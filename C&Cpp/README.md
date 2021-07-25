@@ -15,7 +15,13 @@ template <class T>
 // void next (T a) cout << a++ << endl;       // can't write in a line without {}
 void next (T a)
 {
-    cout << typeid(a).name() << " : " << a << " + 1 = " << ++a << endl;
+    if (typeid(a) == typeid((char) 'a') || typeid(a) == typeid((unsigned char) 'a'))
+    {
+        cout << typeid(a).name() << " : " << (int) a << " + 1 = " << (int) ++a << " (converted to ASCII value)" << endl;    
+    } else
+    {
+        cout << typeid(a).name() << " : " << a << " + 1 = " << ++a << endl;
+    }
     // there will be more alternatives like type_info and so on ……
 }
 ```
@@ -35,8 +41,8 @@ int main()
 ```
 
 #### Output
-> c :  + 1 =  
-> h :  + 1 =  
+> c : 127 + 1 = -128 (converted to ASCII value)  
+> h : 255 + 1 = 0 (converted to ASCII value)  
 > s : 32767 + 1 = -32768  
 > t : 65535 + 1 = 0  
 > i : 2147483647 + 1 = -2147483648  
