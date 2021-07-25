@@ -1,15 +1,50 @@
 # My C/C++ Practice
 The final destination of programming
+- Template (2021.07.23)
 - Stack Overflow (2021.05.18)
 - Hello World (2021.05.12)
 
 
-## Stack Overflow (2021.05.18)
-- "Let's conquer the `stack overflow` problem!"
-- …… a stupid conquerer who didn't know `template` and `generic function` said.
-- Can he learn them or still stay in beginner's swamps? To be continued …… 
+## Template (2021.07.23)
+- Significantly advanced code using **template** from the previous `StackOverflow.cpp`
+- I am so proud!
 
 #### StackOverflow.cpp
+```cpp
+template <class T>
+// void next (T a) cout << a++ << endl;       // can't write in a line without {}
+void next (T a)
+{
+    cout << typeid(a).name() << " : " << a << " + 1 = " << ++a << endl;
+    // there will be more alternatives like type_info and so on ……
+}
+```
+```cpp
+int main()
+{
+    next((char) CHAR_MAX);
+    next((unsigned char) UCHAR_MAX);
+    next((short) SHRT_MAX);
+    next((unsigned short) USHRT_MAX);
+    next((int) INT_MAX);
+    next((unsigned int) UINT_MAX);
+    next((bool) 1);                     // warning: use of an operand of type 'bool' in 'operator++' is deprecated
+
+    return 0;
+}
+```
+
+#### Output
+> c :  + 1 =  
+> h :  + 1 =  
+> s : 32767 + 1 = -32768  
+> t : 65535 + 1 = 0  
+> i : 2147483647 + 1 = -2147483648  
+> j : 4294967295 + 1 = 0  
+> b : 1 + 1 = 1
+
+
+## StackOverflow.cpp
 ```cpp
 #include <iostream>
 
