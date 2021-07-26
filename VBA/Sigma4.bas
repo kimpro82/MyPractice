@@ -30,12 +30,12 @@ Function Sigma4(p As Integer, a As Integer, n As Integer) As Integer
 
 ErrorHandler1:
 
-        MsgBox "Error occurs : Starting number a is greater than final number n."
+        MsgBox "An error occurs : Starting number a is greater than final number n."
 
     Exit Function
 
 ErrorHandler2:
 
-        MsgBox "Sigma4() supports only power numbers under 5."
+        MsgBox "An error occurs : Sigma4() supports only power numbers under 5."
 
 End Function
