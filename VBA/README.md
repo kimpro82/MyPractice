@@ -1,4 +1,5 @@
 # My VBA Practice
+
 VBA, maybe it could my ancient future
 
 - Sigma4 (2021.07.26)
@@ -9,6 +10,7 @@ VBA, maybe it could my ancient future
 
 
 ## Sigma4 (2021.07.26)
+
 - Change the calculation method from loop to **[Faulhaber's Formula](https://en.wikipedia.org/wiki/Faulhaber%27s_formula)** (make faster)
 - Support operations for k ~ k^4
 
@@ -64,6 +66,7 @@ End Function
 
 
 ## Sigma3 (2021.07.07)
+
 - Add **Error Handler** 
 - How about naming labels such like `try` ~ `catch` ~ `finally`?
 
@@ -103,6 +106,7 @@ End Function
 
 
 ## Sigma2 (2021.01.03)
+
 - Add a parameter of _k_ that indicates a starting point
 - Need to add codes for handling errors.
 
@@ -127,6 +131,7 @@ End Function
 
 
 ## Sigma (2021.01.02)
+
 - Make a function to calculate `summation` (a.k.a. Sigma, Σ)
 - Define all the variables as `integer`
 
@@ -151,6 +156,7 @@ End Function
 
 
 ## Color_Scroll (2020.11.14)
+
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet
 
