@@ -1,6 +1,5 @@
 Option Explicit
 
-
 Function Sigma4(p As Integer, a As Integer, n As Integer) As Integer
 
     On Error GoTo ErrorHandler1
@@ -8,7 +7,6 @@ Function Sigma4(p As Integer, a As Integer, n As Integer) As Integer
         If a > n Then
             Err.Raise 380   'Error Code 380 : Invalid property value.
         End If
-
 
     On Error GoTo ErrorHandler2
 
@@ -29,18 +27,15 @@ Function Sigma4(p As Integer, a As Integer, n As Integer) As Integer
         Sigma4 = sum
     
     Exit Function
-        
 
-    ErrorHandler1:
+ErrorHandler1:
 
         MsgBox "Error occurs : Starting number a is greater than final number n."
 
     Exit Function
 
-
-    ErrorHandler2:
+ErrorHandler2:
 
         MsgBox "Sigma4() supports only power numbers under 5."
-
 
 End Function
