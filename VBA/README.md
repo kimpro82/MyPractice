@@ -9,7 +9,7 @@ VBA, maybe it could my ancient future
 
 
 ## Sigma4 (2021.07.26)
-- Change the calculation method from loop to **Faulhaber's Formula** (make faster)
+- Change the calculation method from loop to **[Faulhaber's Formula](https://en.wikipedia.org/wiki/Faulhaber%27s_formula)** (make faster)
 - Support operations for k ~ k^4
 
 ![Sigma4](Images/VBA_Sigma4.PNG)
