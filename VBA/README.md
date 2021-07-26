@@ -51,13 +51,13 @@ Function Sigma4(p As Integer, a As Integer, n As Integer) As Integer
     
     Exit Function
 
-ErrorHandler1:
+    ErrorHandler1:
 
         MsgBox "An error occurs : Starting number a is greater than final number n."
 
     Exit Function
 
-ErrorHandler2:
+    ErrorHandler2:
 
         MsgBox "An error occurs : Sigma4() supports only power numbers under 5."
 
