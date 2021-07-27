@@ -1,13 +1,73 @@
 # My VBA Practice
+
 VBA, maybe it could my ancient future
+
+- Sigma4 (2021.07.26)
 - Sigma3 (2021.07.07)
 - Sigma2 (2021.01.03)
 - Sigma (2021.01.02)
 - Color_Scroll (2020.11.14)
 
 
+## Sigma4 (2021.07.26)
+
+- Change the calculation method from loop to **[Faulhaber's Formula](https://en.wikipedia.org/wiki/Faulhaber%27s_formula)** (make faster)
+- Support operations for k ~ k^4
+
+![Sigma4](Images/VBA_Sigma4.PNG)
+
+![Sigma4_ErrorMsgBox1](Images/VBA_Sigma4_ErrorMsgBox1.PNG)
+
+![Sigma4_ErrorMsgBox2](Images/VBA_Sigma4_ErrorMsgBox2.PNG)
+
+```vba
+Option Explicit
+
+Function Sigma4(p As Integer, a As Integer, n As Integer) As Integer
+
+    On Error GoTo ErrorHandler1
+
+        If a > n Then
+            Err.Raise 380   'Error Code 380 : Invalid property value.
+        End If
+
+    On Error GoTo ErrorHandler2
+
+        Dim sum As Integer
+
+        If p = 1 Then
+            sum = n * (n + 1) / 2 - (a - 1) * a / 2
+        ElseIf p = 2 Then
+            sum = n * (n + 1) * (2 * n + 1) / 6 - (a - 1) * a * (2 * (a - 1) + 1) / 6
+        ElseIf p = 3 Then
+            sum = (n * (n + 1) / 2) ^ 2 - ((a - 1) * a / 2) ^ 2
+        ElseIf p = 4 Then
+            sum = n * (n + 1) * (2 * n + 1) * (3 * n ^ 2 + 3 * n - 1) / 30 - (a - 1) * a * (2 * (a - 1) + 1) * (3 * (a - 1) ^ 2 + 3 * (a - 1) - 1) / 30
+        Else                'When p > 4
+            Err.Raise 380
+        End If
+
+        Sigma4 = sum
+    
+    Exit Function
+
+    ErrorHandler1:
+
+        MsgBox "An error occurs : Starting number a is greater than final number n."
+
+    Exit Function
+
+    ErrorHandler2:
+
+        MsgBox "An error occurs : Sigma4() supports only power numbers under 5."
+
+End Function
+```
+
+
 ## Sigma3 (2021.07.07)
-- Add `Error Handler` 
+
+- Add **Error Handler** 
 - How about naming labels such like `try` ~ `catch` ~ `finally`?
 
 ![Sigma3](Images/VBA_Sigma3.PNG)
@@ -46,6 +106,7 @@ End Function
 
 
 ## Sigma2 (2021.01.03)
+
 - Add a parameter of _k_ that indicates a starting point
 - Need to add codes for handling errors.
 
@@ -70,6 +131,7 @@ End Function
 
 
 ## Sigma (2021.01.02)
+
 - Make a function to calculate `summation` (a.k.a. Sigma, Σ)
 - Define all the variables as `integer`
 
@@ -94,6 +156,7 @@ End Function
 
 
 ## Color_Scroll (2020.11.14)
+
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet
 
