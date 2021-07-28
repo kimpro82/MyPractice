@@ -59,7 +59,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Ganzi.html (2017.04.03)
 
 ## My VBA Practice
-- Try Catch Finally
+- Try Catch Finally (2021.07.28)
 - Sigma4 (2021.07.26)
 - Sigma3 (2021.07.07)
 - Sigma2 (2021.01.03)
