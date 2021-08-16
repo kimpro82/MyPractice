@@ -11,6 +11,8 @@
 
 
 ## [Scatter Points in a Circle (2021.08.16)](/R#my-r-practice)
+\* Scatter points in a circle in various ways  
+\* using `plotrix`
 
 #### 0. Call "plotrix" library (install if not exist)
 ```R
