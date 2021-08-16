@@ -1,17 +1,18 @@
 # [My R Practice]
-- Permutations_and_Combinations.R (2021.04.05)
-- Get_Sample_Number_2.R (2020.06.16)
-- Get_Sample_Number.R (2020.06.10)
-- Generating Array and Variables by for Loop.R (2019.12.06)
-- Grade_Cancel_Effect.R (2019.07.19)
-- CF_Affection.R (2019.05.25)
-- Plotting_Fibonacci Tornado.R (2017.05.07)
-- Plotting_RGB.R (2017.04.14)
+- Scatter Points in a Circle (2021.08.16)
+- Permutations and Combinations (2021.04.05)
+- Sample Number 2 (2020.06.16)
+- Sample Number (2020.06.10)
+- Generating Array and Variables by for Loop (2019.12.06)
+- Grade Cancel Effect (2019.07.19)
+- CF Affection (2019.05.25)
+- Plotting Fibonacci Tornado (2017.05.07)
+- Plotting RGB (2017.04.14)
 
 
-## Permutations_and_Combinations.R (2021.04.05)
-- get permutations and combinations
-- using `gtools`
+## Permutations and Combinations (2021.04.05)
+\* get permutations and combinations  
+\* using `gtools`
 
 #### Factorial
 ```R
@@ -93,7 +94,7 @@ choose(4, 2)                                # 4C2
 > [1] 6
 
 
-## Get_Sample_Number_2.R (2020.6.16)
+## Sample Number 2 (2020.6.16)
 get each branch's sample number for inspection work
 
 ```R
@@ -161,7 +162,7 @@ ceiling(3/10) # rounding up
 > 1
 
 
-## Generating Array and Variables by for Loop.R (2019.12.06)
+## Generating Array and Variables by for Loop (2019.12.06)
 answer for a question at chatting room  
 \* R array-related data structure is actually defined as vector, matrix and array about each dimension's array.  
 \* I call it just 'array' by common mathematical notion here, but it is different from R's strict data structure definition.  
@@ -229,7 +230,7 @@ Hmm …… is it too much?
 It can be more clearly effective when *n* is larger, but now seems not yet.  
 
 
-## Grade_Cancel_Effect.R (2019.07.19)
+## Grade Cancel Effect (2019.07.19)
 try simulating grade cancel effect for my sister
 1) generate grade data (because my sister's real GPA can't be opened.ㅋㅋ)
 2) plot
@@ -306,9 +307,9 @@ mean(sort(평점)[9:len])
 > 3.514286
 
 
-## CF_Affection.R (2019.05.25)
-For my friend JW Park who wants to measure the affection of TV CF  
-It demands simply CF time schedule and target frequency(ex. app download time), not heavy tracker.
+## CF Affection (2019.05.25)
+\* For my friend JW Park who wants to measure the affection of TV CF  
+\* It demands simply CF time schedule and target frequency(ex. app download time), not heavy tracker.
 
 ```R
 # Affection Measurement of TV CFs
@@ -351,7 +352,7 @@ for (i in 1:length(cf.time)) {
 ![CF Affection Measurement](https://github.com/kimpro82/My-Practice/blob/master/images/CF_Affection_Measurement_20190525.png)
 
 
-## Plotting_Fibonacci Tornado.R (2017.05.07)
+## Plotting Fibonacci Tornado (2017.05.07)
 generating Fibonacci Series and Fibonacci Coordinates by looping
 
 #### 1. Generating Fibonacci Series
@@ -447,10 +448,10 @@ plot(log(series[1:12]), type="l",
 ![Fibonacci Series - Golden Ratio](https://github.com/kimpro82/My_Practice/blob/master/images/2017-05-07%2003%3B03%3B02%20Fibonacci%20Series%20-%20Golden%20Ratio.PNG)
 
 
-## Plotting_RGB.R (2017.04.14)
-- showing RGB color data' distribution by several methods in R
-- using `plot3d()`, converting on coordinate plane
-- generating RGB data with a sigmoid function
+## Plotting RGB (2017.04.14)
+\* showing RGB color data' distribution by several methods in R  
+\* using `plot3d()`, converting on coordinate plane  
+\* generating RGB data with a sigmoid function
 
 ```R
 ## Install required library packages (only at first)
