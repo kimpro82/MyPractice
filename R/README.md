@@ -10,7 +10,7 @@
 - [RGB (2017.04.14)](/R#plotting-rgb-20170414)
 
 
-## Scatter Points in a Circle (2021.08.16)
+## [Scatter Points in a Circle (2021.08.16)](/R#my-r-practice)
 
 #### 0. Call "plotrix" library (install if not exist)
 ```R
@@ -163,7 +163,7 @@ draw.circle(0, 0, r)
 <img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="500" height="500" alt = "3.1 Points with lattice spacing including outside the circle">
 
 
-## Permutations and Combinations (2021.04.05)
+## [Permutations and Combinations (2021.04.05)](/R#my-r-practice)
 \* get permutations and combinations  
 \* using `gtools`
 
