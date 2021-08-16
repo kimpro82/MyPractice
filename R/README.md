@@ -12,7 +12,6 @@
 
 ## Scatter Points in a Circle (2021.08.16)
 
-
 #### 0. Call "plotrix" library (install if not exist)
 ```R
 if(!requireNamespace("plotrix")) install.packages("plotrix")
@@ -38,7 +37,7 @@ plot(x, y, pch='.', col = "red",
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)                      # not exact drawing, crazy
 ```
-<img src="Images/Scatter_20210816_1_Monte_Calro_method_1.png" width="400" height="400" alt = "1. Monte Calro method 1">
+<img src="Images/Scatter_20210816_1_Monte_Calro_method_1.png" width="500" height="500" alt = "1. Monte Calro method 1">
 
 #### 1.1 Fit the circle on the coordinates
 ```R
@@ -48,7 +47,7 @@ plot(x, y, pch='.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 ```
-<img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="400" height="400" alt = "1.1 Fit the circle on the coordinates">
+<img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="500" height="500" alt = "1.1 Fit the circle on the coordinates">
 
 #### 2. Monte Calro method 2 (disperse the crowded central population)
 ```R
@@ -74,7 +73,7 @@ plot(x, y, pch='.', col = "red", asp = 1,
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 ```
-<img src="Images/Scatter_20210816_2_Monte_Calro_method_2.png" width="400" height="400" alt = "2. Monte Calro method 2 (disperse the crowded central population)">
+<img src="Images/Scatter_20210816_2_Monte_Calro_method_2.png" width="500" height="500" alt = "2. Monte Calro method 2 (disperse the crowded central population)">
 
 #### 3. Points with lattice spacing
 ```R
@@ -116,7 +115,7 @@ plot(x, y, pch='.', col = "red", asp = 1,
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 ```
-<img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="400" height="400" alt = "3. Points with lattice spacing">
+<img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="500" height="500" alt = "3. Points with lattice spacing">
 
 #### 3.1 Points with lattice spacing including outside the circle
 ```R
@@ -161,7 +160,7 @@ plot(x, y, pch='.', col = xyCol, asp = 1,
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 ```
-<img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="400" height="400" alt = "3.1 Points with lattice spacing including outside the circle">
+<img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="500" height="500" alt = "3.1 Points with lattice spacing including outside the circle">
 
 
 ## Permutations and Combinations (2021.04.05)
