@@ -1,4 +1,4 @@
-# \[My Practice\]
+# [My Practice]
 miscellaneous petty works
 
 ## Github Dashboard
