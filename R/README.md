@@ -594,7 +594,7 @@ abline(h=1.618, col="red", lty=3)
 plot(log(series[1:12]), type="l", 
      main="Natural Logarithm of Fibonacci Series")
 ```
-![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series _Golden_Ratio.PNG)
+![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series_Golden_Ratio.PNG)
 
 
 ## RGB (2017.04.14)
@@ -618,7 +618,7 @@ tail(colors)
 plot3d(colors, col=rgb(colors))
 ```
 
-![RGB_Plotting_2](https://github.com/kimpro82/My_Practice/blob/master/images/2017-04-15%2001%3B33%3B17%20RGB_Plotting_2.PNG)
+![RGB_Plotting_2](Images/RGB_Plotting_20170415_2.PNG)
 
 #### Using Sigmoid function
 Reference : https://en.wikipedia.org/wiki/Sigmoid_function
@@ -633,7 +633,7 @@ summary(colors)
 plot3d(colors, col=rgb(colors))
 ```
 
-![RGB_Plotting_5](https://github.com/kimpro82/My_Practice/blob/master/images/2017-04-15%2001%3B59%3B29%20RGB_Plotting_5.PNG)
+![RGB_Plotting_5](Images/RGB_Plotting_20170415_5.PNG)
 
 #### Using Sigmoid function 2 (Plotting on coordinate plane)
 Reference : https://github.com/THEjoezack/ColorMine/blob/master/ColorMine/ColorSpaces/Conversions/YxyConverter.cs
@@ -652,4 +652,4 @@ plot(colors[,2], colors[,3], col=rgb(colors))
 plot(colors[,3], colors[,1], col=rgb(colors))
 ```
 
-![RGB_Plotting_6](https://github.com/kimpro82/My_Practice/blob/master/images/2017-04-15%2002%3B04%3B13%20RGB_Plotting_6.PNG)
+![RGB_Plotting_6](Images/RGB_Plotting_20170415_6.PNG)
