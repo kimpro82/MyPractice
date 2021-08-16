@@ -388,8 +388,8 @@ try simulating grade cancel effect for my sister
 1) generate grade data (because my sister's real GPA can't be opened.ㅋㅋ)
 2) plot
 
+#### 1. generating grade data
 ```R
-# 1. generating grade data
 # 1.1 grade (4.3 Scale)
 g0 <- 1:4
 gp <- g0 + 0.3
@@ -428,8 +428,8 @@ str(평점)
 ```
 > num [1:30] 3.7 3 2.3 2.3 NA 3 3.7 3.3 3 3.3 ...
 
+#### 2. plot
 ```R
-# 2. plot
 len <- length(sort(평점))
 windows(width=15, height=8)
   par(mfrow=c(1,2)) 
@@ -463,11 +463,8 @@ mean(sort(평점)[9:len])
 \* For my friend JW Park who wants to measure the affection of TV CF  
 \* It demands simply CF time schedule and target frequency(ex. app download time), not heavy tracker.
 
+#### 1. Generating Sample Data
 ```R
-# Affection Measurement of TV CFs
-# For my frend, JW Park
-
-# 1. Generating Sample Data
 n1 = 24*60  # 24 hours * 60 minutes
 n2 = 18*60  # not used - suppose 18:00pm is the peak with normal dist.
 cf.time = c(6, 12, 18) # suppose cf is played at 6:00, 12:00 and 18:00)
@@ -488,8 +485,10 @@ for (i in 1:length(sample.data)) {
     sample.data[i] = sample.data[i] %% 24
   }
 }
+```
 
-# 2. plot histogram for comparing before and after ad.
+#### 2. plot histogram for comparing before and after ad.
+```R
 windows(width=12, height=5)
 par(mfrow=c(1,3)) 
 for (i in 1:length(cf.time)) {
@@ -585,7 +584,8 @@ fibonacci.ratio <- c()
 for (k in 1:n) {
   fibonacci.ratio[k] = series[k+1]/series[k]
 }
-
+```
+```R
 windows(width=10, height=5)
 par(mfrow=c(1,2))
 plot(fibonacci.ratio[1:12],  type="l",
