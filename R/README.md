@@ -1,4 +1,4 @@
-# [\[My R Practice\]](..#my-r-practice)
+# [\[My R Practice\]](/#my-r-practice)
 - [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
 - [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
