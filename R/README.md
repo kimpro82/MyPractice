@@ -1,5 +1,5 @@
 # [My R Practice]
-- Scatter Points in a Circle (2021.08.16)
+- [Scatter Points in a Circle (2021.08.16)](#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
 - [Sample Number 2 (2020.06.16)](#sample-number-2-2020616)
 - Sample Number (2020.06.10)
@@ -18,7 +18,7 @@ if(!requireNamespace("plotrix")) install.packages("plotrix")
 library("plotrix")
 ```
 
-#### 1. Monte Calro method 1
+#### 1. Monte Carlo method 1
 ```R
 r     = 10
 n     = 30000
@@ -33,23 +33,23 @@ y     = rr * sin(rrad)
 ```R
 windows(width=7, height=7)
 plot(x, y, pch='.', col = "red",
-  main = "1. Monte Calro method 1")
+  main = "1. Monte Carlo method 1")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)                      # not exact drawing, crazy
 ```
-<img src="Images/Scatter_20210816_1_Monte_Calro_method_1.png" width="500" height="500" alt = "1. Monte Calro method 1">
+<img src="Images/Scatter_20210816_1_Monte_Carlo_method_1.png" width="500" height="500" alt = "1. Monte Carlo method 1">
 
 #### 1.1 Fit the circle on the coordinates
 ```R
 windows(width=7, height=7)
 plot(x, y, pch='.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
-  main = "1.1 Monte Calro method (with modified asp ratio)")
+  main = "1.1 Monte Carlo method (with modified asp ratio)")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 ```
 <img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="500" height="500" alt = "1.1 Fit the circle on the coordinates">
 
-#### 2. Monte Calro method 2 (disperse the crowded central population)
+#### 2. Monte Carlo method 2 (disperse the crowded central population)
 ```R
 x = c(); y = c()
 cnt = 0
@@ -69,11 +69,11 @@ while (cnt < n)                           # insert points only in the circle
 ```R
 windows(width=7, height=7)
 plot(x, y, pch='.', col = "red", asp = 1,
-     main = "2. Monte Calro method 2 (disperse the crowded central pop.)")
+     main = "2. Monte Carlo method 2 (disperse the crowded central pop.)")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 ```
-<img src="Images/Scatter_20210816_2_Monte_Calro_method_2.png" width="500" height="500" alt = "2. Monte Calro method 2 (disperse the crowded central population)">
+<img src="Images/Scatter_20210816_2_Monte_Carlo_method_2.png" width="500" height="500" alt = "2. Monte Carlo method 2 (disperse the crowded central population)">
 
 #### 3. Points with lattice spacing
 ```R
