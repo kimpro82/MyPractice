@@ -10,7 +10,7 @@ if(!requireNamespace("plotrix")) install.packages("plotrix")
 library("plotrix")
 
 
-# 1. Monte Calro method 1
+# 1. Monte Carlo method 1
 
 r     = 10
 n     = 30000
@@ -23,7 +23,7 @@ y     = rr * sin(rrad)
 
 windows(width=7, height=7)
 plot(x, y, pch='.', col = "red",
-  main = "1. Monte Calro method 1")
+  main = "1. Monte Carlo method 1")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)                      # not exact drawing, crazy
 
@@ -32,12 +32,12 @@ draw.circle(0, 0, r)                      # not exact drawing, crazy
 
 windows(width=7, height=7)
 plot(x, y, pch='.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
-  main = "1.1 Monte Calro method (with modified asp ratio)")
+  main = "1.1 Monte Carlo method (with modified asp ratio)")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 
 
-# 2. Monte Calro method 2 (disperse the crowded central population)
+# 2. Monte Carlo method 2 (disperse the crowded central population)
 
 x = c(); y = c()
 cnt = 0
@@ -55,7 +55,7 @@ while (cnt < n)                           # insert points only in the circle
 
 windows(width=7, height=7)
 plot(x, y, pch='.', col = "red", asp = 1,
-     main = "2. Monte Calro method 2 (disperse the crowded central pop.)")
+     main = "2. Monte Carlo method 2 (disperse the crowded central pop.)")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 
