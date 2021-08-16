@@ -1,4 +1,4 @@
-# [\[My R Practice\]](../#my-r-practice)
+# [\[My R Practice\]](..#my-r-practice)
 - [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
 - [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
@@ -8,7 +8,6 @@
 - [CF Affection (2019.05.25)](/R#cf-affection-20190525)
 - [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
 - [RGB (2017.04.14)](/R#rgb-20170414)
-https://github.com/kimpro82/MyPractice/tree/ScatterInCircle#my-r-practice
 
 
 ## [Scatter Points in a Circle (2021.08.16)](/R#my-r-practice)
