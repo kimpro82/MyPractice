@@ -37,7 +37,7 @@ abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 
 
-# 2. Monte Calro method 2 (disperse the central crowded population)
+# 2. Monte Calro method 2 (disperse the crowded central population)
 
 x = c(); y = c()
 cnt = 0
@@ -55,7 +55,7 @@ while (cnt < n)                           # insert points only in the circle
 
 windows(width=7, height=7)
 plot(x, y, pch='.', col = "red", asp = 1,
-     main = "2. Monte Calro method 2 (disperse the central crowded pop.)")
+     main = "2. Monte Calro method 2 (disperse the crowded central pop.)")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 
@@ -96,7 +96,7 @@ abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
 
 
-# 3.1 Points with lattice spacing including the circle's outside
+# 3.1 Points with lattice spacing including outside the circle
 
 x = c(); y = c(); xyCol = c()
 temp = c(-r, -r)
@@ -115,7 +115,7 @@ for (i in 1:num)
     if (temp[1]^2 + temp[2]^2 < r^2) xyCol = c(xyCol,"red")
     else  xyCol = c(xyCol,"blue")
   }
-  
+
   temp[2] = -r
 }
 
