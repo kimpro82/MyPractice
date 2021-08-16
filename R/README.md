@@ -348,7 +348,7 @@ for (i in 1:10) {
 }
 
 ```
-![generating variable names](https://github.com/kimpro82/My-Practice/blob/master/images/R%2020191206%202.%20generating%20variable%20names.PNG)
+![generating variable names](Images/Generating_variable_names_20191206_2.png)
 
 ```R
 # 2.1 generating variable names with considering sort
@@ -361,7 +361,7 @@ for (i in 1:10) {
   assign(name, c())
 }
 ```
-![generating variable names with considering sort](https://github.com/kimpro82/My-Practice/blob/master/images/R%2020191206%202.1%20generating%20variable%20names%20with%20considering%20sort.PNG)
+![generating variable names with considering sort](Images/Generating_variable_names_20191206_2_1.png)
 
 ```R
 # 2.1.1 code improvement trial of 2.1
@@ -378,7 +378,7 @@ for (i in 1:10) {
   assign(name, c())
 }
 ```
-![code improvement trial of 2.1](https://github.com/kimpro82/My-Practice/blob/master/images/R%2020191207%202.1.1%20code%20improvement%20trial%20of%202.1.PNG)  
+![code improvement trial of 2.1](Images/Generating_variable_names_20191206_2_1_1.PNG)  
 Hmm …… is it too much?  
 It can be more clearly effective when *n* is larger, but now seems not yet.  
 
@@ -443,8 +443,7 @@ windows(width=15, height=8)
       abline(h=mean(sort(평점)[3:len]), col="red")
       abline(h=mean(sort(평점)[6:len]), col="blue")
 ```
-
-![Grade_Cancel_Effect](https://github.com/kimpro82/My-Practice/blob/master/images/2019-07-18%20Grade_Cancel_Effect.png)
+![Grade_Cancel_Effect](Images/Grade_Cancel_Effect_20190718.png)
 
 
 ```R
@@ -501,8 +500,7 @@ for (i in 1:length(cf.time)) {
        breaks=n1)
 }
 ```
-
-![CF Affection Measurement](https://github.com/kimpro82/My-Practice/blob/master/images/CF_Affection_Measurement_20190525.png)
+![CF Affection Measurement](Images/CF_Affection_Measurement_20190525.png)
 
 
 ## Fibonacci Tornado (2017.05.07)
@@ -577,8 +575,7 @@ plot(x[1:12], y[1:12], type="l",
      main="Fibonacci Tornado")
 abline(h=0, v=0, col="gray", lty=3)
 ```
-
-![Fibonacci Tornado](https://github.com/kimpro82/My_Practice/blob/master/images/2017-05-07%2003%3B04%3B10%20Fibonacci%20Tornado.PNG)
+![Fibonacci Tornado](Images/Fibonacci_20170507_Tornado.PNG)
 
 #### Bonus. Seeing it's Aproximate to the Golden Ratio.
 
@@ -597,8 +594,7 @@ abline(h=1.618, col="red", lty=3)
 plot(log(series[1:12]), type="l", 
      main="Natural Logarithm of Fibonacci Series")
 ```
-
-![Fibonacci Series - Golden Ratio](https://github.com/kimpro82/My_Practice/blob/master/images/2017-05-07%2003%3B03%3B02%20Fibonacci%20Series%20-%20Golden%20Ratio.PNG)
+![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series _Golden_Ratio.PNG)
 
 
 ## RGB (2017.04.14)
