@@ -6,8 +6,8 @@
 - [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
 - [Grade Cancel Effect (2019.07.19)](#grade-cancel-effect-20190719)
 - [CF Affection (2019.05.25)](#cf-affection-20190525)
-- [Plotting Fibonacci Tornado (2017.05.07)](#plotting-fibonacci-tornado-20170507)
-- [Plotting RGB (2017.04.14)](#plotting-rgb-20170414)
+- [Fibonacci Tornado (2017.05.07)](#plotting-fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](#plotting-rgb-20170414)
 
 
 ## Scatter Points in a Circle (2021.08.16)
@@ -505,7 +505,7 @@ for (i in 1:length(cf.time)) {
 ![CF Affection Measurement](https://github.com/kimpro82/My-Practice/blob/master/images/CF_Affection_Measurement_20190525.png)
 
 
-## Plotting Fibonacci Tornado (2017.05.07)
+## Fibonacci Tornado (2017.05.07)
 generating Fibonacci Series and Fibonacci Coordinates by looping
 
 #### 1. Generating Fibonacci Series
@@ -601,7 +601,7 @@ plot(log(series[1:12]), type="l",
 ![Fibonacci Series - Golden Ratio](https://github.com/kimpro82/My_Practice/blob/master/images/2017-05-07%2003%3B03%3B02%20Fibonacci%20Series%20-%20Golden%20Ratio.PNG)
 
 
-## Plotting RGB (2017.04.14)
+## RGB (2017.04.14)
 \* showing RGB color data' distribution by several methods in R  
 \* using `plot3d()`, converting on coordinate plane  
 \* generating RGB data with a sigmoid function
