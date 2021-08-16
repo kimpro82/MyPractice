@@ -1,13 +1,167 @@
 # [My R Practice]
 - Scatter Points in a Circle (2021.08.16)
-- Permutations and Combinations (2021.04.05)
-- Sample Number 2 (2020.06.16)
+- [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](#sample-number-2-2020616)
 - Sample Number (2020.06.10)
-- Generating Array and Variables by for Loop (2019.12.06)
-- Grade Cancel Effect (2019.07.19)
-- CF Affection (2019.05.25)
-- Plotting Fibonacci Tornado (2017.05.07)
-- Plotting RGB (2017.04.14)
+- [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](#cf-affection-20190525)
+- [Plotting Fibonacci Tornado (2017.05.07)](#plotting-fibonacci-tornado-20170507)
+- [Plotting RGB (2017.04.14)](#plotting-rgb-20170414)
+
+
+## Scatter Points in a Circle (2021.08.16)
+
+
+#### 0. Call "plotrix" library (install if not exist)
+```R
+if(!requireNamespace("plotrix")) install.packages("plotrix")
+library("plotrix")
+```
+
+#### 1. Monte Calro method 1
+```R
+r     = 10
+n     = 30000
+```
+```R
+rr    = runif(n, 0, r)                    # rr    : randomly sampled radius
+rrad  = runif(n, 0, 2 * pi)               # rrad  : randomly sampled radian
+
+x     = rr * cos(rrad)                    # yes, I am a math genius!
+y     = rr * sin(rrad)
+```
+```R
+windows(width=7, height=7)
+plot(x, y, pch='.', col = "red",
+  main = "1. Monte Calro method 1")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)                      # not exact drawing, crazy
+```
+<img src="Images/Scatter_20210816_1_Monte_Calro_method_1.png" width="400" height="400" alt = "1. Monte Calro method 1">
+
+#### 1.1 Fit the circle on the coordinates
+```R
+windows(width=7, height=7)
+plot(x, y, pch='.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
+  main = "1.1 Monte Calro method (with modified asp ratio)")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="400" height="400" alt = "1.1 Fit the circle on the coordinates">
+
+#### 2. Monte Calro method 2 (disperse the crowded central population)
+```R
+x = c(); y = c()
+cnt = 0
+```
+```R
+while (cnt < n)                           # insert points only in the circle
+{
+  temp = runif(2, -r, r)
+  if (temp[1]^2 + temp[2]^2 < r^2)
+  {
+    x = c(x, temp[1])
+    y = c(y, temp[2])
+    cnt = cnt + 1                         # I miss ++ operator ……
+  }
+}
+```
+```R
+windows(width=7, height=7)
+plot(x, y, pch='.', col = "red", asp = 1,
+     main = "2. Monte Calro method 2 (disperse the crowded central pop.)")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_2_Monte_Calro_method_2.png" width="400" height="400" alt = "2. Monte Calro method 2 (disperse the crowded central population)">
+
+#### 3. Points with lattice spacing
+```R
+x = c(); y = c()
+area = pi * r^2
+interval = sqrt(area / n)
+num = as.integer(floor(2 * r / interval))
+temp = c(-r, -r)
+```
+```R
+for (i in 1:num)
+{
+  temp[1] = temp[1] + interval
+
+  for (j in 1:num)
+  {
+    temp[2] = temp[2] + interval
+
+    if (temp[1]^2 + temp[2]^2 < r^2)
+    {
+      x = c(x, temp[1])
+      y = c(y, temp[2])
+    }
+  }
+
+  temp[2] = -r
+}
+```
+```R
+length(x); length(y)
+```
+> [1] 29988  
+> [1] 29988
+```R
+windows(width=7, height=7)
+plot(x, y, pch='.', col = "red", asp = 1,
+     xlim = c(-r, r), ylim = c(-r, r),
+     main = "3. Points with lattice spacing")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="400" height="400" alt = "3. Points with lattice spacing">
+
+#### 3.1 Points with lattice spacing including outside the circle
+```R
+x = c(); y = c(); xyCol = c()
+temp = c(-r, -r)
+```
+```R
+for (i in 1:num)
+{
+  temp[1] = temp[1] + interval
+  
+  for (j in 1:num)
+  {
+    temp[2] = temp[2] + interval
+
+    x = c(x, temp[1])
+    y = c(y, temp[2])
+
+    if (temp[1]^2 + temp[2]^2 < r^2) xyCol = c(xyCol,"red")
+    else  xyCol = c(xyCol,"blue")
+  }
+
+  temp[2] = -r
+}
+```
+```R
+length(x); length(y)
+```
+> [1] 38025  
+> [1] 38025
+```R
+length(xyCol); length(xyCol[xyCol=="red"]); length(xyCol[xyCol=="blue"])
+```
+> [1] 38025  
+> [1] 29988  
+> [1] 8037
+```R
+windows(width=7, height=7)
+plot(x, y, pch='.', col = xyCol, asp = 1,
+     # xlim = c(-r, r), ylim = c(-r, r),
+     main = "3.1 Points with lattice spacing 2")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="400" height="400" alt = "3.1 Points with lattice spacing including outside the circle">
 
 
 ## Permutations and Combinations (2021.04.05)
