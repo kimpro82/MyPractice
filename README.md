@@ -1,4 +1,4 @@
-# [My_Practice]
+# \[My Practice\]
 miscellaneous petty works
 
 ## Github Dashboard
@@ -13,8 +13,8 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
 - [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
 - [CF Affection (2019.05.25)](/R#cf-affection-20190525)
-- [Fibonacci Tornado (2017.05.07)](/R#plotting-fibonacci-tornado-20170507)
-- [RGB (2017.04.14)](/R#plotting-rgb-20170414)
+- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](/R#rgb-20170414)
 
 ## My Python Practice
 - CallBro.py (2021.06.17)
