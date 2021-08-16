@@ -11,6 +11,8 @@
 https://github.com/kimpro82/MyPractice/tree/ScatterInCircle#my-r-practice
 
 
+## [Scatter Points in a Circle (2021.08.16)](/R#my-r-practice)
+
 #### 0. Call "plotrix" library (install if not exist)
 ```R
 if(!requireNamespace("plotrix")) install.packages("plotrix")
@@ -246,7 +248,7 @@ choose(4, 2)                                # 4C2
 > [1] 6
 
 
-## Sample Number 2 (2020.6.16)
+## [Sample Number 2 (2020.6.16)](/R#my-r-practice)
 get each branch's sample number for inspection work
 
 ```R
@@ -382,7 +384,7 @@ Hmm …… is it too much?
 It can be more clearly effective when *n* is larger, but now seems not yet.  
 
 
-## Grade Cancel Effect (2019.07.19)
+## [Grade Cancel Effect (2019.07.19)](/R#my-r-practice)
 try simulating grade cancel effect for my sister
 1) generate grade data (because my sister's real GPA can't be opened.ㅋㅋ)
 2) plot
