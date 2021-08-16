@@ -6,14 +6,15 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Outline (2020.04.19)
 
 ## My R Practice
-- Permutations_and_Combinations.R (2021.04.05)
-- Get_Sample_Number_2.R (2020.06.16)
-- Get_Sample_Number.R (2020.06.10)
-- Generating Array and Variables by for Loop.R (2019.12.06)
-- Grade_Cancel_Effect.R (2019.07.19)
-- CF_Affection.R (2019.05.25)
-- Plotting_Fibonacci Tornado.R (2017.05.07)
-- Plotting_RGB.R (2017.04.14)
+- [Scatter Points in a Circle (2021.08.16)](#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](#sample-number-2-2020616)
+- Sample Number (2020.06.10)
+- [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](#cf-affection-20190525)
+- [Fibonacci Tornado (2017.05.07)](#plotting-fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](#plotting-rgb-20170414)
 
 ## My Python Practice
 - CallBro.py (2021.06.17)
