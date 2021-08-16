@@ -1,4 +1,4 @@
-# [\[My R Practice\]](/R#my-r-practice)
+# [\[My R Practice\]](/#my_practice)
 - [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
 - [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
@@ -315,7 +315,7 @@ ceiling(3/10) # rounding up
 > 1
 
 
-## Generating Array and Variables by for Loop (2019.12.06)
+## [Generating Array and Variables by for Loop (2019.12.06)](/R#my-r-practice)
 answer for a question at chatting room  
 \* R array-related data structure is actually defined as vector, matrix and array about each dimension's array.  
 \* I call it just 'array' by common mathematical notion here, but it is different from R's strict data structure definition.  
@@ -459,7 +459,7 @@ mean(sort(평점)[9:len])
 > 3.514286
 
 
-## CF Affection (2019.05.25)
+## [CF Affection (2019.05.25)](/R#my-r-practice)
 \* For my friend JW Park who wants to measure the affection of TV CF  
 \* It demands simply CF time schedule and target frequency(ex. app download time), not heavy tracker.
 
@@ -502,7 +502,7 @@ for (i in 1:length(cf.time)) {
 ![CF Affection Measurement](Images/CF_Affection_Measurement_20190525.png)
 
 
-## Fibonacci Tornado (2017.05.07)
+## [Fibonacci Tornado (2017.05.07)](/R#my-r-practice)
 generating Fibonacci Series and Fibonacci Coordinates by looping
 
 #### 1. Generating Fibonacci Series
@@ -597,7 +597,7 @@ plot(log(series[1:12]), type="l",
 ![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series_Golden_Ratio.PNG)
 
 
-## RGB (2017.04.14)
+## [RGB (2017.04.14)](/R#my-r-practice)
 \* showing RGB color data' distribution by several methods in R  
 \* using `plot3d()`, converting on coordinate plane  
 \* generating RGB data with a sigmoid function
