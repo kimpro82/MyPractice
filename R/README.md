@@ -1,13 +1,13 @@
-# [My R Practice]
-- [Scatter Points in a Circle (2021.08.16)](#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
-- [Sample Number 2 (2020.06.16)](#sample-number-2-2020616)
+# [\[My R Practice\]](./R#my-r-practice)
+- [Scatter Points in a Circle (2021.08.16)](./R#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](./R#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](./R#sample-number-2-2020616)
 - Sample Number (2020.06.10)
-- [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
-- [Grade Cancel Effect (2019.07.19)](#grade-cancel-effect-20190719)
-- [CF Affection (2019.05.25)](#cf-affection-20190525)
-- [Fibonacci Tornado (2017.05.07)](#plotting-fibonacci-tornado-20170507)
-- [RGB (2017.04.14)](#plotting-rgb-20170414)
+- [Generating Array and Variables by for Loop (2019.12.06)](./R#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](./R#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](./R#cf-affection-20190525)
+- [Fibonacci Tornado (2017.05.07)](./R#plotting-fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](./R#plotting-rgb-20170414)
 
 
 ## Scatter Points in a Circle (2021.08.16)
