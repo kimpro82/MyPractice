@@ -33,8 +33,8 @@ x     = rr * cos(rrad)                    # yes, I am a math genius!
 y     = rr * sin(rrad)
 ```
 ```R
-windows(width=7, height=7)
-plot(x, y, pch='.', col = "red",
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red",
   main = "1. Monte Carlo method 1")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)                      # not exact drawing, crazy
@@ -43,8 +43,8 @@ draw.circle(0, 0, r)                      # not exact drawing, crazy
 
 #### 1.1 Fit the circle on the coordinates
 ```R
-windows(width=7, height=7)
-plot(x, y, pch='.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
   main = "1.1 Monte Carlo method (with modified asp ratio)")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
@@ -69,8 +69,8 @@ while (cnt < n)                           # insert points only in the circle
 }
 ```
 ```R
-windows(width=7, height=7)
-plot(x, y, pch='.', col = "red", asp = 1,
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red", asp = 1,
   main = "2. Monte Carlo method 2 (disperse the crowded central pop.)")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
@@ -110,8 +110,8 @@ length(x); length(y)
 > [1] 29988  
 > [1] 29988
 ```R
-windows(width=7, height=7)
-plot(x, y, pch='.', col = "red", asp = 1,
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red", asp = 1,
   main = "3. Points with lattice spacing")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
@@ -154,8 +154,8 @@ length(xyCol); length(xyCol[xyCol=="red"]); length(xyCol[xyCol=="blue"])
 > [1] 29988  
 > [1] 8037
 ```R
-windows(width=7, height=7)
-plot(x, y, pch='.', col = xyCol, asp = 1,
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = xyCol, asp = 1,
   main = "3.1 Points with lattice spacing 2")
 abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
 draw.circle(0, 0, r)
