@@ -1,17 +1,171 @@
-# [My R Practice]
-- Permutations_and_Combinations.R (2021.04.05)
-- Get_Sample_Number_2.R (2020.06.16)
-- Get_Sample_Number.R (2020.06.10)
-- Generating Array and Variables by for Loop.R (2019.12.06)
-- Grade_Cancel_Effect.R (2019.07.19)
-- CF_Affection.R (2019.05.25)
-- Plotting_Fibonacci Tornado.R (2017.05.07)
-- Plotting_RGB.R (2017.04.14)
+# [\[My R Practice\]](/#my-r-practice)
+- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
+- Sample Number (2020.06.10)
+- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
+- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](/R#rgb-20170414)
 
 
-## Permutations_and_Combinations.R (2021.04.05)
-- get permutations and combinations
-- using `gtools`
+## [Scatter Points in a Circle (2021.08.16)](/R#my-r-practice)
+\* Scatter points in a circle in various ways  
+\* using `plotrix`
+
+#### 0. Call "plotrix" library (install if not exist)
+```R
+if(!requireNamespace("plotrix")) install.packages("plotrix")
+library("plotrix")
+```
+
+#### 1. Monte Carlo method 1
+```R
+r     = 10
+n     = 30000
+```
+```R
+rr    = runif(n, 0, r)                    # rr    : randomly sampled radius
+rrad  = runif(n, 0, 2 * pi)               # rrad  : randomly sampled radian
+
+x     = rr * cos(rrad)                    # yes, I am a math genius!
+y     = rr * sin(rrad)
+```
+```R
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red",
+  main = "1. Monte Carlo method 1")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)                      # not exact drawing, crazy
+```
+<img src="Images/Scatter_20210816_1_Monte_Carlo_method_1.png" width="500" height="500" alt = "1. Monte Carlo method 1">
+
+#### 1.1 Fit the circle on the coordinates
+```R
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
+  main = "1.1 Monte Carlo method (with modified asp ratio)")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="500" height="500" alt = "1.1 Fit the circle on the coordinates">
+
+#### 2. Monte Carlo method 2 (disperse the crowded central population)
+```R
+x   = c(); y = c()
+cnt = 0
+```
+```R
+while (cnt < n)                           # insert points only in the circle
+{
+  temp = runif(2, -r, r)
+  if (temp[1]^2 + temp[2]^2 < r^2)
+  {
+    x   = c(x, temp[1])
+    y   = c(y, temp[2])
+    cnt = cnt + 1                         # I miss ++ operator ……
+  }
+}
+```
+```R
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red", asp = 1,
+  main = "2. Monte Carlo method 2 (disperse the crowded central pop.)")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_2_Monte_Carlo_method_2.png" width="500" height="500" alt = "2. Monte Carlo method 2 (disperse the crowded central population)">
+
+#### 3. Points with lattice spacing
+```R
+x         = c(); y = c()
+area      = pi * r^2
+interval  = sqrt(area / n)
+num       = as.integer(floor(2 * r / interval))
+temp      = c(-r, -r)
+```
+```R
+for (i in 1:num)
+{
+  temp[1] = temp[1] + interval
+
+  for (j in 1:num)
+  {
+    temp[2] = temp[2] + interval
+
+    if (temp[1]^2 + temp[2]^2 < r^2)
+    {
+      x = c(x, temp[1])
+      y = c(y, temp[2])
+    }
+  }
+
+  temp[2] = -r
+}
+```
+```R
+length(x); length(y)
+```
+> [1] 29988  
+> [1] 29988
+```R
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = "red", asp = 1,
+  main = "3. Points with lattice spacing")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="500" height="500" alt = "3. Points with lattice spacing">
+
+#### 3.1 Points with lattice spacing including outside the circle
+```R
+x     = c(); y = c(); xyCol = c()
+temp  = c(-r, -r)
+```
+```R
+for (i in 1:num)
+{
+  temp[1] = temp[1] + interval
+  
+  for (j in 1:num)
+  {
+    temp[2] = temp[2] + interval
+
+    x = c(x, temp[1])
+    y = c(y, temp[2])
+
+    if (temp[1]^2 + temp[2]^2 < r^2) xyCol = c(xyCol,"red")
+    else xyCol = c(xyCol,"blue")
+  }
+
+  temp[2] = -r
+}
+```
+```R
+length(x); length(y)
+```
+> [1] 38025  
+> [1] 38025
+```R
+length(xyCol); length(xyCol[xyCol=="red"]); length(xyCol[xyCol=="blue"])
+```
+> [1] 38025  
+> [1] 29988  
+> [1] 8037
+```R
+windows(width = 7, height = 7)
+plot(x, y, pch = '.', col = xyCol, asp = 1,
+  main = "3.1 Points with lattice spacing 2")
+abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+draw.circle(0, 0, r)
+```
+<img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="500" height="500" alt = "3.1 Points with lattice spacing including outside the circle">
+
+
+## [Permutations and Combinations (2021.04.05)](/R#my-r-practice)
+\* get permutations and combinations  
+\* using `gtools`
 
 #### Factorial
 ```R
@@ -93,7 +247,7 @@ choose(4, 2)                                # 4C2
 > [1] 6
 
 
-## Get_Sample_Number_2.R (2020.6.16)
+## [Sample Number 2 (2020.6.16)](/R#my-r-practice)
 get each branch's sample number for inspection work
 
 ```R
@@ -161,7 +315,7 @@ ceiling(3/10) # rounding up
 > 1
 
 
-## Generating Array and Variables by for Loop.R (2019.12.06)
+## [Generating Array and Variables by for Loop (2019.12.06)](/R#my-r-practice)
 answer for a question at chatting room  
 \* R array-related data structure is actually defined as vector, matrix and array about each dimension's array.  
 \* I call it just 'array' by common mathematical notion here, but it is different from R's strict data structure definition.  
@@ -194,7 +348,7 @@ for (i in 1:10) {
 }
 
 ```
-![generating variable names](https://github.com/kimpro82/My-Practice/blob/master/images/R%2020191206%202.%20generating%20variable%20names.PNG)
+![generating variable names](Images/Generating_variable_names_20191206_2.png)
 
 ```R
 # 2.1 generating variable names with considering sort
@@ -207,7 +361,7 @@ for (i in 1:10) {
   assign(name, c())
 }
 ```
-![generating variable names with considering sort](https://github.com/kimpro82/My-Practice/blob/master/images/R%2020191206%202.1%20generating%20variable%20names%20with%20considering%20sort.PNG)
+![generating variable names with considering sort](Images/Generating_variable_names_20191206_2_1.png)
 
 ```R
 # 2.1.1 code improvement trial of 2.1
@@ -224,18 +378,18 @@ for (i in 1:10) {
   assign(name, c())
 }
 ```
-![code improvement trial of 2.1](https://github.com/kimpro82/My-Practice/blob/master/images/R%2020191207%202.1.1%20code%20improvement%20trial%20of%202.1.PNG)  
+![code improvement trial of 2.1](Images/Generating_variable_names_20191206_2_1_1.PNG)  
 Hmm …… is it too much?  
 It can be more clearly effective when *n* is larger, but now seems not yet.  
 
 
-## Grade_Cancel_Effect.R (2019.07.19)
+## [Grade Cancel Effect (2019.07.19)](/R#my-r-practice)
 try simulating grade cancel effect for my sister
 1) generate grade data (because my sister's real GPA can't be opened.ㅋㅋ)
 2) plot
 
+#### 1. generating grade data
 ```R
-# 1. generating grade data
 # 1.1 grade (4.3 Scale)
 g0 <- 1:4
 gp <- g0 + 0.3
@@ -274,8 +428,8 @@ str(평점)
 ```
 > num [1:30] 3.7 3 2.3 2.3 NA 3 3.7 3.3 3 3.3 ...
 
+#### 2. plot
 ```R
-# 2. plot
 len <- length(sort(평점))
 windows(width=15, height=8)
   par(mfrow=c(1,2)) 
@@ -289,8 +443,7 @@ windows(width=15, height=8)
       abline(h=mean(sort(평점)[3:len]), col="red")
       abline(h=mean(sort(평점)[6:len]), col="blue")
 ```
-
-![Grade_Cancel_Effect](https://github.com/kimpro82/My-Practice/blob/master/images/2019-07-18%20Grade_Cancel_Effect.png)
+![Grade_Cancel_Effect](Images/Grade_Cancel_Effect_20190718.png)
 
 
 ```R
@@ -306,15 +459,12 @@ mean(sort(평점)[9:len])
 > 3.514286
 
 
-## CF_Affection.R (2019.05.25)
-For my friend JW Park who wants to measure the affection of TV CF  
-It demands simply CF time schedule and target frequency(ex. app download time), not heavy tracker.
+## [CF Affection (2019.05.25)](/R#my-r-practice)
+\* For my friend JW Park who wants to measure the affection of TV CF  
+\* It demands simply CF time schedule and target frequency(ex. app download time), not heavy tracker.
 
+#### 1. Generating Sample Data
 ```R
-# Affection Measurement of TV CFs
-# For my frend, JW Park
-
-# 1. Generating Sample Data
 n1 = 24*60  # 24 hours * 60 minutes
 n2 = 18*60  # not used - suppose 18:00pm is the peak with normal dist.
 cf.time = c(6, 12, 18) # suppose cf is played at 6:00, 12:00 and 18:00)
@@ -335,8 +485,10 @@ for (i in 1:length(sample.data)) {
     sample.data[i] = sample.data[i] %% 24
   }
 }
+```
 
-# 2. plot histogram for comparing before and after ad.
+#### 2. plot histogram for comparing before and after ad.
+```R
 windows(width=12, height=5)
 par(mfrow=c(1,3)) 
 for (i in 1:length(cf.time)) {
@@ -347,11 +499,10 @@ for (i in 1:length(cf.time)) {
        breaks=n1)
 }
 ```
+![CF Affection Measurement](Images/CF_Affection_Measurement_20190525.png)
 
-![CF Affection Measurement](https://github.com/kimpro82/My-Practice/blob/master/images/CF_Affection_Measurement_20190525.png)
 
-
-## Plotting_Fibonacci Tornado.R (2017.05.07)
+## [Fibonacci Tornado (2017.05.07)](/R#my-r-practice)
 generating Fibonacci Series and Fibonacci Coordinates by looping
 
 #### 1. Generating Fibonacci Series
@@ -423,8 +574,7 @@ plot(x[1:12], y[1:12], type="l",
      main="Fibonacci Tornado")
 abline(h=0, v=0, col="gray", lty=3)
 ```
-
-![Fibonacci Tornado](https://github.com/kimpro82/My_Practice/blob/master/images/2017-05-07%2003%3B04%3B10%20Fibonacci%20Tornado.PNG)
+![Fibonacci Tornado](Images/Fibonacci_20170507_Tornado.PNG)
 
 #### Bonus. Seeing it's Aproximate to the Golden Ratio.
 
@@ -434,7 +584,8 @@ fibonacci.ratio <- c()
 for (k in 1:n) {
   fibonacci.ratio[k] = series[k+1]/series[k]
 }
-
+```
+```R
 windows(width=10, height=5)
 par(mfrow=c(1,2))
 plot(fibonacci.ratio[1:12],  type="l",
@@ -443,14 +594,13 @@ abline(h=1.618, col="red", lty=3)
 plot(log(series[1:12]), type="l", 
      main="Natural Logarithm of Fibonacci Series")
 ```
+![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series_Golden_Ratio.PNG)
 
-![Fibonacci Series - Golden Ratio](https://github.com/kimpro82/My_Practice/blob/master/images/2017-05-07%2003%3B03%3B02%20Fibonacci%20Series%20-%20Golden%20Ratio.PNG)
 
-
-## Plotting_RGB.R (2017.04.14)
-- showing RGB color data' distribution by several methods in R
-- using `plot3d()`, converting on coordinate plane
-- generating RGB data with a sigmoid function
+## [RGB (2017.04.14)](/R#my-r-practice)
+\* showing RGB color data' distribution by several methods in R  
+\* using `plot3d()`, converting on coordinate plane  
+\* generating RGB data with a sigmoid function
 
 ```R
 ## Install required library packages (only at first)
@@ -468,7 +618,7 @@ tail(colors)
 plot3d(colors, col=rgb(colors))
 ```
 
-![RGB_Plotting_2](https://github.com/kimpro82/My_Practice/blob/master/images/2017-04-15%2001%3B33%3B17%20RGB_Plotting_2.PNG)
+![RGB_Plotting_2](Images/RGB_Plotting_20170415_2.PNG)
 
 #### Using Sigmoid function
 Reference : https://en.wikipedia.org/wiki/Sigmoid_function
@@ -483,7 +633,7 @@ summary(colors)
 plot3d(colors, col=rgb(colors))
 ```
 
-![RGB_Plotting_5](https://github.com/kimpro82/My_Practice/blob/master/images/2017-04-15%2001%3B59%3B29%20RGB_Plotting_5.PNG)
+![RGB_Plotting_5](Images/RGB_Plotting_20170415_5.PNG)
 
 #### Using Sigmoid function 2 (Plotting on coordinate plane)
 Reference : https://github.com/THEjoezack/ColorMine/blob/master/ColorMine/ColorSpaces/Conversions/YxyConverter.cs
@@ -502,4 +652,4 @@ plot(colors[,2], colors[,3], col=rgb(colors))
 plot(colors[,3], colors[,1], col=rgb(colors))
 ```
 
-![RGB_Plotting_6](https://github.com/kimpro82/My_Practice/blob/master/images/2017-04-15%2002%3B04%3B13%20RGB_Plotting_6.PNG)
+![RGB_Plotting_6](Images/RGB_Plotting_20170415_6.PNG)
