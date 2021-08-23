@@ -14,7 +14,7 @@
 - [Square Root (2020.01.01) (adjusted 2020.01.04)](/Python#square-root-20200101)
 - [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
 - [Generate List (2019.12.07)](/Python#generate-list-20191207)
-- [Limited Range Sampling (2019.09.22)](/Python#limited-range-normal-distribution-20190922)
+- [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
 - [Password (2019.05.24)](/Python#password-20190524)
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
