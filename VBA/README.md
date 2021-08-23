@@ -2,12 +2,80 @@
 
 VBA, maybe it could my ancient future
 
+- Read Binary File (2021.08.23)
 - Try Catch Finally (2021.07.28)
 - Sigma4 (2021.07.26)
 - Sigma3 (2021.07.07)
 - Sigma2 (2021.01.03)
 - Sigma (2021.01.02)
 - Color_Scroll (2020.11.14)
+
+
+## Read Binary File (2021.08.23)
+
+#### Trial 1
+
+```vba
+Option Explicit
+
+
+Sub ReadBinaryFile()
+
+    'Call the target file's path that user entered
+    Dim path As String
+    path = Range("B1")
+
+    'Check if the file exists
+    Dim fileChk As Boolean                      'default : False
+    If (Len(Dir(path)) > 0) Then fileChk = True
+    Range("B2") = fileChk
+
+    Dim fn As Integer                           'fn : file number
+    fn = FreeFile
+
+    Dim output As Range
+    Set output = Range("B5")                    'set offset location for output
+
+    Open path For Binary Access Read As #fn
+    
+        Dim pos, posEnd As Integer
+        pos = 1
+        posEnd = 10
+        
+        Dim data As Byte
+
+        While pos <= posEnd
+            Get #fn, pos, data
+            output.Offset(0, pos).Value = data
+            pos = pos + 1
+        Wend
+
+    Close #fn
+
+End Sub
+```
+
+☞ `data` doesn't work well.
+
+![Read Binary 1](Images/VBA_ReadBinary_1.PNG)
+
+![Read Binary - Debug](Images/VBA_ReadBinary_Debug.PNG)
+
+#### Trial 2
+
+☞ receive advice from [Can't read binary file data (StackOverflow)](https://stackoverflow.com/questions/68892076/cant-read-binary-file-data)
+
+Befor :
+```vba
+path = Range("B1")
+```
+
+After : 
+```vba
+path = ThisWorkbook.path & Application.PathSeparator & Range("B1")
+```
+
+![Read Binary 2](Images/VBA_ReadBinary_2.PNG)
 
 
 ## Try Catch Finally (2021.07.28)
