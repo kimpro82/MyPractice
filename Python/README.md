@@ -1,8 +1,8 @@
 # [My Python Practice]
-- [Iterator (2021.06.17)]()
-- [If ~ While ~ True (2021.05.04)]()
-- [Re.Split (2021.04.29)]()
-- [__name__ == '__main__' (2021.04.26)]()
+- [Iterator (2021.06.17)](/Python#iterator-20210617)
+- [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
+- [Re.Split (2021.04.29)](/Python#resplit-20210429)
+- [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)]()
 - [Turtle (2021.03.24)]()
 - [Map (2021.02.16)]()
 - [Words Mix (2021.01.13)]()
@@ -142,7 +142,7 @@ print(re.split("\W", txt))          # \W = a-zA-Z0-9
 > ['one', 'two', 'three', 'four']
 
 
-## [__name__ == '__main__' (2021.04.26)](/Python#my-python-practice)
+## [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](/Python#my-python-practice)
 - A practice of importing and running `module` in Python
 - Using `__name__` and `__main__`
 
