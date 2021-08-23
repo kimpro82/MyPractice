@@ -2,16 +2,16 @@
 
 VBA, maybe it could my ancient future
 
-- Read Binary File (2021.08.23)
-- Try Catch Finally (2021.07.28)
-- Sigma4 (2021.07.26)
-- Sigma3 (2021.07.07)
-- Sigma2 (2021.01.03)
-- Sigma (2021.01.02)
-- Color_Scroll (2020.11.14)
+- [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
+- [Try Catch Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
+- [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
+- [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
+- [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
+- [Sigma (2021.01.02)](/VBA#sigma-20210102)
+- [Color_Scroll (2020.11.14)](/VBA#color_scroll-20201114)
 
 
-## Read Binary File (2021.08.23)
+## [Read Binary File (2021.08.23)](/VBA#my-vba-practice)
 
 #### Trial 1
 
@@ -78,7 +78,7 @@ path = ThisWorkbook.path & Application.PathSeparator & Range("B1")
 ![Read Binary 2](Images/VBA_ReadBinary_2.PNG)
 
 
-## Try Catch Finally (2021.07.28)
+## [Try Catch Finally (2021.07.28)](/VBA#my-vba-practice)
 
 - Use `Try ~ Catch ~ Finally` statement in VBA
 - Actually VBA doesn't support it officially, but we can imitate it with **label** based on `GoTo` grammar.
@@ -118,7 +118,7 @@ End Function
 ```
 
 
-## Sigma4 (2021.07.26)
+## [Sigma4 (2021.07.26)](/VBA#my-vba-practice)
 
 - Change the calculation method from loop to **[Faulhaber's Formula](https://en.wikipedia.org/wiki/Faulhaber%27s_formula)** (make faster)
 - Support operations for k ~ k^4
@@ -174,7 +174,7 @@ End Function
 ```
 
 
-## Sigma3 (2021.07.07)
+## [Sigma3 (2021.07.07)](/VBA#my-vba-practice)
 
 - Add **Error Handler** 
 - How about naming labels such like `try` ~ `catch` ~ `finally`?
@@ -214,7 +214,7 @@ End Function
 ```
 
 
-## Sigma2 (2021.01.03)
+## [Sigma2 (2021.01.03)](/VBA#my-vba-practice)
 
 - Add a parameter of _k_ that indicates a starting point
 - Need to add codes for handling errors.
@@ -239,7 +239,7 @@ End Function
 ```
 
 
-## Sigma (2021.01.02)
+## [Sigma (2021.01.02)](/VBA#my-vba-practice)
 
 - Make a function to calculate `summation` (a.k.a. Sigma, Σ)
 - Define all the variables as `integer`
@@ -264,7 +264,7 @@ End Function
 ```
 
 
-## Color_Scroll (2020.11.14)
+## [Color_Scroll (2020.11.14)](/VBA#my-vba-practice)
 
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet

@@ -59,14 +59,14 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Colorful Show (2020.03.04)
 - Ganzi.html (2017.04.03)
 
-## My VBA Practice
-- Read Binary File (2021.08.23)
-- Try Catch Finally (2021.07.28)
-- Sigma4 (2021.07.26)
-- Sigma3 (2021.07.07)
-- Sigma2 (2021.01.03)
-- Sigma (2021.01.02)
-- Color_Scroll.bas (2020.11.14)
+## [My VBA Practice](/VBA#my-vba-practice)
+- [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
+- [Try Catch Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
+- [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
+- [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
+- [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
+- [Sigma (2021.01.02)](/VBA#sigma-20210102)
+- [Color_Scroll (2020.11.14)](/VBA#color_scroll-20201114)
 
 ## My QBasic Practice
 - Play Music (2021.02.20)
