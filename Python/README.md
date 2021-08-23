@@ -1,26 +1,26 @@
 # [My Python Practice]
-- CallBro.py (2021.06.17)
-- IfWhileTrue.py (2021.05.04)
-- ReSplit.py (2021.04.29)
-- ModuleSample.py & ModuleRun.py (2021.04.26)
-- Turtle.py (2021.03.24)
-- Map.py (2021.02.16)
-- WordsMix.py (2021.01.13)
-- Count_Words.py (2020.11.10)
-- Operator_Precedence_Test.py (2020.06.28)
-- Print.py (2020.03.31)
-- Suffle_List.py (2020.03.30)
-- Random_Seed_Influence.py (2020.01.05)
-- Square_Root.py (2020.01.01) (adjusted 2020.01.04)
-- Fibonacci_Series.py (2019.12.18)
-- Generate_List.py (2019.12.07)
-- Limited Range Normal Distribution (2019.09.22)
-- Password.py (2019.05.24)
-- Class_Test.py (2018.02.07)
-- Nirvana.py (2017.05.15)
+- [Iterator (2021.06.17)]()
+- [If ~ While ~ True (2021.05.04)]()
+- [Re.Split (2021.04.29)]()
+- [__name__ == '__main__' (2021.04.26)]()
+- [Turtle (2021.03.24)]()
+- [Map (2021.02.16)]()
+- [Words Mix (2021.01.13)]()
+- [Count Words (2020.11.10)]()
+- [Operator Precedence (2020.06.28)]()
+- [Print (2020.03.31)]()
+- [Suffle List (2020.03.30)]()
+- [Random Seed Influence (2020.01.05)]()
+- [Square Root (2020.01.01) (adjusted 2020.01.04)]()
+- [Fibonacci Series (2019.12.18)]()
+- [Generate List (2019.12.07)]()
+- [Limited Range Normal Distribution (2019.09.22)]()
+- [Password (2019.05.24)]()
+- [Class (2018.02.07)]()
+- [While (2017.05.15)]()
 
 
-## CallBro.py (2021.06.17)
+## [Iterator (2021.06.17)](/Python#my-python-practice)
 - Originally started from a stupid question : Can a `method` call other method in the same class?
 - I've just realized it was really obvious (Why does `the constructor` exist?)
 - This code is a strange station, that two methods call each other with `iterator`
@@ -72,7 +72,7 @@ if __name__ == "__main__" :
 > bros1 : Wassup
 
 
-## IfWhileTrue.py (2021.05.04)
+## [If ~ While ~ True (2021.05.04)](/Python#my-python-practice)
 - A practice of using `if` and `while`
 - All the strings and numbers *except* `0` and `False` are regarded as `True`
 
@@ -119,7 +119,7 @@ while '123' :
 > True  
 > 123
 
-## ReSplit.py (2021.04.29)
+## [Re.Split (2021.04.29)](/Python#my-python-practice)
 - Seperating a `string` by plural delimiters
 - Using regular expression (`re`)
 
@@ -142,7 +142,7 @@ print(re.split("\W", txt))          # \W = a-zA-Z0-9
 > ['one', 'two', 'three', 'four']
 
 
-## ModuleSample.py & ModuleRun.py (2021.04.26)
+## [__name__ == '__main__' (2021.04.26)](/Python#my-python-practice)
 - A practice of importing and running `module` in Python
 - Using `__name__` and `__main__`
 
@@ -165,7 +165,7 @@ ModuleSample.call()
 > Call me now.
 
 
-## Turtle.py (2021.03.24)
+## [Turtle (2021.03.24)](/Python#my-python-practice)
 - A practice of python module `turtle`
 - Very easy!
 
@@ -224,7 +224,7 @@ turtle.circle(100, steps=6) # hexagon
 turtle.mainloop()           # avoid the screen closing
 ```
 
-## Map.py (2021.02.16)
+## [Map (2021.02.16)](/Python#my-python-practice)
 - To find how `map()` runs
 - I guessed the result of running `map()` would be something to contain hidden elements.
 - But actually it is a `generator type object`, so has not futural list data before I request by `list()`.
@@ -274,7 +274,7 @@ elements' type : <class 'int'>
 ```
 
 
-## WordsMix.py (2021.01.13)
+## [Words Mix (2021.01.13)](/Python#my-python-practice)
 - Read a _csv_ file into a _dictionary_
 - Import `csv`
 - Seems that _dictionary type_ is not so suitable to generate random paragraphs
@@ -338,7 +338,7 @@ with open(path,'r', encoding='utf-8-sig') as f:
 > {'수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
 
 
-## Count_Words.py (2020.11.10)
+## [Count Words (2020.11.10)](/Python#my-python-practice)
 - Count words without duplication from .txt file
 - import `re` for using `regular expression`
 
@@ -370,7 +370,7 @@ print(len(words))
 > 455
 
 
-## Operator_Precedence_Test.py (2020.06.28)
+## [Operator Precedence (2020.06.28)](/Python#my-python-practice)
 answer for my friend YW Jang's question
 
 ```python
@@ -394,7 +394,7 @@ print(("F" == "M") or "m") # the same with the above line
 ☞ reference : https://www.programiz.com/python-programming/precedence-associativity
 
 
-## Print.py (2020.03.31)
+## [Print (2020.03.31)](/Python#my-python-practice)
 simple practice with `print()`
 
 ```python
@@ -421,7 +421,7 @@ print("줄을\n막\n바꿔")
 > 바꿔
 
 
-## Suffle_List.py (2020.03.30)
+## Suffle List (2020.03.30)
 - find how to get random lists without overlapping values
 - use `random` `random.randint` `random.sample`
 
@@ -471,7 +471,7 @@ print(loopnum) # It shows how many times overlapping numbers are rejected.
 > 87
 
 
-## Random_Seed_Influence.py (2020.01.05)
+## [Random Seed Influence (2020.01.05)](/Python#my-python-practice)
 make sure the range of `random.seed()`'s influence  
 ☞ `random.seed()` affects just one time!
 
@@ -530,7 +530,7 @@ for i in range(0,3) :
 > **0.8780993490764925**
 
 
-## Square_Root.py (2020.01.01)
+## [Square Root (2020.01.01)](/Python#my-python-practice)
 an algorithm to find n's square root without `math.sqrt()`  
 - adjusted 2020.01.04 : rearrange methods' order in `for` Loop for improving intuitive understanding
 
@@ -586,7 +586,7 @@ list(range(10))
 > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
 
 
-## Fibonacci_Series.py (2019.12.18)
+## [Fibonacci Series (2019.12.18)](/Python#my-python-practice)
 Simply Generating `Fibonacci Series` by Python
 
 ```python
@@ -602,7 +602,7 @@ print(a)
 > [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]  
 
 
-## Generate_List.py (2019.12.07)
+## [Generate List (2019.12.07)](/Python#my-python-practice)
 generate lists by various ways
 
 ```python
@@ -620,7 +620,7 @@ list1 == list2
 > True  
 
 
-## Generate_Limited_Range_ND.py (2019.09.22)
+## [Limited Range Normal Distribution (2019.09.22)](/Python#my-python-practice)
 - partial module of a gaming utility for `Romance of The Three Kingdoms II` (KOEI, 1989)
 - generate market rate data sample for practicing `gold`-`food` arbitrage
 - use `numpy` `matplotlib.pyplot` `scipy`
@@ -692,7 +692,7 @@ stats.describe(data3)[0:2]
 > (1000, (25.600374595125377, 74.942171158969671))
 
 
-## Password.py (2019.05.24)
+## [Password (2019.05.24)](/Python#my-python-practice)
 input the correct passworld within 5 trials or die  
 practice if~else, break/continue, time.sleep() and so on
 
@@ -725,7 +725,7 @@ while chance < 5 :
 ```
 
 
-## Class_Test.py (2018.02.07)
+## [Class.py (2018.02.07)](/Python#my-python-practice)
 a simple Python `class` practice
 
 ```python
@@ -747,7 +747,7 @@ I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__
 What the `__hell__`?
 
 
-## Nirvana.py (2017.05.15)
+## [While (2017.05.15)](/Python#my-python-practice)
 a simple Python practice
 
 ```python
