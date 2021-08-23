@@ -9,7 +9,7 @@
 - [Count Words (2020.11.10)]()
 - [Operator Precedence (2020.06.28)]()
 - [Print (2020.03.31)]()
-- [shuffle List (2020.03.30)]()
+- [Shuffle List (2020.03.30)]()
 - [Random Seed Influence (2020.01.05)]()
 - [Square Root (2020.01.01) (adjusted 2020.01.04)]()
 - [Fibonacci Series (2019.12.18)]()
@@ -421,7 +421,7 @@ print("줄을\n막\n바꿔")
 > 바꿔
 
 
-## [shuffle List (2020.03.30)](/Python#my-python-practice)
+## [Shuffle List (2020.03.30)](/Python#my-python-practice)
 - find how to get random lists without overlapping values
 - use `random` `random.randint` `random.sample`
 
@@ -725,7 +725,7 @@ while chance < 5 :
 ```
 
 
-## [Class.py (2018.02.07)](/Python#my-python-practice)
+## [Class (2018.02.07)](/Python#my-python-practice)
 a simple Python `class` practice
 
 ```python
