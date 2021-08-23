@@ -2,22 +2,22 @@
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
 - [Re.Split (2021.04.29)](/Python#resplit-20210429)
-- [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)]()
-- [Turtle (2021.03.24)]()
-- [Map (2021.02.16)]()
-- [Words Mix (2021.01.13)]()
-- [Count Words (2020.11.10)]()
-- [Operator Precedence (2020.06.28)]()
-- [Print (2020.03.31)]()
-- [Shuffle List (2020.03.30)]()
-- [Random Seed Influence (2020.01.05)]()
-- [Square Root (2020.01.01) (adjusted 2020.01.04)]()
-- [Fibonacci Series (2019.12.18)]()
-- [Generate List (2019.12.07)]()
-- [Limited Range Normal Distribution (2019.09.22)]()
-- [Password (2019.05.24)]()
-- [Class (2018.02.07)]()
-- [While (2017.05.15)]()
+- [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](/Python#__name__--__main__-20210426)
+- [Turtle (2021.03.24)](/Python#turtle-20210324)
+- [Map (2021.02.16)](/Python#map-20210216)
+- [Words Mix (2021.01.13)](/Python#words-mix-20210113)
+- [Count Words (2020.11.10)](/Python#count-words-20201110)
+- [Operator Precedence (2020.06.28)](/Python#operator-precedence-20200628)
+- [Print (2020.03.31)](/Python#print-20200331)
+- [Shuffle List (2020.03.30)](/Python#shuffle-list-20200330)
+- [Random Seed Influence (2020.01.05)](/Python#random-seed-influence-20200105)
+- [Square Root (2020.01.01) (adjusted 2020.01.04)](/Python#square-root-20200101)
+- [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
+- [Generate List (2019.12.07)](/Python#generate-list-20191207)
+- [Limited Range Sampling (2019.09.22)](/Python#limited-range-normal-distribution-20190922)
+- [Password (2019.05.24)](/Python#password-20190524)
+- [Class (2018.02.07)](/Python#class-20180207)
+- [While (2017.05.15)](/Python#while-20170515)
 
 
 ## [Iterator (2021.06.17)](/Python#my-python-practice)
@@ -169,7 +169,7 @@ ModuleSample.call()
 - A practice of python module `turtle`
 - Very easy!
 
-![Turtle Practice](Images/Python%20Turtle.gif)
+![Turtle Practice](Images/Turtle.gif)
 
 #### Codes
 ```python
@@ -620,10 +620,9 @@ list1 == list2
 > True  
 
 
-## [Limited Range Normal Distribution (2019.09.22)](/Python#my-python-practice)
-- partial module of a gaming utility for `Romance of The Three Kingdoms II` (KOEI, 1989)
-- generate market rate data sample for practicing `gold`-`food` arbitrage
-- use `numpy` `matplotlib.pyplot` `scipy`
+## [Limited Range Sampling (2019.09.22)](/Python#my-python-practice)
+- Generate normal distributed sample with limited range
+- Use `numpy` `matplotlib.pyplot` `scipy`
 
 #### Generate a normal distribution with limited range [25, 75]
 ```python
