@@ -1,4 +1,4 @@
-# Generating a normal distribution with limited range [25, 75]
+# Generate normal distributed sample with limited range [25, 75]
 
 import numpy as np
 import matplotlib.pyplot as plt
