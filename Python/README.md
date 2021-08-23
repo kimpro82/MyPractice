@@ -169,7 +169,7 @@ ModuleSample.call()
 - A practice of python module `turtle`
 - Very easy!
 
-![Turtle Practice](./image/Python%20Turtle.gif)
+![Turtle Practice](Images/Turtle.gif)
 
 #### Codes
 ```python
@@ -571,7 +571,7 @@ myplot = plt.plot(range(k), squareroot)
 > 19 1.4141854421168503 1.9999204646952313 -7.953530476867421e-05  
 > 20 1.4141980335178153 1.9999560780056558 -4.3921994344220394e-05 
 
-![approximate to the exact square root](./image/Square_Root_20200104.png)
+![approximate to the exact square root](Images/Square_Root_20200104.png)
 
 ```python
 # practice
@@ -642,7 +642,7 @@ data = np.random.normal(mu, sigma, n)
 plt.hist(data)
 stats.describe(data)[0:2] # [0] : nobs, [1] : minmax
 ```
-![hist0](image/Generate_Limited_Range_ND_hist_0.png)
+![hist0](Images/Generate_Limited_Range_ND_hist_0.png)
 > (1000, (16.763171096395133, 76.969552776105601))
 
 #### Method 1. Trim with rack of amount
@@ -653,7 +653,7 @@ data1 = data[(data >= llimit) & (data <= rlimit)]
 plt.hist(data1)
 stats.describe(data1)[0:2]
 ```
-![hist1](image/Generate_Limited_Range_ND_hist_1.png)
+![hist1](Images/Generate_Limited_Range_ND_hist_1.png)
 > (991, (25.600374595125377, 74.942171158969671))
 
 #### Method 2. Check each one trial
@@ -670,7 +670,7 @@ while amount < n :
 plt.hist(data2)
 stats.describe(data2)[0:2]
 ```
-![hist2](image/Generate_Limited_Range_ND_hist_2.png)
+![hist2](Images/Generate_Limited_Range_ND_hist_2.png)
 > (1000, (25.987274047611137, 73.473315070409228))
 
 #### Method 3. Generate one round and fill the lack
@@ -688,7 +688,7 @@ while amount < n :
 plt.hist(data3)
 stats.describe(data3)[0:2]
 ```
-![hist3](image/Generate_Limited_Range_ND_hist_3.png)
+![hist3](Images/Generate_Limited_Range_ND_hist_3.png)
 > (1000, (25.600374595125377, 74.942171158969671))
 
 
@@ -741,7 +741,7 @@ Do.Family("Shin", "Wife")
 Do.Family("Kim", "Future Baby")
 ```
 
-![Python_Class_Test](./image/Python_Class_Test.PNG)
+![Python_Class_Test](Images/Class.PNG)
 
 I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__init__` and so on.
 What the `__hell__`?
