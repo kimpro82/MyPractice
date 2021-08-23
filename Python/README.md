@@ -9,7 +9,7 @@
 - [Count Words (2020.11.10)]()
 - [Operator Precedence (2020.06.28)]()
 - [Print (2020.03.31)]()
-- [Suffle List (2020.03.30)]()
+- [shuffle List (2020.03.30)]()
 - [Random Seed Influence (2020.01.05)]()
 - [Square Root (2020.01.01) (adjusted 2020.01.04)]()
 - [Fibonacci Series (2019.12.18)]()
@@ -169,7 +169,7 @@ ModuleSample.call()
 - A practice of python module `turtle`
 - Very easy!
 
-![Turtle Practice](Images/Turtle.gif)
+![Turtle Practice](Images/Python%20Turtle.gif)
 
 #### Codes
 ```python
@@ -421,7 +421,7 @@ print("줄을\n막\n바꿔")
 > 바꿔
 
 
-## Suffle List (2020.03.30)
+## [shuffle List (2020.03.30)](/Python#my-python-practice)
 - find how to get random lists without overlapping values
 - use `random` `random.randint` `random.sample`
 
@@ -431,37 +431,37 @@ import random
 
 #### Trial 1 : Use `random.randint()`
 ```python
-sufflelist1 = []
+shufflelist1 = []
 
 for i in range(0,20) :
     random.seed(330 + i)
-    sufflelist1.append(random.randint(1, 20))
+    shufflelist1.append(random.randint(1, 20))
 
-print(sufflelist1) # There are overlapping values.
+print(shufflelist1) # There are overlapping values.
 ```
 > [20, 11, 8, 18, 8, 5, 1, 7, 4, 5, 13, 19, 4, 7, 13, 10, 18, 12, 11, 14]
 
 #### Trial 2 : Use `random.sample()`
 ```python
 random.seed(330)
-sufflelist2 = random.sample(range(1, 21), 20)
+shufflelist2 = random.sample(range(1, 21), 20)
 
-print(sufflelist2) # random.sample() offers values without overlapping.
+print(shufflelist2) # random.sample() offers values without overlapping.
 ```
 > [20, 3, 2, 13, 1, 6, 10, 9, 15, 11, 14, 4, 18, 8, 16, 17, 7, 19, 12, 5]
 
 #### Trial 3 : Use `while` Statement
 ```python
-sufflelist3 = []
+shufflelist3 = []
 loopnum = 0
 
-while len(sufflelist3) < 20 :
+while len(shufflelist3) < 20 :
     random.seed(330 + loopnum)
     r = random.randint(1,20)
-    if r not in sufflelist3 : sufflelist3.append(r)
+    if r not in shufflelist3 : shufflelist3.append(r)
     loopnum += 1
 
-print(sufflelist3)
+print(shufflelist3)
 # It seems similar with Trial 1's sequence but there's no overlapping values.
 ```
 > [20, 11, 8, 18, 5, 1, 7, 4, 13, 19, 10, 12, 14, 6, 2, 3, 17, 16, 15, 9]  
