@@ -1,4 +1,4 @@
-# [My Python Practice]
+# My Python Practice
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
 - [Re.Split (2021.04.29)](/Python#resplit-20210429)
@@ -15,7 +15,7 @@
 - [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
 - [Generate List (2019.12.07)](/Python#generate-list-20191207)
 - [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
-- [With ~ Open (2019.07.21)]()
+- [With ~ Open (2019.07.21)](/Python#with--open-20190721)
 - [Password (2019.05.24)](/Python#password-20190524)
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
