@@ -43,6 +43,14 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Polymorphism.cs (2021.02.18)
 - Overloading.cs (2021.02.02)
 
+## My VBA Practice
+- Try Catch Finally (2021.07.28)
+- Sigma4 (2021.07.26)
+- Sigma3 (2021.07.07)
+- Sigma2 (2021.01.03)
+- Sigma (2021.01.02)
+- Color_Scroll.bas (2020.11.14)
+
 ## My Java Practice
 - MyThread.java (2021.04.13)
 - Swing.java (2021.04.06)
@@ -59,14 +67,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - 5th Wedding Anniversary (2020.03.07)
 - Colorful Show (2020.03.04)
 - Ganzi.html (2017.04.03)
-
-## My VBA Practice
-- Try Catch Finally (2021.07.28)
-- Sigma4 (2021.07.26)
-- Sigma3 (2021.07.07)
-- Sigma2 (2021.01.03)
-- Sigma (2021.01.02)
-- Color_Scroll.bas (2020.11.14)
 
 ## My QBasic Practice
 - Play Music (2021.02.20)
