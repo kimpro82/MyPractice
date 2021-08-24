@@ -13,7 +13,7 @@ VBA, maybe it could my ancient future
 
 ## [Read Binary File (2021.08.23)](/VBA#my-vba-practice)
 
-- Use `Open ~ For ~ As ~` statement
+- Use `Open ~ For ~ As` statement
 - `path` requires absoulte one
 
 #### Trial 1
