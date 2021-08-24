@@ -692,7 +692,7 @@ stats.describe(data3)[0:2]
 > (1000, (25.600374595125377, 74.942171158969671))
 
 
-## With_Open.py (2019.07.21)
+## [With ~ Open (2019.07.21)](/Python#my-python-practice)
 - read binary file
 - convert decimal number ↔ hexadecimal number
 
@@ -711,7 +711,7 @@ os.path.isfile("path")
 ```python
 import binascii
 
-# with문
+# with statement
 with open('path','rb') as f: # rb : read & binary
     string = f.read()
     print(string[0:10])
@@ -721,7 +721,7 @@ with open('path','rb') as f: # rb : read & binary
 > b'313939302e30322e3139'
 
 ```python
-# with문 X
+# with statement X
 f = open('path','rb')
 data = f.read()
 print(data[0:10])
