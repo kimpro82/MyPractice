@@ -15,6 +15,7 @@
 - [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
 - [Generate List (2019.12.07)](/Python#generate-list-20191207)
 - [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
+- [With ~ Open (2019.07.21)]()
 - [Password (2019.05.24)](/Python#password-20190524)
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
@@ -689,6 +690,66 @@ stats.describe(data3)[0:2]
 ```
 ![hist3](Images/Generate_Limited_Range_ND_hist_3.png)
 > (1000, (25.600374595125377, 74.942171158969671))
+
+
+## With_Open.py (2019.07.21)
+- read binary file
+- convert decimal number ↔ hexadecimal number
+
+```python
+# get current working directory
+import os
+
+os.getcwd()
+print(os.getcwd())
+
+# check if the file exists
+os.path.isfile("path")
+```
+> True
+
+```python
+import binascii
+
+# with문
+with open('path','rb') as f: # rb : read & binary
+    string = f.read()
+    print(string[0:10])
+    print(binascii.b2a_hex(string[0:10]))
+```
+> b'1990.02.19'  
+> b'313939302e30322e3139'
+
+```python
+# with문 X
+f = open('path','rb')
+data = f.read()
+print(data[0:10])
+print(binascii.b2a_hex(data[0:10]))
+f.close()
+```
+> b'1990.02.19'  
+> b'313939302e30322e3139'
+
+```python
+# decimal → hexadecimal
+hex(30000)
+hex(3000000)
+hex(100)
+```
+> '0x7530'  
+> '0x2dc6c0'  
+> '0x64'
+
+```python
+# hexadecimal → decimal
+int('7530', 16)
+int('2dc6c0', 16)
+int('64', 16)
+```
+> 30000  
+> 3000000  
+> 100
 
 
 ## [Password (2019.05.24)](/Python#my-python-practice)
