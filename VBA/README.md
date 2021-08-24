@@ -65,7 +65,7 @@ End Sub
 
 ☞ receive advice from [Can't read binary file data (StackOverflow)](https://stackoverflow.com/questions/68892076/cant-read-binary-file-data)
 
-Befor :
+Before :
 ```vba
 path = Range("B1")
 ```
