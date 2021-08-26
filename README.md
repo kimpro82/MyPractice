@@ -33,6 +33,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
 - [Generate List (2019.12.07)](/Python#generate-list-20191207)
 - [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
+- [With ~ Open (2019.07.21)](/Python#with--open-20190721)
 - [Password (2019.05.24)](/Python#password-20190524)
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
@@ -43,19 +44,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Polymorphism.cs (2021.02.18)
 - Overloading.cs (2021.02.02)
 
-## My VBA Practice
-- Try Catch Finally (2021.07.28)
-- Sigma4 (2021.07.26)
-- Sigma3 (2021.07.07)
-- Sigma2 (2021.01.03)
-- Sigma (2021.01.02)
-- Color_Scroll.bas (2020.11.14)
-
-## My Java Practice
-- MyThread.java (2021.04.13)
-- Swing.java (2021.04.06)
-- MyDate.java (2021.03.08)
-
 ## [My VBA Practice](/VBA#my-vba-practice)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
 - [Try Catch Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
@@ -64,6 +52,11 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
 - [Color_Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+
+## My Java Practice
+- MyThread.java (2021.04.13)
+- Swing.java (2021.04.06)
+- MyDate.java (2021.03.08)
 
 ## My C/C++ Practice
 - Template (2021.07.23)
