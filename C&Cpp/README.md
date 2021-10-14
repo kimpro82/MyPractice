@@ -14,7 +14,7 @@ The final destination of programming
 - Especially `Deque` is something greater than `vector` and `list`
 - `Prior Queue` that is also one of the container adaptor from Deque and consists of `heap` will be continued ……
 
-※ All codes includes the following lines. :
+※ All codes include the following lines. :
 ```cpp
 #include <iostream>
 
