@@ -2,15 +2,17 @@
 
 The final destination of programming
 
-- Containers : Deque, Stack, Queue (2021.10.14)
+- [Containers : Deque, Stack and Queue (2021.10.14)](/C&Cpp#containers--deque-stack-and-queue-20211014)
 - [Template (2021.07.23)](/C%26Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
 
 ## Containers : Deque, Stack and Queue (2021.10.14)
+
 - `STL` Practice : Container `Deque` and its adaptors `Stack` and `Queue`
 - Especially `Deque` is something greater than `vector` and `list`
+
 ※ All codes includes the following lines. :
 ```cpp
 #include <iostream>
@@ -166,6 +168,7 @@ int main()
 
 
 ## Template (2021.07.23)
+
 - Significantly advanced code using **template** from the previous `StackOverflow.cpp`
 - I am so proud!
 
@@ -211,6 +214,7 @@ int main()
 
 
 ## Stack Overflow (2021.05.18)
+
 - "Let's conquer the **stack overflow** problem!"
 - …… a stupid conquerer who didn't know **template** and **generic function** said.
 - Can he learn them or still stay in beginner's swamps? To be continued …… 
@@ -300,6 +304,7 @@ int main()
 
 
 ## Hello World (2021.05.12)
+
 - My first run of **`C`/`C++`** code in **Visual Studio Code**
 - Environmental setting was harder than coding
 - Find how to **complie** and **run** in cosole (rather easier than VS Code menu)
