@@ -1,24 +1,79 @@
-# [My Python Practice]
-- IfWhileTrue.py (2021.05.04)
-- ReSplit.py (2021.04.29)
-- ModuleSample.py & ModuleRun.py (2021.04.26)
-- Turtle.py (2021.03.24)
-- Map.py (2021.02.16)
-- WordsMix.py (2021.01.13)
-- Count_Words.py (2020.11.10)
-- Operator_Precedence_Test.py (2020.06.28)
-- Print.py (2020.03.31)
-- Suffle_List.py (2020.03.30)
-- Random_Seed_Influence.py (2020.01.05)
-- Square_Root.py (2020.01.01) (adjusted 2020.01.04)
-- Fibonacci_Series.py (2019.12.18)
-- Generate_List.py (2019.12.07)
-- Password.py (2019.05.24)
-- Class_Test.py (2018.02.07)
-- Nirvana.py (2017.05.15)
+# My Python Practice
+- [Iterator (2021.06.17)](/Python#iterator-20210617)
+- [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
+- [Re.Split (2021.04.29)](/Python#resplit-20210429)
+- [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](/Python#__name__--__main__-20210426)
+- [Turtle (2021.03.24)](/Python#turtle-20210324)
+- [Map (2021.02.16)](/Python#map-20210216)
+- [Words Mix (2021.01.13)](/Python#words-mix-20210113)
+- [Count Words (2020.11.10)](/Python#count-words-20201110)
+- [Operator Precedence (2020.06.28)](/Python#operator-precedence-20200628)
+- [Print (2020.03.31)](/Python#print-20200331)
+- [Shuffle List (2020.03.30)](/Python#shuffle-list-20200330)
+- [Random Seed Influence (2020.01.05)](/Python#random-seed-influence-20200105)
+- [Square Root (2020.01.01) (adjusted 2020.01.04)](/Python#square-root-20200101)
+- [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
+- [Generate List (2019.12.07)](/Python#generate-list-20191207)
+- [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
+- [With ~ Open (2019.07.21)](/Python#with--open-20190721)
+- [Password (2019.05.24)](/Python#password-20190524)
+- [Class (2018.02.07)](/Python#class-20180207)
+- [While (2017.05.15)](/Python#while-20170515)
 
 
-## IfWhileTrue.py (2021.05.04)
+## [Iterator (2021.06.17)](/Python#my-python-practice)
+- Originally started from a stupid question : Can a `method` call other method in the same class?
+- I've just realized it was really obvious (Why does `the constructor` exist?)
+- This code is a strange station, that two methods call each other with `iterator`
+
+```python
+turn = 0
+
+class Bros :
+
+    def __init__(self) :
+        global turn
+        turn += 1
+        print("<Conversation " + str(turn) + ">")
+        self.conversation = iter(["Hey bro", "Wassup"])
+        self.n = 0
+
+    def bros1(self) :
+        print(self.bros1.__name__ + " : " + next(self.conversation))
+        if (self.n < 1) :
+            self.n += 1
+            self.bros2()
+        else :
+            print()
+
+    def bros2(self) :
+        print(self.bros2.__name__ + " : " + next(self.conversation))
+        if (self.n < 1) :
+            self.n += 1
+            self.bros1()
+        else :
+            print()
+```
+```python
+if __name__ == "__main__" :
+
+    Bros1 = Bros()
+    Bros1.bros1()
+
+    Bros2 = Bros()
+    Bros2.bros2()
+```
+
+> <Conversation 1>  
+> bros1 : Hey bro  
+> bros2 : Wassup
+
+> <Conversation 2>  
+> bros2 : Hey bro  
+> bros1 : Wassup
+
+
+## [If ~ While ~ True (2021.05.04)](/Python#my-python-practice)
 - A practice of using `if` and `while`
 - All the strings and numbers *except* `0` and `False` are regarded as `True`
 
@@ -65,7 +120,7 @@ while '123' :
 > True  
 > 123
 
-## ReSplit.py (2021.04.29)
+## [Re.Split (2021.04.29)](/Python#my-python-practice)
 - Seperating a `string` by plural delimiters
 - Using regular expression (`re`)
 
@@ -88,7 +143,7 @@ print(re.split("\W", txt))          # \W = a-zA-Z0-9
 > ['one', 'two', 'three', 'four']
 
 
-## ModuleSample.py & ModuleRun.py (2021.04.26)
+## [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](/Python#my-python-practice)
 - A practice of importing and running `module` in Python
 - Using `__name__` and `__main__`
 
@@ -111,11 +166,11 @@ ModuleSample.call()
 > Call me now.
 
 
-## Turtle.py (2021.03.24)
+## [Turtle (2021.03.24)](/Python#my-python-practice)
 - A practice of python module `turtle`
 - Very easy!
 
-![Turtle Practice](./image/Python%20Turtle.gif)
+![Turtle Practice](Images/Turtle.gif)
 
 #### Codes
 ```python
@@ -170,7 +225,7 @@ turtle.circle(100, steps=6) # hexagon
 turtle.mainloop()           # avoid the screen closing
 ```
 
-## Map.py (2021.02.16)
+## [Map (2021.02.16)](/Python#my-python-practice)
 - To find how `map()` runs
 - I guessed the result of running `map()` would be something to contain hidden elements.
 - But actually it is a `generator type object`, so has not futural list data before I request by `list()`.
@@ -220,7 +275,7 @@ elements' type : <class 'int'>
 ```
 
 
-## WordsMix.py (2021.01.13)
+## [Words Mix (2021.01.13)](/Python#my-python-practice)
 - Read a _csv_ file into a _dictionary_
 - Import `csv`
 - Seems that _dictionary type_ is not so suitable to generate random paragraphs
@@ -284,7 +339,7 @@ with open(path,'r', encoding='utf-8-sig') as f:
 > {'수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
 
 
-## Count_Words.py (2020.11.10)
+## [Count Words (2020.11.10)](/Python#my-python-practice)
 - Count words without duplication from .txt file
 - import `re` for using `regular expression`
 
@@ -316,7 +371,7 @@ print(len(words))
 > 455
 
 
-## Operator_Precedence_Test.py (2020.06.28)
+## [Operator Precedence (2020.06.28)](/Python#my-python-practice)
 answer for my friend YW Jang's question
 
 ```python
@@ -340,7 +395,7 @@ print(("F" == "M") or "m") # the same with the above line
 ☞ reference : https://www.programiz.com/python-programming/precedence-associativity
 
 
-## Print.py (2020.03.31)
+## [Print (2020.03.31)](/Python#my-python-practice)
 simple practice with `print()`
 
 ```python
@@ -367,7 +422,7 @@ print("줄을\n막\n바꿔")
 > 바꿔
 
 
-## Suffle_List.py (2020.03.30)
+## [Shuffle List (2020.03.30)](/Python#my-python-practice)
 - find how to get random lists without overlapping values
 - use `random` `random.randint` `random.sample`
 
@@ -377,37 +432,37 @@ import random
 
 #### Trial 1 : Use `random.randint()`
 ```python
-sufflelist1 = []
+shufflelist1 = []
 
 for i in range(0,20) :
     random.seed(330 + i)
-    sufflelist1.append(random.randint(1, 20))
+    shufflelist1.append(random.randint(1, 20))
 
-print(sufflelist1) # There are overlapping values.
+print(shufflelist1) # There are overlapping values.
 ```
 > [20, 11, 8, 18, 8, 5, 1, 7, 4, 5, 13, 19, 4, 7, 13, 10, 18, 12, 11, 14]
 
 #### Trial 2 : Use `random.sample()`
 ```python
 random.seed(330)
-sufflelist2 = random.sample(range(1, 21), 20)
+shufflelist2 = random.sample(range(1, 21), 20)
 
-print(sufflelist2) # random.sample() offers values without overlapping.
+print(shufflelist2) # random.sample() offers values without overlapping.
 ```
 > [20, 3, 2, 13, 1, 6, 10, 9, 15, 11, 14, 4, 18, 8, 16, 17, 7, 19, 12, 5]
 
 #### Trial 3 : Use `while` Statement
 ```python
-sufflelist3 = []
+shufflelist3 = []
 loopnum = 0
 
-while len(sufflelist3) < 20 :
+while len(shufflelist3) < 20 :
     random.seed(330 + loopnum)
     r = random.randint(1,20)
-    if r not in sufflelist3 : sufflelist3.append(r)
+    if r not in shufflelist3 : shufflelist3.append(r)
     loopnum += 1
 
-print(sufflelist3)
+print(shufflelist3)
 # It seems similar with Trial 1's sequence but there's no overlapping values.
 ```
 > [20, 11, 8, 18, 5, 1, 7, 4, 13, 19, 10, 12, 14, 6, 2, 3, 17, 16, 15, 9]  
@@ -417,7 +472,7 @@ print(loopnum) # It shows how many times overlapping numbers are rejected.
 > 87
 
 
-## Random_Seed_Influence.py (2020.01.05)
+## [Random Seed Influence (2020.01.05)](/Python#my-python-practice)
 make sure the range of `random.seed()`'s influence  
 ☞ `random.seed()` affects just one time!
 
@@ -476,7 +531,7 @@ for i in range(0,3) :
 > **0.8780993490764925**
 
 
-## Square_Root.py (2020.01.01)
+## [Square Root (2020.01.01)](/Python#my-python-practice)
 an algorithm to find n's square root without `math.sqrt()`  
 - adjusted 2020.01.04 : rearrange methods' order in `for` Loop for improving intuitive understanding
 
@@ -517,7 +572,7 @@ myplot = plt.plot(range(k), squareroot)
 > 19 1.4141854421168503 1.9999204646952313 -7.953530476867421e-05  
 > 20 1.4141980335178153 1.9999560780056558 -4.3921994344220394e-05 
 
-![approximate to the exact square root](./image/Square_Root_20200104.png)
+![approximate to the exact square root](Images/Square_Root_20200104.png)
 
 ```python
 # practice
@@ -532,7 +587,7 @@ list(range(10))
 > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
 
 
-## Fibonacci_Series.py (2019.12.18)
+## [Fibonacci Series (2019.12.18)](/Python#my-python-practice)
 Simply Generating `Fibonacci Series` by Python
 
 ```python
@@ -548,7 +603,7 @@ print(a)
 > [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]  
 
 
-## Generate_List.py (2019.12.07)
+## [Generate List (2019.12.07)](/Python#my-python-practice)
 generate lists by various ways
 
 ```python
@@ -566,7 +621,138 @@ list1 == list2
 > True  
 
 
-## Password.py (2019.05.24)
+## [Limited Range Sampling (2019.09.22)](/Python#my-python-practice)
+- Generate normal distributed sample with limited range
+- Use `numpy` `matplotlib.pyplot` `scipy`
+
+#### Generate a normal distribution with limited range [25, 75]
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+mu, sigma, n = 50, 10, 1000
+llimit, rlimit = 25, 75
+
+data = np.random.normal(mu, sigma, n)
+```
+
+#### Method 0. Generating initial data (not trimmed yet)
+```python
+plt.hist(data)
+stats.describe(data)[0:2] # [0] : nobs, [1] : minmax
+```
+![hist0](Images/Generate_Limited_Range_ND_hist_0.png)
+> (1000, (16.763171096395133, 76.969552776105601))
+
+#### Method 1. Trim with rack of amount
+```python
+data1 = data[(data >= llimit) & (data <= rlimit)]
+```
+```python
+plt.hist(data1)
+stats.describe(data1)[0:2]
+```
+![hist1](Images/Generate_Limited_Range_ND_hist_1.png)
+> (991, (25.600374595125377, 74.942171158969671))
+
+#### Method 2. Check each one trial
+```python
+data2, amount = [], 0
+
+while amount < n :
+    data_temp = np.random.normal(mu, sigma, 1)
+    if (data_temp >= llimit) & (data_temp <= rlimit) :
+        data2 = np.append(data2, data_temp)
+        amount += 1
+```
+```python
+plt.hist(data2)
+stats.describe(data2)[0:2]
+```
+![hist2](Images/Generate_Limited_Range_ND_hist_2.png)
+> (1000, (25.987274047611137, 73.473315070409228))
+
+#### Method 3. Generate one round and fill the lack
+```python
+data3 = data[(data >= llimit) & (data <= rlimit)]
+amount = len(data3)
+
+while amount < n :
+    data_temp = np.random.normal(mu, sigma, 1)
+    if (data_temp >= llimit) & (data_temp <= rlimit) :
+        data3 = np.append(data3, data_temp)
+        amount += 1
+```
+```python
+plt.hist(data3)
+stats.describe(data3)[0:2]
+```
+![hist3](Images/Generate_Limited_Range_ND_hist_3.png)
+> (1000, (25.600374595125377, 74.942171158969671))
+
+
+## [With ~ Open (2019.07.21)](/Python#my-python-practice)
+- read binary file
+- convert decimal number ↔ hexadecimal number
+
+```python
+# get current working directory
+import os
+
+os.getcwd()
+print(os.getcwd())
+
+# check if the file exists
+os.path.isfile("path")
+```
+> True
+
+```python
+import binascii
+
+# with statement
+with open('path','rb') as f: # rb : read & binary
+    string = f.read()
+    print(string[0:10])
+    print(binascii.b2a_hex(string[0:10]))
+```
+> b'1990.02.19'  
+> b'313939302e30322e3139'
+
+```python
+# with statement X
+f = open('path','rb')
+data = f.read()
+print(data[0:10])
+print(binascii.b2a_hex(data[0:10]))
+f.close()
+```
+> b'1990.02.19'  
+> b'313939302e30322e3139'
+
+```python
+# decimal → hexadecimal
+hex(30000)
+hex(3000000)
+hex(100)
+```
+> '0x7530'  
+> '0x2dc6c0'  
+> '0x64'
+
+```python
+# hexadecimal → decimal
+int('7530', 16)
+int('2dc6c0', 16)
+int('64', 16)
+```
+> 30000  
+> 3000000  
+> 100
+
+
+## [Password (2019.05.24)](/Python#my-python-practice)
 input the correct passworld within 5 trials or die  
 practice if~else, break/continue, time.sleep() and so on
 
@@ -599,7 +785,7 @@ while chance < 5 :
 ```
 
 
-## Class_Test.py (2018.02.07)
+## [Class (2018.02.07)](/Python#my-python-practice)
 a simple Python `class` practice
 
 ```python
@@ -615,13 +801,13 @@ Do.Family("Shin", "Wife")
 Do.Family("Kim", "Future Baby")
 ```
 
-![Python_Class_Test](./image/Python_Class_Test.PNG)
+![Python_Class_Test](Images/Class.PNG)
 
 I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__init__` and so on.
 What the `__hell__`?
 
 
-## Nirvana.py (2017.05.15)
+## [While (2017.05.15)](/Python#my-python-practice)
 a simple Python practice
 
 ```python
