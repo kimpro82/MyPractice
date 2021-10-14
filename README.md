@@ -1,38 +1,42 @@
-# [My_Practice]
+# [My Practice]
 miscellaneous petty works
 
 ## Github Dashboard
 making a dashboard for managing Gitgub contributions by using `Github API`
 - Outline (2020.04.19)
 
-## My R Practice
-- Permutations_and_Combinations.R (2021.04.05)
-- Get_Sample_Number_2.R (2020.06.16)
-- Get_Sample_Number.R (2020.06.10)
-- Generating Array and Variables by for Loop.R (2019.12.06)
-- Grade_Cancel_Effect.R (2019.07.19)
-- CF_Affection.R (2019.05.25)
-- Plotting_Fibonacci Tornado.R (2017.05.07)
-- Plotting_RGB.R (2017.04.14)
+## [My R Practice](/R#my-r-practice)
+- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
+- Sample Number (2020.06.10)
+- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
+- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](/R#rgb-20170414)
 
-## My Python Practice
-- IfWhileTrue.py (2021.05.04)
-- ReSplit.py (2021.04.29)
-- ModuleSample.py & ModuleRun.py (2021.04.26)
-- Turtle.py (2021.03.24)
-- Map.py (2021.02.16)
-- WordsMix.py (2021.01.13)
-- Count_Words.py (2020.11.10)
-- Operator_Precedence_Test.py (2020.06.28)
-- Print.py (2020.03.31)
-- Suffle_List.py (2020.03.30)
-- Random_Seed_Influence.py (2020.01.05)
-- Square_Root.py (2020.01.01)
-- Fibonacci_Series.py (2019.12.18)
-- Generate_List.py (2019.12.07)
-- Password.py (2019.05.24)
-- Class_Test.py (2018.02.07)
-- Nirvana.py (2017.05.15)
+## [My Python Practice](/Python#my-python-practice)
+- [Iterator (2021.06.17)](/Python#iterator-20210617)
+- [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
+- [Re.Split (2021.04.29)](/Python#resplit-20210429)
+- [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](/Python#__name__--__main__-20210426)
+- [Turtle (2021.03.24)](/Python#turtle-20210324)
+- [Map (2021.02.16)](/Python#map-20210216)
+- [Words Mix (2021.01.13)](/Python#words-mix-20210113)
+- [Count Words (2020.11.10)](/Python#count-words-20201110)
+- [Operator Precedence (2020.06.28)](/Python#operator-precedence-20200628)
+- [Print (2020.03.31)](/Python#print-20200331)
+- [Shuffle List (2020.03.30)](/Python#shuffle-list-20200330)
+- [Random Seed Influence (2020.01.05)](/Python#random-seed-influence-20200105)
+- [Square Root (2020.01.01) (adjusted 2020.01.04)](/Python#square-root-20200101)
+- [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
+- [Generate List (2019.12.07)](/Python#generate-list-20191207)
+- [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
+- [With ~ Open (2019.07.21)](/Python#with--open-20190721)
+- [Password (2019.05.24)](/Python#password-20190524)
+- [Class (2018.02.07)](/Python#class-20180207)
+- [While (2017.05.15)](/Python#while-20170515)
 
 ## My C# Practice
 - GCD.cs (2021.03.30)
@@ -40,10 +44,20 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Polymorphism.cs (2021.02.18)
 - Overloading.cs (2021.02.02)
 
-## My Java Practice
-- MyThread.java (2021.04.13)
-- Swing.java (2021.04.06)
-- MyDate.java (2021.03.08)
+## [My VBA Practice](/VBA#my-vba-practice)
+- [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
+- [Try Catch Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
+- [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
+- [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
+- [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
+- [Sigma (2021.01.02)](/VBA#sigma-20210102)
+- [Color_Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+
+## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
+- Containers : Deque, Stack, Queue
+- [Template (2021.07.23)](/C%26Cpp#template-20210723)
+- [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
+- [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
 ## My Web Practice
 - 6th Wedding Anniversary (2021.03.07)
@@ -52,15 +66,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Colorful Show (2020.03.04)
 - Ganzi.html (2017.04.03)
 
-## My VBA Practice
-- Sigma2 (2021.01.03)
-- Sigma (2021.01.02)
-- Color_Scroll.bas (2020.11.14)
-
 ## My QBasic Practice
 - Play Music (2021.02.20)
 - Hello World (2020.02.27)
-
-## My C/C++ Practice
-- Containers.cpp
-- Hello World (2021.05.11)
