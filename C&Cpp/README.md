@@ -12,6 +12,7 @@ The final destination of programming
 
 - `STL` Practice : Container `Deque` and its adaptors `Stack` and `Queue`
 - Especially `Deque` is something greater than `vector` and `list`
+- `Prior Queue` that is also one of the container adaptor from Deque and consists of `heap` will be continued ……
 
 ※ All codes includes the following lines. :
 ```cpp
