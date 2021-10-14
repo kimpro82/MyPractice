@@ -8,7 +8,7 @@ The final destination of programming
 - [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
 
-## [Containers : Deque, Stack and Queue (2021.10.14)]((/C%26Cpp#my-cc-practice))
+## [Containers : Deque, Stack and Queue (2021.10.14)](#my-cc-practice)
 
 - `STL` Practice : Container `Deque` and its adaptors `Stack` and `Queue`
 - Especially `Deque` is something greater than `vector` and `list`
@@ -167,7 +167,7 @@ int main()
 > The que is empty.
 
 
-## [Template (2021.07.23)]((/C%26Cpp#my-cc-practice))
+## [Template (2021.07.23)](#my-cc-practice)
 
 - Significantly advanced code using **template** from the previous `StackOverflow.cpp`
 - I am so proud!
@@ -213,7 +213,7 @@ int main()
 > b : 1 + 1 = 1
 
 
-## [Stack Overflow (2021.05.18)]((/C%26Cpp#my-cc-practice))
+## [Stack Overflow (2021.05.18)](#my-cc-practice)
 
 - "Let's conquer the **stack overflow** problem!"
 - …… a stupid conquerer who didn't know **template** and **generic function** said.
@@ -303,7 +303,7 @@ int main()
 > bool (1) : 1 + 1 = 1
 
 
-## [Hello World (2021.05.12)]((/C%26Cpp#my-cc-practice))
+## [Hello World (2021.05.12)](#my-cc-practice)
 
 - My first run of **`C`/`C++`** code in **Visual Studio Code**
 - Environmental setting was harder than coding
