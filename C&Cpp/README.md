@@ -16,12 +16,14 @@ The final destination of programming
 ※ All codes includes the following lines. :
 ```cpp
 #include <iostream>
-#include <deque>
 
 using namespace std;
 ```
 
 #### Containers_Deque.cpp
+```cpp
+#include <deque>
+```
 ```cpp
 void print(deque<int> deq)
 {
@@ -72,7 +74,10 @@ int main()
 > 1 2 3 4 5  
 > 1 2 3  
 
-#### Containers_Deque.cpp
+#### Containers_Stack.cpp
+```cpp
+#include <stack>
+```
 ```cpp
 void print(stack<int> stk)
 {
@@ -120,7 +125,10 @@ int main()
 > 3 2 1  
 > The stack is empty.
 
-#### Containers_Deque.cpp
+#### Containers_Queue.cpp
+```cpp
+#include <queue>
+```
 ```cpp
 void print(queue<int> q)
 {
