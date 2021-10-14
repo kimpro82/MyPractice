@@ -37,5 +37,9 @@ int main()
     deq.erase(deq.begin() + 3, deq.end());
     print(deq);
 
+    // emplace()?
+    // emplace_front()?
+    // emplace_back()?
+
     return 0;
 }
