@@ -1,7 +1,7 @@
 # [My Practice]
 miscellaneous petty works
 
-## Github Dashboard
+## [Github Dashboard](/GithubDashboard#my-python-practice---github-dashboard)
 making a dashboard for managing Gitgub contributions by using `Github API`
 - Outline (2020.04.19)
 
@@ -38,7 +38,13 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
 
-## My C# Practice
+## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
+- [Containers : Deque, Stack and Queue (2021.10.14)](/C&Cpp#containers--deque-stack-and-queue-20211014)
+- [Template (2021.07.23)](/C%26Cpp#template-20210723)
+- [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
+- [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
+
+## [My C# Practice](/CSharp#my-c-practice)
 - GCD.cs (2021.03.30)
 - TerminalGUI.cs (2021.03.24)
 - Polymorphism.cs (2021.02.18)
@@ -53,23 +59,18 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
 - [Color_Scroll (2020.11.14)](/VBA#color_scroll-20201114)
 
-## My Java Practice
+## [My Java Practice](/Java#my-java-practice)
 - MyThread.java (2021.04.13)
 - Swing.java (2021.04.06)
 - MyDate.java (2021.03.08)
 
-## My C/C++ Practice
-- Template (2021.07.23)
-- Stack Overflow (2021.05.18)
-- Hello World (2021.05.11)
-
-## My Web Practice
+## [My Web Practice](/Web#my-web-practice)
 - 6th Wedding Anniversary (2021.03.07)
 - 5th Wedding Anniversary 2 (2020.03.11)
 - 5th Wedding Anniversary (2020.03.07)
 - Colorful Show (2020.03.04)
 - Ganzi.html (2017.04.03)
 
-## My QBasic Practice
+## [My QBasic Practice](/QBasic#my-qbasic-practice)
 - Play Music (2021.02.20)
 - Hello World (2020.02.27)

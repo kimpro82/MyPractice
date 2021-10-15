@@ -1,11 +1,184 @@
 # My C/C++ Practice
+
 The final destination of programming
-- Template (2021.07.23)
-- Stack Overflow (2021.05.18)
-- Hello World (2021.05.12)
+
+- [Containers : Deque, Stack and Queue (2021.10.14)](/C&Cpp#containers--deque-stack-and-queue-20211014)
+- [Template (2021.07.23)](/C%26Cpp#template-20210723)
+- [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
+- [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
 
-## Template (2021.07.23)
+## [Containers : Deque, Stack and Queue (2021.10.14)](#my-cc-practice)
+
+- `STL` Practice : Container `Deque` and its adaptors `Stack` and `Queue`
+- Especially `Deque` is something greater than `vector` and `list`
+- `Prior Queue` that is also one of the container adaptor from Deque and consists of `heap` will be continued ……
+- Reference ☞ [코딩 테스트를 위한 자료 구조와 알고리즘 with C++ (길벗, 2020)](https://github.com/gilbutITbook/080239)
+
+※ All codes include the following lines. :
+```cpp
+#include <iostream>
+
+using namespace std;
+```
+
+#### Containers_Deque.cpp
+```cpp
+#include <deque>
+```
+```cpp
+void print(deque<int> deq)
+{
+    for (auto it = deq.begin(); it != deq.end(); it++) cout << *it << ' ';
+    cout << endl;
+}
+```
+```cpp
+int main()
+{
+    deque<int> deq {1, 2, 3, 4, 5};
+    print(deq);
+
+    deq.push_front(0);
+    print(deq);
+
+    deq.push_back(6);
+    print(deq);
+
+    deq.insert(deq.begin() + 2, 10);
+    print(deq);
+
+    deq.pop_back();
+    print(deq);
+
+    deq.pop_front();
+    print(deq);
+
+    deq.erase(deq.begin() + 1);
+    print(deq);
+
+    deq.erase(deq.begin() + 3, deq.end());
+    print(deq);
+
+    // emplace()?
+    // emplace_front()?
+    // emplace_back()?
+
+    return 0;
+}
+```
+> 1 2 3 4 5  
+> 0 1 2 3 4 5  
+> 0 1 2 3 4 5 6  
+> 0 1 10 2 3 4 5 6  
+> 0 1 10 2 3 4 5  
+> 1 10 2 3 4 5  
+> 1 2 3 4 5  
+> 1 2 3  
+
+#### Containers_Stack.cpp
+```cpp
+#include <stack>
+```
+```cpp
+void print(stack<int> stk)
+{
+    if (stk.empty()) cout << "The stack is empty." << endl;
+    else
+    {
+        while (!stk.empty())
+        {
+            cout << stk.top() << ' ';
+            stk.pop();
+        }
+        cout << endl;
+    }
+}
+```
+```cpp
+int main()
+{
+    stack<int> stk ({1, 2, 3});     // check the different way to declare with initial elements from deque and so on
+    print(stk);
+
+    stk.push(4);
+    print(stk);
+
+    stk.push(5);
+    print(stk);
+
+    stk.pop();
+    stk.pop();
+    print(stk);
+
+    stk.pop();
+    stk.pop();
+    stk.pop();
+    print(stk);
+
+    // Any other methods?
+
+    return 0;
+}
+```
+> 3 2 1  
+> 4 3 2 1  
+> 5 4 3 2 1  
+> 3 2 1  
+> The stack is empty.
+
+#### Containers_Queue.cpp
+```cpp
+#include <queue>
+```
+```cpp
+void print(queue<int> q)
+{
+    if (q.empty()) cout << "The que is empty." << endl;
+    else
+    {
+        while (!q.empty())
+        {
+            cout << q.front() << ' ';
+            q.pop();
+        }
+        cout << endl;
+    }
+}
+```
+```cpp
+int main()
+{
+    queue<int> q ({1, 2, 3});   // don't forget ()!
+    print(q);
+
+    q.push(4);
+    print(q);
+
+    q.push(5);
+    print(q);
+
+    q.pop();
+    q.pop();
+    print(q);
+
+    q.pop();
+    q.pop();
+    q.pop();
+    print(q);
+
+    return 0;
+}
+```
+> 1 2 3  
+> 1 2 3 4  
+> 1 2 3 4 5  
+> 3 4 5  
+> The que is empty.
+
+
+## [Template (2021.07.23)](#my-cc-practice)
+
 - Significantly advanced code using **template** from the previous `StackOverflow.cpp`
 - I am so proud!
 
@@ -50,7 +223,8 @@ int main()
 > b : 1 + 1 = 1
 
 
-## Stack Overflow (2021.05.18)
+## [Stack Overflow (2021.05.18)](#my-cc-practice)
+
 - "Let's conquer the **stack overflow** problem!"
 - …… a stupid conquerer who didn't know **template** and **generic function** said.
 - Can he learn them or still stay in beginner's swamps? To be continued …… 
@@ -139,7 +313,8 @@ int main()
 > bool (1) : 1 + 1 = 1
 
 
-## Hello World (2021.05.12)
+## [Hello World (2021.05.12)](#my-cc-practice)
+
 - My first run of **`C`/`C++`** code in **Visual Studio Code**
 - Environmental setting was harder than coding
 - Find how to **complie** and **run** in cosole (rather easier than VS Code menu)
