@@ -13,6 +13,7 @@ The final destination of programming
 - `STL` Practice : Container `Deque` and its adaptors `Stack` and `Queue`
 - Especially `Deque` is something greater than `vector` and `list`
 - `Prior Queue` that is also one of the container adaptor from Deque and consists of `heap` will be continued ……
+- Reference ☞ [코딩 테스트를 위한 자료 구조와 알고리즘 with C++ (길벗, 2020)](https://github.com/gilbutITbook/080239)
 
 ※ All codes include the following lines. :
 ```cpp
