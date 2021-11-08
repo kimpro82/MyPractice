@@ -14,7 +14,7 @@ VBA, maybe it could my ancient future
 
 ## [Control Formula Calculation Option (2021.11.08)](/VBA#my-vba-practice)
 
-- Control excel's formula calculation option by `Application.Calculation` method
+- Control **Excel's formula calculation option** by `Application.Calculation` method
 - Working with `xlManual` status is much faster than `xlAutomatic`
 
 ```VBA
