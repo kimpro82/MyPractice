@@ -45,7 +45,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
 ## [My VBA Practice](/VBA#my-vba-practice)
-- [Control Formula Calculation Option (2021.11.08)]()
+- [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
 - [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
 - [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
