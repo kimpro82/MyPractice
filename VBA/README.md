@@ -2,13 +2,75 @@
 
 VBA, maybe it could my ancient future
 
+- [Control Formula Calculation Option (2021.11.08)]()
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
-- [Try Catch Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
+- [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
 - [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
 - [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
-- [Color_Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+- [Color Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+
+
+## [Control Formula Calculation Option (2021.11.08)](/VBA#my-vba-practice)
+
+- Control excel's formula calculation option by `Application.Calculation` method
+- Working with `xlManual` status is much faster than `xlAutomatic`
+
+```VBA
+Option Explicit
+```
+
+![VBA Formula Calc. Option = xlAutomatic](Images/VBA_FormulaCalcOption_xlAutomatic.gif)
+
+```VBA
+' Make a sample case that contains many calculations
+Sub sampleWork()
+
+    ' Set range
+    Dim row, rowEnd, col, colEnd As Integer
+    row = 1
+    rowEnd = 34
+    col = row
+    colEnd = rowEnd
+
+    ' Generate formula n * n times
+    While row <= rowEnd
+    
+        While col <= colEnd
+
+            If (row = rowEnd And col = colEnd) Then
+                Sheet1.Cells(row, col) = rowEnd * 3 - 3
+            ElseIf (col = colEnd) Then
+                Sheet1.Cells(row, col).FormulaR1C1 = "=R[+1]C-3"    ' 삼천포 you nahm sayin
+            Else
+                Sheet1.Cells(row, col).FormulaR1C1 = "=RC[+1]-3"
+            End If
+
+            col = col + 1
+
+        Wend
+
+        col = 1
+        row = row + 1
+
+    Wend
+
+End Sub
+```
+
+![VBA Formula Calc. Option = xlManual](Images/VBA_FormulaCalcOption_xlManual.gif)
+
+```VBA
+' Skip excel formula calculation temporarily
+Sub SkipFormulaCalc()
+
+    Application.Calculation = xlManual
+        Call sampleWork
+    Application.Calculation = xlAutomatic
+    
+End Sub
+```
 
 
 ## [Read Binary File (2021.08.23)](/VBA#my-vba-practice)
