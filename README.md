@@ -51,13 +51,14 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Overloading.cs (2021.02.02)
 
 ## [My VBA Practice](/VBA#my-vba-practice)
+- [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
-- [Try Catch Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
+- [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
 - [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
 - [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
-- [Color_Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+- [Color Scroll (2020.11.14)](/VBA#color_scroll-20201114)
 
 ## [My Java Practice](/Java#my-java-practice)
 - MyThread.java (2021.04.13)
