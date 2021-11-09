@@ -44,6 +44,12 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
+## [My C# Practice](/CSharp#my-c-practice)
+- GCD.cs (2021.03.30)
+- TerminalGUI.cs (2021.03.24)
+- Polymorphism.cs (2021.02.18)
+- Overloading.cs (2021.02.02)
+
 ## [My VBA Practice](/VBA#my-vba-practice)
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
@@ -53,12 +59,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
 - [Color Scroll (2020.11.14)](/VBA#color_scroll-20201114)
-
-## [My C# Practice](/CSharp#my-c-practice)
-- GCD.cs (2021.03.30)
-- TerminalGUI.cs (2021.03.24)
-- Polymorphism.cs (2021.02.18)
-- Overloading.cs (2021.02.02)
 
 ## [My Java Practice](/Java#my-java-practice)
 - MyThread.java (2021.04.13)
