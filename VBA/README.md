@@ -2,6 +2,8 @@
 
 VBA, maybe it could my ancient future
 
+
+- [Variable Scope (2011.11.29)]()
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
 - [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
@@ -10,6 +12,58 @@ VBA, maybe it could my ancient future
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
 - [Color Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+
+
+
+## [Variable Scope (2011.11.29)]()
+
+- Load several operation results into `Public` variables and call them into local `Sub` procedure
+- I don't think it is an enough practice but my front line here.
+
+![Variable Scope](Images/VBA_Scope.gif)
+
+```vba
+'----------------------------------------------------------------------------------------
+' Module1
+
+
+Option Explicit
+
+
+Public num1, num2, res(7) As Integer
+
+
+Sub Operate()
+
+    num1 = ActiveSheet.Range("B1")
+    num2 = ActiveSheet.Range("B2")
+
+    res(0) = num1 + num2
+    res(1) = num1 - num2
+    res(2) = num1 * num2
+    res(3) = num1 / num2
+    res(4) = num1 \ num2            ' no difference from '/' because of Integer / Integer
+    res(5) = num1 Mod num2
+    res(6) = num1 ^ num2
+    res(7) = num1 >= num2           ' why -1 when num1 = 5, num2 = 2?
+
+End Sub
+```
+
+```vba
+'----------------------------------------------------------------------------------------
+' Sheet1
+
+
+Sub ReadResults()
+
+    Dim i As Integer
+    For i = 0 To 7
+        ActiveSheet.Range("B" & 3 + i) = res(i)
+    Next i
+
+End Sub
+```
 
 
 ## [Control Formula Calculation Option (2021.11.08)](/VBA#my-vba-practice)
