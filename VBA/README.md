@@ -18,7 +18,7 @@ VBA, maybe it could my ancient future
 ## [Variable Scope (2011.11.29)]()
 
 - Load several operation results into `Public` variables and call them into local `Sub` procedure
-- I don't think it is an enough practice but my front line here.
+- I don't think it is an enough practice but my front line now here ……
 
 ![Variable Scope](Images/VBA_Scope.gif)
 
