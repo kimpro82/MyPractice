@@ -3,7 +3,7 @@
 VBA, maybe it could my ancient future
 
 
-- [Variable Scope (2011.11.29)]()
+- [Variable Scope (2011.11.29)](/VBA#variable-scope-20111129)
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
 - [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
@@ -15,7 +15,7 @@ VBA, maybe it could my ancient future
 
 
 
-## [Variable Scope (2011.11.29)]()
+## [Variable Scope (2011.11.29)](/VBA#my-vba-practice)
 
 - Load several operation results into `Public` variables and call them into local `Sub` procedure
 - I don't think it is an enough practice but my front line now here ……
