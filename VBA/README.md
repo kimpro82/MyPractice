@@ -58,7 +58,7 @@ Sub ReadResults()
         ActiveSheet.Range("B" & 3 + i) = res(i)
     Next i
 
-    Range("B3:B10").Value = res                     ' Why doesn't it work?
+    ' Range("B3:B10").Value = res                   ' Why doesn't it work?
 
 End Sub
 ```
