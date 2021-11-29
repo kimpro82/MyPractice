@@ -58,8 +58,8 @@ Sub ReadResults()
         ActiveSheet.Range("B" & 3 + i) = res(i)
     Next i
 
-    'Range("B3:B10").Value = res                                ' why doesn't it work?
-    'Range("B3:B10").Value = WorksheetFunction.Transpose(res)   ' it works but I want to avoid WorkSheetFunction() if possible
+'    Range("B3:B10").Value = res                                ' why doesn't it work?
+'    Range("B3:B10").Value = WorksheetFunction.Transpose(res)   ' it works but I want to avoid WorkSheetFunction() if possible
 
 End Sub
 ```
