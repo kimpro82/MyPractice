@@ -2,7 +2,7 @@
 
 VBA, maybe it could my ancient future
 
-- [Color Scroll 2 (2021.12.01)]()
+- [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
 - [Variable Scope (2011.11.29)](/VBA#variable-scope-20111129)
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
@@ -11,13 +11,13 @@ VBA, maybe it could my ancient future
 - [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
-- [Color Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+- [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
 
 
 ## [Color Scroll 2 (2021.12.01)](/VBA#my-vba-practice)
 
 - Advanced from [Color Scroll 1 (2020.11.14)]() : succeed in making it move!
-- Use **array** `Application.Calculation` `RGB()`
+- Use `array` `Application.Calculation` `RGB()`
 
 ![Color Scroll 2](Images/VBA_ColorScroll2.gif)
 
@@ -31,7 +31,7 @@ Option Explicit
 Sub ColorScroll2()
 
     Dim width, interval As Integer
-    Dim base(2), rgbCol(2) As Integer                                               ' 2 means 0 ti 2 (size : 3)
+    Dim base(2), rgbCol(2) As Integer                                               ' 2 means 0 to 2 (size : 3)
 
     width = 96
     interval = 16
@@ -470,7 +470,7 @@ End Function
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet
 
-![Color Scroll 1](Images/VBA_ColorScroll.png)
+![Color Scroll](Images/VBA_ColorScroll.PNG)
 
 ```vba
 Option Explicit
