@@ -6,7 +6,7 @@ Option Explicit
 Sub ColorScroll2()
 
     Dim width, interval As Integer
-    Dim base(2), rgbCol(2) As Integer                                               ' 2 means 0 ti 2 (size : 3)
+    Dim base(2), rgbCol(2) As Integer                                               ' 2 means 0 to 2 (size : 3)
 
     width = 96
     interval = 16
