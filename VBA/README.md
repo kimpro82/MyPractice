@@ -16,7 +16,7 @@ VBA, maybe it could my ancient future
 
 ## [Color Scroll 2 (2021.12.01)](/VBA#my-vba-practice)
 
-- Advanced from [Color Scroll 1 (2020.11.14)]() : succeed in making it move!
+- Advanced from [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114) : succeed in making it move!
 - Use `array` `Application.Calculation` `RGB()`, without `Select`/`Selection`
 
 ![Color Scroll 2](Images/VBA_ColorScroll2.gif)
