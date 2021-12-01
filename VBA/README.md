@@ -11,7 +11,7 @@ VBA, maybe it could my ancient future
 - [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
-- [Color Scroll (2020.11.14)](/VBA#color_scroll-1-20201114)
+- [Color Scroll (2020.11.14)](/VBA#color_scroll-20201114)
 
 
 ## [Color Scroll 2 (2021.12.01)](/VBA#my-vba-practice)
@@ -465,7 +465,7 @@ End Function
 ```
 
 
-## [Color_Scroll 1 (2020.11.14)](/VBA#my-vba-practice)
+## [Color Scroll (2020.11.14)](/VBA#my-vba-practice)
 
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet
