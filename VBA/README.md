@@ -2,7 +2,7 @@
 
 VBA, maybe it could my ancient future
 
-
+- [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
 - [Variable Scope (2011.11.29)](/VBA#variable-scope-20111129)
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
@@ -11,8 +11,91 @@ VBA, maybe it could my ancient future
 - [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
-- [Color Scroll (2020.11.14)](/VBA#color_scroll-20201114)
+- [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
 
+
+## [Color Scroll 2 (2021.12.01)](/VBA#my-vba-practice)
+
+- Advanced from [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114) : succeed in making it move!
+- Use `array` `Application.Calculation` `RGB()`, without `Select`/`Selection`
+
+![Color Scroll 2](Images/VBA_ColorScroll2.gif)
+
+```vba
+Option Explicit
+
+'Private Declare PtrSafe Sub Sleep Lib "kernel32" (ByVal Milliseconds As LongPtr)   ' actually it is somewhat crazy to declare it as Private
+```
+
+```vba
+Sub ColorScroll2()
+
+    Dim width, interval As Integer
+    Dim base(2), rgbCol(2) As Integer                                               ' 2 means 0 to 2 (size : 3)
+
+    width = 96
+    interval = 16
+
+    base(0) = 0
+    base(1) = 127
+    base(2) = 255
+
+    Dim i, j, k As Integer
+
+    ' shift i times
+    For i = 1 To 100
+
+        Application.Calculation = xlManual
+
+            ' i-th drawing
+            For j = 1 To width
+
+                ' for base(0 ~ 2)
+                For k = 0 To 2
+
+                    If (base(k) \ 256) Mod 2 = 0 Then                               ' / : don't operate as int / int
+                        rgbCol(k) = base(k) Mod 256
+                    Else
+                        rgbCol(k) = 256 - (base(k) Mod 256)
+                    End If
+
+                    ' test
+                    'Cells(2 + k, j) = rgbCol(k)
+
+                    base(k) = base(k) + interval
+
+                Next k
+
+                Cells(1, j).Interior.Color = RGB(rgbCol(0), rgbCol(1), rgbCol(2))   ' not .ColorIndex
+
+            Next j
+
+        Application.Calculation = xlAutomatic
+
+        base(0) = base(0) + interval                                                ' is it the best?
+        base(1) = base(1) + interval
+        base(2) = base(2) + interval
+
+'        Sleep (100)
+
+    Next i
+
+End Sub
+```
+
+```vba
+Sub Reset()
+'Initialize the sheet
+
+    Cells.Select
+    Selection.Clear
+
+    Selection.ColumnWidth = 1
+    Selection.RowHeight = 10
+    Cells(1, 1).RowHeight = 409                                                     ' 409 : the max row height supported by Excel
+
+End Sub
+```
 
 
 ## [Variable Scope (2011.11.29)](/VBA#my-vba-practice)
@@ -382,45 +465,47 @@ End Function
 ```
 
 
-## [Color_Scroll (2020.11.14)](/VBA#my-vba-practice)
+## [Color Scroll (2020.11.14)](/VBA#my-vba-practice)
 
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet
 
-![Color_Scroll](Images/VBA_Color_Scroll.png)
+![Color Scroll](Images/VBA_ColorScroll.PNG)
 
 ```vba
 Option Explicit
+```
 
-Sub Color_Scroll()
+```vba
+Sub ColorScroll()
 
     Dim StartRow As Integer, StartColumn As Integer, Width As Integer, Height As Integer
     Dim i As Integer, j As Integer, k As Integer
     Dim FirstColumn As Range, LastColumn As Range
-    
+
     StartRow = 1
     StartColumn = 1
     Width = 56
     Height = 56
-        
+
     Range(Cells(StartRow, StartColumn), Cells(Height, Width)).Select
     Selection.RowHeight = 10
     Selection.ColumnWidth = 1
-    
+
     For i = 1 To Height
         For j = 1 To Width
             Cells(i, j).Interior.ColorIndex = (i + j) Mod 56 + 1
         Next j
     Next i
-    
-'Differnt result from debugging mode and normal run mode(F5)
+
+'    Differnt result from debugging mode and normal run mode(F5)
 '    For k = 1 To Width
 '        Columns(Width).Select
 '        Selection.Cut
 '        Columns(1).Select
 '        Selection.Insert Shift:=xlToRight
 '    Next k
-    
+
 End Sub
 ```
 
@@ -430,7 +515,7 @@ Sub Reset()
 
     Cells.Select
     Selection.Clear
-    
+
     Selection.ColumnWidth = 10
     Selection.RowHeight = 15
 
