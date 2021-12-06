@@ -10,7 +10,9 @@ func main() {
 
     // Determine the alphabet
     var grade string
-    if (input >= 90) {
+    if (input >= 95) {
+        grade = "A+"
+    } else if (input >= 90) {
         grade = "A"
     } else if (input >= 80) {
         grade = "B"
@@ -23,7 +25,7 @@ func main() {
     }
 
     // Determine the sign
-    if (grade != "F") {
+    if (grade != "A+" && grade != "F") {
         if (input % 10 >= 5) {
             grade += "+"
         } else {

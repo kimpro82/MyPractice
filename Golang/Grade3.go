@@ -9,12 +9,12 @@ func main() {
     fmt.Scanln(&input)
 
     // Determine the alphabet by using array
-    alphabet := [6]string{"F", "D", "C", "B", "A", "A"}
+    alphabet := [6]string{"F", "D", "C", "B", "A", "A+"}
     var grade string
     grade = alphabet[input / 10 - 5]
 
     // Determine the sign
-    if (grade != "F") {
+    if (grade != "A+" && grade != "F") {
         if (input % 10 >= 5) {
             grade += "+"
         } else {
