@@ -116,7 +116,7 @@ func main() {
     var input int
     fmt.Scanln(&input)
 
-    // Determine the alphabet by ASCII vlaue operation
+    // Determine the alphabet by ASCII value operation
     var grade string
     if (input >= 95) {
         grade = "A+"
