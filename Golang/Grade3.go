@@ -9,7 +9,7 @@ func main() {
     fmt.Scanln(&input)
 
     // Determine the alphabet by using array
-    alphabet := [5]string{"F", "D", "C", "B", "A"}
+    alphabet := [6]string{"F", "D", "C", "B", "A", "A"}
     var grade string
     grade = alphabet[input / 10 - 5]
 
