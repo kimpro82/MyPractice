@@ -9,13 +9,13 @@
 - A simple practice code to grade a score by several ways
 
 ※ All codes include the following lines. :
-```cpp
+```go
 package main
 import "fmt"
 ```
 
 #### Grade1.go
-```cpp
+```go
 // 1. Vanilla if statement
 func main() {
 
@@ -40,7 +40,7 @@ func main() {
 ```
 
 #### Grade2.go
-```cpp
+```go
 // 2. Seperate processes to get the alphabet and its sign
 func main() {
 
@@ -79,7 +79,7 @@ func main() {
 ```
 
 #### Grade3.go
-```cpp
+```go
 // 3. Reduce codes by using array
 func main() {
 
@@ -108,7 +108,7 @@ func main() {
 > 
 
 #### Grade4.go
-```cpp
+```go
 // 4. Reduce codes by ASCII value operation
 func main() {
 
