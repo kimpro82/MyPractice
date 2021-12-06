@@ -10,7 +10,7 @@ func main() {
 
     // Determine the alphabet by ASCII vlaue operation
     var grade string
-    if (input >= 100) {
+    if (input >= 95) {
         grade = "A+"
     } else if (input >= 60) {
         grade = string(int('A') + (9 - input / 10))
