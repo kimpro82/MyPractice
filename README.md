@@ -74,8 +74,8 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Colorful Show (2020.03.04)
 - Ganzi.html (2017.04.03)
 
-## My Golang Practice
-- [Grade (2021.12.06)]()
+## [My Golang Practice](/Golang#my-golang-practice)
+- [Grade (2021.12.06)](/Golang#grade-20211206)
 
 ## [My QBasic Practice](/QBasic#my-qbasic-practice)
 - Play Music (2021.02.20)

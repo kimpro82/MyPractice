@@ -1,7 +1,7 @@
 # My Golang Practice
 
 
-- [Grade (2021.12.06)]()
+- [Grade (2021.12.06)](/Golang#grade-20211206)
 
 
 ## [Grade (2021.12.06)](#my-golang-practice)
