@@ -81,5 +81,5 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Play Music (2021.02.20)
 - Hello World (2020.02.27)
 
-# [My Auto Hot Key Practice]()
-- [Stack Overflow (2021.12.07)]()
+## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
+- [Stack Overflow (2021.12.07)](/AutoHotKey#stack-overflow-20211207)
