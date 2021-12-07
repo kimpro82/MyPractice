@@ -151,7 +151,7 @@ func main() {
     // Determine the alphabet by using array
     alphabet := [11]string{"F", "F", "F", "F", "F", "F", "D", "C", "B", "A", "A+"}
     var grade string
-    grade = alphabet[(input + 3) / 10]
+    grade = alphabet[(input + 3) / 10]                                              // tricky!
 
     // Determine the sign
     if (grade != "A+" && grade != "F") {
