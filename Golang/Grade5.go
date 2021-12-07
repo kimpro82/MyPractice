@@ -1,7 +1,7 @@
 package main
 import "fmt"
 
-// 5. Variation for 4.3 scale based on grade3.go
+// 5. Variation for 4.3 scale based on Grade3.go
 func main() {
 
     // Input data
