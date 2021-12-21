@@ -1,5 +1,5 @@
 # My Python Practice
-- [Vertical Alignment (2021.12.21)]()
+- [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
 - [Re.Split (2021.04.29)](/Python#resplit-20210429)
