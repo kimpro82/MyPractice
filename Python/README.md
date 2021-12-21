@@ -69,7 +69,7 @@ for i in list :
     i += length * ' '
     print(i, 100)
 ```
-> abcd &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100  
+> abcd &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100  
 > 삼성전자 &nbsp; 100
 
 
