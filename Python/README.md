@@ -42,7 +42,7 @@ length = 0
 for char in ssjj :
     if char >= '가' :
         length += 2
-print (length)
+print(length)
 ```
 > 8
 
