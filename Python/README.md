@@ -69,8 +69,8 @@ for i in list :
     i += length * ' '
     print(i, 100, sep = '')
 ```
-> abcd &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100  
-> 삼성전자 &nbsp; 100
+> abcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100  
+> 삼성전자&nbsp;&nbsp;100
 
 
 ## [Iterator (2021.06.17)](/Python#my-python-practice)
