@@ -30,4 +30,4 @@ for i in list :
         else :
             length -= 1
     i += length * ' '
-    print(i, 100)
+    print(i, 100, sep = '')

@@ -67,7 +67,7 @@ for i in list :
         else :
             length -= 1
     i += length * ' '
-    print(i, 100)
+    print(i, 100, sep = '')
 ```
 > abcd &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100  
 > 삼성전자 &nbsp; 100
