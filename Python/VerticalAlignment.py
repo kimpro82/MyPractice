@@ -2,8 +2,8 @@
 abcd = "abcd"
 ssjj = "삼성전자"
 
-print(len("abcd"))
-print(len("ssjj"))
+print(len(abcd))
+print(len(ssjj))
 
 
 # How to count Korean letter's length as 2

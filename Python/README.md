@@ -30,8 +30,8 @@
 abcd = "abcd"
 ssjj = "삼성전자"
 
-print(len("abcd"))
-print(len("ssjj"))
+print(len(abcd))
+print(len(ssjj))
 ```
 > 4  
 > 4
