@@ -71,6 +71,7 @@ for i in list :
 ```
 > abcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100  
 > 삼성전자&nbsp;&nbsp;100  
+> (arranged vertically in the console output)
 
 
 ## [Iterator (2021.06.17)](/Python#my-python-practice)
