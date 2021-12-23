@@ -15,7 +15,7 @@ print(length)
 
 
 # Vertical alignment
-list = [abcd, ssjj]
+list = ["abcd", "삼성전자"]
 
 # trial 1
 for i in list :
