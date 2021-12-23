@@ -33,8 +33,10 @@ ssjj = "삼성전자"
 print(len(abcd))
 print(len(ssjj))
 ```
-> 4  
-> 4
+```
+4
+4
+```
 
 ```python
 # How to count Korean letter's length as 2
@@ -44,7 +46,9 @@ for char in ssjj :
         length += 2
 print(length)
 ```
-> 8
+```
+8
+```
 
 ```python
 # Vertical alignment
@@ -54,8 +58,10 @@ list = ["abcd", "삼성전자"]
 for i in list :
     print(i, '\t', 100)
 ```
-> abcd &nbsp;&nbsp;&nbsp; 100  
-> 삼성전자 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100
+```
+abcd     100
+삼성전자         100
+```
 
 ```python
 # trial 2
@@ -69,8 +75,10 @@ for i in list :
     i += length * ' '
     print(i, 100, sep = '')
 ```
-> abcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100  
-> 삼성전자&nbsp;&nbsp;100
+```
+abcd      100
+삼성전자  100
+```
 
 
 ## [Iterator (2021.06.17)](/Python#my-python-practice)
