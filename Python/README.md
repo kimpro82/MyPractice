@@ -1,4 +1,5 @@
 # My Python Practice
+- [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
 - [Re.Split (2021.04.29)](/Python#resplit-20210429)
@@ -19,6 +20,58 @@
 - [Password (2019.05.24)](/Python#password-20190524)
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
+
+
+## [Vertical Alignment (2021.12.21)](/Python#my-python-practice)
+- A solution for the problem to **align text vertically** with both of English and Korean letters
+
+```python
+# Korean letter's length is also measured as 1
+abcd = "abcd"
+ssjj = "삼성전자"
+
+print(len(abcd))
+print(len(ssjj))
+```
+> 4  
+> 4
+
+```python
+# How to count Korean letter's length as 2
+length = 0
+for char in ssjj :
+    if char >= '가' :
+        length += 2
+print(length)
+```
+> 8
+
+```python
+# Vertical alignment
+list = ["abcd", "삼성전자"]
+
+# trial 1
+for i in list :
+    print(i, '\t', 100)
+```
+> abcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100  
+> 삼성전자&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
+
+```python
+# trial 2
+for i in list :
+    length = 10
+    for char in i :
+        if char >= '가' :
+            length -= 2
+        else :
+            length -= 1
+    i += length * ' '
+    print(i, 100, sep = '')
+```
+> abcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100  
+> 삼성전자&nbsp;&nbsp;100  
+> (arranged vertically in the console output)
 
 
 ## [Iterator (2021.06.17)](/Python#my-python-practice)
