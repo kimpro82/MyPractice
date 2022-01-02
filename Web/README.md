@@ -13,6 +13,8 @@ HTML, CSS and JavaScript
 - Seperate css id `name` to `name1` and `name2` and maintain the texts in a line
 - Enhancement of Javascript : use `for` statement
 
+![Wedding Anniversary 6](./Image/WeddingAnniversary6.gif)
+
 #### Mainly changed part of WeddingAnniversary6.html
 ```html
 	<div id='name1' style="display:inline">
@@ -52,13 +54,12 @@ function changeColor() {
 setInterval(changeColor, 500);
 ```
 
-#### Result
-![Wedding Anniversary 6](./Image/2021-03-07%20Wedding%20Anniversary%206.gif)
-
 
 ## 5th Wedding Anniversary 2 (2020.03.11)
 - Enhancement of `vertical-align` between text and image
 - No change in `.js` file
+
+![Wedding Anniversary 5 - 2](./Image/WeddingAnniversary5_2.gif)
 
 #### Mainly changed part of WeddingAnniversary5_2.html
 ```html
@@ -98,12 +99,11 @@ setInterval(changeColor, 500);
 }
 ```
 
-#### Result
-![Wedding Anniversary 5 - 2](./Image/2020-03-11%20Wedding%20Anniversary%205_2.gif)
-
 
 ## 5th Wedding Anniversary (2020.03.07)
 - Application of Colorful Show
+
+![Wedding Anniversary](./Image/WeddingAnniversary5.gif)
 
 #### WeddingAnniversary5.html
 ```html
@@ -176,12 +176,11 @@ function changeColor() {
 setInterval(changeColor, 500);
 ```
 
-#### Result
-![Wedding Anniversary](./Image/2020-03-07%20Wedding%20Anniversary%205.gif)
-
 
 ## Colorful Show (2020.03.04)
 This is a colorful 'Show'.
+
+![Colorful Show](./Image/ColorfulShow.gif)
 
 #### ColorfulShow.html
 ```html
@@ -242,9 +241,6 @@ function changeColor() {
 
 setInterval(changeColor, 1000);
 ```
-
-#### Result
-![Colorful Show](./Image/2020-03-05-23%20Colorful-Show.gif)
 
 
 ## Ganzi.html (2017.04.03)
