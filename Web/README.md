@@ -15,10 +15,11 @@ HTML, CSS and JavaScript
 - Compare the results from where the `script` tag is located
 - Let's use **External `.js` file** and a keyword **`defer`**
 
-#### Case 1. Script tag in the Head
+### Case 1. Script tag in the Head
 
 ![Script tag in the Head](Image/ScriptInHTML_Head.PNG)
 
+#### ScriptInHTML_Head.html
 ```html
 <!DOCTYPE html>
 
@@ -41,6 +42,7 @@ HTML, CSS and JavaScript
 
 </html>
 ```
+#### ScriptInHTML_Head.css
 ```css
 p {
 	text-align: center;
@@ -52,10 +54,11 @@ p {
 }
 ```
 
-#### Case 2. Script tag in the Bottom of the Body
+### Case 2. Script tag in the Bottom of the Body
 
 ![Script tag in the Bottom of the Body](Image/ScriptInHTML_BodyEnd.PNG)
 
+#### ScriptInHTML_BodyEnd.html
 ```html
 <!DOCTYPE html>
 
@@ -79,10 +82,11 @@ p {
 </html>
 ```
 
-#### Case 3. Script tag in the External `.js` file
+### Case 3. Script tag in the External `.js` file
 
 ![Script tag in the External .js file](Image/ScriptInExternalJS.PNG)
 
+#### ScriptInExternalJS.html
 ```html
 <!DOCTYPE html>
 
@@ -106,9 +110,11 @@ p {
 
 </html>
 ```
+#### ScriptInExternalJS.js
 ```js
 document.getElementsByTagName('p')[0].style.color = "red"
 ```
+
 
 ## 6th Wedding Anniversary (2021.03.11)
 - Annual Update : change images of the heart and number
