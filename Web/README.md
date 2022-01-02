@@ -14,7 +14,7 @@ HTML, CSS and JavaScript
 ## [Script Tag's Location (2022.01.02)](#my-web-practice)
 - A topic suggested from my friend [*Alibaba*](https://github.com/abiriadev)
 - Compare the results from where the `script` tag is located
-- Let's use the **External `.js` file** and the keyword **`defer`**
+- Arrange `script` tag into the `head` with external `.js` file link and don't forget the option **`defer`**
 
 ### Case 1. Script tag in the Head
 
