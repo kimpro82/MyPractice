@@ -1,12 +1,114 @@
 # [My Web Practice]
+
 HTML, CSS and JavaScript
 
+
+- Script Tag's Location (2022.01.02)
 - 6th Wedding Anniversary (2021.03.07)
 - 5th Wedding Anniversary 2 (2020.03.11)
 - 5th Wedding Anniversary (2020.03.07)
 - Colorful Show (2020.03.04)
 - Ganzi.html (2017.04.03)
 
+
+## Script Tag's Location (2022.01.02)
+- Compare the results from where the `script` tag is located
+- Let's use **External `.js` file** and a keyword **`defer`**
+
+#### Case 1. Script tag in the Head
+
+![Script tag in the Head](Image/ScriptInHTML_Head.PNG)
+
+```html
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="EUC-KR">
+        <title>Script in the Head</title>
+        <link rel="stylesheet" href="ScriptInHTML.css">
+        <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
+
+    </head>
+
+    <body>
+
+        <p>Be the reads!</p>
+
+    </body>
+
+</html>
+```
+```css
+p {
+	text-align: center;
+	font-family: Brush Script MT, Georgia, Garamond, Times New Roman, serif;
+	/* font reference ☞ https://www.w3schools.com/css/css_font.asp */
+    color: blue;
+	font-size: 700%;
+	margin: 0;
+}
+```
+
+#### Case 2. Script tag in the Bottom of the Body
+
+![Script tag in the Bottom of the Body](Image/ScriptInHTML_BodyEnd.PNG)
+
+```html
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="EUC-KR">
+        <title>Script in the Bottom of the Body</title>
+        <link rel="stylesheet" href="ScriptInHTML.css">
+
+    </head>
+
+    <body>
+
+        <p>Be the reads!</p>
+        <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
+
+    </body>
+
+</html>
+```
+
+#### Case 3. Script tag in the External `.js` file
+
+![Script tag in the External .js file](Image/ScriptInExternalJS.PNG)
+
+```html
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="EUC-KR">
+        <title>Script in the External .js File</title>
+        <link rel="stylesheet" href="ScriptInHTML.css">
+        <script defer src="ScriptInExternalJS.js"></script>
+        <!-- don't forget "defer" ! -->
+
+    </head>
+
+    <body>
+
+        <p>Be the reads!</p>
+
+    </body>
+
+</html>
+```
+```js
+document.getElementsByTagName('p')[0].style.color = "red"
+```
 
 ## 6th Wedding Anniversary (2021.03.11)
 - Annual Update : change images of the heart and number
