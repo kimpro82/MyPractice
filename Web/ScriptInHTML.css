@@ -1,0 +1,8 @@
+p {
+	text-align: center;
+	font-family: Brush Script MT, Georgia, Garamond, Times New Roman, serif;
+	/* font reference ☞ https://www.w3schools.com/css/css_font.asp */
+    color: blue;
+	font-size: 700%;
+	margin: 0;
+}
