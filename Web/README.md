@@ -8,7 +8,7 @@ HTML, CSS and JavaScript
 - [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
 - [5th Wedding Anniversary (2020.03.07)](/Web#5th-wedding-anniversary-20200307)
 - [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
-- [Ganzi.html (2017.04.03)](/Web#ganzihtml-20170403)
+- [Ganzi (2017.04.03)](/Web#ganzi-20170403)
 
 
 ## [Script Tag's Location (2022.01.02)](#my-web-practice)
@@ -351,8 +351,10 @@ setInterval(changeColor, 1000);
 ```
 
 
-## [Ganzi.html (2017.04.03)](#my-web-practice)
+## [Ganzi (2017.04.03)](#my-web-practice)
 - A simple Javascript practice
+
+![Ganzi](Image/Ganzi.gif)
 
 ```html
 <div id ="Zure">Ganzi</div>
