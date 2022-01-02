@@ -69,11 +69,12 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - MyDate.java (2021.03.08)
 
 ## [My Web Practice](/Web#my-web-practice)
-- 6th Wedding Anniversary (2021.03.07)
-- 5th Wedding Anniversary 2 (2020.03.11)
-- 5th Wedding Anniversary (2020.03.07)
-- Colorful Show (2020.03.04)
-- Ganzi.html (2017.04.03)
+- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
+- [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
+- [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
+- [5th Wedding Anniversary (2020.03.07)](/Web#5th-wedding-anniversary-20200307)
+- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
+- [Ganzi.html (2017.04.03)](/Web#ganzihtml-20170403)
 
 ## [My Golang Practice](/Golang#my-golang-practice)
 - [Grade (2021.12.06)](/Golang#grade-20211206)

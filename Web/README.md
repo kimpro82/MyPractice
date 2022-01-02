@@ -3,17 +3,17 @@
 HTML, CSS and JavaScript
 
 
-- Script Tag's Location (2022.01.02)
-- 6th Wedding Anniversary (2021.03.07)
-- 5th Wedding Anniversary 2 (2020.03.11)
-- 5th Wedding Anniversary (2020.03.07)
-- Colorful Show (2020.03.04)
-- Ganzi.html (2017.04.03)
+- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
+- [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
+- [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
+- [5th Wedding Anniversary (2020.03.07)](/Web#5th-wedding-anniversary-20200307)
+- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
+- [Ganzi.html (2017.04.03)](/Web#ganzihtml-20170403)
 
 
-## Script Tag's Location (2022.01.02)
+## [Script Tag's Location (2022.01.02)](#my-web-practice)
 - Compare the results from where the `script` tag is located
-- Let's use **External `.js` file** and a keyword **`defer`**
+- Let's use the **External `.js` file** and the keyword **`defer`**
 
 ### Case 1. Script tag in the Head
 
@@ -116,7 +116,7 @@ document.getElementsByTagName('p')[0].style.color = "red"
 ```
 
 
-## 6th Wedding Anniversary (2021.03.11)
+## [6th Wedding Anniversary (2021.03.07)](#my-web-practice)
 - Annual Update : change images of the heart and number
 - Seperate css id `name` to `name1` and `name2` and maintain the texts in a line
 - Enhancement of Javascript : use `for` statement
@@ -163,7 +163,7 @@ setInterval(changeColor, 500);
 ```
 
 
-## 5th Wedding Anniversary 2 (2020.03.11)
+## [5th Wedding Anniversary 2 (2020.03.11)](#my-web-practice)
 - Enhancement of `vertical-align` between text and image
 - No change in `.js` file
 
@@ -208,7 +208,7 @@ setInterval(changeColor, 500);
 ```
 
 
-## 5th Wedding Anniversary (2020.03.07)
+## [5th Wedding Anniversary (2020.03.07)](#my-web-practice)
 - Application of Colorful Show
 
 ![Wedding Anniversary](./Image/WeddingAnniversary5.gif)
@@ -285,7 +285,7 @@ setInterval(changeColor, 500);
 ```
 
 
-## Colorful Show (2020.03.04)
+## [Colorful Show (2020.03.04)](#my-web-practice)
 This is a colorful 'Show'.
 
 ![Colorful Show](./Image/ColorfulShow.gif)
@@ -351,7 +351,7 @@ setInterval(changeColor, 1000);
 ```
 
 
-## Ganzi.html (2017.04.03)
+## [Ganzi.html (2017.04.03)](#my-web-practice)
 - A simple Javascript practice
 
 ```html
