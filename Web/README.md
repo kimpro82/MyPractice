@@ -87,7 +87,7 @@ p {
 
 ![Script tag in the External .js file](Image/ScriptInExternalJS.PNG)
 
-#### ScriptInExternalJS.html
+#### ScriptWithDefer.html
 ```html
 <!DOCTYPE html>
 
@@ -111,7 +111,7 @@ p {
 
 </html>
 ```
-#### ScriptInExternalJS.js
+#### ScriptWithDefer.js
 ```js
 document.getElementsByTagName('p')[0].style.color = "red"
 ```
