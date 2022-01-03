@@ -1,17 +1,128 @@
 # [My Web Practice]
+
 HTML, CSS and JavaScript
 
-- 6th Wedding Anniversary (2021.03.07)
-- 5th Wedding Anniversary 2 (2020.03.11)
-- 5th Wedding Anniversary (2020.03.07)
-- Colorful Show (2020.03.04)
-- Ganzi.html (2017.04.03)
+
+- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
+- [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
+- [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
+- [5th Wedding Anniversary (2020.03.07)](/Web#5th-wedding-anniversary-20200307)
+- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
+- [Ganzi (2017.04.03)](/Web#ganzi-20170403)
 
 
-## 6th Wedding Anniversary (2021.03.11)
+## [Script Tag's Location (2022.01.02)](#my-web-practice)
+- A topic suggested from my friend [*Alibaba*](https://github.com/abiriadev)
+- Compare the results from where the `script` tag is located
+- Arrange `script` tag into the `head` with external `.js` file link and don't forget the option **`defer`**
+
+### Case 1. Script tag in the Head
+
+![Script tag in the Head](Image/ScriptInHTML_Head.PNG)
+
+#### ScriptInHTML_Head.html
+```html
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="EUC-KR">
+        <title>Script in the Head</title>
+        <link rel="stylesheet" href="ScriptInHTML.css">
+        <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
+
+    </head>
+
+    <body>
+
+        <p>Be the reads!</p>
+
+    </body>
+
+</html>
+```
+#### ScriptInHTML_Head.css
+```css
+p {
+	text-align: center;
+	font-family: Brush Script MT, Georgia, Garamond, Times New Roman, serif;
+	/* font reference ☞ https://www.w3schools.com/css/css_font.asp */
+    color: blue;
+	font-size: 700%;
+	margin: 0;
+}
+```
+
+### Case 2. Script tag in the Bottom of the Body
+
+![Script tag in the Bottom of the Body](Image/ScriptInHTML_BodyEnd.PNG)
+
+#### ScriptInHTML_BodyEnd.html
+```html
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="EUC-KR">
+        <title>Script in the Bottom of the Body</title>
+        <link rel="stylesheet" href="ScriptInHTML.css">
+
+    </head>
+
+    <body>
+
+        <p>Be the reads!</p>
+        <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
+
+    </body>
+
+</html>
+```
+
+### Case 3. Script tag with `defer` option
+
+![Script tag in the External .js file](Image/ScriptInExternalJS.PNG)
+
+#### ScriptWithDefer.html
+```html
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="EUC-KR">
+        <title>Script in the External .js File</title>
+        <link rel="stylesheet" href="ScriptInHTML.css">
+        <script defer src="ScriptInExternalJS.js"></script>
+        <!-- don't forget "defer" ! -->
+
+    </head>
+
+    <body>
+
+        <p>Be the reads!</p>
+
+    </body>
+
+</html>
+```
+#### ScriptWithDefer.js
+```js
+document.getElementsByTagName('p')[0].style.color = "red"
+```
+
+
+## [6th Wedding Anniversary (2021.03.07)](#my-web-practice)
 - Annual Update : change images of the heart and number
 - Seperate css id `name` to `name1` and `name2` and maintain the texts in a line
 - Enhancement of Javascript : use `for` statement
+
+![Wedding Anniversary 6](./Image/WeddingAnniversary6.gif)
 
 #### Mainly changed part of WeddingAnniversary6.html
 ```html
@@ -52,13 +163,12 @@ function changeColor() {
 setInterval(changeColor, 500);
 ```
 
-#### Result
-![Wedding Anniversary 6](./Image/2021-03-07%20Wedding%20Anniversary%206.gif)
 
-
-## 5th Wedding Anniversary 2 (2020.03.11)
+## [5th Wedding Anniversary 2 (2020.03.11)](#my-web-practice)
 - Enhancement of `vertical-align` between text and image
 - No change in `.js` file
+
+![Wedding Anniversary 5 - 2](./Image/WeddingAnniversary5_2.gif)
 
 #### Mainly changed part of WeddingAnniversary5_2.html
 ```html
@@ -98,12 +208,11 @@ setInterval(changeColor, 500);
 }
 ```
 
-#### Result
-![Wedding Anniversary 5 - 2](./Image/2020-03-11%20Wedding%20Anniversary%205_2.gif)
 
-
-## 5th Wedding Anniversary (2020.03.07)
+## [5th Wedding Anniversary (2020.03.07)](#my-web-practice)
 - Application of Colorful Show
+
+![Wedding Anniversary](./Image/WeddingAnniversary5.gif)
 
 #### WeddingAnniversary5.html
 ```html
@@ -176,12 +285,11 @@ function changeColor() {
 setInterval(changeColor, 500);
 ```
 
-#### Result
-![Wedding Anniversary](./Image/2020-03-07%20Wedding%20Anniversary%205.gif)
 
-
-## Colorful Show (2020.03.04)
+## [Colorful Show (2020.03.04)](#my-web-practice)
 This is a colorful 'Show'.
+
+![Colorful Show](./Image/ColorfulShow.gif)
 
 #### ColorfulShow.html
 ```html
@@ -243,12 +351,11 @@ function changeColor() {
 setInterval(changeColor, 1000);
 ```
 
-#### Result
-![Colorful Show](./Image/2020-03-05-23%20Colorful-Show.gif)
 
-
-## Ganzi.html (2017.04.03)
+## [Ganzi (2017.04.03)](#my-web-practice)
 - A simple Javascript practice
+
+![Ganzi](Image/Ganzi.gif)
 
 ```html
 <div id ="Zure">Ganzi</div>
