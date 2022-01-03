@@ -83,7 +83,7 @@ p {
 </html>
 ```
 
-### Case 3. Script tag in the External `.js` file
+### Case 3. Script tag with `defer` option
 
 ![Script tag in the External .js file](Image/ScriptInExternalJS.PNG)
 
