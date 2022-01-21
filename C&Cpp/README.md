@@ -2,10 +2,43 @@
 
 The final destination of programming
 
+- [Prevent Garbage Value (2022.01.21)]()
 - [Containers : Deque, Stack and Queue (2021.10.14)](/C&Cpp#containers--deque-stack-and-queue-20211014)
 - [Template (2021.07.23)](/C%26Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
+
+※ All codes include the following lines. :
+```cpp
+#include <iostream>
+
+using namespace std;
+```
+
+
+## [Prevent Garbage Value (2022.01.21)](#my-cc-practice)
+
+- The way to prevent **variable declaration** from **garbage value**
+
+#### PreventGarbageValue.cpp
+```cpp
+int main()
+{
+    int garbage;
+    int noGarbage{};
+
+    cout << garbage << endl;
+    cout << noGarbage << endl;
+
+    return 0;
+}
+```
+
+#### Output
+```
+2686816
+0
+```
 
 
 ## [Containers : Deque, Stack and Queue (2021.10.14)](#my-cc-practice)
@@ -14,13 +47,6 @@ The final destination of programming
 - Especially `Deque` is something greater than `vector` and `list`
 - `Prior Queue` that is also one of the container adaptor from Deque and consists of `heap` will be continued ……
 - Reference ☞ [코딩 테스트를 위한 자료 구조와 알고리즘 with C++ (길벗, 2020)](https://github.com/gilbutITbook/080239)
-
-※ All codes include the following lines. :
-```cpp
-#include <iostream>
-
-using namespace std;
-```
 
 #### Containers_Deque.cpp
 ```cpp
