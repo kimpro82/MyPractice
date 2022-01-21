@@ -2,7 +2,9 @@
 
 The final destination of programming
 
-- [Prevent Garbage Value (2022.01.21)]()
+### \<List>
+
+- [Prevent Garbage Value (2022.01.21)](/C&Cpp#prevent-garbage-value-20220121)
 - [Containers : Deque, Stack and Queue (2021.10.14)](/C&Cpp#containers--deque-stack-and-queue-20211014)
 - [Template (2021.07.23)](/C%26Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
