@@ -2,6 +2,7 @@
 
 The final destination of programming
 
+
 ### \<List>
 
 - [Prevent Garbage Value (2022.01.21)](/C&Cpp#prevent-garbage-value-20220121)
@@ -18,7 +19,7 @@ using namespace std;
 ```
 
 
-## [Prevent Garbage Value (2022.01.21)](#my-cc-practice)
+## [Prevent Garbage Value (2022.01.21)](#list)
 
 - The way to prevent **variable declaration** from **garbage value**
 
@@ -43,7 +44,7 @@ int main()
 ```
 
 
-## [Containers : Deque, Stack and Queue (2021.10.14)](#my-cc-practice)
+## [Containers : Deque, Stack and Queue (2021.10.14)](#list)
 
 - `STL` Practice : Container `Deque` and its adaptors `Stack` and `Queue`
 - Especially `Deque` is something greater than `vector` and `list`
@@ -205,7 +206,7 @@ int main()
 > The que is empty.
 
 
-## [Template (2021.07.23)](#my-cc-practice)
+## [Template (2021.07.23)](#list)
 
 - Significantly advanced code using **template** from the previous `StackOverflow.cpp`
 - I am so proud!
@@ -251,7 +252,7 @@ int main()
 > b : 1 + 1 = 1
 
 
-## [Stack Overflow (2021.05.18)](#my-cc-practice)
+## [Stack Overflow (2021.05.18)](#list)
 
 - "Let's conquer the **stack overflow** problem!"
 - …… a stupid conquerer who didn't know **template** and **generic function** said.
@@ -341,7 +342,7 @@ int main()
 > bool (1) : 1 + 1 = 1
 
 
-## [Hello World (2021.05.12)](#my-cc-practice)
+## [Hello World (2021.05.12)](#list)
 
 - My first run of **`C`/`C++`** code in **Visual Studio Code**
 - Environmental setting was harder than coding
