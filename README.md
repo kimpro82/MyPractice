@@ -1,11 +1,17 @@
 # [My Practice]
+
 miscellaneous petty works
 
+
 ## [Github Dashboard](/GithubDashboard#my-python-practice---github-dashboard)
+
 making a dashboard for managing Gitgub contributions by using `Github API`
+
 - Outline (2020.04.19)
 
+
 ## [My R Practice](/R#my-r-practice)
+
 - [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
 - [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
@@ -16,7 +22,9 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
 - [RGB (2017.04.14)](/R#rgb-20170414)
 
+
 ## [My Python Practice](/Python#my-python-practice)
+
 - [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
@@ -39,7 +47,9 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
 
+
 ## [My VBA Practice](/VBA#my-vba-practice)
+
 - [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
 - [Variable Scope (2011.11.29)](/VBA#variable-scope-20111129)
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
@@ -51,24 +61,33 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
 - [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
 
+
 ## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
+
+- [Prevent Garbage Value (2022.01.21)](/C&Cpp#prevent-garbage-value-20220121)
 - [Containers : Deque, Stack and Queue (2021.10.14)](/C&Cpp#containers--deque-stack-and-queue-20211014)
 - [Template (2021.07.23)](/C%26Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
+
 ## [My C# Practice](/CSharp#my-c-practice)
-- GCD.cs (2021.03.30)
-- TerminalGUI.cs (2021.03.24)
-- Polymorphism.cs (2021.02.18)
-- Overloading.cs (2021.02.02)
+
+- GCD (2021.03.30)
+- Terminal GUI (2021.03.24)
+- Polymorphism (2021.02.18)
+- Overloading (2021.02.02)
+
 
 ## [My Java Practice](/Java#my-java-practice)
-- MyThread.java (2021.04.13)
-- Swing.java (2021.04.06)
-- MyDate.java (2021.03.08)
+
+- Thread (2021.04.13)
+- Swing (2021.04.06)
+- Date (2021.03.08)
+
 
 ## [My Web Practice](/Web#my-web-practice)
+
 - [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
 - [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
 - [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
@@ -76,12 +95,18 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
 - [Ganzi (2017.04.03)](/Web#ganzi-20170403)
 
+
 ## [My Golang Practice](/Golang#my-golang-practice)
+
 - [Grade (2021.12.06)](/Golang#grade-20211206)
 
+
 ## [My QBasic Practice](/QBasic#my-qbasic-practice)
+
 - Play Music (2021.02.20)
 - Hello World (2020.02.27)
 
+
 ## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
+
 - [Stack Overflow (2021.12.07)](/AutoHotKey#stack-overflow-20211207)
