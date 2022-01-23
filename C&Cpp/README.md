@@ -21,7 +21,7 @@ using namespace std;
 
 ## [Prevent Garbage Value (2022.01.21)](#list)
 
-- The way to prevent **variable declaration** from **garbage value**
+- The way to prevent variable declaration from garbage value
 
 #### PreventGarbageValue.cpp
 ```cpp
