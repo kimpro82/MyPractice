@@ -1,2 +1,5 @@
+Web/bootstrap5/ linguist-vendored
+C&Cpp/*.s linguist-vendored
+
 VBA/**/*.bas linguist-language=VBA
 QBasic/**/*.bas linguist-language=BASIC
