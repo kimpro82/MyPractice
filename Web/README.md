@@ -3,6 +3,9 @@
 HTML, CSS and JavaScript
 
 
+### List
+
+- [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
 - [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
 - [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
 - [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
@@ -11,7 +14,71 @@ HTML, CSS and JavaScript
 - [Ganzi (2017.04.03)](/Web#ganzi-20170403)
 
 
-## [Script Tag's Location (2022.01.02)](#my-web-practice)
+## [Bootstrap : Magic Stick (2022.01.28)](#list)
+- A practice of **Bootstrap** (5.1.3) : use `container-fluid` `mx` `my` `row` `col`
+- Originally I was going to apply **grid**, but to fail.
+
+![Bootstrap : Magic Stick](Image/BootstrapMagicStick.gif)
+
+#### BootstrapMagicStick.html
+```html
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Magic Stick by Bootstrap</title>
+        <link href="./bootstrap5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <script defer src="BootstrapMagicStick.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div class="container-fluid mx-3 my-5">
+            <div class="row">
+                <div class="col bg-primary text-center">
+                    <h1><span id="text">여의봉아 여의봉아</span></h1>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
+```
+
+#### BootstrapMagicStick.js
+```js
+var direction = false;
+var width = 400;
+// console.log(width);
+
+function resize()
+{
+    // Set direction and text content
+    if (width < 450 && direction == false)
+    {
+        direction = !direction;
+        document.getElementById("text").textContent = "길어져라 길어져라";
+    }
+    else if (width > 1000 && direction == true)
+    {
+        direction = !direction;
+        document.getElementById("text").textContent = "짧아져라 짧아져라";
+    }
+
+    // Modify the body's width
+    if (direction == true) { document.body.style.width = (Number(width) + 50) + 'px' }
+    else  { document.body.style.width = (Number(width) - 50) + 'px'}
+
+    width = document.body.style.width.replace(/[^0-9]/g, "");
+    console.log(direction, width);
+}
+
+setInterval(resize, 100);
+```
+
+
+## [Script Tag's Location (2022.01.02)](#list)
 - A topic suggested from my friend [*Alibaba*](https://github.com/abiriadev)
 - Compare the results from where the `script` tag is located
 - Arrange `script` tag into the `head` with external `.js` file link and don't forget the option **`defer`**
@@ -117,7 +184,7 @@ document.getElementsByTagName('p')[0].style.color = "red"
 ```
 
 
-## [6th Wedding Anniversary (2021.03.07)](#my-web-practice)
+## [6th Wedding Anniversary (2021.03.07)](#list)
 - Annual Update : change images of the heart and number
 - Seperate css id `name` to `name1` and `name2` and maintain the texts in a line
 - Enhancement of Javascript : use `for` statement
@@ -164,7 +231,7 @@ setInterval(changeColor, 500);
 ```
 
 
-## [5th Wedding Anniversary 2 (2020.03.11)](#my-web-practice)
+## [5th Wedding Anniversary 2 (2020.03.11)](#list)
 - Enhancement of `vertical-align` between text and image
 - No change in `.js` file
 
@@ -209,7 +276,7 @@ setInterval(changeColor, 500);
 ```
 
 
-## [5th Wedding Anniversary (2020.03.07)](#my-web-practice)
+## [5th Wedding Anniversary (2020.03.07)](#list)
 - Application of Colorful Show
 
 ![Wedding Anniversary](./Image/WeddingAnniversary5.gif)
@@ -286,7 +353,7 @@ setInterval(changeColor, 500);
 ```
 
 
-## [Colorful Show (2020.03.04)](#my-web-practice)
+## [Colorful Show (2020.03.04)](#list)
 This is a colorful 'Show'.
 
 ![Colorful Show](./Image/ColorfulShow.gif)
@@ -352,7 +419,7 @@ setInterval(changeColor, 1000);
 ```
 
 
-## [Ganzi (2017.04.03)](#my-web-practice)
+## [Ganzi (2017.04.03)](#list)
 - A simple Javascript practice
 
 ![Ganzi](Image/Ganzi.gif)
