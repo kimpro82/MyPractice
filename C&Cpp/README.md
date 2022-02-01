@@ -78,11 +78,8 @@ int main()
 }
 ```
 
-#### Output
-```
-2686816
-0
-```
+> 2686816  
+> 0
 
 
 ## [Containers : Deque, Stack and Queue (2021.10.14)](#list)
