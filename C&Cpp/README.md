@@ -57,7 +57,10 @@ int main()
 }
 ```
 
-> Good-bye 2 0 2 1
+#### Output
+```
+Good-bye 2 0 2 1
+```
 
 
 ## [Prevent Garbage Value (2022.01.21)](#list)
@@ -78,8 +81,11 @@ int main()
 }
 ```
 
-> 2686816  
-> 0
+#### Output
+```
+2686816
+0
+```
 
 
 ## [Containers : Deque, Stack and Queue (2021.10.14)](#list)
