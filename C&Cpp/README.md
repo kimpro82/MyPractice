@@ -5,18 +5,59 @@ The final destination of programming
 
 ### \<List>
 
+- [Increment and Decrement Operators (2022.02.01)]()
 - [Prevent Garbage Value (2022.01.21)](/C&Cpp#prevent-garbage-value-20220121)
 - [Containers : Deque, Stack and Queue (2021.10.14)](/C&Cpp#containers--deque-stack-and-queue-20211014)
 - [Template (2021.07.23)](/C%26Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C%26Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C%26Cpp#hello-world-20210512)
 
-※ All codes include the following lines. :
+※ All codes include the following top lines. :
+```c
+// C
+#include <stdio.h>
+```
 ```cpp
+// CPP
 #include <iostream>
 
 using namespace std;
 ```
+
+
+## [Increment and Decrement Operators (2022.02.01)](#list)
+
+- Some extreme(?) experiments about `++` and `--` operators
+
+#### IncDecOperator.c
+```c
+int main()
+{
+    int a = 1, b = 1, c = 1, d = 1, e = 1, f = 1;
+
+    a++;
+    --b;
+    // no problem
+
+    c = ++c;
+    d = d++;
+    // gcc - no problem
+    // clang - warning: multiple unsequenced modifications to 'c' [-Wunsequenced]
+
+    // e = ++e--;
+    // ++e--;
+    // f++--++;
+    // f++++++;
+    // gcc - error: lvalue required as increment operand
+    // clang - error: expression is not assignable
+
+    printf("Good-bye %d %d %d %d\n", a, b, c, d);
+
+    return 0;
+}
+```
+
+> Good-bye 2 0 2 1
 
 
 ## [Prevent Garbage Value (2022.01.21)](#list)
