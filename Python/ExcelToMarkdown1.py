@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import re
 
-path = 'ExcelToMarkdown.csv'
+path = "ExcelToMarkdown.csv"
 
 # Check if the file exists
 if os.path.isfile(path) :
@@ -17,11 +17,11 @@ if os.path.isfile(path) :
     print(md, '\n')
 
     # Modify details
-    # md2 = re.sub("---*", '--', md)
-    # md2 = re.sub(":--", ':-:', md2)
-    # md2 = re.sub("nan", '', md2)
-    # md2 = re.sub("  *", ' ', md2)
-    md2 = re.sub("nan", '   ', md)
+    # md2 = re.sub("---*", "--", md)
+    # md2 = re.sub(":--", ":-:", md2)
+    # md2 = re.sub("nan", "", md2)
+    # md2 = re.sub("  *", " ", md2)
+    md2 = re.sub("nan", "   ", md)
     print(md2, '\n')
 
     # Save as a .txt file
