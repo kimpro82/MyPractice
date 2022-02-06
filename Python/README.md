@@ -159,6 +159,7 @@ if __name__ == "__main__" :
 | A2       | B<br>2  | [C2](#) |
 | 〃        | `B3`    | *C3*    |
 | <u>〃</u> | __B4__  | ~~C4~~  |
+> \<u> tag doesn't work on the real browser.
 
 
 ## [Excel To Markdown 1 (2021.02.05)](#list)
