@@ -21,7 +21,7 @@ def getFilePath(fileName) :
 # Read data as a pandas dataframe from excel
 def excelToMarkdown(path, ext) :
 
-    excelExtension = (".xls", ".xlsx", ".xlsm", ".slxb", ".odf", ".ods", ".odt")
+    excelExtension = (".xls", ".xlsx", ".xlsm", ".xlsb", ".odf", ".ods", ".odt")
     # reference ☞ https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html
 
     if ext.lower() in excelExtension :
