@@ -18,14 +18,14 @@ if os.path.isfile(path) :
 
     # Modify details
     # md2 = re.sub("---*", '--', md)
-    # md2 = re.sub(":--", '-:-', md2)
+    # md2 = re.sub(":--", ':-:', md2)
     # md2 = re.sub("nan", '', md2)
     # md2 = re.sub("  *", ' ', md2)
     md2 = re.sub("nan", '   ', md)
     print(md2, '\n')
 
     # Save as a .txt file
-    saveFileName = re.sub("[.]\w*", ".txt", path)   # The file name should not include '.' 
+    saveFileName = re.sub("[.]\w*", ".md", path)   # The file name should not include '.' 
     # print(saveFileName)                           # test : ok
     if os.path.isfile(saveFileName) == False :
         with open(saveFileName, 'w', encoding='utf-8') as f :
