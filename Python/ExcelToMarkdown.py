@@ -13,7 +13,7 @@ if os.path.isfile(path) :
     print(df, '\n')
 
     # Print markdown table
-    md = df.to_markdown()           # string
+    md = df.to_markdown()                           # string
     print(md, '\n')
 
     # Modify details
@@ -25,8 +25,8 @@ if os.path.isfile(path) :
     print(md2, '\n')
 
     # Save as a .txt file
-    saveFileName = re.sub("[.]\w*", ".txt", path)                           # The file name should not include '.' 
-    print(saveFileName)
+    saveFileName = re.sub("[.]\w*", ".txt", path)   # The file name should not include '.' 
+    # print(saveFileName)                           # test : ok
     if os.path.isfile(saveFileName) == False :
         with open(saveFileName, 'w', encoding='utf-8') as f :
             f.write(md2)
