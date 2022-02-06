@@ -11,7 +11,7 @@ def getFilePath(fileName) :
     # print(path)                                   # test : ok
 
     root, ext = os.path.splitext(path)
-    saveFilePath = root + ".txt"
+    saveFilePath = root + ".md"
     # saveFilePath = re.sub("[.]\w*", ".md", path)  # do not need to use regular expression directly
     # print(ext, saveFilePath)                      # test : ok
 
@@ -33,12 +33,12 @@ def excelToMarkdown(path, ext) :
     print(df, '\n')
 
     # Print markdown table
-    md = df.to_markdown()                           # string
+    md = df.to_markdown(index=False)                # string
     print(md, '\n')
 
     # Modify details
     md = re.sub("---*", '--', md)
-    md = re.sub(":--", '-:-', md)
+    md = re.sub(":--", ':-:', md)
     # md = re.sub("nan", '', md)
     # md = re.sub("  *", ' ', md)
     md = re.sub("nan", '   ', md)
