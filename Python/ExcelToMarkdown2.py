@@ -37,11 +37,11 @@ def excelToMarkdown(path, ext) :
     print(md, '\n')
 
     # Modify details
-    md = re.sub("---*", '--', md)
-    md = re.sub(":--", ':-:', md)
-    # md = re.sub("nan", '', md)
-    # md = re.sub("  *", ' ', md)
-    md = re.sub("nan", '   ', md)
+    md = re.sub("---*", "--", md)
+    md = re.sub(":--", ":-:", md)
+    # md = re.sub("nan", "", md)
+    # md = re.sub("  *", " ", md)
+    md = re.sub("nan", "   ", md)
     print(md, '\n')
 
     return md
@@ -49,7 +49,7 @@ def excelToMarkdown(path, ext) :
 
 # Save as a .md file
 def saveMarkdown(md, saveFilePath) :
-    # if os.path.isfile(saveFilePath) == False :
+    # if os.path.isfile(saveFilePath) == False :    # check in __main__
     with open(saveFilePath, 'w', encoding='utf-8') as f :
         f.write(md)
         f.close()
@@ -59,7 +59,7 @@ def saveMarkdown(md, saveFilePath) :
 # Run
 if __name__ == "__main__" :
 
-    fileName = 'ExcelToMarkdown2.csv'
+    fileName = "ExcelToMarkdown2.csv"
     # The stem of the filename should not include '.'
     path, ext, saveFilePath = getFilePath(fileName)
 
