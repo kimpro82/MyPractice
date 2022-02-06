@@ -25,7 +25,7 @@ if os.path.isfile(path) :
     print(md2, '\n')
 
     # Save as a .txt file
-    saveFileName = re.sub("[.]\w*", ".md", path)   # The file name should not include '.' 
+    saveFileName = re.sub("[.]\w*", ".md", path)    # The file name should not include '.' 
     # print(saveFileName)                           # test : ok
     if os.path.isfile(saveFileName) == False :
         with open(saveFileName, 'w', encoding='utf-8') as f :

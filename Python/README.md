@@ -161,9 +161,9 @@ if __name__ == "__main__" :
 
 
 ## [Excel To Markdown 1 (2021.02.05)](#list)
-- Convert **Excel(.csv)** data to **Github markdown table**
+- Convert **Excel**(`.csv`) data to **Github markdown table**
 - Use `pandas` for reading and converting data, `re` for customizing the markdaown table
-- The result will be saved in `.md` file that has the same name with `.csv` file after check if an overwriting occurs.
+- The result will be saved in a `.md` file that has the same name with the `.csv` file after check if an overwriting occurs.
 
 #### ExcelToMarkdown.csv
 ```csv
@@ -250,7 +250,7 @@ if os.path.isfile(path) :
     print(md2, '\n')
 
     # Save as a .txt file
-    saveFileName = re.sub("[.]\w*", ".md", path)   # The file name should not include '.' 
+    saveFileName = re.sub("[.]\w*", ".md", path)    # The file name should not include '.' 
     # print(saveFileName)                           # test : ok
     if os.path.isfile(saveFileName) == False :
         with open(saveFileName, 'w', encoding='utf-8') as f :
