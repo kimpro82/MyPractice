@@ -90,9 +90,9 @@ def excelToMarkdown(path, ext) :
     # Modify details
     md = re.sub("---*", "--", md)
     md = re.sub(":--", ":-:", md)
-    # md = re.sub("nan", "", md)
-    # md = re.sub("  *", " ", md)
-    md = re.sub("nan", "   ", md)
+    md = re.sub("nan", "", md)
+    # md = re.sub("nan", "   ", md)
+    md = re.sub("  *", " ", md)
     print(md, '\n')
 
     return md
@@ -148,17 +148,17 @@ if __name__ == "__main__" :
 | 〃        | `B3`    | *C3*    |
 | <u>〃</u> | __B4__  | ~~C4~~  |
 ```md
-| **A**    | **B**   | **C**   |
+| **A** | **B** | **C** |
 |:-:|:-:|:-:|
-| A2       | B<br>2  | [C2](#) |
-| 〃        | `B3`    | *C3*    |
-| <u>〃</u> | __B4__  | ~~C4~~  |
+| A2 | B<br>2 | [C2](#) |
+| 〃 | `B3` | *C3* |
+| <u>〃</u> | __B4__ | ~~C4~~ |
 ```
-| **A**    | **B**   | **C**   |
+| **A** | **B** | **C** |
 |:-:|:-:|:-:|
-| A2       | B<br>2  | [C2](#) |
-| 〃        | `B3`    | *C3*    |
-| <u>〃</u> | __B4__  | ~~C4~~  |
+| A2 | B<br>2 | [C2](#) |
+| 〃 | `B3` | *C3* |
+| <u>〃</u> | __B4__ | ~~C4~~ |
 > `<u>` tag doesn't work on the real browser.
 
 

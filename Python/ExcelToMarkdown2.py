@@ -39,9 +39,10 @@ def excelToMarkdown(path, ext) :
     # Modify details
     md = re.sub("---*", "--", md)
     md = re.sub(":--", ":-:", md)
-    # md = re.sub("nan", "", md)
-    # md = re.sub("  *", " ", md)
-    md = re.sub("nan", "   ", md)
+    md = re.sub("nan", "", md)
+    # md = re.sub("nan", "   ", md)
+    md = re.sub("  *", " ", md)
+
     print(md, '\n')
 
     return md
