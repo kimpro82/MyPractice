@@ -32,11 +32,11 @@ I'm sorry `C++` …… I betrayed you.
 
 ## [Excel To Markdown 2 (2021.02.06)](#list)
 - Advanced code from [Excel To Markdown 1 (2021.02.05)](#excel-to-markdown-1-20210205)  
-  - seperate functions of `getFilePath()` `excelToMarkdown()` `saveMarkdown()`
-  - Change sample `.csv` file that can test more markdown syntax
-  - Get the `.md` file name for saving by `os.path.splitext()`, not by `re`
   - Support more file extensions : not only `.csv` but also `.xls` `.xlsx` `.xlsm` `xlsb` and so on
   - Ask if overwrite `.md` file
+  - seperate functions of `getFilePath()` `excelToMarkdown()` `saveMarkdown()`
+  - Get the `.md` file name for saving by `os.path.splitext()`, not by `re`
+  - Change sample `.csv` file that can test more markdown syntax
 
 #### ExcelToMarkdown2.csv
 ```csv
