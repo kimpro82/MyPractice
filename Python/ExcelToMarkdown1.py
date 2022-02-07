@@ -20,8 +20,8 @@ if os.path.isfile(path) :
     # md2 = re.sub("---*", "--", md)
     # md2 = re.sub(":--", ":-:", md2)
     # md2 = re.sub("nan", "", md2)
-    # md2 = re.sub("  *", " ", md2)
     md2 = re.sub("nan", "   ", md)
+    # md2 = re.sub("  *", " ", md2)
     print(md2, '\n')
 
     # Save as a .txt file
