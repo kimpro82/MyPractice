@@ -32,10 +32,10 @@ I'm sorry `C++` …… I betrayed you.
 
 ## [Excel To Markdown 2 (2021.02.06)](#list)
 - Advanced code from [Excel To Markdown 1 (2021.02.05)](#excel-to-markdown-1-20210205)  
-  - Support more file extensions : not only `.csv` but also `.xls` `.xlsx` `.xlsm` `xlsb` and so on
+  - **Support more file extensions** : not only `.csv` but also `.xls` `.xlsx` `.xlsm` `xlsb` and so on
   - Ask if overwrite `.md` file
-  - seperate functions of `getFilePath()` `excelToMarkdown()` `saveMarkdown()`
-  - Get the `.md` file name for saving by `os.path.splitext()`, not by `re`
+  - Improve entire code structure : seperate functions of `getFilePath()` `excelToMarkdown()` `saveMarkdown()`
+  - Get the `.md` file name for saving by `os.path.splitext()` instead of `re`
   - Change sample `.csv` file that can test more markdown syntax
 
 #### ExcelToMarkdown2.csv
@@ -164,8 +164,8 @@ if __name__ == "__main__" :
 
 ## [Excel To Markdown 1 (2021.02.05)](#list)
 - Convert **Excel**(`.csv`) data to **Github markdown table**
-- Use `pandas` for reading and converting data, `re` for customizing the markdaown table
-- The result will be saved in a `.md` file that has the same name with the `.csv` file after check if an overwriting occurs.
+  - Use `pandas` for reading and converting data, `re` for customizing the markdaown table
+  - The result will be saved in a `.md` file that has the same name with the `.csv` file after check if an overwriting occurs.
 
 #### ExcelToMarkdown.csv
 ```csv
