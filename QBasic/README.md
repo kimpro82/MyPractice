@@ -118,7 +118,7 @@ PLAY "MS G8G8A-8A-8 G8G8E-4 G8E-8D8E-8 C6 P8"
 (* These can't be played directly, but played after downloading.)
 
 
-## [Hello World (2020.02.27)](](#list))
+## [Hello World (2020.02.27)](#list)
 
 #### HelloWorld.bas
 
