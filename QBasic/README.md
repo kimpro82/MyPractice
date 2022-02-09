@@ -1,12 +1,66 @@
 # My QBasic Practice
+
 Nostalgia!
-- Play Music (2021.02.20)
-- Hello World (2020.02.27)
+
+### \<List>
+
+- [Draw A Car (2022.02.09)]()
+- [Play Music (2021.02.20)]()
+- [Hello World (2020.02.27)]()
 
 
-### Play Music (2021.02.20)
+## [Draw A Car (2022.02.09)](#list)
+
+![Draw A Car](Images/QB_DrawingCar.PNG)
+
+#### DrawCar.bas
+```bas
+CLS
+
+SCREEN 12       '640 x 480 / 16 colors
+wid% = 640      'Can I get these parameters automatically?
+hei% = 480
+
+'Border
+LINE (10, 10)-(wid% - 10, 10), 15, B
+LINE (10, hei% - 80)-(wid% - 10, hei% - 80), 15, B
+LINE (10, 10)-(10, hei% - 80), 15, B
+LINE (wid% - 10, 10)-(wid% - 10, hei% - 80), 15, B
+
+'Memo
+LOCATE 3, 5
+PRINT "QBasic : My Nostalgia"
+LOCATE 3, 67
+PRINT "2022.02.09"
+
+'Body
+LINE (wid% / 2 - 100, hei% / 2 - 100)-(wid% / 2 + 100, hei% / 2), 7, BF
+LINE (wid% / 2 - 200, hei% / 2)-(wid% / 2 + 200, hei% / 2 + 100), 7, BF
+
+'Windows
+LINE (wid% / 2 - 100, hei% / 2 - 80)-(wid% / 2 - 60, hei% / 2), 9, BF
+LINE (wid% / 2 - 50, hei% / 2 - 80)-(wid% / 2 - 5, hei% / 2), 9, BF
+LINE (wid% / 2 + 5, hei% / 2 - 80)-(wid% / 2 + 50, hei% / 2), 9, BF
+LINE (wid% / 2 + 60, hei% / 2 - 80)-(wid% / 2 + 100, hei% / 2), 9, BF
+
+'Wheels
+CIRCLE (wid% / 2 - 90, hei% / 2 + 100), 50, 8
+CIRCLE (wid% / 2 + 90, hei% / 2 + 100), 50, 8
+PAINT (wid% / 2 - 120, hei% / 2 + 100), 8, 8
+PAINT (wid% / 2 + 120, hei% / 2 + 100), 8, 8
+CIRCLE (wid% / 2 - 90, hei% / 2 + 100), 30, 7
+CIRCLE (wid% / 2 + 90, hei% / 2 + 100), 30, 7
+PAINT (wid% / 2 - 90, hei% / 2 + 100), 7, 7
+PAINT (wid% / 2 + 90, hei% / 2 + 100), 7, 7
+
+END
+```
+
+
+## [Play Music (2021.02.20)](#list)
+
 - Practice of functions : `BEEP` `SOUND` `PLAY`
-- Run by `MS QuickBASIC v4.5`
+- Run by `MS QBasic 4.5`
 
 #### Xerxes.bas
 Using `SHELL` function to borrow the `CLS` command from DOS
@@ -61,7 +115,7 @@ PLAY "MS G8G8A-8A-8 G8G8E-4 G8E-8D8E-8 C6 P8"
 (* These can't be played directly, but played after downloading.)
 
 
-### Hello World (2020.02.27)
+## [Hello World (2020.02.27)](](#list))
 
 #### HelloWorld.bas
 
