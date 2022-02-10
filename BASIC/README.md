@@ -1,6 +1,6 @@
-# My QBasic Practice
+# My Basic Practice
 
-Nostalgia!
+My Nostalgia; codes for **old BASIC product family**(*GW-BASIC*, *QuickBASIC* and so on) before Visual Basic
 
 
 ### \<List>
