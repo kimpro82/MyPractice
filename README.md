@@ -13,7 +13,7 @@ miscellaneous petty works
 - [My Java Practice](#my-java-practice)
 - [My Web Practice](#my-web-practice)
 - [My Golang Practice](#my-golang-practice)
-- [My QBasic Practice](#my-qbasic-practice)
+- [My BASIC Practice](#my-basic-practice)
 - [My Auto Hot Key Practice](#my-auto-hot-key-practice)
 
 
