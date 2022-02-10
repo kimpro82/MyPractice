@@ -32,7 +32,7 @@ LINE (wid% - 10, 10)-(wid% - 10, hei% - 80), 15, B
 
 'Memo
 LOCATE 3, 5
-PRINT "QBasic : My Nostalgia"
+PRINT "QuickBasic : My Nostalgia"
 LOCATE 3, 67
 PRINT "2022.02.09"
 
