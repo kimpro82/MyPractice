@@ -1,6 +1,6 @@
 # My Basic Practice
 
-My Nostalgia; codes for **old BASIC product family** (*GW-BASIC*, *QuickBASIC* and so on) before [*Visual Basic*](../VBA)
+My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASIC* and so on) before [*Visual Basic*](../VBA)
 
 
 ### \<List>
