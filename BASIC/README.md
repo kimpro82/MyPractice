@@ -63,7 +63,7 @@ END
 ## [Play Music (2021.02.20)](#list)
 
 - Practice of functions : `BEEP` `SOUND` `PLAY`
-- Run by `MS QBasic 4.5`
+- Run by `MS QuickBASIC 4.5`
 
 #### Xerxes.bas
 Using `SHELL` function to borrow the `CLS` command from DOS
