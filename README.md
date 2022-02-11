@@ -3,6 +3,21 @@
 miscellaneous petty works
 
 
+### \<List>
+
+- [Github Dashboard](#my-python-practice)
+- [My **Python** Practice](#my-python-practice)
+- [My **R** Practice](#my-r-practice)
+- [My **VBA** Practice](#my-vba-practice)
+- [My **C**/**C++** Practice](#my-cc-practice)
+- [My **C#** Practice](#my-c-practice)
+- [My **Java** Practice](#my-java-practice)
+- [My **Web** Practice](#my-web-practice)
+- [My **Golang** Practice](#my-golang-practice)
+- [My **BASIC** Practice](#my-basic-practice)
+- [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
+
+
 ## [Github Dashboard](/GithubDashboard#my-python-practice---github-dashboard)
 
 making a dashboard for managing Gitgub contributions by using `Github API`
@@ -10,23 +25,10 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Outline (2020.04.19)
 
 
-## [My R Practice](/R#my-r-practice)
-
-- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
-- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
-- Sample Number (2020.06.10)
-- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
-- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
-- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
-- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
-- [RGB (2017.04.14)](/R#rgb-20170414)
-
-
 ## [My Python Practice](/Python#my-python-practice)
 
-- [Excel To Markdown 2 (2021.02.06)](/Python#excel-to-markdown-2-20210206)
-- [Excel To Markdown 1 (2021.02.05)](/Python#excel-to-markdown-1-20210205)
+- [Excel To Markdown 2 (2022.02.06)](/Python#excel-to-markdown-2-20210206)
+- [Excel To Markdown 1 (2022.02.05)](/Python#excel-to-markdown-1-20210205)
 - [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
@@ -48,6 +50,19 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Password (2019.05.24)](/Python#password-20190524)
 - [Class (2018.02.07)](/Python#class-20180207)
 - [While (2017.05.15)](/Python#while-20170515)
+
+
+## [My R Practice](/R#my-r-practice)
+
+- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
+- Sample Number (2020.06.10)
+- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
+- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](/R#rgb-20170414)
 
 
 ## [My VBA Practice](/VBA#my-vba-practice)
@@ -105,10 +120,11 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Grade (2021.12.06)](/Golang#grade-20211206)
 
 
-## [My QBasic Practice](/QBasic#my-qbasic-practice)
+## [My BASIC Practice](/BASIC#my-qbasic-practice)
 
-- Play Music (2021.02.20)
-- Hello World (2020.02.27)
+- [Draw A Car (2022.02.09)](/BASIC#draw-a-car-20220209)
+- [Play Music (2021.02.20)](/BASIC#play-music-20210220)
+- [Hello World (2020.02.27)](/BASIC#hello-world-20200227)
 
 
 ## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
