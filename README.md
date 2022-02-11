@@ -2,19 +2,20 @@
 
 miscellaneous petty works
 
+
 ### \<List>
 
 - [Github Dashboard](#my-python-practice)
-- [My Python Practice](#my-python-practice)
-- [My R Practice](#my-r-practice)
-- [My VBA Practice](#my-vba-practice)
-- [My C/C++ Practice](#my-cc-practice)
-- [My C# Practice](#my-c-practice)
-- [My Java Practice](#my-java-practice)
-- [My Web Practice](#my-web-practice)
-- [My Golang Practice](#my-golang-practice)
-- [My BASIC Practice](#my-basic-practice)
-- [My Auto Hot Key Practice](#my-auto-hot-key-practice)
+- [My **Python** Practice](#my-python-practice)
+- [My **R** Practice](#my-r-practice)
+- [My **VBA** Practice](#my-vba-practice)
+- [My **C**/**C++** Practice](#my-cc-practice)
+- [My **C#** Practice](#my-c-practice)
+- [My **Java** Practice](#my-java-practice)
+- [My **Web** Practice](#my-web-practice)
+- [My **Golang** Practice](#my-golang-practice)
+- [My **BASIC** Practice](#my-basic-practice)
+- [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 
 
 ## [Github Dashboard](/GithubDashboard#my-python-practice---github-dashboard)
