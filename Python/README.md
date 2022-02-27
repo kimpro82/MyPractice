@@ -5,7 +5,7 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
-- [Image Blending (2022.02.27)]()
+- [Image Blending (2022.02.27)](#image-blending-20220227)
 - [Excel To Markdown 2 (2022.02.06)](#excel-to-markdown-2-20220206)
 - [Excel To Markdown 1 (2022.02.05)](#excel-to-markdown-1-20220205)
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
@@ -32,15 +32,18 @@ I'm sorry `C++` …… I betrayed you.
 
 
 ## [Image Blending (2022.02.27)](#list)
+- A practice to blend two images by using `cv2`
+- Generate Ukrainian flag with `numpy`
 - Reference ☞ https://opencv-python.readthedocs.io/
+- ** Pray for Ukraine**
 
+#### ImageBlending.py
 ```py
 # 0. Importing libraries
 import cv2                                                                      # Install "opencv-python", but import "cv2"
 import numpy as np                                                              # for using np.full()
 import matplotlib.pyplot as plt
 ```
-
 ```py
 # 1. Call img1
 path = "Images/UkrainianPresidentZelenskyy.png"                                 # ★ input your image ★
@@ -49,7 +52,6 @@ img1 = cv2.imread(path, cv2.IMREAD_COLOR)
 # cv2.waitKey(0)
 ```
 ![img1](Images/UkrainianPresidentZelenskyy.png)
-
 ```py
 # 2. Call img2 : generate an Ukrainian flag to fit with the img1's size
 h, w, c = img1.shape
@@ -66,7 +68,6 @@ img2 = cv2.vconcat([img2_1, img2_2])
 cv2.imwrite("Images/UkrainianFlag.png", img2)
 ```
 ![img2](Images/UkrainianFlag.png)
-
 ```py
 # 3. Blend two images and save it
 alpha = 0.5
@@ -76,7 +77,6 @@ cv2.waitKey(0)
 cv2.imwrite("Images/UkrainianFlagBlended.png", img3)
 ```
 ![img3](Images/UkrainianFlagBlended.png)
-
 ```py
 # 3.1 Show images on multiple figures
 fig = plt.figure()
