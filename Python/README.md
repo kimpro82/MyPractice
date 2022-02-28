@@ -40,7 +40,7 @@ I'm sorry `C++` …… I betrayed you.
 #### ImageBlending.py
 ```py
 # 0. Importing libraries
-import cv2                                                                      # Install "opencv-python", but import "cv2"
+import cv2                                                                      # install "opencv-python", but import "cv2"
 import numpy as np                                                              # for using np.full()
 import matplotlib.pyplot as plt
 ```
