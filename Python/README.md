@@ -5,8 +5,9 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
-- [Excel To Markdown 2 (2021.02.06)](#excel-to-markdown-2-20210206)
-- [Excel To Markdown 1 (2021.02.05)](#excel-to-markdown-1-20210205)
+- [Image Blending (2022.02.27)](#image-blending-20220227)
+- [Excel To Markdown 2 (2022.02.06)](#excel-to-markdown-2-20220206)
+- [Excel To Markdown 1 (2022.02.05)](#excel-to-markdown-1-20220205)
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](#if--while--true-20210504)
@@ -30,8 +31,69 @@ I'm sorry `C++` …… I betrayed you.
 - [While (2017.05.15)](#while-20170515)
 
 
-## [Excel To Markdown 2 (2021.02.06)](#list)
-- Advanced code from [Excel To Markdown 1 (2021.02.05)](#excel-to-markdown-1-20210205)  
+## [Image Blending (2022.02.27)](#list)
+- A practice to blend two images by using `cv2`
+- Generate Ukrainian flag with `numpy`
+- Reference ☞ https://opencv-python.readthedocs.io/
+- **Pray for Ukraine**
+
+#### ImageBlending.py
+```py
+# 0. Import libraries
+import cv2                                                                      # install "opencv-python", but import "cv2"
+import numpy as np                                                              # for using np.full()
+import matplotlib.pyplot as plt
+```
+```py
+# 1. Call img1
+path = "Images/UkrainianPresidentZelenskyy.png"                                 # ★ input your image ★
+img1 = cv2.imread(path, cv2.IMREAD_COLOR)
+# cv2.imshow("image", img1)                                                     # test : ok
+# cv2.waitKey(0)
+```
+![img1](Images/UkrainianPresidentZelenskyy.png)
+```py
+# 2. Call img2 : generate an Ukrainian flag to fit with the img1's size
+h, w, c = img1.shape
+# print(h, w, c)                                                                # test : ok
+h2_1 = int(h/2)                                                                 # h/2 without int() returns float, that occurs error in np.full()
+h2_2 = h - h2_1
+sapphire = (0xBB, 0x5B, 0x00)                                                   # Ukrainian flag color 1 : not RGB, but BGR
+cyberYellow = (0x00, 0xD5, 0xFF)                                                # Ukrainian flag color 2 : not RGB, but BGR
+img2_1 = np.full((h2_1, w, 3), sapphire, dtype=np.uint8)                        # not "unit8"!
+img2_2 = np.full((h2_2, w, 3), cyberYellow, dtype=np.uint8)
+img2 = cv2.vconcat([img2_1, img2_2])
+# cv2.imshow("image", img2)                                                     # test : ok
+# cv2.waitKey(0)
+cv2.imwrite("Images/UkrainianFlag.png", img2)
+```
+![img2](Images/UkrainianFlag.png)
+```py
+# 3. Blend two images and save it
+alpha = 0.5
+img3 = cv2.addWeighted(img1, alpha, img2, 1 - alpha, 0)
+cv2.imshow("image", img3)
+cv2.waitKey(0)
+cv2.imwrite("Images/UkrainianFlagBlended.png", img3)
+```
+![img3](Images/UkrainianFlagBlended.png)
+```py
+# 3.1 Show images on multiple figures
+fig = plt.figure()
+rows = 1; cols = 3
+ax1 = fig.add_subplot(rows, cols, 1)
+ax1.imshow(img1)
+ax2 = fig.add_subplot(rows, cols, 2)
+ax2.imshow(img2)
+ax3 = fig.add_subplot(rows, cols, 3)
+ax3.imshow(img3)
+plt.show()                                                                      # crazy colors
+```
+![img4](Images/UkrainianFlagMultipleFigures.png)
+
+
+## [Excel To Markdown 2 (2022.02.06)](#list)
+- Advanced code from [Excel To Markdown 1 (2022.02.05)](#excel-to-markdown-1-20220205)  
   - **Support more file extensions** : not only `.csv` but also `.xls` `.xlsx` `.xlsm` `xlsb` and so on
   - Ask if overwrite `.md` file
   - Improve entire code structure : seperate functions of `getFilePath()` `excelToMarkdown()` `saveMarkdown()`
@@ -162,7 +224,7 @@ if __name__ == "__main__" :
 > `<u>` tag doesn't work on the real browser.
 
 
-## [Excel To Markdown 1 (2021.02.05)](#list)
+## [Excel To Markdown 1 (2022.02.05)](#list)
 - Convert **Excel**(`.csv`) data to **Github markdown table**
   - Use `pandas` for reading and converting data, `re` for customizing the markdaown table
   - The result will be saved in a `.md` file that has the same name with the `.csv` file after check if an overwriting occurs.
