@@ -128,10 +128,7 @@ setInterval(resize, 100);
 
 #### ScriptInHTML_Head.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
+……
     <head>
 
         <meta charset="EUC-KR">
@@ -140,14 +137,7 @@ setInterval(resize, 100);
         <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
 
     </head>
-
-    <body>
-
-        <p>Be the reads!</p>
-
-    </body>
-
-</html>
+……
 ```
 #### ScriptInHTML_Head.css
 ```css
@@ -186,9 +176,7 @@ p {
 ……
     <head>
 
-        <meta charset="EUC-KR">
-        <title>Script in the External .js File</title>
-        <link rel="stylesheet" href="ScriptInHTML.css">
+        ……
         <script defer src="ScriptInExternalJS.js"></script>
         <!-- don't forget "defer" ! -->
 
