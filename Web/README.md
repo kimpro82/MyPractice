@@ -51,12 +51,14 @@ body {
 
 #### Mainly changed part of WeddingAnniversary7.js
 ```js
-do                                                                          // to avoid black letters on the black background
-{
-    randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3));           // generate RGB color (decimal)
-    console.log(i, randNumDec[i]);                                          // test : ok
-}
-while (randNumDec[i] == 16777216);                                          // 256^3 = 16777216
+……
+        do                                                                          // to avoid black letters on the black background
+        {
+            randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3));           // generate RGB color (decimal)
+            console.log(i, randNumDec[i]);                                          // test : ok
+        }
+        while (randNumDec[i] == 16777216);                                          // 256^3 = 16777216
+……
 ```
 
 
