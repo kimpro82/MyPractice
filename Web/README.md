@@ -22,6 +22,9 @@ HTML, CSS and JavaScript
 &nbsp;- `html` : relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))  
 &nbsp;- `css` : add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`  
 &nbsp;- `js` : limit letter's color range in consideration of black background (seems trivial)
+- Source :  
+&nbsp;- Heart ☞ https://www.pinterest.co.kr/pin/301881981279040326/  
+&nbsp;- 777 ☞ https://tenor.com/view/jackpot-slot-machine-777-lucky-gif-12992912
 
 ![Wedding Anniversary 7](./Image/WeddingAnniversary7.gif)
 
