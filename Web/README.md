@@ -30,7 +30,9 @@ HTML, CSS and JavaScript
 
 #### Mainly changed part of WeddingAnniversary7.html
 ```html
-<script defer src="WeddingAnniversary7.js"></script>
+……
+        <script defer src="WeddingAnniversary7.js"></script>
+……
 ```
 
 #### Mainly changed part of WeddingAnniversary7.css
