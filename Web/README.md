@@ -17,11 +17,12 @@ HTML, CSS and JavaScript
 
 ## [7th Wedding Anniversary (2022.03.07)](#list)
 
-- Annual Update : change images of the heart and number
-- Relocate `script` tag in `html` (* Reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))
-- Add border with rounded edge
-- Change font from `Comic Sans MS` to `Brush Script MT`
-- Limit letter's color range in consideration of black background (seems trivial)
+- Annual update : change images of the heart and number
+- Technical improvements :  
+&nbsp;- `html` : relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))  
+&nbsp;- `css` : add border with rounded edge  
+&nbsp;- `css` : change font from `Comic Sans MS` to `Brush Script MT`  
+&nbsp;- `js` : limit letter's color range in consideration of black background (seems trivial)
 
 ![Wedding Anniversary 7](./Image/WeddingAnniversary7.gif)
 
