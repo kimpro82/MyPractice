@@ -20,8 +20,7 @@ HTML, CSS and JavaScript
 - Annual update : change images of the heart and number
 - Technical improvements :  
 &nbsp;- `html` : relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))  
-&nbsp;- `css` : add border with rounded edge  
-&nbsp;- `css` : change font from `Comic Sans MS` to `Brush Script MT`  
+&nbsp;- `css` : add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`  
 &nbsp;- `js` : limit letter's color range in consideration of black background (seems trivial)
 
 ![Wedding Anniversary 7](./Image/WeddingAnniversary7.gif)
@@ -66,10 +65,7 @@ while (randNumDec[i] == 16777216);                                          // 2
 
 #### BootstrapMagicStick.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
+……
     <head>
         <meta charset="UTF-8">
         <title>Magic Stick by Bootstrap</title>
@@ -86,8 +82,7 @@ while (randNumDec[i] == 16777216);                                          // 2
             </div>
         </div>
     </body>
-
-</html>
+……
 ```
 
 #### BootstrapMagicStick.js
@@ -172,26 +167,14 @@ p {
 
 #### ScriptInHTML_BodyEnd.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
-    <head>
-
-        <meta charset="EUC-KR">
-        <title>Script in the Bottom of the Body</title>
-        <link rel="stylesheet" href="ScriptInHTML.css">
-
-    </head>
-
+……
     <body>
 
         <p>Be the reads!</p>
         <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
 
     </body>
-
-</html>
+……
 ```
 
 ### Case 3. Script tag with `defer` option
@@ -200,10 +183,7 @@ p {
 
 #### ScriptWithDefer.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
+……
     <head>
 
         <meta charset="EUC-KR">
@@ -213,14 +193,7 @@ p {
         <!-- don't forget "defer" ! -->
 
     </head>
-
-    <body>
-
-        <p>Be the reads!</p>
-
-    </body>
-
-</html>
+……
 ```
 #### ScriptWithDefer.js
 ```js
