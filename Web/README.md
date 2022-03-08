@@ -5,13 +5,63 @@ HTML, CSS and JavaScript
 
 ### List
 
-- [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
-- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
-- [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
-- [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
-- [5th Wedding Anniversary (2020.03.07)](/Web#5th-wedding-anniversary-20200307)
-- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
-- [Ganzi (2017.04.03)](/Web#ganzi-20170403)
+- [7th Wedding Anniversary (2022.03.07)](#7th-wedding-anniversary-20220307)
+- [Bootstrap : Magic Stick (2022.01.28)](#bootstrap--magic-stick-20220128)
+- [Script Tag's Location (2022.01.02)](#script-tags-location-20220102)
+- [6th Wedding Anniversary (2021.03.07)](#6th-wedding-anniversary-20210307)
+- [5th Wedding Anniversary 2 (2020.03.11)](#5th-wedding-anniversary-2-20200311)
+- [5th Wedding Anniversary (2020.03.07)](#5th-wedding-anniversary-20200307)
+- [Colorful Show (2020.03.04)](#colorful-show-20200304)
+- [Ganzi (2017.04.03)](#ganzi-20170403)
+
+
+## [7th Wedding Anniversary (2022.03.07)](#list)
+
+- Annual update : change images of the heart and number
+- Technical improvements :  
+&nbsp;- `html` : relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))  
+&nbsp;- `css` : add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`  
+&nbsp;- `js` : limit letter's color range in consideration of black background (seems trivial)
+- Source :  
+&nbsp;- Heart ☞ https://www.pinterest.co.kr/pin/301881981279040326/  
+&nbsp;- 777 ☞ https://tenor.com/view/jackpot-slot-machine-777-lucky-gif-12992912
+
+![Wedding Anniversary 7](./Image/WeddingAnniversary7.gif)
+
+#### Mainly changed part of WeddingAnniversary7.html
+```html
+……
+        <script defer src="WeddingAnniversary7.js"></script>
+……
+```
+
+#### Mainly changed part of WeddingAnniversary7.css
+```css
+body {
+    ……
+    border: 2px solid white;
+    border-radius: 40px;
+}
+```
+```css
+#name1 {
+	……
+	font-family: "Brush Script MT", "Comic Sans MS", Times, serif;
+	……
+}
+```
+
+#### Mainly changed part of WeddingAnniversary7.js
+```js
+……
+        do                                                                          // to avoid black letters on the black background
+        {
+            randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3));           // generate RGB color (decimal)
+            console.log(i, randNumDec[i]);                                          // test : ok
+        }
+        while (randNumDec[i] == 16777216);                                          // 256^3 = 16777216
+……
+```
 
 
 ## [Bootstrap : Magic Stick (2022.01.28)](#list)
@@ -22,10 +72,7 @@ HTML, CSS and JavaScript
 
 #### BootstrapMagicStick.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
+……
     <head>
         <meta charset="UTF-8">
         <title>Magic Stick by Bootstrap</title>
@@ -42,8 +89,7 @@ HTML, CSS and JavaScript
             </div>
         </div>
     </body>
-
-</html>
+……
 ```
 
 #### BootstrapMagicStick.js
@@ -89,10 +135,7 @@ setInterval(resize, 100);
 
 #### ScriptInHTML_Head.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
+……
     <head>
 
         <meta charset="EUC-KR">
@@ -101,14 +144,7 @@ setInterval(resize, 100);
         <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
 
     </head>
-
-    <body>
-
-        <p>Be the reads!</p>
-
-    </body>
-
-</html>
+……
 ```
 #### ScriptInHTML_Head.css
 ```css
@@ -128,26 +164,14 @@ p {
 
 #### ScriptInHTML_BodyEnd.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
-    <head>
-
-        <meta charset="EUC-KR">
-        <title>Script in the Bottom of the Body</title>
-        <link rel="stylesheet" href="ScriptInHTML.css">
-
-    </head>
-
+……
     <body>
 
         <p>Be the reads!</p>
         <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
 
     </body>
-
-</html>
+……
 ```
 
 ### Case 3. Script tag with `defer` option
@@ -156,27 +180,15 @@ p {
 
 #### ScriptWithDefer.html
 ```html
-<!DOCTYPE html>
-
-<html>
-
+……
     <head>
 
-        <meta charset="EUC-KR">
-        <title>Script in the External .js File</title>
-        <link rel="stylesheet" href="ScriptInHTML.css">
+        ……
         <script defer src="ScriptInExternalJS.js"></script>
         <!-- don't forget "defer" ! -->
 
     </head>
-
-    <body>
-
-        <p>Be the reads!</p>
-
-    </body>
-
-</html>
+……
 ```
 #### ScriptWithDefer.js
 ```js

@@ -107,6 +107,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Web Practice](/Web#my-web-practice)
 
+- [7th Wedding Anniversary (2022.03.07)](/Web#7th-wedding-anniversary-20220307)
 - [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
 - [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
 - [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
