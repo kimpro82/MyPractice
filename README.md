@@ -108,6 +108,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 ## [My Web Practice](/Web#my-web-practice)
 
 - [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
+- [Dove's Step 1 (2022.01.13)](/Web#doves-step-1-20220113)
 - [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
 - [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
 - [Ganzi (2017.04.03)](/Web#ganzi-20170403)
