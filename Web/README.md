@@ -85,7 +85,7 @@ setInterval(resize, 100);
 2. Draw them more naturally with angle and speed
 3. Make them disappear gradually like ont the natural snowfield
 
-![Dove's Step 1](Image/DoveStep01.gif)
+![Dove's Step 1](Images/DoveStep01.gif)
 
 #### HTML
 ```html
