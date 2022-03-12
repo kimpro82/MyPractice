@@ -18,7 +18,7 @@ HTML, CSS and JavaScript
 
 ![Bootstrap : Magic Stick](Images/BootstrapMagicStick.gif)
 
-#### BootstrapMagicStick.html
+#### `BootstrapMagicStick.html`
 ```html
 ……
     <head>
@@ -40,7 +40,7 @@ HTML, CSS and JavaScript
 ……
 ```
 
-#### BootstrapMagicStick.js
+#### `BootstrapMagicStick.js`
 ```js
 var direction = false;
 var width = 400;
@@ -87,7 +87,7 @@ setInterval(resize, 100);
 
 ![Dove's Step 1](Images/DoveStep01.gif)
 
-#### HTML
+#### `DoveStep.html`
 ```html
 <!doctype html>
 
@@ -117,7 +117,7 @@ setInterval(resize, 100);
 </html>
 ```
 
-#### CSS
+#### `DoveStep.css`
 ```css
 body
 {
@@ -153,7 +153,7 @@ body
 }
 ```
 
-#### Java Script
+#### `DoveStep.js`
 ```js
 // Declare global variables
 const canvas = document.getElementById("canvas");
@@ -222,7 +222,7 @@ function footPrint()
 setInterval(randomWalk, interval);
 ```
 
-#### Java Script : Test
+#### `Test.js`
 ```js
 // Rounding off in JavaScript
 
@@ -269,7 +269,7 @@ console.log(Math.cos(Math.PI * 360 / 180))  // 1
 
 ![Script tag in the Head](Images/ScriptInHTML_Head.PNG)
 
-#### ScriptInHTML_Head.html
+#### `ScriptInHTML_Head.html`
 ```html
 ……
     <head>
@@ -282,7 +282,7 @@ console.log(Math.cos(Math.PI * 360 / 180))  // 1
     </head>
 ……
 ```
-#### ScriptInHTML_Head.css
+#### `ScriptInHTML_Head.css`
 ```css
 p {
 	text-align: center;
@@ -298,7 +298,7 @@ p {
 
 ![Script tag in the Bottom of the Body](Images/ScriptInHTML_BodyEnd.PNG)
 
-#### ScriptInHTML_BodyEnd.html
+#### `ScriptInHTML_BodyEnd.html`
 ```html
 ……
     <body>
@@ -314,7 +314,7 @@ p {
 
 ![Script tag in the External .js file](Images/ScriptInExternalJS.PNG)
 
-#### ScriptWithDefer.html
+#### `ScriptWithDefer.html`
 ```html
 ……
     <head>
@@ -326,7 +326,7 @@ p {
     </head>
 ……
 ```
-#### ScriptWithDefer.js
+#### `ScriptWithDefer.js`
 ```js
 document.getElementsByTagName('p')[0].style.color = "red"
 ```
@@ -337,7 +337,7 @@ This is a colorful 'Show'.
 
 ![Colorful Show](Images/ColorfulShow.gif)
 
-#### ColorfulShow.html
+#### `ColorfulShow.html`
 ```html
 <!DOCTYPE html>
 
@@ -363,7 +363,7 @@ This is a colorful 'Show'.
 </html>
 ```
 
-#### ColorfulShow.css
+#### `ColorfulShow.css`
 ```css
 @charset "EUC-KR";
 
@@ -374,7 +374,7 @@ This is a colorful 'Show'.
 }
 ```
 
-#### ColorfulShow.js
+#### `ColorfulShow.js`
 ```javascript
 function changeColor() {
 	randNumDec = Math.floor(Math.random() * Math.pow(256, 3));
@@ -403,6 +403,7 @@ setInterval(changeColor, 1000);
 
 ![Ganzi](Images/Ganzi.gif)
 
+#### `Ganzi.html`
 ```html
 <div id ="Zure">Ganzi</div>
 
