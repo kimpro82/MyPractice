@@ -6,7 +6,7 @@ HTML, CSS and JavaScript
 ### List
 
 - [Bootstrap : Magic Stick (2022.01.28)](#bootstrap--magic-stick-20220128)
-- [Dove's Step 1 (2022.01.13)](/DoveStep#doves-step-1-20220113)
+- [Dove's Step 1 (2022.01.13)](#doves-step-1-20220113)
 - [Script Tag's Location (2022.01.02)](#script-tags-location-20220102)
 - [Colorful Show (2020.03.04)](#colorful-show-20200304)
 - [Ganzi (2017.04.03)](#ganzi-20170403)
