@@ -222,7 +222,7 @@ function footPrint()
 setInterval(randomWalk, interval);
 ```
 
-#### `Test.js`
+#### `DoveStepTest.js`
 ```js
 // Rounding off in JavaScript
 
