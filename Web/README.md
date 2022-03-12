@@ -15,7 +15,7 @@ HTML, CSS and JavaScript
 - A practice of **Bootstrap** (5.1.3) : use `container-fluid` `mx` `my` `row` `col`
 - Originally I was going to apply **grid**, but to fail.
 
-![Bootstrap : Magic Stick](Image/BootstrapMagicStick.gif)
+![Bootstrap : Magic Stick](Images/BootstrapMagicStick.gif)
 
 #### BootstrapMagicStick.html
 ```html
@@ -78,7 +78,7 @@ setInterval(resize, 100);
 
 ### Case 1. Script tag in the Head
 
-![Script tag in the Head](Image/ScriptInHTML_Head.PNG)
+![Script tag in the Head](Images/ScriptInHTML_Head.PNG)
 
 #### ScriptInHTML_Head.html
 ```html
@@ -107,7 +107,7 @@ p {
 
 ### Case 2. Script tag in the Bottom of the Body
 
-![Script tag in the Bottom of the Body](Image/ScriptInHTML_BodyEnd.PNG)
+![Script tag in the Bottom of the Body](Images/ScriptInHTML_BodyEnd.PNG)
 
 #### ScriptInHTML_BodyEnd.html
 ```html
@@ -123,7 +123,7 @@ p {
 
 ### Case 3. Script tag with `defer` option
 
-![Script tag in the External .js file](Image/ScriptInExternalJS.PNG)
+![Script tag in the External .js file](Images/ScriptInExternalJS.PNG)
 
 #### ScriptWithDefer.html
 ```html
@@ -146,7 +146,7 @@ document.getElementsByTagName('p')[0].style.color = "red"
 ## [Colorful Show (2020.03.04)](#list)
 This is a colorful 'Show'.
 
-![Colorful Show](./Image/ColorfulShow.gif)
+![Colorful Show](Images/ColorfulShow.gif)
 
 #### ColorfulShow.html
 ```html
@@ -212,7 +212,7 @@ setInterval(changeColor, 1000);
 ## [Ganzi (2017.04.03)](#list)
 - A simple Javascript practice
 
-![Ganzi](Image/Ganzi.gif)
+![Ganzi](Images/Ganzi.gif)
 
 ```html
 <div id ="Zure">Ganzi</div>
