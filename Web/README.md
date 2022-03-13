@@ -5,72 +5,20 @@ HTML, CSS and JavaScript
 
 ### List
 
-- [7th Wedding Anniversary (2022.03.07)](#7th-wedding-anniversary-20220307)
 - [Bootstrap : Magic Stick (2022.01.28)](#bootstrap--magic-stick-20220128)
+- [Dove's Step 1 (2022.01.13)](#doves-step-1-20220113)
 - [Script Tag's Location (2022.01.02)](#script-tags-location-20220102)
-- [6th Wedding Anniversary (2021.03.07)](#6th-wedding-anniversary-20210307)
-- [5th Wedding Anniversary 2 (2020.03.11)](#5th-wedding-anniversary-2-20200311)
-- [5th Wedding Anniversary (2020.03.07)](#5th-wedding-anniversary-20200307)
 - [Colorful Show (2020.03.04)](#colorful-show-20200304)
 - [Ganzi (2017.04.03)](#ganzi-20170403)
-
-
-## [7th Wedding Anniversary (2022.03.07)](#list)
-
-- Annual update : change images of the heart and number
-- Technical improvements :  
-&nbsp;- `html` : relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))  
-&nbsp;- `css` : add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`  
-&nbsp;- `js` : limit letter's color range in consideration of black background (seems trivial)
-- Source :  
-&nbsp;- Heart ☞ https://www.pinterest.co.kr/pin/301881981279040326/  
-&nbsp;- 777 ☞ https://tenor.com/view/jackpot-slot-machine-777-lucky-gif-12992912
-
-![Wedding Anniversary 7](./Image/WeddingAnniversary7.gif)
-
-#### Mainly changed part of WeddingAnniversary7.html
-```html
-……
-        <script defer src="WeddingAnniversary7.js"></script>
-……
-```
-
-#### Mainly changed part of WeddingAnniversary7.css
-```css
-body {
-    ……
-    border: 2px solid white;
-    border-radius: 40px;
-}
-```
-```css
-#name1 {
-	……
-	font-family: "Brush Script MT", "Comic Sans MS", Times, serif;
-	……
-}
-```
-
-#### Mainly changed part of WeddingAnniversary7.js
-```js
-……
-        do                                                                          // to avoid black letters on the black background
-        {
-            randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3));           // generate RGB color (decimal)
-            console.log(i, randNumDec[i]);                                          // test : ok
-        }
-        while (randNumDec[i] == 16777216);                                          // 256^3 = 16777216
-……
-```
 
 
 ## [Bootstrap : Magic Stick (2022.01.28)](#list)
 - A practice of **Bootstrap** (5.1.3) : use `container-fluid` `mx` `my` `row` `col`
 - Originally I was going to apply **grid**, but to fail.
 
-![Bootstrap : Magic Stick](Image/BootstrapMagicStick.gif)
+![Bootstrap : Magic Stick](Images/BootstrapMagicStick.gif)
 
-#### BootstrapMagicStick.html
+#### `BootstrapMagicStick.html`
 ```html
 ……
     <head>
@@ -92,7 +40,7 @@ body {
 ……
 ```
 
-#### BootstrapMagicStick.js
+#### `BootstrapMagicStick.js`
 ```js
 var direction = false;
 var width = 400;
@@ -124,6 +72,194 @@ setInterval(resize, 100);
 ```
 
 
+## [Dove's Step 1 (2022.01.13)](#list)
+
+### Done
+- Generate random footprints on **HTML Canvas**
+- Draw the `canvas`' edges rounded with `border-radius` in **CSS**
+- Get position (x, y) on `canvas` that is located relatively
+- Draw footprints in detail with **trigonometric function**
+
+### To-be
+1. ~~Draw random footprints on **HTML Canvas**~~ (done)
+2. Draw them more naturally with angle and speed
+3. Make them disappear gradually like ont the natural snowfield
+
+![Dove's Step 1](Images/DoveStep01.gif)
+
+#### `DoveStep.html`
+```html
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>Dove Step Simulation</title>
+        <meta name="author" content="kimpro82">
+
+        <link rel="stylesheet" href="DoveStep.css">
+        <script defer src="DoveStep.js"></script>
+
+    </head>
+
+    <body>
+
+        <p id="title">Dove's Step Simulation</p>
+
+        <canvas id="canvas" width=600 height=600></canvas>
+        <!-- It is necessary to fill width and height in HTML for dealing it with js -->
+
+    </body>
+
+</html>
+```
+
+#### `DoveStep.css`
+```css
+body
+{
+    text-align: center;
+    font-size: 10px;
+}
+```
+```css
+#title
+{
+    margin-top: 8rem;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+
+    font-family: Brush Script MT, Georgia, Garamond, Times New Roman, serif;
+
+    color: crimson;
+    text-shadow: 0.2rem 0.2rem 0.5rem black;
+}
+```
+```css
+#canvas
+{
+    width: 600px;
+    height: 600px;
+
+    background-color: white;
+
+    border: 1px solid gray;
+    border-radius: 40px;
+
+    box-shadow: 0.2rem 0.2rem 0.5rem;
+}
+```
+
+#### `DoveStep.js`
+```js
+// Declare global variables
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+var x = -1, y = -1, direction = 0, step = 0;
+var interval = 1000;
+```
+```js
+// Start with a click on the canvas
+canvas.onclick = function(event)
+{
+    x = event.clientX - ctx.canvas.offsetLeft;
+    y = event.clientY - ctx.canvas.offsetTop;
+    // test
+    console.log("click point :", x, y);
+
+    footPrint();
+}
+```
+```js
+// Determine where the next step is located
+function randomWalk()
+{
+    if (x >= 0)
+    {
+        if (step > 19)
+        {
+            alert("The dove has archieved " + step + " steps. It became a budda and flied away!");
+            return -1;
+        }
+        else
+        {
+            x = Math.round(Math.random() * 560) + 20;
+            y = Math.round(Math.random() * 560) + 20;
+            direction = Math.floor(Math.random() * 360);    // 0 ~ 359
+
+            footPrint();
+        }
+    }
+}
+```
+```js
+// Figure the foot print in detail
+function footPrint()
+{
+    var angles = [45, 90, 135, 270];
+    ctx.beginPath();
+    for (let i = 0; i < 4; i++)
+    {
+        ctx.moveTo(x, y);
+        var x2 = x - Math.round(Math.cos(Math.PI * (angles[i] + direction) / 180) * 20);
+        var y2 = y - Math.round(Math.sin(Math.PI * (angles[i] + direction) / 180) * 20);
+        ctx.lineTo(x2, y2);
+    }
+    ctx.closePath();
+    ctx.stroke();
+
+    step++;
+
+    // test
+    console.log(step + "th step :", x, y, direction);
+}
+```
+```js
+// Loop by setInterval()
+setInterval(randomWalk, interval);
+```
+
+#### `DoveStepTest.js`
+```js
+// Rounding off in JavaScript
+
+console.log(Math.floor(0.7))                // 0
+console.log(Math.ceil(1.3))                 // 2
+console.log(Math.round(2.3))                // 2
+console.log(Math.round(2.7))                // 3
+```
+```js
+// Trigonometric Function in JavaScript
+
+console.log(Math.PI);                       // 3.141592653589793
+console.log(Math.PI / 180)                  // 0.017453292519943295
+
+console.log(Math.sin(Math.PI / 180))        // 0.01745240643728351
+console.log(Math.cos(Math.PI / 180))        // 0.9998476951563913
+
+console.log(Math.sin(Math.PI *   0 / 180))  // 0
+console.log(Math.sin(Math.PI *  30 / 180))  // 0.49999999999999994
+console.log(Math.sin(Math.PI *  45 / 180))  // 0.7071067811865475
+console.log(Math.sin(Math.PI *  60 / 180))  // 0.8660254037844386
+console.log(Math.sin(Math.PI *  90 / 180))  // 1
+console.log(Math.sin(Math.PI * 180 / 180))  // 1.2246467991473532e-16 ≒ 0
+console.log(Math.sin(Math.PI * 270 / 180))  // -1
+console.log(Math.sin(Math.PI * 360 / 180))  // -2.4492935982947064e-16 ≒ 0
+
+console.log(Math.cos(Math.PI *   0 / 180))  // 1
+console.log(Math.cos(Math.PI *  30 / 180))  // 0.8660254037844387
+console.log(Math.cos(Math.PI *  45 / 180))  // 0.7071067811865476
+console.log(Math.cos(Math.PI *  60 / 180))  // 0.5000000000000001
+console.log(Math.cos(Math.PI *  90 / 180))  // 6.123233995736766e-17 ≒ 0
+console.log(Math.cos(Math.PI * 180 / 180))  // -1
+console.log(Math.cos(Math.PI * 270 / 180))  // -1.8369701987210297e-16 ≒ 0
+console.log(Math.cos(Math.PI * 360 / 180))  // 1
+```
+
+
 ## [Script Tag's Location (2022.01.02)](#list)
 - A topic suggested from my friend [*Alibaba*](https://github.com/abiriadev)
 - Compare the results from where the `script` tag is located
@@ -131,9 +267,9 @@ setInterval(resize, 100);
 
 ### Case 1. Script tag in the Head
 
-![Script tag in the Head](Image/ScriptInHTML_Head.PNG)
+![Script tag in the Head](Images/ScriptInHTML_Head.PNG)
 
-#### ScriptInHTML_Head.html
+#### `ScriptInHTML_Head.html`
 ```html
 ……
     <head>
@@ -146,7 +282,7 @@ setInterval(resize, 100);
     </head>
 ……
 ```
-#### ScriptInHTML_Head.css
+#### `ScriptInHTML_Head.css`
 ```css
 p {
 	text-align: center;
@@ -160,9 +296,9 @@ p {
 
 ### Case 2. Script tag in the Bottom of the Body
 
-![Script tag in the Bottom of the Body](Image/ScriptInHTML_BodyEnd.PNG)
+![Script tag in the Bottom of the Body](Images/ScriptInHTML_BodyEnd.PNG)
 
-#### ScriptInHTML_BodyEnd.html
+#### `ScriptInHTML_BodyEnd.html`
 ```html
 ……
     <body>
@@ -176,9 +312,9 @@ p {
 
 ### Case 3. Script tag with `defer` option
 
-![Script tag in the External .js file](Image/ScriptInExternalJS.PNG)
+![Script tag in the External .js file](Images/ScriptInExternalJS.PNG)
 
-#### ScriptWithDefer.html
+#### `ScriptWithDefer.html`
 ```html
 ……
     <head>
@@ -190,187 +326,18 @@ p {
     </head>
 ……
 ```
-#### ScriptWithDefer.js
+#### `ScriptWithDefer.js`
 ```js
 document.getElementsByTagName('p')[0].style.color = "red"
-```
-
-
-## [6th Wedding Anniversary (2021.03.07)](#list)
-- Annual Update : change images of the heart and number
-- Seperate css id `name` to `name1` and `name2` and maintain the texts in a line
-- Enhancement of Javascript : use `for` statement
-
-![Wedding Anniversary 6](./Image/WeddingAnniversary6.gif)
-
-#### Mainly changed part of WeddingAnniversary6.html
-```html
-	<div id='name1' style="display:inline">
-		K R
-		<div id='heart' style="display:inline">
-			<img src="heart2.gif">
-		</div>
-	</div>
-	<div id='name2' style="display:inline">
-		E Y
-	</div>
-```
-
-#### Mainly changed part of WeddingAnniversary6.css
-```css
-body {
-	text-align: center;
-}
-```
-
-#### WeddingAnniversary6.js
-```js
-function changeColor() {
-
-	const randNumDec = []; 	// for containing random numbers decimally
-	const randNumHex = []; 	// for containing converted numbers hexdecimally
-	const cssIdList = ["name1", "name2", "chameleon1", "chameleon2"]; // css id list to change colors
-
-	for (let i = 0; i < 4 ; i++) {
-		randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3)); // generate RGB color (decimal)
-		randNumHex[i] = randNumDec[i].toString(16); // turn to the hexdecimal
-		document.getElementById(cssIdList[i]).style.color = '#' + randNumHex[i]; // style-color requires #XXXXXX
-	}
-
-}
-
-setInterval(changeColor, 500);
-```
-
-
-## [5th Wedding Anniversary 2 (2020.03.11)](#list)
-- Enhancement of `vertical-align` between text and image
-- No change in `.js` file
-
-![Wedding Anniversary 5 - 2](./Image/WeddingAnniversary5_2.gif)
-
-#### Mainly changed part of WeddingAnniversary5_2.html
-```html
-	<div id='name'>
-		K R
-		<div id='heart'>
-			<img src="heart.gif">
-		</div>
-		E Y
-	</div>
-	<div id='chameleon1'>
-		Celebrate Our
-		<div id='year'>
-			<img src="5.gif">
-		</div>
-		th
-	</div>
-```
-
-#### Mainly changed part of WeddingAnniversary5_2.css
-```css
-#heart {
-	display: inline;
-}
-#heart img {
-	width: 80px;
-	height: auto;
-}
-
-#year {
-	display: inline;
-}
-#year img {
-	vertical-align: -20px;
-	width: 100px;
-	height: auto;
-}
-```
-
-
-## [5th Wedding Anniversary (2020.03.07)](#list)
-- Application of Colorful Show
-
-![Wedding Anniversary](./Image/WeddingAnniversary5.gif)
-
-#### WeddingAnniversary5.html
-```html
-<!DOCTYPE html>
-
-<html>
-
-<head>
-    <meta charset="EUC-KR">
-    <title>Wedding Anniversary 5</title>
-    <link rel="stylesheet" href="WeddingAnniversary5.css">
-</head>
-
-<body>
-    <div id='name'>
-        K R <img src="https://thumbs.gfycat.com/ZigzagJauntyHapuku-small.gif"  height="70" width="70"> E Y
-    </div>
-    <div id='chameleon1'>
-        Celebrate Our <img src="https://media.giphy.com/media/jQWTJf2Ch2ANz2DdqU/giphy.gif"  height="80" width="80">th
-    </div>
-    <div id='chameleon2'>
-        Wedding Anniversary
-    </div>
-    <script src="WeddingAnniversary5.js">
-    </script> 
-</body>
-
-</html>
-```
-
-#### WeddingAnniversary5.css
-```css
-@charset "EUC-KR";
-
-#name {
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 450%;
-}
-
-#chameleon1 {
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 400%;
-}
-
-#chameleon2 {
-    text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 400%;
-}
-```
-
-#### WeddingAnniversary5.js
-```js
-function changeColor() {
-	randNumDec1 = Math.floor(Math.random() * Math.pow(256, 3));
-	randNumDec2 = Math.floor(Math.random() * Math.pow(256, 3));
-	randNumDec3 = Math.floor(Math.random() * Math.pow(256, 3));
-	
-	randNumHex1 = randNumDec1.toString(16);
-	randNumHex2 = randNumDec2.toString(16);
-	randNumHex3 = randNumDec3.toString(16);
-
-	document.getElementById('name').style.color = '#' + randNumHex1;
-	document.getElementById('chameleon1').style.color = '#' + randNumHex2;
-	document.getElementById('chameleon2').style.color = '#' + randNumHex3;
-}
-
-setInterval(changeColor, 500);
 ```
 
 
 ## [Colorful Show (2020.03.04)](#list)
 This is a colorful 'Show'.
 
-![Colorful Show](./Image/ColorfulShow.gif)
+![Colorful Show](Images/ColorfulShow.gif)
 
-#### ColorfulShow.html
+#### `ColorfulShow.html`
 ```html
 <!DOCTYPE html>
 
@@ -396,7 +363,7 @@ This is a colorful 'Show'.
 </html>
 ```
 
-#### ColorfulShow.css
+#### `ColorfulShow.css`
 ```css
 @charset "EUC-KR";
 
@@ -407,7 +374,7 @@ This is a colorful 'Show'.
 }
 ```
 
-#### ColorfulShow.js
+#### `ColorfulShow.js`
 ```javascript
 function changeColor() {
 	randNumDec = Math.floor(Math.random() * Math.pow(256, 3));
@@ -434,8 +401,9 @@ setInterval(changeColor, 1000);
 ## [Ganzi (2017.04.03)](#list)
 - A simple Javascript practice
 
-![Ganzi](Image/Ganzi.gif)
+![Ganzi](Images/Ganzi.gif)
 
+#### `Ganzi.html`
 ```html
 <div id ="Zure">Ganzi</div>
 
