@@ -28,8 +28,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 ## [My Python Practice](/Python#my-python-practice)
 
 - [Image Blending (2022.02.27)](/Python#image-blending-20220227)
-- [Excel To Markdown 2 (2022.02.06)](/Python#excel-to-markdown-2-20220206)
-- [Excel To Markdown 1 (2022.02.05)](/Python#excel-to-markdown-1-20220205)
 - [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
