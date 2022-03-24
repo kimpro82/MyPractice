@@ -40,7 +40,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Python Practice](/Python#my-python-practice)
 
-- [Arguements Parsing (2022.03.24)]()
+- [Arguements Parsing (2022.03.24)](/Python#arguements-parsing-20220324)
 - [Image Blending (2022.02.27)](/Python#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
