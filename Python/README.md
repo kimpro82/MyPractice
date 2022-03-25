@@ -5,6 +5,7 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
+- [Arguements Parsing (2022.03.24)](#arguements-parsing-20220324)
 - [Image Blending (2022.02.27)](#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](#iterator-20210617)
@@ -28,6 +29,52 @@ I'm sorry `C++` …… I betrayed you.
 - [Class (2018.02.07)](#class-20180207)
 - [While (2017.05.15)](#while-20170515)
 
+
+## [Arguements Parsing (2022.03.24)](#list)
+- A practice to parse arguments from command line to `.py` script file
+- Reference ☞ https://en.wikipedia.org/wiki/Command-line_argument_parsing
+
+#### ArguementParsing.py
+```python
+import sys
+```
+```python
+def ArguementParsing() :
+    if len(sys.argv) > 1 :                          # not > 0; sys.argv[0] is the script file name
+        for arg in sys.argv :
+            print(arg)
+    else :
+        print("No arguments has been received.")
+```
+```python
+# test
+def test() :
+    for arg in list(sys.argv) :
+        print(arg)
+```
+```python
+if __name__ == "__main__" :
+    ArguementParsing()
+    # test()                                        # 0(path) 1 2 3
+```
+
+#### ArguementParsing.bat
+```bat
+python ArguementParsing.py
+python ArguementParsing.py a b c
+```
+
+#### Output
+```
+>python ArguementParsing.py
+No arguments has been received.
+
+>python ArguementParsing.py a b c
+ArguementParsing.py
+a
+b
+c
+```
 
 ## [Image Blending (2022.02.27)](#list)
 - A practice to blend two images by using `cv2`
