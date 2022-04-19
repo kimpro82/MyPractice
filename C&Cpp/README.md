@@ -4,8 +4,8 @@ The final destination of programming
 
 
 ### \<List>
-- [Binary Search 1 (2022.04.19)]()
-- [Binary Search 0 (2022.02.11)]()
+- [Binary Search 1 (2022.04.19)](#binary-search-1-20220419)
+- [Binary Search 0 (2022.02.11)](#binary-search-0-20220211)
 - [Increment and Decrement Operators (2022.02.01)](#increment-and-decrement-operators-20220201)
 - [Prevent Garbage Value (2022.01.21)](#prevent-garbage-value-20220121)
 - [Containers : Deque, Stack and Queue (2021.10.14)](#containers--deque-stack-and-queue-20211014)
@@ -80,7 +80,7 @@ Node* delete(Node* root, int value)
     return root;
 }
 ```
-※ `delete()` is still imcomplete.
+`delete()` is still imcomplete.
 ```c
 void preOrder(Node* root)
 {
@@ -109,6 +109,7 @@ void postOrder(Node* root)
     printf("%d ", root->value);
 }
 ```
+I wrote all the inside function name as `preOrder()` …… crazy~~~
 ```c
 int main()
 {
