@@ -109,7 +109,7 @@ void postOrder(Node* root)
     printf("%d ", root->value);
 }
 ```
-I wrote all the inside function name as `preOrder()` …… crazy~~~
+I wrote all the inside function names as `preOrder()` …… crazy~~~
 ```c
 int main()
 {
