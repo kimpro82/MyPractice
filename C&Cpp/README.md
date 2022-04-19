@@ -28,7 +28,7 @@ using namespace std;
 
 ## [Binary Search 1 (2022.04.19)](#list)
 
-- I tried this code with [Binary Search 0 (2022.02.11)]() about the same time,
+- I tried this code with [Binary Search 0 (2022.02.11)](#binary-search-0-20220211) about the same time,  
   but couldn't find why the traversal results are wrong.
 - There was a crazy mistake …… It stole my two months!
 
@@ -145,7 +145,7 @@ Postorder traversal : 4 3 10 13 7 6
 
 ## [Binary Search 0 (2022.02.11)](#list)
 
-- hope `binary_search()` in C++ would be a free lunch ……  
+- hope `binary_search()` in *C++* would be a free lunch ……  
   but it just returns only `true` or `false` depending on the element's presence.
 - Of course, this function seems very **powerful** for sorted data.
 
