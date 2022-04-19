@@ -40,8 +40,8 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Python Practice](/Python#my-python-practice)
 
-- [Excel To Markdown 2 (2022.02.06)](/Python#excel-to-markdown-2-20210206)
-- [Excel To Markdown 1 (2022.02.05)](/Python#excel-to-markdown-1-20210205)
+- [Arguements Parsing (2022.03.24)](/Python#arguements-parsing-20220324)
+- [Image Blending (2022.02.27)](/Python#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
@@ -82,10 +82,8 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 ## [My Web Practice](/Web#my-web-practice)
 
 - [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
+- [Dove's Step 1 (2022.01.13)](/Web#doves-step-1-20220113)
 - [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
-- [6th Wedding Anniversary (2021.03.07)](/Web#6th-wedding-anniversary-20210307)
-- [5th Wedding Anniversary 2 (2020.03.11)](/Web#5th-wedding-anniversary-2-20200311)
-- [5th Wedding Anniversary (2020.03.07)](/Web#5th-wedding-anniversary-20200307)
 - [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
 - [Ganzi (2017.04.03)](/Web#ganzi-20170403)
 
