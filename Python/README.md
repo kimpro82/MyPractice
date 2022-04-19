@@ -5,8 +5,8 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
-- [Excel To Markdown 2 (2021.02.06)](#excel-to-markdown-2-20210206)
-- [Excel To Markdown 1 (2021.02.05)](#excel-to-markdown-1-20210205)
+- [Arguements Parsing (2022.03.24)](#arguements-parsing-20220324)
+- [Image Blending (2022.02.27)](#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](#iterator-20210617)
 - [If ~ While ~ True (2021.05.04)](#if--while--true-20210504)
@@ -30,255 +30,111 @@ I'm sorry `C++` …… I betrayed you.
 - [While (2017.05.15)](#while-20170515)
 
 
-## [Excel To Markdown 2 (2021.02.06)](#list)
-- Advanced code from [Excel To Markdown 1 (2021.02.05)](#excel-to-markdown-1-20210205)  
-  - **Support more file extensions** : not only `.csv` but also `.xls` `.xlsx` `.xlsm` `xlsb` and so on
-  - Ask if overwrite `.md` file
-  - Improve entire code structure : seperate functions of `getFilePath()` `excelToMarkdown()` `saveMarkdown()`
-  - Get the `.md` file name for saving by `os.path.splitext()` instead of `re`
-  - Change sample `.csv` file that can test more markdown syntax
+## [Arguements Parsing (2022.03.24)](#list)
+- A practice to parse arguments from command line to `.py` script file
+- Reference ☞ https://en.wikipedia.org/wiki/Command-line_argument_parsing
 
-#### ExcelToMarkdown2.csv
-```csv
-**A**,**B**,**C**
-A2,B<br>2,[C2](#)
-〃,`B3`,*C3*
-<u>〃</u>,__B4__,~~C4~~
-
-```
-
-#### ExcelToMarkdown2.py
+#### ArguementParsing.py
 ```python
-import os
-import pandas as pd
-import re
+import sys
 ```
 ```python
-# Get the file path
-def getFilePath(fileName) :
-
-    os.getcwd()
-    path = os.getcwd() + os.sep + fileName          # not os.sep()
-    # print(path)                                   # test : ok
-
-    root, ext = os.path.splitext(path)
-    saveFilePath = root + ".md"
-    # saveFilePath = re.sub("[.]\w*", ".md", path)  # do not need to use regular expression directly
-    # print(ext, saveFilePath)                      # test : ok
-
-    return path, ext, saveFilePath
-```
-```python
-# Read data as a pandas dataframe from excel
-def excelToMarkdown(path, ext) :
-
-    excelExtension = (".xls", ".xlsx", ".xlsm", ".xlsb", ".odf", ".ods", ".odt")
-    # reference ☞ https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html
-
-    if ext.lower() in excelExtension :
-        df = pd.read_excel(path)
-    elif  ext.lower() == ".csv" :
-        df = pd.read_csv(path)
+def ArguementParsing() :
+    if len(sys.argv) > 1 :                          # not > 0; sys.argv[0] is the script file name
+        for arg in sys.argv :
+            print(arg)
     else :
-        print("The process doesn't supprt", ext, "file.")
-    print(df, '\n')
-
-    # Print markdown table
-    md = df.to_markdown(index=False)                # string
-    print(md, '\n')
-
-    # Modify details
-    md = re.sub("---*", "--", md)
-    md = re.sub(":--", ":-:", md)
-    md = re.sub("nan", "", md)
-    # md = re.sub("nan", "   ", md)
-    md = re.sub("  *", " ", md)
-    print(md, '\n')
-
-    return md
+        print("No arguments has been received.")
 ```
 ```python
-# Save as a .md file
-def saveMarkdown(md, saveFilePath) :
-    # if os.path.isfile(saveFilePath) == False :    # check in __main__
-    with open(saveFilePath, 'w', encoding='utf-8') as f :
-        f.write(md)
-        f.close()
-    print("The markdown table has been saved in " + saveFilePath + ".")
+# test
+def test() :
+    for arg in list(sys.argv) :
+        print(arg)
 ```
 ```python
-# Run
 if __name__ == "__main__" :
+    ArguementParsing()
+    # test()                                        # 0(path) 1 2 3
+```
 
-    fileName = "ExcelToMarkdown2.csv"
-    # The stem of the filename should not include '.'
-    path, ext, saveFilePath = getFilePath(fileName)
-
-    # Check if the file exists
-    if os.path.isfile(path) :
-        print("The file exists.\n")
-
-        # Check if the overwriting risk exists and save as a .md file
-        if os.path.isfile(saveFilePath) == False :
-            md = excelToMarkdown(path, ext)
-            saveMarkdown(md, saveFilePath)
-        else :
-            answer = input(path + " has already existed. Will you overwriter? (y/n) ")
-            if answer.lower() in ("y", "yes") :
-                md = excelToMarkdown(path, ext)
-                saveMarkdown(md, saveFilePath)
-            else :
-                print("The process has stopped without saving data.")
-
-    else :
-        print("The file doesn't exist.")
+#### ArguementParsing.bat
+```bat
+python ArguementParsing.py
+python ArguementParsing.py a b c
 ```
 
 #### Output
-```md
-| **A**    | **B**   | **C**   |
-|:---------|:--------|:--------|
-| A2       | B<br>2  | [C2](#) |
-| 〃        | `B3`    | *C3*    |
-| <u>〃</u> | __B4__  | ~~C4~~  |
 ```
-| **A**    | **B**   | **C**   |
-|:---------|:--------|:--------|
-| A2       | B<br>2  | [C2](#) |
-| 〃        | `B3`    | *C3*    |
-| <u>〃</u> | __B4__  | ~~C4~~  |
-```md
-| **A** | **B** | **C** |
-|:-:|:-:|:-:|
-| A2 | B<br>2 | [C2](#) |
-| 〃 | `B3` | *C3* |
-| <u>〃</u> | __B4__ | ~~C4~~ |
-```
-| **A** | **B** | **C** |
-|:-:|:-:|:-:|
-| A2 | B<br>2 | [C2](#) |
-| 〃 | `B3` | *C3* |
-| <u>〃</u> | __B4__ | ~~C4~~ |
-> `<u>` tag doesn't work on the real browser.
+>python ArguementParsing.py
+No arguments has been received.
 
-
-## [Excel To Markdown 1 (2021.02.05)](#list)
-- Convert **Excel**(`.csv`) data to **Github markdown table**
-  - Use `pandas` for reading and converting data, `re` for customizing the markdaown table
-  - The result will be saved in a `.md` file that has the same name with the `.csv` file after check if an overwriting occurs.
-
-#### ExcelToMarkdown.csv
-```csv
-A,B,C
-A(병합),B<br>2,[C2](#)
-,B3(병합),
-
+>python ArguementParsing.py a b c
+ArguementParsing.py
+a
+b
+c
 ```
 
-#### ExcelToMarkdown0.py
-```python
-import pandas as pd
-import re
+## [Image Blending (2022.02.27)](#list)
+- A practice to blend two images by using `cv2`
+- Generate Ukrainian flag with `numpy`
+- Reference ☞ https://opencv-python.readthedocs.io/
+- **Pray for Ukraine**
+
+#### ImageBlending.py
+```py
+# 0. Import libraries
+import cv2                                                                      # install "opencv-python", but import "cv2"
+import numpy as np                                                              # for using np.full()
+import matplotlib.pyplot as plt
 ```
-```python
-path = 'ExcelToMarkdown.csv'
-
-# Read data as a pandas dataframe from excel
-df = pd.read_csv(path)
-print(df, '\n')
-
-# Print markdown table
-md = df.to_markdown()                           # string
-print(md, '\n')
-
-# Modify details
-md2 = re.sub("---*", '--', md)
-md2 = re.sub(":--", '-:-', md2)                 # wrong : -:- → :-:
-md2 = re.sub("nan", '', md2)
-md2 = re.sub("  *", ' ', md2)
-print(md2, '\n')
+```py
+# 1. Call img1
+path = "Images/UkrainianPresidentZelenskyy.png"                                 # ★ input your image ★
+img1 = cv2.imread(path, cv2.IMREAD_COLOR)
+# cv2.imshow("image", img1)                                                     # test : ok
+# cv2.waitKey(0)
 ```
-
-##### Output
-```md
-|    | A     | B      | C       |
-|---:|:------|:-------|:--------|
-|  0 | A(병합) | B<br>2 | [C2](#) |
-|  1 | nan   | B3(병합) | nan     |
+![img1](Images/UkrainianPresidentZelenskyy.png)
+```py
+# 2. Call img2 : generate an Ukrainian flag to fit with the img1's size
+h, w, c = img1.shape
+# print(h, w, c)                                                                # test : ok
+h2_1 = int(h/2)                                                                 # h/2 without int() returns float, that occurs error in np.full()
+h2_2 = h - h2_1
+sapphire = (0xBB, 0x5B, 0x00)                                                   # Ukrainian flag color 1 : not RGB, but BGR
+cyberYellow = (0x00, 0xD5, 0xFF)                                                # Ukrainian flag color 2 : not RGB, but BGR
+img2_1 = np.full((h2_1, w, 3), sapphire, dtype=np.uint8)                        # not "unit8"!
+img2_2 = np.full((h2_2, w, 3), cyberYellow, dtype=np.uint8)
+img2 = cv2.vconcat([img2_1, img2_2])
+# cv2.imshow("image", img2)                                                     # test : ok
+# cv2.waitKey(0)
+cv2.imwrite("Images/UkrainianFlag.png", img2)
 ```
-|    | A     | B      | C       |
-|---:|:------|:-------|:--------|
-|  0 | A(병합) | B<br>2 | [C2](#) |
-|  1 | nan   | B3(병합) | nan     |
-```md
-| | A | B | C |
-|--:|-:-|-:-|-:-|
-| 0 | A(병합) | B<br>2 | [C2](#) |
-| 1 | | B3(병합) | |
+![img2](Images/UkrainianFlag.png)
+```py
+# 3. Blend two images and save it
+alpha = 0.5
+img3 = cv2.addWeighted(img1, alpha, img2, 1 - alpha, 0)
+cv2.imshow("image", img3)
+cv2.waitKey(0)
+cv2.imwrite("Images/UkrainianFlagBlended.png", img3)
 ```
-| | A | B | C |
-|--:|-:-|-:-|-:-|
-| 0 | A(병합) | B<br>2 | [C2](#) |
-| 1 | | B3(병합) | |
-> `-:-` should be fixed as `:-:`
-
-#### ExcelToMarkdown1.py
-```python
-import os
-import pandas as pd
-import re
+![img3](Images/UkrainianFlagBlended.png)
+```py
+# 3.1 Show images on multiple figures
+fig = plt.figure()
+rows = 1; cols = 3
+ax1 = fig.add_subplot(rows, cols, 1)
+ax1.imshow(img1)
+ax2 = fig.add_subplot(rows, cols, 2)
+ax2.imshow(img2)
+ax3 = fig.add_subplot(rows, cols, 3)
+ax3.imshow(img3)
+plt.show()                                                                      # crazy colors
 ```
-```python
-path = "ExcelToMarkdown.csv"
-
-# Check if the file exists
-if os.path.isfile(path) :
-    print("The file exists.")
-
-    # Read data as a pandas dataframe from excel
-    df = pd.read_csv(path)
-    print(df, '\n')
-
-    # Print markdown table
-    md = df.to_markdown()                           # string
-    print(md, '\n')
-
-    # Modify details
-    # md2 = re.sub("---*", "--", md)
-    # md2 = re.sub(":--", ":-:", md2)
-    # md2 = re.sub("nan", "", md2)
-    md2 = re.sub("nan", "   ", md)
-    # md2 = re.sub("  *", " ", md2)
-    print(md2, '\n')
-
-    # Save as a .txt file
-    saveFileName = re.sub("[.]\w*", ".md", path)    # The file name should not include '.' 
-    # print(saveFileName)                           # test : ok
-    if os.path.isfile(saveFileName) == False :
-        with open(saveFileName, 'w', encoding='utf-8') as f :
-            f.write(md2)
-            f.close()
-        print("The markdown table has been saved in " + saveFileName + ".")
-    else :
-        print("A file called " + saveFileName + " has already existed.")
-
-else :
-    print("The file doesn't exist.")
-```
-
-##### Output
-```md
-|    | A     | B      | C       |
-|---:|:------|:-------|:--------|
-|  0 | A(병합) | B<br>2 | [C2](#) |
-|  1 |       | B3(병합) |         |
-```
-|    | A     | B      | C       |
-|---:|:------|:-------|:--------|
-|  0 | A(병합) | B<br>2 | [C2](#) |
-|  1 |       | B3(병합) |         |
-
-> Merging cells doesn't work (`pandas` never has a reason to consider it!)
+![img4](Images/UkrainianFlagMultipleFigures.png)
 
 
 ## [Vertical Alignment (2021.12.21)](#list)
