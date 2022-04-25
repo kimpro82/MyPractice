@@ -90,6 +90,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
 
+- [`printf()` format test (2022.04.25)]()
 - [Binary Search 1 (2022.04.19)](/C&Cpp#binary-search-1-20220419)
 - [Binary Search 0 (2022.02.11)](/C&Cpp#binary-search-0-20220211)
 - [Increment and Decrement Operators (2022.02.01)](/C&Cpp#increment-and-decrement-operators-20220201)

@@ -4,6 +4,8 @@ The final destination of programming
 
 
 ### \<List>
+
+- [`printf()` format test (2022.04.25)]()
 - [Binary Search 1 (2022.04.19)](#binary-search-1-20220419)
 - [Binary Search 0 (2022.02.11)](#binary-search-0-20220211)
 - [Increment and Decrement Operators (2022.02.01)](#increment-and-decrement-operators-20220201)
@@ -12,6 +14,7 @@ The final destination of programming
 - [Template (2021.07.23)](#template-20210723)
 - [Stack Overflow (2021.05.18)](#stack-overflow-20210518)
 - [Hello World (2021.05.12)](#hello-world-20210512)
+
 
 ※ All codes include the following top lines. :
 ```c
@@ -24,6 +27,52 @@ The final destination of programming
 
 using namespace std;
 ```
+
+
+## [`printf()` format test (2022.04.25)](#list)
+
+- I wrote the below codes in [*GCJ 2022 Round 1B*](), but there's some struggle with `printf()`s format `%d` `%ld` `%lld`.  
+  (All the variables are declared as *long long* type.)
+```cpp
+// test
+// printf("min : %lld, max : %lld, dist : %lld, sum1 : %lld, sum2 : %lld\n", min, max, dist, sum1, sum2);
+```
+- I will never miss the criminal!
+
+#### printf.c & printf.cpp
+The codes except each of the headers are the same.
+```c
+int main()
+{
+    char text[] = "%d %ld %lld\n";
+    printf(text, __SCHAR_MAX__, __SCHAR_MAX__, __SCHAR_MAX__);
+    printf(text, __INT8_MAX__, __INT8_MAX__, __INT8_MAX__);
+    printf(text, __SHRT_MAX__, __SHRT_MAX__, __SHRT_MAX__);
+    printf(text, __INT16_MAX__, __INT16_MAX__, __INT16_MAX__);
+    printf(text, __INT_MAX__, __INT_MAX__, __INT_MAX__);
+    printf(text, __LONG_MAX__, __LONG_MAX__, __LONG_MAX__);
+    printf(text, __INT32_MAX__, __INT32_MAX__, __INT32_MAX__);
+    printf(text, __LONG_LONG_MAX__, __LONG_LONG_MAX__, __LONG_LONG_MAX__);
+    printf(text, __INT64_MAX__, __INT64_MAX__, __INT64_MAX__);
+
+    return 0;
+}
+```
+
+#### Output
+```
+127 127 8458399796925825151
+127 127 8458399796925825151
+32767 32767 8458399796925857791
+32767 32767 8458399796925857791
+2147483647 2147483647 8458399799073308671
+2147483647 2147483647 8458399799073308671
+2147483647 2147483647 8458399799073308671
+-1 2147483647 9223372036854775807
+-1 2147483647 9223372036854775807
+```
+
+-1 seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it. The partial number `1 111 …… 1111` indicates -1 as 2's complement.
 
 
 ## [Binary Search 1 (2022.04.19)](#list)
