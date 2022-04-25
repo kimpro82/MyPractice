@@ -5,7 +5,7 @@ The final destination of programming
 
 ### \<List>
 
-- [`printf()` format test (2022.04.25)]()
+- [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
 - [Binary Search 1 (2022.04.19)](#binary-search-1-20220419)
 - [Binary Search 0 (2022.02.11)](#binary-search-0-20220211)
 - [Increment and Decrement Operators (2022.02.01)](#increment-and-decrement-operators-20220201)
@@ -31,7 +31,7 @@ using namespace std;
 
 ## [`printf()` format test (2022.04.25)](#list)
 
-- I wrote the below codes in [*GCJ 2022 Round 1B*](), but there's some struggle with `printf()`s format `%d` `%ld` `%lld`.  
+- I wrote the below codes in [*GCJ 2022 Round 1B*](), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
   (All the variables are declared as *long long* type.)
 ```cpp
 // test
@@ -72,8 +72,8 @@ int main()
 -1 2147483647 9223372036854775807
 ```
 
--1 seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it. The partial number `1 111 …… 1111` indicates -1 as 2's complement*.  
-※ 2's complement ☞ [Wikipedia](https://en.wikipedia.org/wiki/Two%27s_complement)
+**-1** seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it.  
+And the partial number `1 111 …… 1111` indicates -1 as [2's complement](https://en.wikipedia.org/wiki/Two%27s_complement).  
 
 
 ## [Binary Search 1 (2022.04.19)](#list)
