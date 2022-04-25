@@ -72,7 +72,8 @@ int main()
 -1 2147483647 9223372036854775807
 ```
 
--1 seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it. The partial number `1 111 …… 1111` indicates -1 as 2's complement.
+-1 seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it. The partial number `1 111 …… 1111` indicates -1 as 2's complement*.  
+※ 2's complement ☞ [Wikipedia](https://en.wikipedia.org/wiki/Two%27s_complement)
 
 
 ## [Binary Search 1 (2022.04.19)](#list)
