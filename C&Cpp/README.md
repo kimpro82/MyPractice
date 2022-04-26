@@ -31,7 +31,7 @@ using namespace std;
 
 ## [`printf()` format test (2022.04.25)](#list)
 
-- I wrote the below codes in [*GCJ 2022 Round 1B*](), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
+- I wrote the below codes in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
   (All the variables are declared as *long long* type.)
 ```cpp
 // test
@@ -74,7 +74,7 @@ int main()
 
 #### Implications
 - `%d` and `%ld` don't make trouble with reading `char` or `short`, but `%lld` is something special.
-- Make sure `int` == `long` == `int32` in 32-bit environment
+- Make sure `int` == `long` == `int32` in the current standard environment
 - **-1** seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it.  
   And the partial number `1 111 …… 1111` indicates -1 as [2's complement](https://en.wikipedia.org/wiki/Two%27s_complement).
 
