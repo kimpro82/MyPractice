@@ -44,7 +44,7 @@ for r in sample :
 
 # 2.3 Use f-string : Code generalization & individual alignment control
 sample[3][0] = '다섯 번'
-print("\n2.3 Use f-string : Code generalization")
+print("\n2.3 Use f-string : Code generalization & individual alignment control")
 for r in sample :
     length = [10] * len(r)
     for c in range(len(r)) :

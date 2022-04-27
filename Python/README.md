@@ -122,7 +122,7 @@ for r in sample :
 ### 2.3 Use *f-string* : Code generalization & individual alignment control
 ```python
 sample[3][0] = '다섯 번'
-print("\n2.3 Use f-string : Code generalization")
+print("\n2.3 Use f-string : Code generalization & individual alignment control")
 for r in sample :
     length = [10] * len(r)
     for c in range(len(r)) :
@@ -136,7 +136,7 @@ for r in sample :
     print()
 ```
 ```
-2.3 Use f-string : Code generalization
+2.3 Use f-string : Code generalization & individual alignment control
 이렇게          하면
 줄이       잘 맞을까
 모르겠네        어디
