@@ -424,7 +424,7 @@ print(re.split("\W", txt))          # \W = a-zA-Z0-9
 > ['one', 'two', 'three', 'four']
 
 
-## [`\_\_name\_\_ == '\_\_main\_\_'` (2021.04.26)](#list)
+## [`__name__ == '__main__'` (2021.04.26)](#list)
 - A practice of importing and running `module` in Python
 - Using `__name__` and `__main__`
 
