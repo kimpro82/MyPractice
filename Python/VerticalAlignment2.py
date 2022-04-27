@@ -1,3 +1,5 @@
+# 2022.04.27
+
 sample = [
     ['이렇게', '하면'],
     ['줄이', '잘 맞을까'],
@@ -5,7 +7,7 @@ sample = [
     ['한 번', '볼까'],
 ]
 
-# 1. Normal
+# 1. Normal Approach
 print("# 1. Normal")
 for el in sample :
     print(el[0], el[1])
