@@ -12,7 +12,7 @@ I'm sorry `C++` …… I betrayed you.
 - [Iterator (2021.06.17)](#iterator-20210617)
 - [`if` ~ `while` ~ `true` (2021.05.04)](#if--while--true-20210504)
 - [`re.split` (2021.04.29)](#resplit-20210429)
-- [`\_\_name\_\_ == '\_\_main\_\_'` (2021.04.26)](#__name__--__main__-20210426)
+- [`__name__ == '__main__'` (2021.04.26)](#__name__--__main__-20210426)
 - [Turtle (2021.03.24)](#turtle-20210324)
 - [`map()` (2021.02.16)](#map-20210216)
 - [Words Mix (2021.01.13)](#words-mix-20210113)

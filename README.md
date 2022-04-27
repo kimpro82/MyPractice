@@ -34,7 +34,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Iterator (2021.06.17](/Python#iterator-20210617)
 - [`if` ~ `while` ~ `true` (2021.05.04](/Python#if--while--true-20210504)
 - [`re.split` (2021.04.29](/Python#resplit-20210429)
-- [`\_\_name\_\_ == '\_\_main\_\_'` (2021.04.26](/Python#__name__--__main__-20210426)
+- [`__name__ == '__main__'` (2021.04.26](/Python#__name__--__main__-20210426)
 - [Turtle (2021.03.24](/Python#turtle-20210324)
 - [`map()` (2021.02.16](/Python#map-20210216)
 - [Words Mix (2021.01.13](/Python#words-mix-20210113)
