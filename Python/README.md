@@ -11,21 +11,21 @@ I'm sorry `C++` …… I betrayed you.
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](#iterator-20210617)
 - [`if` ~ `while` ~ `true` (2021.05.04)](#if--while--true-20210504)
-- [`re.split` (2021.04.29)](#resplit-20210429)
+- [`re.split()` (2021.04.29)](#resplit-20210429)
 - [`__name__ == '__main__'` (2021.04.26)](#__name__--__main__-20210426)
 - [Turtle (2021.03.24)](#turtle-20210324)
 - [`map()` (2021.02.16)](#map-20210216)
 - [Words Mix (2021.01.13)](#words-mix-20210113)
 - [Count Words (2020.11.10)](#count-words-20201110)
 - [Operator Precedence (2020.06.28)](#operator-precedence-20200628)
-- [`print` (2020.03.31)](#print-20200331)
+- [`print()` (2020.03.31)](#print-20200331)
 - [Shuffle List (2020.03.30)](#shuffle-list-20200330)
 - [Random Seed Influence (2020.01.05)](#random-seed-influence-20200105)
 - [Square Root (2020.01.01) (adjusted 2020.01.04)](#square-root-20200101)
 - [Fibonacci Series (2019.12.18)](#fibonacci-series-20191218)
 - [Generate List (2019.12.07)](#generate-list-20191207)
 - [Limited Range Sampling (2019.09.22)](#limited-range-sampling-20190922)
-- [`with` ~ `open` (2019.07.21)](#with--open-20190721)
+- [`with` ~ `open()` (2019.07.21)](#with--open-20190721)
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
@@ -402,7 +402,7 @@ while '123' :
 > True  
 > 123
 
-## [`re.split` (2021.04.29)](#list)
+## [`re.split()` (2021.04.29)](#list)
 - Seperating a `string` by plural delimiters
 - Using regular expression (`re`)
 
@@ -677,7 +677,7 @@ print(("F" == "M") or "m") # the same with the above line
 ☞ reference : https://www.programiz.com/python-programming/precedence-associativity
 
 
-## [`print` (2020.03.31)](#list)
+## [`print()` (2020.03.31)](#list)
 simple practice with `print()`
 
 ```python
@@ -974,7 +974,7 @@ stats.describe(data3)[0:2]
 > (1000, (25.600374595125377, 74.942171158969671))
 
 
-## [`with` ~ `open` (2019.07.21)](#list)
+## [`with` ~ `open()` (2019.07.21)](#list)
 - read binary file
 - convert decimal number ↔ hexadecimal number
 
