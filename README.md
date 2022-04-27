@@ -6,11 +6,11 @@ miscellaneous petty works
 ### \<List>
 
 - [Github Dashboard](#my-python-practice)
-- [My **R** Practice](#my-r-practice)
 - [My **Python** Practice](#my-python-practice)
+- [My **R** Practice](#my-r-practice)
 - [My **VBA** Practice](#my-vba-practice)
-- [My **Web** Practice](#my-web-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
+- [My **Web** Practice](#my-web-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
@@ -25,21 +25,9 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Outline (2020.04.19)
 
 
-## [My R Practice](/R#my-r-practice)
-
-- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
-- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
-- Sample Number (2020.06.10)
-- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
-- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
-- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
-- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
-- [RGB (2017.04.14)](/R#rgb-20170414)
-
-
 ## [My Python Practice](/Python#my-python-practice)
 
+- [Vertical Alignment 2 (2022.04.27)](/Python#vertical-alignment-2-20220427)
 - [Arguements Parsing (2022.03.24)](/Python#arguements-parsing-20220324)
 - [Image Blending (2022.02.27)](/Python#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
@@ -65,6 +53,19 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [While (2017.05.15)](/Python#while-20170515)
 
 
+## [My R Practice](/R#my-r-practice)
+
+- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
+- Sample Number (2020.06.10)
+- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
+- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](/R#rgb-20170414)
+
+
 ## [My VBA Practice](/VBA#my-vba-practice)
 
 - [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
@@ -79,15 +80,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
 
 
-## [My Web Practice](/Web#my-web-practice)
-
-- [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
-- [Dove's Step 1 (2022.01.13)](/Web#doves-step-1-20220113)
-- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
-- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
-- [Ganzi (2017.04.03)](/Web#ganzi-20170403)
-
-
 ## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
 
 - [`printf()` format test (2022.04.25)](/C%26Cpp#printf-format-test-20220425)
@@ -99,6 +91,15 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Template (2021.07.23)](/C&Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C&Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C&Cpp#hello-world-20210512)
+
+
+## [My Web Practice](/Web#my-web-practice)
+
+- [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
+- [Dove's Step 1 (2022.01.13)](/Web#doves-step-1-20220113)
+- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
+- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
+- [Ganzi (2017.04.03)](/Web#ganzi-20170403)
 
 
 ## [My C# Practice](/CSharp#my-c-practice)
