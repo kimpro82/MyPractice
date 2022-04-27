@@ -10,7 +10,7 @@ I'm sorry `C++` …… I betrayed you.
 - [Image Blending (2022.02.27)](#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](#iterator-20210617)
-- [If ~ While ~ True (2021.05.04)](#if--while--true-20210504)
+- [`if` ~ `while` ~ `true` (2021.05.04)](#if--while--true-20210504)
 - [Re.Split (2021.04.29)](#resplit-20210429)
 - [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](#__name__--__main__-20210426)
 - [Turtle (2021.03.24)](#turtle-20210324)
@@ -354,7 +354,7 @@ if __name__ == "__main__" :
 > bros1 : Wassup
 
 
-## [If ~ While ~ True (2021.05.04)](#list)
+## [`if` ~ `while` ~ `true` (2021.05.04)](#list)
 - A practice of using `if` and `while`
 - All the strings and numbers *except* `0` and `False` are regarded as `True`
 
