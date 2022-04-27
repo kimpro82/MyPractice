@@ -8,7 +8,7 @@ sample = [
 ]
 
 # 1. Normal Approach
-print("# 1. Normal")
+print("# 1. Normal Approach")
 for el in sample :
     print(el[0], el[1])
 
