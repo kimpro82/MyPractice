@@ -33,7 +33,7 @@ I'm sorry `C++` …… I betrayed you.
 
 ## [Vertical Alignment 2 (2022.04.27)](#list)
 
-- I dreamed of making a new open source library to do it for a while, but `f-string` is too strong …… This devil has broken my dear dream!
+- I dreamed of making a new open source library to do it for a while, but *f-string* is too strong …… This devil has broken my dear dream!
 - Reference ☞ https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 
 ```python
@@ -60,7 +60,7 @@ for el in sample :
 한 번 볼까
 ```
 
-### 2. Use f-string
+### 2. Use *f-string*
 ```python
 # 2. Use f-string
 sample[3][0] = '두 번'
@@ -76,7 +76,7 @@ for el in sample :
 두 번        볼까
 ```
 
-### 2.1 Use f-string : Handle Korean letters
+### 2.1 Use *f-string* : Handle Korean letters
 ```python
 # 2.1 Use f-string : Handle Korean letters
 sample[3][0] = '세 번'
@@ -99,7 +99,7 @@ for r in sample :
 세 번      볼까
 ```
 
-### 2.2 Use f-string : Change alignment direction
+### 2.2 Use *f-string* : Change alignment direction
 ```python
 sample[3][0] = '네 번'
 print("\n2.2 Use f-string : Change alignment direction")
@@ -119,7 +119,7 @@ for r in sample :
      네 번       볼까
 ```
 
-### 2.3 Use f-string : Code generalization & individual alignment control
+### 2.3 Use *f-string* : Code generalization & individual alignment control
 ```python
 sample[3][0] = '다섯 번'
 print("\n2.3 Use f-string : Code generalization")
