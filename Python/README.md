@@ -33,7 +33,8 @@ I'm sorry `C++` …… I betrayed you.
 
 ## [Vertical Alignment 2 (2022.04.27)](#list)
 
-I dreamed of making a new open source library to do it for a while, but `f-string` is too strong …… This devil has broken my dear dream!
+- I dreamed of making a new open source library to do it for a while, but `f-string` is too strong …… This devil has broken my dear dream!
+- Reference ☞ https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 
 ```python
 sample = [
