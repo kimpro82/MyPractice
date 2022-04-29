@@ -5,29 +5,143 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
+- [Vertical Alignment 2 (2022.04.27)](#vertical-alignment-2-20220427)
 - [Arguements Parsing (2022.03.24)](#arguements-parsing-20220324)
 - [Image Blending (2022.02.27)](#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](#iterator-20210617)
-- [If ~ While ~ True (2021.05.04)](#if--while--true-20210504)
-- [Re.Split (2021.04.29)](#resplit-20210429)
-- [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](#__name__--__main__-20210426)
+- [`if` ~ `while` ~ `true` (2021.05.04)](#if--while--true-20210504)
+- [`re.split()` (2021.04.29)](#resplit-20210429)
+- [`__name__ == '__main__'` (2021.04.26)](#__name__--__main__-20210426)
 - [Turtle (2021.03.24)](#turtle-20210324)
-- [Map (2021.02.16)](#map-20210216)
+- [`map()` (2021.02.16)](#map-20210216)
 - [Words Mix (2021.01.13)](#words-mix-20210113)
 - [Count Words (2020.11.10)](#count-words-20201110)
 - [Operator Precedence (2020.06.28)](#operator-precedence-20200628)
-- [Print (2020.03.31)](#print-20200331)
+- [`print()` (2020.03.31)](#print-20200331)
 - [Shuffle List (2020.03.30)](#shuffle-list-20200330)
 - [Random Seed Influence (2020.01.05)](#random-seed-influence-20200105)
 - [Square Root (2020.01.01) (adjusted 2020.01.04)](#square-root-20200101)
 - [Fibonacci Series (2019.12.18)](#fibonacci-series-20191218)
 - [Generate List (2019.12.07)](#generate-list-20191207)
 - [Limited Range Sampling (2019.09.22)](#limited-range-sampling-20190922)
-- [With ~ Open (2019.07.21)](#with--open-20190721)
+- [`with` ~ `open()` (2019.07.21)](#with--open-20190721)
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
-- [While (2017.05.15)](#while-20170515)
+- [`while` (2017.05.15)](#while-20170515)
+
+
+## [Vertical Alignment 2 (2022.04.27)](#list)
+
+- I dreamed of making a new open source library to do it for a while, but *f-string* is too strong …… This devil has broken my dear dream!
+- Reference ☞ https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
+
+```python
+sample = [
+    ['이렇게', '하면'],
+    ['줄이', '잘 맞을까'],
+    ['모르겠네', '어디'],
+    ['한 번', '볼까'],
+]
+```
+
+### 1. Normal Approach
+```python
+# 1. Normal Approach
+print("# 1. Normal Approach")
+for el in sample :
+    print(el[0], el[1])
+```
+```
+# 1. Normal Approach
+이렇게 하면
+줄이 잘 맞을까
+모르겠네 어디
+한 번 볼까
+```
+
+### 2. Use *f-string*
+```python
+# 2. Use f-string
+sample[3][0] = '두 번'
+print("\n# 2. Use f-string")
+for el in sample :
+    print(f"{el[0]:<10}", f"{el[1]:<10}")                   # Korean letters drive it to insanity
+```
+```
+# 2. Use f-string
+이렇게        하면
+줄이         잘 맞을까
+모르겠네       어디
+두 번        볼까
+```
+
+### 2.1 Use *f-string* : Handle Korean letters
+```python
+# 2.1 Use f-string : Handle Korean letters
+sample[3][0] = '세 번'
+print("\n# 2.1 Use f-string 2 : Handle Korean letters")
+for r in sample :
+    length = [10, 10]
+    for c in range(2) :
+        for char in r[c] :
+            if char >= '가' :
+                length[c] -= 1
+    # print(length[0], length[1])                           # test : ok
+    # print(f"{r[0]:<length[0]} {r[1]:<length[1]}")         # ValueError: Invalid format specifier; length[] → {length[]}
+    print(f"{r[0]:<{length[0]}} {r[1]:<{length[1]}}")
+```
+```
+# 2.1 Use f-string 2 : Handle Korean letters
+이렇게     하면
+줄이       잘 맞을까
+모르겠네   어디
+세 번      볼까
+```
+
+### 2.2 Use *f-string* : Change alignment direction
+```python
+sample[3][0] = '네 번'
+print("\n2.2 Use f-string : Change alignment direction")
+for r in sample :
+    length = [10, 10]
+    for c in range(2) :
+        for char in r[c] :
+            if char >= '가' :
+                length[c] -= 1
+    print(f"{r[0]:>{length[0]}} {r[1]:>{length[1]}}")
+```
+```
+2.2 Use f-string : Change alignment direction
+    이렇게       하면
+      줄이  잘 맞을까
+  모르겠네       어디
+     네 번       볼까
+```
+
+### 2.3 Use *f-string* : Code generalization & individual alignment control
+```python
+sample[3][0] = '다섯 번'
+print("\n2.3 Use f-string : Code generalization & individual alignment control")
+for r in sample :
+    length = [10] * len(r)
+    for c in range(len(r)) :
+        for char in r[c] :
+            if char >= '가' :
+                length[c] -= 1
+        if c == 1 :
+            print(f"{r[c]:>{length[c]}}", end = '')
+        else :
+            print(f"{r[c]:<{length[c]}}", end = '')
+    print()
+```
+```
+2.3 Use f-string : Code generalization & individual alignment control
+이렇게          하면
+줄이       잘 맞을까
+모르겠네        어디
+다섯 번         볼까
+```
 
 
 ## [Arguements Parsing (2022.03.24)](#list)
@@ -241,7 +355,7 @@ if __name__ == "__main__" :
 > bros1 : Wassup
 
 
-## [If ~ While ~ True (2021.05.04)](#list)
+## [`if` ~ `while` ~ `true` (2021.05.04)](#list)
 - A practice of using `if` and `while`
 - All the strings and numbers *except* `0` and `False` are regarded as `True`
 
@@ -288,7 +402,7 @@ while '123' :
 > True  
 > 123
 
-## [Re.Split (2021.04.29)](#list)
+## [`re.split()` (2021.04.29)](#list)
 - Seperating a `string` by plural delimiters
 - Using regular expression (`re`)
 
@@ -311,7 +425,7 @@ print(re.split("\W", txt))          # \W = a-zA-Z0-9
 > ['one', 'two', 'three', 'four']
 
 
-## [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](#list)
+## [`__name__ == '__main__'` (2021.04.26)](#list)
 - A practice of importing and running `module` in Python
 - Using `__name__` and `__main__`
 
@@ -393,7 +507,7 @@ turtle.circle(100, steps=6) # hexagon
 turtle.mainloop()           # avoid the screen closing
 ```
 
-## [Map (2021.02.16)](#list)
+## [`map()` (2021.02.16)](#list)
 - To find how `map()` runs
 - I guessed the result of running `map()` would be something to contain hidden elements.
 - But actually it is a `generator type object`, so has not futural list data before I request by `list()`.
@@ -563,7 +677,7 @@ print(("F" == "M") or "m") # the same with the above line
 ☞ reference : https://www.programiz.com/python-programming/precedence-associativity
 
 
-## [Print (2020.03.31)](#list)
+## [`print()` (2020.03.31)](#list)
 simple practice with `print()`
 
 ```python
@@ -860,7 +974,7 @@ stats.describe(data3)[0:2]
 > (1000, (25.600374595125377, 74.942171158969671))
 
 
-## [With ~ Open (2019.07.21)](#list)
+## [`with` ~ `open()` (2019.07.21)](#list)
 - read binary file
 - convert decimal number ↔ hexadecimal number
 
@@ -975,7 +1089,7 @@ I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__
 What the `__hell__`?
 
 
-## [While (2017.05.15)](#list)
+## [`while` (2017.05.15)](#list)
 a simple Python practice
 
 ```python

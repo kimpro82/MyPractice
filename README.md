@@ -6,11 +6,11 @@ miscellaneous petty works
 ### \<List>
 
 - [Github Dashboard](#my-python-practice)
-- [My **R** Practice](#my-r-practice)
 - [My **Python** Practice](#my-python-practice)
+- [My **R** Practice](#my-r-practice)
 - [My **VBA** Practice](#my-vba-practice)
-- [My **Web** Practice](#my-web-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
+- [My **Web** Practice](#my-web-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
@@ -25,6 +25,34 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - Outline (2020.04.19)
 
 
+## [My Python Practice](/Python#my-python-practice)
+
+- [Vertical Alignment 2 (2022.04.27)](/Python#vertical-alignment-2-20220427)
+- [Arguements Parsing (2022.03.24)](/Python#arguements-parsing-20220324)
+- [Image Blending (2022.02.27)](/Python#image-blending-20220227)
+- [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
+- [Iterator (2021.06.17)](/Python#iterator-20210617)
+- [`if` ~ `while` ~ `true` (2021.05.04)](/Python#if--while--true-20210504)
+- [`re.split()` (2021.04.29)](/Python#resplit-20210429)
+- [`__name__ == '__main__'` (2021.04.26)](/Python#__name__--__main__-20210426)
+- [Turtle (2021.03.24)](/Python#turtle-20210324)
+- [`map()` (2021.02.16)](/Python#map-20210216)
+- [Words Mix (2021.01.13)](/Python#words-mix-20210113)
+- [Count Words (2020.11.10)](/Python#count-words-20201110)
+- [Operator Precedence (2020.06.28)](/Python#operator-precedence-20200628)
+- [`print()` (2020.03.31)](/Python#print-20200331)
+- [Shuffle List (2020.03.30)](/Python#shuffle-list-20200330)
+- [Random Seed Influence (2020.01.05)](/Python#random-seed-influence-20200105)
+- [Square Root (2020.01.01) (adjusted 2020.01.04)](/Python#square-root-20200101)
+- [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
+- [Generate List (2019.12.07)](/Python#generate-list-20191207)
+- [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
+- [`with` ~ `open()` (2019.07.21)](/Python#with--open-20190721)
+- [Password (2019.05.24)](/Python#password-20190524)
+- [Class (2018.02.07)](/Python#class-20180207)
+- [`while` (2017.05.15)](/Python#while-20170515)
+
+
 ## [My R Practice](/R#my-r-practice)
 
 - [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
@@ -36,33 +64,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [CF Affection (2019.05.25)](/R#cf-affection-20190525)
 - [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
 - [RGB (2017.04.14)](/R#rgb-20170414)
-
-
-## [My Python Practice](/Python#my-python-practice)
-
-- [Arguements Parsing (2022.03.24)](/Python#arguements-parsing-20220324)
-- [Image Blending (2022.02.27)](/Python#image-blending-20220227)
-- [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
-- [Iterator (2021.06.17)](/Python#iterator-20210617)
-- [If ~ While ~ True (2021.05.04)](/Python#if--while--true-20210504)
-- [Re.Split (2021.04.29)](/Python#resplit-20210429)
-- [\_\_name\_\_ == '\_\_main\_\_' (2021.04.26)](/Python#__name__--__main__-20210426)
-- [Turtle (2021.03.24)](/Python#turtle-20210324)
-- [Map (2021.02.16)](/Python#map-20210216)
-- [Words Mix (2021.01.13)](/Python#words-mix-20210113)
-- [Count Words (2020.11.10)](/Python#count-words-20201110)
-- [Operator Precedence (2020.06.28)](/Python#operator-precedence-20200628)
-- [Print (2020.03.31)](/Python#print-20200331)
-- [Shuffle List (2020.03.30)](/Python#shuffle-list-20200330)
-- [Random Seed Influence (2020.01.05)](/Python#random-seed-influence-20200105)
-- [Square Root (2020.01.01) (adjusted 2020.01.04)](/Python#square-root-20200101)
-- [Fibonacci Series (2019.12.18)](/Python#fibonacci-series-20191218)
-- [Generate List (2019.12.07)](/Python#generate-list-20191207)
-- [Limited Range Sampling (2019.09.22)](/Python#limited-range-sampling-20190922)
-- [With ~ Open (2019.07.21)](/Python#with--open-20190721)
-- [Password (2019.05.24)](/Python#password-20190524)
-- [Class (2018.02.07)](/Python#class-20180207)
-- [While (2017.05.15)](/Python#while-20170515)
 
 
 ## [My VBA Practice](/VBA#my-vba-practice)
@@ -79,15 +80,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
 
 
-## [My Web Practice](/Web#my-web-practice)
-
-- [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
-- [Dove's Step 1 (2022.01.13)](/Web#doves-step-1-20220113)
-- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
-- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
-- [Ganzi (2017.04.03)](/Web#ganzi-20170403)
-
-
 ## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
 
 - [`printf()` format test (2022.04.25)](/C%26Cpp#printf-format-test-20220425)
@@ -99,6 +91,15 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Template (2021.07.23)](/C&Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C&Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C&Cpp#hello-world-20210512)
+
+
+## [My Web Practice](/Web#my-web-practice)
+
+- [Bootstrap : Magic Stick (2022.01.28)](/Web#bootstrap--magic-stick-20220128)
+- [Dove's Step 1 (2022.01.13)](/Web#doves-step-1-20220113)
+- [Script Tag's Location (2022.01.02)](/Web#script-tags-location-20220102)
+- [Colorful Show (2020.03.04)](/Web#colorful-show-20200304)
+- [Ganzi (2017.04.03)](/Web#ganzi-20170403)
 
 
 ## [My C# Practice](/CSharp#my-c-practice)
