@@ -16,6 +16,7 @@
 ## [`Shiny` - 1st Trial (2022.05.04)](#list)
 
 - Hello Shiny
+- Reference ☞ https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/
 
 ```r
 if (!requireNamespace("shiny")) install.packages("shiny")
