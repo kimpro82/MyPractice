@@ -1,6 +1,7 @@
 # [\[My R Practice\]](/#my-r-practice)
 
 ## List
+- [`Shiny` - 1st Trial]()
 - [Scatter Points in a Circle (2021.08.16)](#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
 - [Sample Number 2 (2020.06.16)](#sample-number-2-2020616)
@@ -10,6 +11,20 @@
 - [CF Affection (2019.05.25)](#cf-affection-20190525)
 - [Fibonacci Tornado (2017.05.07)](#fibonacci-tornado-20170507)
 - [RGB (2017.04.14)](#rgb-20170414)
+
+
+## [`Shiny` - 1st Trial](#list)
+
+- Hello Shiny
+
+```r
+if (!requireNamespace("shiny")) install.packages("shiny")
+library("shiny")
+
+runExample("01_hello")
+```
+
+![Hello Shiny](Images/Shiny_20220505_RunExample.PNG)
 
 
 ## [Scatter Points in a Circle (2021.08.16)](#list)
