@@ -1,16 +1,34 @@
 # [\[My R Practice\]](/#my-r-practice)
-- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
-- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
+
+## List
+- [`Shiny` - 1st Trial (2022.05.04)](#shiny---1st-trial-20220504)
+- [Scatter Points in a Circle (2021.08.16)](#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
+- [Sample Number 2 (2020.06.16)](#sample-number-2-2020616)
 - Sample Number (2020.06.10)
-- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
-- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
-- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
-- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
-- [RGB (2017.04.14)](/R#rgb-20170414)
+- [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
+- [Grade Cancel Effect (2019.07.19)](#grade-cancel-effect-20190719)
+- [CF Affection (2019.05.25)](#cf-affection-20190525)
+- [Fibonacci Tornado (2017.05.07)](#fibonacci-tornado-20170507)
+- [RGB (2017.04.14)](#rgb-20170414)
 
 
-## [Scatter Points in a Circle (2021.08.16)](/R#my-r-practice)
+## [`Shiny` - 1st Trial (2022.05.04)](#list)
+
+- Hello Shiny
+- Reference ☞ https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/
+
+```r
+if (!requireNamespace("shiny")) install.packages("shiny")
+library("shiny")
+
+runExample("01_hello")
+```
+
+![Hello Shiny](Images/Shiny_20220505_RunExample.PNG)
+
+
+## [Scatter Points in a Circle (2021.08.16)](#list)
 \* Scatter points in a circle in various ways  
 \* using `plotrix`
 
@@ -163,7 +181,7 @@ draw.circle(0, 0, r)
 <img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="500" height="500" alt = "3.1 Points with lattice spacing including outside the circle">
 
 
-## [Permutations and Combinations (2021.04.05)](/R#my-r-practice)
+## [Permutations and Combinations (2021.04.05)](#list)
 \* get permutations and combinations  
 \* using `gtools`
 
@@ -247,7 +265,7 @@ choose(4, 2)                                # 4C2
 > [1] 6
 
 
-## [Sample Number 2 (2020.6.16)](/R#my-r-practice)
+## [Sample Number 2 (2020.6.16)](#list)
 get each branch's sample number for inspection work
 
 ```R
@@ -315,7 +333,7 @@ ceiling(3/10) # rounding up
 > 1
 
 
-## [Generating Array and Variables by for Loop (2019.12.06)](/R#my-r-practice)
+## [Generating Array and Variables by for Loop (2019.12.06)](#list)
 answer for a question at chatting room  
 \* R array-related data structure is actually defined as vector, matrix and array about each dimension's array.  
 \* I call it just 'array' by common mathematical notion here, but it is different from R's strict data structure definition.  
@@ -383,7 +401,7 @@ Hmm …… is it too much?
 It can be more clearly effective when *n* is larger, but now seems not yet.  
 
 
-## [Grade Cancel Effect (2019.07.19)](/R#my-r-practice)
+## [Grade Cancel Effect (2019.07.19)](#list)
 try simulating grade cancel effect for my sister
 1) generate grade data (because my sister's real GPA can't be opened.ㅋㅋ)
 2) plot
@@ -459,7 +477,7 @@ mean(sort(평점)[9:len])
 > 3.514286
 
 
-## [CF Affection (2019.05.25)](/R#my-r-practice)
+## [CF Affection (2019.05.25)](#list)
 \* For my friend JW Park who wants to measure the affection of TV CF  
 \* It demands simply CF time schedule and target frequency(ex. app download time), not heavy tracker.
 
@@ -502,7 +520,7 @@ for (i in 1:length(cf.time)) {
 ![CF Affection Measurement](Images/CF_Affection_Measurement_20190525.png)
 
 
-## [Fibonacci Tornado (2017.05.07)](/R#my-r-practice)
+## [Fibonacci Tornado (2017.05.07)](#list)
 generating Fibonacci Series and Fibonacci Coordinates by looping
 
 #### 1. Generating Fibonacci Series
@@ -597,7 +615,7 @@ plot(log(series[1:12]), type="l",
 ![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series_Golden_Ratio.PNG)
 
 
-## [RGB (2017.04.14)](/R#my-r-practice)
+## [RGB (2017.04.14)](#list)
 \* showing RGB color data' distribution by several methods in R  
 \* using `plot3d()`, converting on coordinate plane  
 \* generating RGB data with a sigmoid function
