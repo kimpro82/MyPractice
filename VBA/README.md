@@ -17,7 +17,8 @@ VBA, maybe it could my ancient future
 
 ## [Declare Plural Variable (2022.06.03)](#my-vba-practice)
 
-- Every variable should be specified individually as its type although they are declared in a line.
+- A technical issue raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
+- **Every variable should be specified individually as its type although they are declared in a line.**
 - In the below cases, the result `0` means `Empty (uninitialized)` and `2` does `Integer` from `VarType()`.  
   ※ Reference ☞ [[Microsoft Docs] VBA > VarType function > Return values](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/vartype-function#return-values)
 
