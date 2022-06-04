@@ -17,7 +17,9 @@ VBA, maybe it could my ancient future
 
 ## [Declare Plural Variable (2022.06.03)](#my-vba-practice)
 
-- Reference ☞ [[Microsoft Docs] VBA > VarType function > Return values](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/vartype-function#return-values)
+- Every variable should be specified as its type althogh they are declared in a line.
+- In the below cases, the result `0` means `Empty (uninitialized)` and `2` does `Integer` from `VarType()`.
+  · Reference ☞ [[Microsoft Docs] VBA > VarType function > Return values](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/vartype-function#return-values)
 
 ```vba
 Option Explicit
