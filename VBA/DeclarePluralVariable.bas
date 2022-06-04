@@ -1,4 +1,4 @@
-' Microsoft Docs > VBA > VarType function > Return values
+' [Microsoft Docs] VBA > VarType function > Return values
 ' ☞ https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/vartype-function#return-values
 
 

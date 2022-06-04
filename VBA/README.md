@@ -2,6 +2,7 @@
 
 VBA, maybe it could my ancient future
 
+- [Declare Plural Variable (2022.06.03)]()
 - [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
 - [Variable Scope (2011.11.29)](/VBA#variable-scope-20111129)
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
@@ -12,6 +13,37 @@ VBA, maybe it could my ancient future
 - [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
 - [Sigma (2021.01.02)](/VBA#sigma-20210102)
 - [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
+
+
+## [Declare Plural Variable (2022.06.03)](/VBA#my-vba-practice)
+
+- Reference ☞ [[Microsoft Docs] VBA > VarType function > Return values](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/vartype-function#return-values)
+
+```vba
+Option Explicit
+```
+
+```vba
+Private Sub StupidDeclare()
+
+    Dim a, b As Integer
+
+    Debug.Print VarType(a) & " " & VarType(b)
+
+End Sub
+```
+> 0 2
+
+```vba
+Private Sub SmartDeclare()
+
+    Dim a As Integer, b As Integer
+
+    Debug.Print VarType(a) & " " & VarType(b)
+
+End Sub
+```
+> 2 2
 
 
 ## [Color Scroll 2 (2021.12.01)](/VBA#my-vba-practice)
