@@ -2,21 +2,56 @@
 
 VBA, maybe it could my ancient future
 
-- [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
-- [Variable Scope (2011.11.29)](/VBA#variable-scope-20111129)
-- [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
-- [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
-- [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
-- [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
-- [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
-- [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
-- [Sigma (2021.01.02)](/VBA#sigma-20210102)
-- [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
+- [Declare Plural Variable (2022.06.03)](#declare-plural-variable-20220603)
+- [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
+- [Variable Scope (2011.11.29)](#variable-scope-20111129)
+- [Control Formula Calculation Option (2021.11.08)](#control-formula-calculation-option-20211108)
+- [Read Binary File (2021.08.23)](#read-binary-file-20210823)
+- [Try ~ Catch ~ Finally (2021.07.28)](#try-catch-finally-20210728)
+- [Sigma4 (2021.07.26)](#sigma4-20210726)
+- [Sigma3 (2021.07.07)](#sigma3-20210707)
+- [Sigma2 (2021.01.03)](#sigma2-20210103)
+- [Sigma (2021.01.02)](#sigma-20210102)
+- [Color Scroll (2020.11.14)](#color-scroll-20201114)
 
 
-## [Color Scroll 2 (2021.12.01)](/VBA#my-vba-practice)
+## [Declare Plural Variable (2022.06.03)](#my-vba-practice)
 
-- Advanced from [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114) : succeed in making it move!
+- A technical issue raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
+- **Every variable should be specified individually as its type although they are declared in a line.**
+- In the below cases, the result `0` means `Empty (uninitialized)` and `2` does `Integer` from `VarType()`.  
+  ※ Reference ☞ [[Microsoft Docs] VBA > VarType function > Return values](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/vartype-function#return-values)
+
+```vba
+Option Explicit
+```
+
+```vba
+Private Sub StupidDeclare()
+
+    Dim a, b As Integer
+
+    Debug.Print VarType(a) & " " & VarType(b)
+
+End Sub
+```
+> 0 2
+
+```vba
+Private Sub SmartDeclare()
+
+    Dim a As Integer, b As Integer
+
+    Debug.Print VarType(a) & " " & VarType(b)
+
+End Sub
+```
+> 2 2
+
+
+## [Color Scroll 2 (2021.12.01)](#my-vba-practice)
+
+- Advanced from [Color Scroll (2020.11.14)](#color-scroll-20201114) : succeed in making it move!
 - Use `array` `Application.Calculation` `RGB()`, without `Select`/`Selection`
 
 ![Color Scroll 2](Images/VBA_ColorScroll2.gif)
@@ -98,7 +133,7 @@ End Sub
 ```
 
 
-## [Variable Scope (2011.11.29)](/VBA#my-vba-practice)
+## [Variable Scope (2011.11.29)](#my-vba-practice)
 
 - Load several operation results into `Public` variables and call them into local `Sub` procedure
 - I don't think it is an enough practice but my front line now here ……
@@ -148,7 +183,7 @@ End Sub
 ```
 
 
-## [Control Formula Calculation Option (2021.11.08)](/VBA#my-vba-practice)
+## [Control Formula Calculation Option (2021.11.08)](#my-vba-practice)
 
 - Control **Excel's formula calculation option** by `Application.Calculation` method
 - Working with `xlManual` status is much faster than `xlAutomatic`
@@ -209,7 +244,7 @@ End Sub
 ```
 
 
-## [Read Binary File (2021.08.23)](/VBA#my-vba-practice)
+## [Read Binary File (2021.08.23)](#my-vba-practice)
 
 - Use `Open ~ For ~ As` statement
 - `path` requires absoulte one
@@ -279,7 +314,7 @@ path = ThisWorkbook.path & Application.PathSeparator & Range("B1")
 ![Read Binary 2](Images/VBA_ReadBinary_2.PNG)
 
 
-## [Try Catch Finally (2021.07.28)](/VBA#my-vba-practice)
+## [Try Catch Finally (2021.07.28)](#my-vba-practice)
 
 - Use `Try ~ Catch ~ Finally` statement in VBA
 - Actually VBA doesn't support it officially, but we can imitate it with **label** based on `GoTo` grammar.
@@ -319,7 +354,7 @@ End Function
 ```
 
 
-## [Sigma4 (2021.07.26)](/VBA#my-vba-practice)
+## [Sigma4 (2021.07.26)](#my-vba-practice)
 
 - Change the calculation method from loop to **[Faulhaber's Formula](https://en.wikipedia.org/wiki/Faulhaber%27s_formula)** (make faster)
 - Support operations for k ~ k^4
@@ -375,7 +410,7 @@ End Function
 ```
 
 
-## [Sigma3 (2021.07.07)](/VBA#my-vba-practice)
+## [Sigma3 (2021.07.07)](#my-vba-practice)
 
 - Add **Error Handler** 
 - How about naming labels such like `try` ~ `catch` ~ `finally`?
@@ -415,7 +450,7 @@ End Function
 ```
 
 
-## [Sigma2 (2021.01.03)](/VBA#my-vba-practice)
+## [Sigma2 (2021.01.03)](#my-vba-practice)
 
 - Add a parameter of _k_ that indicates a starting point
 - Need to add codes for handling errors.
@@ -440,7 +475,7 @@ End Function
 ```
 
 
-## [Sigma (2021.01.02)](/VBA#my-vba-practice)
+## [Sigma (2021.01.02)](#my-vba-practice)
 
 - Make a function to calculate `summation` (a.k.a. Sigma, Σ)
 - Define all the variables as `integer`
@@ -465,7 +500,7 @@ End Function
 ```
 
 
-## [Color Scroll (2020.11.14)](/VBA#my-vba-practice)
+## [Color Scroll (2020.11.14)](#my-vba-practice)
 
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet
