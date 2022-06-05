@@ -2,7 +2,7 @@
 
 VBA, maybe it could my ancient future
 
-- [`ByRef` vs `ByVal` (2022.06.05)]()
+- [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.03)](#declare-plural-variable-20220603)
 - [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
 - [Variable Scope (2011.11.29)](#variable-scope-20111129)
@@ -19,6 +19,7 @@ VBA, maybe it could my ancient future
 ## [`ByRef` vs `ByVal` (2022.06.05)](#my-vba-practice)
 
 - One more technical issue, following the below topic, raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
+- Don't ignore VBA users! We also understand the difference between **Call by Reference** and **Call by Value**!
 - References  
   · [[Microsoft Docs] VBA > Array argument must be ByRef](https://docs.microsoft.com/ko-kr/office/vba/language/reference/user-interface-help/array-argument-must-be-byref)  
   · [[Microsoft Docs] VBA > Understanding parameter arrays](https://docs.microsoft.com/ko-kr/office/vba/language/concepts/getting-started/understanding-parameter-arrays)
