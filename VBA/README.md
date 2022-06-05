@@ -20,7 +20,7 @@ VBA, maybe it could my ancient future
 
 - One more technical issue, following the below topic, raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
 - Don't ignore VBA users! We also understand the difference between **Call by Reference** and **Call by Value**!
-- Further discussion
+- Further discussion  
   · [[Microsoft Docs] VBA > Array argument must be ByRef](https://docs.microsoft.com/ko-kr/office/vba/language/reference/user-interface-help/array-argument-must-be-byref)  
   · [[Microsoft Docs] VBA > Understanding parameter arrays](https://docs.microsoft.com/ko-kr/office/vba/language/concepts/getting-started/understanding-parameter-arrays)
 
