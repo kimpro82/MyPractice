@@ -3,7 +3,7 @@
 VBA, maybe it could my ancient future
 
 - [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
-- [Declare Plural Variable (2022.06.03)](#declare-plural-variable-20220603)
+- [Declare Plural Variable (2022.06.04)](#declare-plural-variable-20220604)
 - [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
 - [Variable Scope (2011.11.29)](#variable-scope-20111129)
 - [Control Formula Calculation Option (2021.11.08)](#control-formula-calculation-option-20211108)
@@ -64,7 +64,7 @@ End Sub
 > 남편은 최고다.
 
 
-## [Declare Plural Variable (2022.06.03)](#my-vba-practice)
+## [Declare Plural Variable (2022.06.04)](#my-vba-practice)
 
 - A technical issue raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
 - **Every variable should be specified individually as its type although they are declared in a line.**
