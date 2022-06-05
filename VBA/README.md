@@ -60,10 +60,8 @@ Private Sub Main()
 
 End Sub
 ```
-```
-마누라는 바보다.
-남편은 최고다.
-```
+> 마누라는 바보다.  
+> 남편은 최고다.
 
 
 ## [Declare Plural Variable (2022.06.03)](#my-vba-practice)
