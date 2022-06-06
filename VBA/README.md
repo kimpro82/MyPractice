@@ -1,6 +1,6 @@
 # My VBA Practice
 
-VBA, maybe it could my ancient future
+VBA, maybe it could be my ancient future
 
 - [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.04)](#declare-plural-variable-20220604)
@@ -21,8 +21,9 @@ VBA, maybe it could my ancient future
 - One more technical issue, following the below topic, raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
 - Don't ignore VBA users! We also understand the difference between **Call by Reference** and **Call by Value**!
 - Further discussion  
-  · [[Microsoft Docs] VBA > Array argument must be ByRef](https://docs.microsoft.com/ko-kr/office/vba/language/reference/user-interface-help/array-argument-must-be-byref)  
-  · [[Microsoft Docs] VBA > Understanding parameter arrays](https://docs.microsoft.com/ko-kr/office/vba/language/concepts/getting-started/understanding-parameter-arrays)
+  · [[Microsoft Docs] VB for .Net > Passing Arguments by Value and by Reference](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference)
+  · [[Microsoft Docs] VBA > Array argument must be ByRef](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/array-argument-must-be-byref)  
+  · [[Microsoft Docs] VBA > Understanding parameter arrays](https://docs.microsoft.com/en-us/office/vba/language/concepts/getting-started/understanding-parameter-arrays)
 
 ```vba
 Option Explicit
