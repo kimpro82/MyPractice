@@ -1,8 +1,9 @@
 # My VBA Practice
 
-VBA, maybe it could my ancient future
+VBA, maybe it could be my ancient future
 
-- [Declare Plural Variable (2022.06.03)](#declare-plural-variable-20220603)
+- [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
+- [Declare Plural Variable (2022.06.04)](#declare-plural-variable-20220604)
 - [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
 - [Variable Scope (2011.11.29)](#variable-scope-20111129)
 - [Control Formula Calculation Option (2021.11.08)](#control-formula-calculation-option-20211108)
@@ -15,7 +16,56 @@ VBA, maybe it could my ancient future
 - [Color Scroll (2020.11.14)](#color-scroll-20201114)
 
 
-## [Declare Plural Variable (2022.06.03)](#my-vba-practice)
+## [`ByRef` vs `ByVal` (2022.06.05)](#my-vba-practice)
+
+- One more technical issue, following the below topic, raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
+- Don't ignore VBA users! We also understand the difference between **Call by Reference** and **Call by Value**!
+- Further discussion  
+  · [[Microsoft Docs] VB.NET > Passing Arguments by Value and by Reference](https://docs.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference)  
+  · [[Microsoft Docs] VBA > Array argument must be ByRef](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/array-argument-must-be-byref)  
+  · [[Microsoft Docs] VBA > Understanding parameter arrays](https://docs.microsoft.com/en-us/office/vba/language/concepts/getting-started/understanding-parameter-arrays)
+
+```vba
+Option Explicit
+```
+```vba
+Private Function fByRef(ByRef s As String)
+
+    s = "바보"
+
+End Function
+```
+```vba
+Private Function fByVal(ByVal s As String)                  ' An array as a parameter can't be called by Value
+
+    s = "바보"
+
+End Function
+```
+```vba
+Private Sub Main()
+
+    Dim 마누라(1) As String
+    Dim 남편(1) As String
+
+    마누라(0) = "마누라"
+    마누라(1) = "최고"
+    남편(0) = "남편"
+    남편(1) = "최고"
+
+    Call fByRef(마누라(1))
+    Call fByVal(남편(1))
+
+    Debug.Print 마누라(0) & "는 " & 마누라(1) & "다."
+    Debug.Print 남편(0) & "은 " & 남편(1) & "다."
+
+End Sub
+```
+> 마누라는 바보다.  
+> 남편은 최고다.
+
+
+## [Declare Plural Variable (2022.06.04)](#my-vba-practice)
 
 - A technical issue raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
 - **Every variable should be specified individually as its type although they are declared in a line.**
