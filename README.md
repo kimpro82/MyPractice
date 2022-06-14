@@ -29,7 +29,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 - [Vertical Alignment 2 (2022.04.27)](/Python#vertical-alignment-2-20220427)
 - [Arguements Parsing (2022.03.24)](/Python#arguements-parsing-20220324)
-- [Image Blending (2022.02.27)](/Python#image-blending-20220227)
 - [Vertical Alignment (2021.12.21)](/Python#vertical-alignment-20211221)
 - [Iterator (2021.06.17)](/Python#iterator-20210617)
 - [`if` ~ `while` ~ `true` (2021.05.04)](/Python#if--while--true-20210504)
@@ -58,13 +57,8 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [`Shiny` - 1st Trial (2022.05.04)](/R#shiny---1st-trial-20220504)
 - [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
-- [Sample Number 2 (2020.06.16)](/R#sample-number-2-2020616)
-- Sample Number (2020.06.10)
 - [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
-- [Grade Cancel Effect (2019.07.19)](/R#grade-cancel-effect-20190719)
-- [CF Affection (2019.05.25)](/R#cf-affection-20190525)
 - [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
-- [RGB (2017.04.14)](/R#rgb-20170414)
 
 
 ## [My VBA Practice](/VBA#my-vba-practice)
@@ -76,10 +70,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
 - [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
 - [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
-- [Sigma4 (2021.07.26)](/VBA#sigma4-20210726)
-- [Sigma3 (2021.07.07)](/VBA#sigma3-20210707)
-- [Sigma2 (2021.01.03)](/VBA#sigma2-20210103)
-- [Sigma (2021.01.02)](/VBA#sigma-20210102)
 - [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
 
 
