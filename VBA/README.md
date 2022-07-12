@@ -2,6 +2,10 @@
 
 VBA, maybe it could be my ancient future
 
+
+### \<List>
+
+- [`File` Object : `DateCreated` Property (2022.07.12)]()
 - [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.04)](#declare-plural-variable-20220604)
 - [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
@@ -12,7 +16,43 @@ VBA, maybe it could be my ancient future
 - [Color Scroll (2020.11.14)](#color-scroll-20201114)
 
 
-## [`ByRef` vs `ByVal` (2022.06.05)](#my-vba-practice)
+## [`File` Object : `DateCreated` Property (2022.07.12)](#list)
+
+- Read the `DateCreated` property from an external file through `File` object in VBA
+- Reference : [[Microsoft Docs] VBA > Objects > File Object](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/file-object)
+
+![File Object](Images/VBA_File_DateCreated.PNG)
+
+```vba
+Option Explicit
+```
+```vba
+Sub ReadDateCreated()
+
+    Dim fs, f, s
+    Dim path As String
+    path = ThisWorkbook.path & Application.PathSeparator & Range("B1").Value
+        'Debug.Print path
+    Set fs = CreateObject("Scripting.FileSystemObject")
+    Set f = fs.GetFile(path)
+    s = f.DateCreated
+
+    Range("B2").Value = s
+
+End Sub
+```
+```vba
+Private Sub btnReadDateCreated_Click()
+
+    Application.Calculation = xlManual
+        Call ReadDateCreated
+    Application.Calculation = xlAutomatic
+
+End Sub
+```
+
+
+## [`ByRef` vs `ByVal` (2022.06.05)](#list)
 
 - One more technical issue, following the below topic, raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
 - Don't ignore VBA users! We also understand the difference between **Call by Reference** and **Call by Value**!
@@ -61,7 +101,7 @@ End Sub
 > 남편은 최고다.
 
 
-## [Declare Plural Variable (2022.06.04)](#my-vba-practice)
+## [Declare Plural Variable (2022.06.04)](#list)
 
 - A technical issue raised from [Idea Generator v0.20 (2022.06.03)](https://github.com/kimpro82/MyFamilyCare/tree/main/IdeaGenerator#idea-generator-v020-20220603)
 - **Every variable should be specified individually as its type although they are declared in a line.**
@@ -95,7 +135,7 @@ End Sub
 > 2 2
 
 
-## [Color Scroll 2 (2021.12.01)](#my-vba-practice)
+## [Color Scroll 2 (2021.12.01)](#list)
 
 - Advanced from [Color Scroll (2020.11.14)](#color-scroll-20201114) : succeed in making it move!
 - Use `array` `Application.Calculation` `RGB()`, without `Select`/`Selection`
@@ -179,7 +219,7 @@ End Sub
 ```
 
 
-## [Variable Scope (2011.11.29)](#my-vba-practice)
+## [Variable Scope (2011.11.29)](#list)
 
 - Load several operation results into `Public` variables and call them into local `Sub` procedure
 - I don't think it is an enough practice but my front line now here ……
@@ -229,7 +269,7 @@ End Sub
 ```
 
 
-## [Control Formula Calculation Option (2021.11.08)](#my-vba-practice)
+## [Control Formula Calculation Option (2021.11.08)](#list)
 
 - Control **Excel's formula calculation option** by `Application.Calculation` method
 - Working with `xlManual` status is much faster than `xlAutomatic`
@@ -290,7 +330,7 @@ End Sub
 ```
 
 
-## [Read Binary File (2021.08.23)](#my-vba-practice)
+## [Read Binary File (2021.08.23)](#list)
 
 - Use `Open ~ For ~ As` statement
 - `path` requires absoulte one
@@ -360,7 +400,7 @@ path = ThisWorkbook.path & Application.PathSeparator & Range("B1")
 ![Read Binary 2](Images/VBA_ReadBinary_2.PNG)
 
 
-## [Try Catch Finally (2021.07.28)](#my-vba-practice)
+## [Try Catch Finally (2021.07.28)](#list)
 
 - Use `Try ~ Catch ~ Finally` statement in VBA
 - Actually VBA doesn't support it officially, but we can imitate it with **label** based on `GoTo` grammar.
@@ -400,7 +440,7 @@ End Function
 ```
 
 
-## [Color Scroll (2020.11.14)](#my-vba-practice)
+## [Color Scroll (2020.11.14)](#list)
 
 - Make a color matrix by `Nested For` statement
 - Want to make it flow, but it doesn't work well yet
