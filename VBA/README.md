@@ -5,7 +5,7 @@ VBA, maybe it could be my ancient future
 
 ### \<List>
 
-- [`File` Object : `DateCreated` Property (2022.07.12)]()
+- [`File` Object : `DateCreated` Property (2022.07.12)](#file-object--datecreated-property-20220712)
 - [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.04)](#declare-plural-variable-20220604)
 - [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
