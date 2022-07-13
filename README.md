@@ -7,9 +7,9 @@ miscellaneous petty works
 
 - [Github Dashboard](#github-dashboard)
 - [My **Python** Practice](#my-python-practice)
-- [My **R** Practice](#my-r-practice)
 - [My **VBA** Practice](#my-vba-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
+- [My **R** Practice](#my-r-practice)
 - [My **Web** Practice](#my-web-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
@@ -52,17 +52,9 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [`while` (2017.05.15)](/Python#while-20170515)
 
 
-## [My R Practice](/R#my-r-practice)
-
-- [`Shiny` - 1st Trial (2022.05.04)](/R#shiny---1st-trial-20220504)
-- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
-- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
-- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
-
-
 ## [My VBA Practice](/VBA#my-vba-practice)
 
+- [`File` Object : `DateCreated` Property (2022.07.12)](/VBA#file-object--datecreated-property-20220712)
 - [`ByRef` vs `ByVal` (2022.06.05)](/VBA#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.04)](/VBA#declare-plural-variable-20220604)
 - [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
@@ -84,6 +76,15 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Template (2021.07.23)](/C&Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C&Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C&Cpp#hello-world-20210512)
+
+
+## [My R Practice](/R#my-r-practice)
+
+- [`Shiny` - 1st Trial (2022.05.04)](/R#shiny---1st-trial-20220504)
+- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
+- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
+- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
 
 
 ## [My Web Practice](/Web#my-web-practice)
