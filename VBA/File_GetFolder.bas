@@ -16,9 +16,6 @@ Sub GetFileList()
     usingArea.ClearContents
 
     ' Get path
-    Dim oFSO, oFolder, oFile
-    Dim i As Integer
-
     Dim path As String
     If Range("B1").Value <> "" Then
         path = Range("B1").Value
@@ -28,14 +25,16 @@ Sub GetFileList()
         ' Debug.Print path
 
     ' Get oFile collection's informations
+    Dim oFSO, oFolder, oFile
+    Dim i As Integer
     Set oFSO = CreateObject("Scripting.FileSystemObject")
     Set oFolder = oFSO.GetFolder(path)
         ' Debug.Print oFolder.Name
     For Each oFile In oFolder.Files                                             ' .Files property returns a Files collection consisting of all File objects
-        Cells(5 + i, 1) = oFile.Name
-        Cells(5 + i, 2) = oFile.Type
-        Cells(5 + i, 3) = oFile.Size
-        Cells(5 + i, 4) = oFile.DateCreated
+        printZero.Offset(i, 0) = oFile.Name
+        printZero.Offset(i, 1) = oFile.Type
+        printZero.Offset(i, 2) = oFile.Size
+        printZero.Offset(i, 3) = oFile.DateCreated
         i = i + 1
     Next oFile
 
