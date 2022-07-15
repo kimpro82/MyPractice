@@ -54,6 +54,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My VBA Practice](/VBA#my-vba-practice)
 
+- [`Folder` Object : `Files` Property (2022.07.15)](/VBA#folder-object--files-property-20220715)
 - [`File` Object : `DateCreated` Property (2022.07.12)](/VBA#file-object--datecreated-property-20220712)
 - [`ByRef` vs `ByVal` (2022.06.05)](/VBA#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.04)](/VBA#declare-plural-variable-20220604)
