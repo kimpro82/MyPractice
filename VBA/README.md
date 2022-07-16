@@ -5,8 +5,8 @@ VBA, maybe it could be my ancient future
 
 ### \<List>
 
-- [`Folder` Object : `Files` Property (2022.07.15)](#folder-object--files-property-20220715)
-- [`File` Object : `DateCreated` Property (2022.07.12)](#file-object--datecreated-property-20220712)
+- [File System : `Folder.Files` (2022.07.15)](#folder-object--files-property-20220715)
+- [File System : `File.DateCreated` (2022.07.12)](#file-object--datecreated-property-20220712)
 - [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.04)](#declare-plural-variable-20220604)
 - [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
@@ -17,7 +17,7 @@ VBA, maybe it could be my ancient future
 - [Color Scroll (2020.11.14)](#color-scroll-20201114)
 
 
-## [`Folder` Object : `Files` Property (2022.07.15)](#list)
+## [File System : `Folder.Files` (2022.07.15)](#list)
 
 - Get a file list from a folder through `Folder` object in VBA
 - Reference : [[Microsoft Docs] VBA > Objects > Folder Object](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/folder-object)
@@ -75,7 +75,7 @@ End Sub
 ```
 
 
-## [`File` Object : `DateCreated` Property (2022.07.12)](#list)
+## [File System : `File.DateCreated` (2022.07.12)](#list)
 
 - Read the `DateCreated` property from an external file through `File` object in VBA
 - Reference : [[Microsoft Docs] VBA > Objects > File Object](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/file-object)
