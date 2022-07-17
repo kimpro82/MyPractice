@@ -5,7 +5,8 @@ VBA, maybe it could be my ancient future
 
 ### \<List>
 
-- [`File` Object : `DateCreated` Property (2022.07.12)](#file-object--datecreated-property-20220712)
+- [File System : `Folder.Files` (2022.07.15)](#folder-object--files-property-20220715)
+- [File System : `File.DateCreated` (2022.07.12)](#file-object--datecreated-property-20220712)
 - [`ByRef` vs `ByVal` (2022.06.05)](#byref-vs-byval-20220605)
 - [Declare Plural Variable (2022.06.04)](#declare-plural-variable-20220604)
 - [Color Scroll 2 (2021.12.01)](#color-scroll-2-20211201)
@@ -16,7 +17,65 @@ VBA, maybe it could be my ancient future
 - [Color Scroll (2020.11.14)](#color-scroll-20201114)
 
 
-## [`File` Object : `DateCreated` Property (2022.07.12)](#list)
+## [File System : `Folder.Files` (2022.07.15)](#list)
+
+- Get a file list from a folder through `Folder` object in VBA
+- Reference : [[Microsoft Docs] VBA > Objects > Folder Object](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/folder-object)
+
+![Get File List](Images/VBA_File_GetFileList.PNG)
+
+```vba
+Option Explicit
+```
+```vba
+Sub GetFileList()
+
+    ' Set zero point to print
+    Dim printZero As Range
+    Set printZero = Range("A5")
+
+    ' Clear area to print
+    Dim usingArea As Range
+    Set usingArea = Range(printZero, printZero.Offset(10000, 3))
+    usingArea.ClearContents
+
+    ' Get path
+    Dim path As String
+    If Range("B1").Value <> "" Then
+        path = Range("B1").Value
+    Else
+        path = ThisWorkbook.path & Application.PathSeparator
+    End If
+        ' Debug.Print path
+
+    ' Get oFile collection's informations
+    Dim oFSO, oFolder, oFile
+    Dim i As Integer
+    Set oFSO = CreateObject("Scripting.FileSystemObject")
+    Set oFolder = oFSO.GetFolder(path)
+        ' Debug.Print oFolder.Name
+    For Each oFile In oFolder.Files                                             ' .Files property returns a Files collection consisting of all File objects
+        printZero.Offset(i, 0) = oFile.Name
+        printZero.Offset(i, 1) = oFile.Type
+        printZero.Offset(i, 2) = oFile.Size
+        printZero.Offset(i, 3) = oFile.DateCreated
+        i = i + 1
+    Next oFile
+
+End Sub
+```
+```vba
+Private Sub btnGetFileList_Click()
+
+    Application.Calculation = xlManual
+        Call GetFileList
+    Application.Calculation = xlAutomatic
+
+End Sub
+```
+
+
+## [File System : `File.DateCreated` (2022.07.12)](#list)
 
 - Read the `DateCreated` property from an external file through `File` object in VBA
 - Reference : [[Microsoft Docs] VBA > Objects > File Object](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/file-object)
