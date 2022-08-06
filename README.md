@@ -16,6 +16,7 @@ miscellaneous petty works
 - [My **Golang** Practice](#my-golang-practice)
 - [My **BASIC** Practice](#my-basic-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
+- [My Dart Practice](#my-dart-practice)
 
 
 ## [Github Dashboard](/GithubDashboard#my-python-practice---github-dashboard)
