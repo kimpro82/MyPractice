@@ -8,7 +8,7 @@
 
 ## [Hello World (2022.07.17)](#list)
 
-- I heard some hearsay that **Dart** is almost like **C**, and whose app framework **Flutter** performs as well as native languages.
+- I heard some hearsay that **Dart** is almost like **C**, and whose app framework **Flutter** performs as well as other existing native languages.
 - Hmm but `import 'package:flutter/material.dart';` doesn't run on **Repl.it**!
 
 #### `HelloWorld.dart`
