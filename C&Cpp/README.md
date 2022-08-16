@@ -5,7 +5,7 @@ The final destination of programming
 
 ### \<List>
 
-- [GCC Optimization Option Practice (2022.08.16)](#)
+- [GCC Optimization Option Practice (2022.08.16)](##gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
 - [Binary Search 1 (2022.04.19)](#binary-search-1-20220419)
 - [Binary Search 0 (2022.02.11)](#binary-search-0-20220211)
@@ -36,6 +36,10 @@ using namespace std;
 - But I've realized that I'm not ready yet to read their assembly codes ……
 - However, I've found at least that the known properties of `O2` `O3` `Ofast` and so on are not fixed absolutely.  
   (For example, `Os` is known as smaller code size but it sometimes outputs rather larger one.)
+- References :  
+  · https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html  
+  · https://wiki.kldp.org/wiki.php/GccOptimizationOptions  
+  · https://www.rapidtables.com/code/linux/gcc/gcc-o.html
 
 #### `OptimizePractice.c`
 ```c
