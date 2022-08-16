@@ -33,7 +33,7 @@ using namespace std;
 ## [GCC Optimization Option Practice (2022.08.16)](#list)
 
 - Generate many assembly(`.s`) files with various optimization options in `GCC`
-- But I've realized that I'm not ready yet to read their assembly codes ……
+- But I've just realized that I'm not ready yet to read their assembly codes ……
 - However, I've found at least that the generally known properties of the optimization options are not fixed absolutely.  
   (For example, `Os` is known as smaller code size but it sometimes returns rather larger one.)
 - References :  
