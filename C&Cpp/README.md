@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [GCC Optimization Option Practice (2022.08.16)](#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
 - [Binary Search 1 (2022.04.19)](#binary-search-1-20220419)
 - [Binary Search 0 (2022.02.11)](#binary-search-0-20220211)
@@ -29,6 +30,64 @@ using namespace std;
 ```
 
 
+## [GCC Optimization Option Practice (2022.08.16)](#list)
+
+- Generate many assembly(`.s`) files with various optimization options in `GCC`
+- But I've just realized that I'm not ready yet to read their assembly codes ……
+- However, I've found at least that the generally known properties of the optimization options are not fixed absolutely.  
+  (For example, `Os` is known as smaller code size but it sometimes returns rather larger one.)
+- References :  
+  · https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html  
+  · https://wiki.kldp.org/wiki.php/GccOptimizationOptions  
+  · https://www.rapidtables.com/code/linux/gcc/gcc-o.html
+
+#### `OptimizePractice.c`
+```c
+void operate(int i, int* p)
+{
+    if (i % 2 != 0) (*p)++;
+}
+```
+```c
+int main()
+{
+    int num = 0;
+    int* p = &num;
+
+    for (int i = 0; i < 10; i++) operate(i, p);
+
+    printf("%d\n", num);
+
+    return 0;
+}
+```
+> 5
+
+#### `OptimizePractice.bat` (Old)
+```batch
+gcc -O0 -S OptimizePractice.c -o OptimizePractice_O0.s
+gcc -O1 -S OptimizePractice.c -o OptimizePractice_O1.s
+gcc -O2 -S OptimizePractice.c -o OptimizePractice_O2.s
+gcc -O3 -S OptimizePractice.c -o OptimizePractice_O3.s
+gcc -Os -S OptimizePractice.c -o OptimizePractice_Os.s
+gcc -Ofast -S OptimizePractice.c -o OptimizePractice_Ofast.s
+```
+
+#### `OptimizePractice.bat` (New)
+```batch
+@echo off
+
+set name=OptimizePractice
+set options=O0 O1 O2 O3 Os Ofast
+@REM There should be no space on the both side of "="
+
+for %%i in (%options%) do (
+    @REM echo %%i
+    gcc -%%i -S %name%.c -o %name%_%%i.s
+)
+```
+
+
 ## [`printf()` format test (2022.04.25)](#list)
 
 - I wrote the below codes in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
@@ -39,7 +98,7 @@ using namespace std;
 ```
 - I will never miss the criminal!
 
-#### printf.c & printf.cpp
+#### `printf.c` & `printf.cpp`
 The codes except each of the headers are the same.
 ```c
 int main()
@@ -85,7 +144,7 @@ int main()
   but couldn't find why the traversal results are wrong.
 - There was a crazy mistake …… It stole my two months!
 
-#### BinarySearch.c
+#### `BinarySearch.c`
 ```c
 #include <stdio.h>
 #include <stdlib.h>                             // malloc()
@@ -202,7 +261,7 @@ Postorder traversal : 4 3 10 13 7 6
   but it just returns only `true` or `false` depending on the element's presence.
 - Of course, this function seems very **powerful** for sorted data.
 
-#### BinarySearch.cpp
+#### `BinarySearch.cpp`
 ```cpp
 #include <iostream>
 #include <vector>
@@ -238,7 +297,7 @@ int main()
 
 - Some extreme(?) experiments about `++` and `--` operators
 
-#### IncDecOperator.c
+#### `IncDecOperator.c`
 ```c
 int main()
 {
@@ -276,7 +335,7 @@ Good-bye 2 0 2 1
 
 - The way to prevent variable declaration from garbage value
 
-#### PreventGarbageValue.cpp
+#### `PreventGarbageValue.cpp`
 ```cpp
 int main()
 {
@@ -304,7 +363,7 @@ int main()
 - `Prior Queue` that is also one of the container adaptor from Deque and consists of `heap` will be continued ……
 - Reference ☞ [코딩 테스트를 위한 자료 구조와 알고리즘 with C++ (길벗, 2020)](https://github.com/gilbutITbook/080239)
 
-#### Containers_Deque.cpp
+#### `Containers_Deque.cpp`
 ```cpp
 #include <deque>
 ```
@@ -358,7 +417,7 @@ int main()
 > 1 2 3 4 5  
 > 1 2 3  
 
-#### Containers_Stack.cpp
+#### `Containers_Stack.cpp`
 ```cpp
 #include <stack>
 ```
@@ -409,7 +468,7 @@ int main()
 > 3 2 1  
 > The stack is empty.
 
-#### Containers_Queue.cpp
+#### `Containers_Queue.cpp`
 ```cpp
 #include <queue>
 ```
@@ -464,7 +523,7 @@ int main()
 - Significantly advanced code using **template** from the previous `StackOverflow.cpp`
 - I am so proud!
 
-#### Template.cpp
+#### `Template.cpp`
 ```cpp
 template <class T>
 // void next (T a) cout << a++ << endl;       // can't write in a line without {}
@@ -511,7 +570,7 @@ int main()
 - …… a stupid conquerer who didn't know **template** and **generic function** said.
 - Can he learn them or still stay in beginner's swamps? To be continued …… 
 
-#### StackOverflow.cpp
+#### `StackOverflow.cpp`
 ```cpp
 #include <iostream>
 
@@ -602,7 +661,7 @@ int main()
 - Find how to **complie** and **run** in cosole (rather easier than VS Code menu)
 - `gcc` (for `C`) and `g++` (for `C++`) seem not so different to each other
 
-#### IamYourFather_c.c :
+#### `IamYourFather_c.c`
 ```c
 #include <stdio.h>
 #include <windows.h>    // for using system()
@@ -626,7 +685,7 @@ gcc IamYourFather_c.c -o IamYourFather_c.exe
 ```
 > I am your father.
 
-#### IamYourFather_cpp.cpp :
+#### `IamYourFather_cpp.cpp`
 ```cpp
 #include <iostream>
 

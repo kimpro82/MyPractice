@@ -69,6 +69,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
 
+- [GCC Optimization Option Practice (2022.08.16)](/C%26Cpp#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](/C%26Cpp#printf-format-test-20220425)
 - [Binary Search 1 (2022.04.19)](/C&Cpp#binary-search-1-20220419)
 - [Binary Search 0 (2022.02.11)](/C&Cpp#binary-search-0-20220211)
