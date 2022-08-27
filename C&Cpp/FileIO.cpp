@@ -17,10 +17,7 @@ int main()
     ifstream ifs;
     string line;
     ifs.open("FileIO.txt", ios::in);            // ios::in : read-only
-    while(getline(ifs, line))
-    {
-        cout << line << endl;
-    }
+    while(getline(ifs, line)) cout << line << endl;
     ifs.close();
 
     return 0;
