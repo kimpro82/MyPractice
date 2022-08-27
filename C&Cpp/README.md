@@ -5,7 +5,7 @@ The final destination of programming
 
 ### \<List>
 
-- [File I/O (2022.08.27)](#)
+- [File I/O (2022.08.27)](#file-io-20220827)
 - [GCC Optimization Option Practice (2022.08.16)](#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
 - [Binary Search 1 (2022.04.19)](#binary-search-1-20220419)
