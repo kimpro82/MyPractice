@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [File I/O (2022.08.27)](#file-io-20220827)
 - [GCC Optimization Option Practice (2022.08.16)](#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
 - [Binary Search 1 (2022.04.19)](#binary-search-1-20220419)
@@ -27,6 +28,69 @@ The final destination of programming
 #include <iostream>
 
 using namespace std;
+```
+
+
+## [File I/O (2022.08.27)](#list)
+
+- A practice of file input/ouput in **C/C++**
+- Further discussion : how to read *Korean* string from external file
+
+#### `FileIO.c`
+```c
+int main()
+{
+    // Write file
+    FILE* pf1 = fopen("FileIO.txt", "w");       // w : make a new empty file
+    fprintf(pf1, "My wife is crazy.\n");
+    fprintf(pf1, "Really crazy.\n");
+    fclose(pf1);
+
+    // Read file
+    FILE* pf2 = fopen("FileIO.txt", "r");       // r : read-only
+    char txt[__INT16_MAX__];
+    fread(txt, 1, __INT16_MAX__, pf2);
+    printf("%s", txt);
+    fclose(pf2);
+
+    return 0;
+}
+```
+
+#### `FileIO.cpp`
+```cpp
+#include <iostream>
+#include <fstream>
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    // Write file
+    ofstream ofs;
+    ofs.open("FileIO.txt", ios::out);           // ios::out : make a new empty file
+    ofs << "My wife is crazy." << endl;
+    ofs << "Really crazy." << endl;
+    ofs.close();
+
+    // Read file
+    ifstream ifs;
+    string line;
+    ifs.open("FileIO.txt", ios::in);            // ios::in : read-only
+    while(getline(ifs, line)) cout << line << endl;
+    ifs.close();
+
+    return 0;
+}
+```
+
+#### `FileIO.txt`
+```txt
+My wife is crazy.
+Really crazy.
+
 ```
 
 
