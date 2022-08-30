@@ -5,7 +5,7 @@ The final destination of programming
 
 ### \<List>
 
-- [Conditional Compile with `#ifdef` (2022.08.30)](#)
+- [Conditional Compile with `#ifdef` (2022.08.30)](#conditional-compile-with-ifdef-20220830)
 - [File I/O (2022.08.27)](#file-io-20220827)
 - [GCC Optimization Option Practice (2022.08.16)](#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
@@ -98,6 +98,8 @@ a
 gcc conditionalcompile.c
 a
 ```
+> ConditionalCompile.txt has been generated.  
+> I am your father.
 ```bat
 :: #ifdef fileio
 g++ -Dfileio conditionalcompile.cpp
@@ -107,6 +109,8 @@ a
 g++ conditionalcompile.cpp
 a
 ```
+> ConditionalCompile.txt has been generated.  
+> I am your father.
 
 #### `ConditionalCompile.txt`
 ```txt
