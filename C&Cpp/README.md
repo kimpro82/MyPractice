@@ -36,7 +36,8 @@ using namespace std;
 
 - Can determine where to compile or not with the preprocessors `#ifdef` ~ `#endif`
 - It seems very useful! I love it!
-- The couple of files `ConditionalCompile.c` and `ConditionalCompile.cpp` have the same results.
+- The couple of files `ConditionalCompile.c` and `ConditionalCompile.cpp` have the same results.  
+※ When the macro `fileio` is on, Ahnlan V3 Lite recognizes `a.exe` as a malware!
 
 #### `ConditionalCompile.c`
 ```c
