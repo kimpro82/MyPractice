@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [Conditional Compile with `#ifdef` (2022.08.30)](#)
 - [File I/O (2022.08.27)](#file-io-20220827)
 - [GCC Optimization Option Practice (2022.08.16)](#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
@@ -28,6 +29,89 @@ The final destination of programming
 #include <iostream>
 
 using namespace std;
+```
+
+
+## [Conditional Compile with `#ifdef` (2022.08.30)](#list)
+
+- Can determine where to compile or not with the preprocessors `#ifdef` ~ `#endif`
+- It seems very useful! I love it!
+- The couple of files `ConditionalCompile.c` and `ConditionalCompile.cpp` have the same results.
+
+#### `ConditionalCompile.c`
+```c
+int main()
+{
+    char txt[] = "I am your father.\n";
+
+    #ifdef fileio
+        char fileName[] = "ConditionalCompile.txt";
+
+        FILE* pf = fopen(fileName, "w");       // w : make a new empty file
+        fprintf(pf, txt);
+        fclose(pf);
+
+        printf("%s has been generated.\n", fileName);
+    #else
+        printf("%s", txt);
+    #endif
+
+    return 0;
+}
+```
+
+#### `ConditionalCompile.cpp`
+```cpp
+#include <iostream>
+#include <fstream>
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    string txt = "I am your father.";
+
+    #ifdef fileio
+        ofstream ofs;
+        string fileName = "ConditionalCompile.txt";
+        ofs.open(fileName, ios::out);           // ios::out : make a new empty file
+        ofs << txt << endl;
+        ofs.close();
+        cout << fileName << " has been generated." << endl;
+    #else
+        cout << txt << endl;
+    #endif
+
+    return 0;
+}
+```
+
+#### `ConditionalCompile_c.bat` `ConditionalCompile_cpp.bat`
+```bat
+:: #ifdef fileio
+gcc -Dfileio conditionalcompile.c
+a
+
+:: #else
+gcc conditionalcompile.c
+a
+```
+```bat
+:: #ifdef fileio
+g++ -Dfileio conditionalcompile.cpp
+a
+
+:: #else
+g++ conditionalcompile.cpp
+a
+```
+
+#### `ConditionalCompile.txt`
+```txt
+I am your father.
+
 ```
 
 
