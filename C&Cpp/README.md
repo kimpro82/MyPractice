@@ -36,6 +36,10 @@ using namespace std;
 
 - Can determine where to compile or not with the preprocessors `#ifdef` ~ `#endif`
 - It seems very useful! I love it!
+- References :
+  - 조건부 컴파일 (TCP School) http://www.tcpschool.com/c/c_compile_condCompile
+  - 조건부 컴파일 (C언어 / Wikidocs) https://wikidocs.net/13348
+  - (C/C++) 조건부 컴파일로 디버깅용 출력 한방에 없애기 (BOJ) https://www.acmicpc.net/blog/view/110
 
 &nbsp;&nbsp;※ When the macro `fileio` is on, *Ahnlab V3 Lite* recognizes `a.exe` as a malware!
 
