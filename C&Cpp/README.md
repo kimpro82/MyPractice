@@ -36,9 +36,8 @@ using namespace std;
 
 - Can determine where to compile or not with the preprocessors `#ifdef` ~ `#endif`
 - It seems very useful! I love it!
-- The couple of files `ConditionalCompile.c` and `ConditionalCompile.cpp` have the same results.
 
-&nbsp;&nbsp;※ When the macro `fileio` is on, Ahnlan V3 Lite recognizes `a.exe` as a malware!
+&nbsp;&nbsp;※ When the macro `fileio` is on, *Ahnlab V3 Lite* recognizes `a.exe` as a malware!
 
 #### `ConditionalCompile.c`
 ```c
@@ -91,6 +90,7 @@ int main()
 ```
 
 #### `ConditionalCompile_c.bat` `ConditionalCompile_cpp.bat`
+The couple of files have the same results.
 ```bat
 :: #ifdef fileio
 gcc -Dfileio conditionalcompile.c
