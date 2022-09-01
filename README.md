@@ -69,6 +69,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
 
+- [Conditional Compile with `#ifdef` (2022.08.30)](/C%26Cpp#conditional-compile-with-ifdef-20220830)
 - [File I/O (2022.08.27)](/C%26Cpp#file-io-20220827)
 - [GCC Optimization Option Practice (2022.08.16)](/C%26Cpp#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](/C%26Cpp#printf-format-test-20220425)

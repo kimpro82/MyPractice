@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [Conditional Compile with `#ifdef` (2022.08.30)](#conditional-compile-with-ifdef-20220830)
 - [File I/O (2022.08.27)](#file-io-20220827)
 - [GCC Optimization Option Practice (2022.08.16)](#gcc-optimization-option-practice-20220816)
 - [`printf()` format test (2022.04.25)](#printf-format-test-20220425)
@@ -28,6 +29,99 @@ The final destination of programming
 #include <iostream>
 
 using namespace std;
+```
+
+
+## [Conditional Compile with `#ifdef` (2022.08.30)](#list)
+
+- Can determine where to compile or not with the preprocessors `#ifdef` ~ `#endif`
+- It seems very useful! I love it!
+- References :
+  - 조건부 컴파일 (TCP School) http://www.tcpschool.com/c/c_compile_condCompile
+  - 조건부 컴파일 (C언어 / Wikidocs) https://wikidocs.net/13348
+  - (C/C++) 조건부 컴파일로 디버깅용 출력 한방에 없애기 (BOJ) https://www.acmicpc.net/blog/view/110
+
+&nbsp;&nbsp;※ When the macro `fileio` is on, *Ahnlab V3 Lite* recognizes `a.exe` as a malware!
+
+#### `ConditionalCompile.c`
+```c
+int main()
+{
+    char txt[] = "I am your father.\n";
+
+    #ifdef fileio
+        char fileName[] = "ConditionalCompile.txt";
+
+        FILE* pf = fopen(fileName, "w");       // w : make a new empty file
+        fprintf(pf, txt);
+        fclose(pf);
+
+        printf("%s has been generated.\n", fileName);
+    #else
+        printf("%s", txt);
+    #endif
+
+    return 0;
+}
+```
+
+#### `ConditionalCompile.cpp`
+```cpp
+#include <iostream>
+#include <fstream>
+#define endl '\n'
+
+using namespace std;
+```
+```cpp
+int main()
+{
+    string txt = "I am your father.";
+
+    #ifdef fileio
+        ofstream ofs;
+        string fileName = "ConditionalCompile.txt";
+        ofs.open(fileName, ios::out);           // ios::out : make a new empty file
+        ofs << txt << endl;
+        ofs.close();
+        cout << fileName << " has been generated." << endl;
+    #else
+        cout << txt << endl;
+    #endif
+
+    return 0;
+}
+```
+
+#### `ConditionalCompile_c.bat` `ConditionalCompile_cpp.bat`
+The couple of files have the same results.
+```bat
+:: #ifdef fileio
+gcc -Dfileio conditionalcompile.c
+a
+
+:: #else
+gcc conditionalcompile.c
+a
+```
+> ConditionalCompile.txt has been generated.  
+> I am your father.
+```bat
+:: #ifdef fileio
+g++ -Dfileio conditionalcompile.cpp
+a
+
+:: #else
+g++ conditionalcompile.cpp
+a
+```
+> ConditionalCompile.txt has been generated.  
+> I am your father.
+
+#### `ConditionalCompile.txt`
+```txt
+I am your father.
+
 ```
 
 
