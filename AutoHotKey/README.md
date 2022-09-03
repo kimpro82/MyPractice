@@ -1,8 +1,8 @@
 # My Auto Hot Key Practice
 
 ### \<List>
-- [Hello World (2022.09.03)](#)
-- [Stack Overflow (2021.12.07)](/AutoHotKey#stack-overflow-20211207)
+- [Hello World (2022.09.03)](#hello-world-20220903)
+- [Stack Overflow (2021.12.07)](#infinity-20211207)
 
 
 ## [Hello World (2022.09.03)](#list)
