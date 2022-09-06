@@ -15,6 +15,7 @@ miscellaneous petty works
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
 - [My **BASIC** Practice](#my-basic-practice)
+- [My **Verilog** Practice](#my-verilog-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
