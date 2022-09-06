@@ -37,8 +37,8 @@ endmodule
 > 0 1 2 3 4 5 6 7 8 9 
 
 #### `ArrayIndexing2.sv`
-&nbsp;&nbsp;· deal with `reg` type array, that requires **bit slicing**
-&nbsp;&nbsp;· should call the array's indices from back to front because it follows **little endian**
+&nbsp;&nbsp;· deal with `reg` type array, that requires **bit slicing**  
+&nbsp;&nbsp;· should call the array's indices from back to front because it follows **little endian**  
 &nbsp;&nbsp;&nbsp;&nbsp;(The syntax from **bit slicing** × **little endian** seems so crazy …… !)
 ```sv
 module ArrayIndexing2();
