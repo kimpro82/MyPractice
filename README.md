@@ -15,6 +15,7 @@ miscellaneous petty works
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
 - [My **BASIC** Practice](#my-basic-practice)
+- [My **Verilog** Practice](#my-verilog-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
@@ -126,6 +127,11 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Draw A Car (2022.02.09)](/BASIC#draw-a-car-20220209)
 - [Play Music (2021.02.20)](/BASIC#play-music-20210220)
 - [Hello World (2020.02.27)](/BASIC#hello-world-20200227)
+
+
+## [My Verilog Practice](/Verilog#my-verilog-practice)
+
+- [Array Indexing (2022.09.06)](/Verilog#array-indexing-20220906)
 
 
 ## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
