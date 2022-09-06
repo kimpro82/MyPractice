@@ -5,7 +5,7 @@
 
 ## \<List>
 
-- [Array Indexing (2022.09.06)](#)
+- [Array Indexing (2022.09.06)](#array-indexing-20220906)
 
 
 ## [Array Indexing (2022.09.06)](#list)
@@ -13,7 +13,7 @@
 - Practices of array indexing in *SystemVerilog*
 
 #### `ArrayIndexing1.sv`
-deal with basic `integer` type array
+&nbsp;&nbsp;· deal with basic `integer` type array
 ```sv
 module ArrayIndexing1();
 
@@ -37,8 +37,9 @@ endmodule
 > 0 1 2 3 4 5 6 7 8 9 
 
 #### `ArrayIndexing2.sv`
-- deal with `reg` type array, that requires **bit slicing**
-- should call the array's indices from back to front because it follows **little endian**
+&nbsp;&nbsp;· deal with `reg` type array, that requires **bit slicing**
+&nbsp;&nbsp;· should call the array's indices from back to front because it follows **little endian**
+&nbsp;&nbsp;&nbsp;&nbsp;(The syntax from **bit slicing** × **little endian** seems so crazy …… !)
 ```sv
 module ArrayIndexing2();
 
