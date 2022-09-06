@@ -128,6 +128,11 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Hello World (2020.02.27)](/BASIC#hello-world-20200227)
 
 
+## [My Verilog Practice](/Verilog#my-verilog-practice)
+
+- [Array Indexing (2022.09.06)](/Verilog#array-indexing-20220906)
+
+
 ## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
 
 - [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
