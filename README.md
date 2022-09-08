@@ -131,6 +131,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Verilog Practice](/Verilog#my-verilog-practice)
 
+- [Type Casting (2022.09.06)](/Verilog#type-casting-20220906)
 - [Array Indexing (2022.09.06)](/Verilog#array-indexing-20220906)
 
 
