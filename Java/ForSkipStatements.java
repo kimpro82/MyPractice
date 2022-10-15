@@ -12,7 +12,7 @@ class ForSkipStatements
         for( ; i <= 100; i++) sum += i;
         System.out.println(sum);
 
-        // 3. Skip the 1st and 2nd statement
+        // 3. Skip the 1st and 2nd statements
         for( ; ; i++)
         {
             sum += i;
@@ -20,7 +20,7 @@ class ForSkipStatements
         }
         System.out.println(sum);
 
-        // 4. Skip all the statement
+        // 4. Skip all the statements
         for( ; ; )
         {
             i++;
