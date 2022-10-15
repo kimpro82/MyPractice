@@ -6,9 +6,9 @@ N/A Java BoA~
 ## \<List>
 
 - [`for` loop with skipping expressions (2022.10.15)](#for-loop-with-skipping-expressions-20221015)
-- [Thread (2021.04.13)](#thread-20210413)
-- [Swing (2021.04.06)](#swing-20210406)
-- ['java.util.Date' (2021.03.08)](#javautildate-20210308)
+- [Multi-Thread (2021.04.13)](#multi-thread-20210413)
+- [GUI : `Swing` (2021.04.06)](#gui--swing-20210406)
+- [`java.util.Date` (2021.03.08)](#javautildate-20210308)
 
 
 ## [`for` loop with skipping expressions (2022.10.15)](#list)
@@ -16,6 +16,7 @@ N/A Java BoA~
 - There are various ways to fulfill or skip the expressions in `for` loop statement
 
 #### `ForSkipExpressions.java`
+
 ```java
 class ForSkipExpressions
 {
@@ -57,9 +58,13 @@ class ForSkipExpressions
 50005000
 ```
 
-## [Thread (2021.04.13)](#list)
-- A practice of `Multi-Thread`
+
+## [Multi-Thread (2021.04.13)](#list)
+
+- A practice of **multi-thread**
 - Using `java.lang.Thread`
+
+#### `MultiThread.java`
 
 ```java
 class NumThread extends Thread
@@ -78,7 +83,6 @@ class NumThread extends Thread
 	}
 }
 ```
-
 ```java
 class CharThread extends Thread
 {
@@ -96,7 +100,6 @@ class CharThread extends Thread
 	}
 }
 ```
-
 ```java
 public class MyThread
 {
@@ -109,13 +112,15 @@ public class MyThread
 	}
 } 
 ```
-
 > 0A1B2C3D4E5F6G7H8I9J10K11L12M13N14O15P16Q17R18S19T20U21V22W23X24Y25Z26
 
 
-## [Swing (2021.04.06)](#list)
+## [GUI : `Swing` (2021.04.06)](#list)
+
 - A practice of Java `Swing` GUI
 - Reference ☞ https://www.javatpoint.com/java-swing
+
+### `Swing.java`
 
 ![Swing Practice](./Images/Swing.PNG)
 
@@ -210,10 +215,12 @@ import javax.swing.tree.DefaultMutableTreeNode;
 ```
 
 
-## ['java.util.Date' (2021.03.08)](#list)
+## [`java.util.Date` (2021.03.08)](#list)
 
 - A practice of **deprecated** class `java.util.Date`
 - So terrible
+
+#### `DatePractice.java`
 
 ```java
 import java.util.Date;
