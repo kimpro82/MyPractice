@@ -1,4 +1,4 @@
-# My Java Practice
+# [My Java Practice](../README.md#my-java-practice)
 
 N/A Java BoA~
 
