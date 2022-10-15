@@ -4,15 +4,15 @@ class ForSkipExpressions
     {
         int i, sum;
 
-        // 1. Use two arguments in the 1st statement
+        // 1. Use two parameters in the 1st expression
         for(i = 0, sum = 0; i <= 10; i++) sum += i;
         System.out.println(sum);
 
-        // 2. Skip the 1st statement
+        // 2. Skip the 1st expression
         for( ; i <= 100; i++) sum += i;
         System.out.println(sum);
 
-        // 3. Skip the 1st and 2nd statements
+        // 3. Skip the 1st and 2nd expressions
         for( ; ; i++)
         {
             sum += i;
@@ -20,7 +20,7 @@ class ForSkipExpressions
         }
         System.out.println(sum);
 
-        // 4. Skip all the statements
+        // 4. Skip all the expressions
         for( ; ; )
         {
             i++;
