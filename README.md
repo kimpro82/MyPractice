@@ -112,10 +112,10 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Java Practice](/Java#my-java-practice)
 
-- [`for` loop with skipping expressions (2022.10.15)](./Java#for-loop-with-skipping-expressions-20221015)
-- [Multi-Thread (2021.04.13)](./Java#multi-thread-20210413)
-- [GUI : `Swing` (2021.04.06)](./Java#gui--swing-20210406)
-- [`java.util.Date` (2021.03.08)](./Java#javautildate-20210308)
+- [`for` loop with skipping expressions (2022.10.15)](./Java/README.md#for-loop-with-skipping-expressions-20221015)
+- [Multi-Thread (2021.04.13)](./Java/README.md#multi-thread-20210413)
+- [GUI : `Swing` (2021.04.06)](./Java/README.md#gui--swing-20210406)
+- [`java.util.Date` (2021.03.08)](./Java/README.md#javautildate-20210308)
 
 
 ## [My Golang Practice](/Golang#my-golang-practice)
