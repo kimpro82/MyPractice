@@ -1,11 +1,63 @@
 # My Java Practice
+
 N/A Java BoA~
-- MyThread.java (2021.04.13)
-- Swing.java (2021.04.06)
-- MyDate.java (2021.03.08)
 
 
-## MyThread.java (2021.04.13)
+## \<List>
+
+- [`for` loop with skipping expressions (2022.10.15)](#for-loop-with-skipping-expressions-20221015)
+- [Thread (2021.04.13)](#thread-20210413)
+- [Swing (2021.04.06)](#swing-20210406)
+- ['java.util.Date' (2021.03.08)](#javautildate-20210308)
+
+
+## [`for` loop with skipping expressions (2022.10.15)](#list)
+
+- There are various ways to fulfill or skip the expressions in `for` loop statement
+
+#### `ForSkipExpressions.java`
+```java
+class ForSkipExpressions
+{
+    public static void main(String[] args)
+    {
+        int i, sum;
+
+        // 1. Use two parameters in the 1st expression
+        for(i = 0, sum = 0; i <= 10; i++) sum += i;
+        System.out.println(sum);
+
+        // 2. Skip the 1st expression
+        for( ; i <= 100; i++) sum += i;
+        System.out.println(sum);
+
+        // 3. Skip the 1st and 2nd expressions
+        for( ; ; i++)
+        {
+            sum += i;
+            if(i >= 1000) break;
+        }
+        System.out.println(sum);
+
+        // 4. Skip all the expressions
+        for( ; ; )
+        {
+            i++;
+            sum += i;
+            if(i >= 10000) break;
+        }
+        System.out.println(sum);
+    }
+}
+```
+```
+55
+5050
+500500
+50005000
+```
+
+## [Thread (2021.04.13)](#list)
 - A practice of `Multi-Thread`
 - Using `java.lang.Thread`
 
@@ -61,7 +113,7 @@ public class MyThread
 > 0A1B2C3D4E5F6G7H8I9J10K11L12M13N14O15P16Q17R18S19T20U21V22W23X24Y25Z26
 
 
-## Swing.java (2021.04.06)
+## [Swing (2021.04.06)](#list)
 - A practice of Java `Swing` GUI
 - Reference ☞ https://www.javatpoint.com/java-swing
 
@@ -158,7 +210,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 ```
 
 
-## MyDate.java (2021.03.08)
+## ['java.util.Date' (2021.03.08)](#list)
+
 - A practice of **deprecated** class `java.util.Date`
 - So terrible
 
