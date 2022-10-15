@@ -1,4 +1,4 @@
-class ForSkipStatements
+class ForSkipExpressions
 {
     public static void main(String[] args)
     {
