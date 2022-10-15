@@ -30,7 +30,7 @@ class CharThread extends Thread
 	}
 }
 
-public class MyThread
+public class MultiThread
 {
 	public static void main(String args[])
 	{
