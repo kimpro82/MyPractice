@@ -2,7 +2,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 
-public class MyDate {
+public class DatePractice {
 
 	public static void main(String[] args) {
 
