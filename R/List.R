@@ -11,17 +11,18 @@ Chuhan <- list(
     "general" = c("Guan Yu", "Zhang Fei"),
     "advisor" = "Zhuge Liang"
 )
-
+Chuhan
 
 # 1. Read by key
 
-Chuhan
 Chuhan["ruler"]
 Chuhan[1]                                       # the same with Chuhan["ruler"]
 Chuhan[[1]]
 
 Chuhan[2]
 Chuhan[2][1]
+Chuhan[[2]][1]
+
 print(Chuhan[[2]][1])
 cat(Chuhan[[2]][1])
 
