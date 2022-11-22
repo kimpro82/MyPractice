@@ -1,11 +1,99 @@
 # [\[My R Practice\]](/#my-r-practice)
 
+
 ## List
+
+- [`List` Practice in R (2022.11.22)](#list-in-r-20221122)
 - [`Shiny` - 1st Trial (2022.05.04)](#shiny---1st-trial-20220504)
 - [Scatter Points in a Circle (2021.08.16)](#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
 - [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
 - [Fibonacci Tornado (2017.05.07)](#fibonacci-tornado-20170507)
+
+
+## [`List` Practice in R (2022.11.22)](#list)
+
+- It's not the linked list, but the data strurture that consists of key & value!
+
+#### `List.r`
+  ```R
+  # 0. Set a sample data
+
+  Chuhan <- list(
+      "ruler" = "Liu Bei",
+      "general" = c("Guan Yu", "Zhang Fei"),
+      "advisor" = "Zhuge Liang"
+  )
+  Chuhan
+  ```
+  <details>
+    <summary>Results</summary>
+
+    $ruler
+    [1] "Liu Bei"
+
+    $general
+    [1] "Guan Yu"   "Zhang Fei"
+
+    $advisor
+    [1] "Zhuge Liang"
+  </details>
+
+  ```R
+  # 1. Read by key
+
+  Chuhan["ruler"]
+  Chuhan[1]                                       # the same with Chuhan["ruler"]
+  Chuhan[[1]]
+
+  Chuhan[2]
+  Chuhan[2][1]
+  Chuhan[[2]][1]
+
+  print(Chuhan[[2]][1])
+  cat(Chuhan[[2]][1])
+  ```
+  <details>
+    <summary>Results</summary>
+
+    $ruler
+    [1] "Liu Bei"
+
+    $ruler
+    [1] "Liu Bei"
+
+    [1] "Liu Bei"
+
+    $general
+    [1] "Guan Yu"   "Zhang Fei"
+
+    $general
+    [1] "Guan Yu"   "Zhang Fei"
+
+    [1] "Guan Yu"
+
+    [1] "Guan Yu"
+
+    Guan Yu
+  </details>
+
+  ```R
+  # 2. Read by value
+
+  match("Zhuge Liang", Chuhan)                    # get the index of the value
+  Chuhan[match("Zhuge Liang", Chuhan)]            # the key & value from the index
+  names(Chuhan[match("Zhuge Liang", Chuhan)])     # read only the key
+  ```
+  <details>
+    <summary>Results</summary>
+
+    [1] 3
+
+    $advisor
+    [1] "Zhuge Liang"
+
+    [1] "advisor"
+  </details>
 
 
 ## [`Shiny` - 1st Trial (2022.05.04)](#list)
