@@ -398,64 +398,81 @@ answer for a question at chatting room
 \* R array-related data structure is actually defined as vector, matrix and array about each dimension's array.  
 \* I call it just 'array' by common mathematical notion here, but it is different from R's strict data structure definition.  
 
-```R
-# 1. generating array by for loop
-mylist = c()
+  <details>
+    <summary>1. generating array by for loop</summary>
 
-for (i in 1:10) {
-  mylist[i] = i
-}
+  ```R
+  mylist = c()
 
-mylist
-```
->  [1]  1  2  3  4  5  6  7  8  9 10
-
-```R
-# 1.1 generating array more efficiently
-mylist2 = c(1:10)
-
-mylist2
-```
->  [1]  1  2  3  4  5  6  7  8  9 10
-
-```R
-# 2. generating variable names
-for (i in 1:10) { 
-  name <- paste("mylist_", i, sep = "")
-  assign(name, c())
-}
-
-```
-![generating variable names](Images/Generating_variable_names_20191206_2.png)
-
-```R
-# 2.1 generating variable names with considering sort
-for (i in 1:10) { 
-  if (i < 10) {
-    name <- paste("mylist_0", i, sep = "")
-  } else {
-    name <- paste("mylist_", i, sep = "")
+  for (i in 1:10) {
+    mylist[i] = i
   }
-  assign(name, c())
-}
-```
+
+  mylist
+  ```
+  >  [1]  1  2  3  4  5  6  7  8  9 10
+  </details>
+
+  <details>
+    <summary>1.1 generating array more efficiently</summary>
+
+  ```R
+  mylist2 = c(1:10)
+
+  mylist2
+  ```
+  >  [1]  1  2  3  4  5  6  7  8  9 10
+  </details>
+
+  <details>
+    <summary>2. generating variable names</summary>
+
+  ```R
+  for (i in 1:10) { 
+    name <- paste("mylist_", i, sep = "")
+    assign(name, c())
+  }
+
+  ```
+  </details>
+
+  ![generating variable names](Images/Generating_variable_names_20191206_2.png)
+
+  <details>
+    <summary>2.1 generating variable names with considering sort</summary>
+
+  ```R
+  for (i in 1:10) { 
+    if (i < 10) {
+      name <- paste("mylist_0", i, sep = "")
+    } else {
+      name <- paste("mylist_", i, sep = "")
+    }
+    assign(name, c())
+  }
+  ```
+  </details>
+
 ![generating variable names with considering sort](Images/Generating_variable_names_20191206_2_1.png)
 
-```R
-# 2.1.1 code improvement trial of 2.1
+  <details>
+    <summary>2.1.1 code improvement trial of 2.1</summary>
 
-name_head_original = "mylist_"
+  ```R
+  name_head_original = "mylist_"
 
-for (i in 1:10) { 
-  if (i < 10) {
-    name_head = paste(name_head_original, "0", sep = "")
-  } else {
-    name_head = name_head_original
+  for (i in 1:10) { 
+    if (i < 10) {
+      name_head = paste(name_head_original, "0", sep = "")
+    } else {
+      name_head = name_head_original
+    }
+    name <- paste(name_head, i, sep = "")
+    assign(name, c())
   }
-  name <- paste(name_head, i, sep = "")
-  assign(name, c())
-}
-```
+  ```
+  </details>
+
 ![code improvement trial of 2.1](Images/Generating_variable_names_20191206_2_1_1.PNG)  
 Hmm …… is it too much?  
 It can be more clearly effective when *n* is larger, but now seems not yet.  
@@ -464,93 +481,112 @@ It can be more clearly effective when *n* is larger, but now seems not yet.
 ## [Fibonacci Tornado (2017.05.07)](#list)
 generating Fibonacci Series and Fibonacci Coordinates by looping
 
-#### 1. Generating Fibonacci Series
+  <details>
+    <summary>1. Generating Fibonacci Series</summary>
 
-```R
-series <- c(1,1)
-n <- 1000                                     ## defining the length of the series
+  ```R
+  series <- c(1,1)
+  n <- 1000                                     ## defining the length of the series
 
-for (i in 3:n) {
-  series[i] <- series[i-2] + series[i-1]
-}
-
-head(series)
-```
-
-#### 2. Skimming the Movement of Fibonacci Coordinates
-```
-## The series' flow : (0,0), (1,0), (1,1), (-1,1), (-1,-2), (4,-2), ……
-
-## Each Coordinate's movement :
-## 0 : x = 0, y = 0
-## 1 : x <- x + 1
-## 2 : y <- y + 1
-## 3 : x <- x - 2
-## 4 : y <- y - 3
-## 5 : x <- x + 5
-```
-
-There are 4 types of calculation for coordinates' movement.
-It seems possible to be realized by looping.
-
-#### 2-1. How sort the types of calculation?
-```
-## type 1 : %% 4 = 1
-## type 2 : %% 4 = 2
-## type 3 : %% 4 = 3
-## type 4 : %% 4 = 4
-```
-
-#### 3. Generating Fibonacci Coordinates by Looping
-```R
-x <- 0
-y <- 0
-
-for (j in 2:n) {
-  if (j %% 2 == 1) {
-    x[j] <- x[j-1]
-    if (j %% 4 == 1) {
-      y[j] <- y[j-1] + series[j-1]  ## type 1
-    } else {
-      y[j] <- y[j-1] - series[j-1]  ## type 3
-      }
+  for (i in 3:n) {
+    series[i] <- series[i-2] + series[i-1]
   }
-  else if (j %% 2 == 0) {
-    y[j] <- y[j-1]
-    if (j %% 4 == 2) {
-      x[j] <- x[j-1] + series[j-1]  ## type 2
-    } else {
-      x[j] <- x[j-1] - series[j-1]  ## type 4
-      }
+
+  head(series)
+  ```
+  </details>
+
+  <details>
+    <summary>2. Skimming the Movement of Fibonacci Coordinates</summary>
+
+  ```
+  ## The series' flow : (0,0), (1,0), (1,1), (-1,1), (-1,-2), (4,-2), ……
+
+  ## Each Coordinate's movement :
+  ## 0 : x = 0, y = 0
+  ## 1 : x <- x + 1
+  ## 2 : y <- y + 1
+  ## 3 : x <- x - 2
+  ## 4 : y <- y - 3
+  ## 5 : x <- x + 5
+  ```
+
+  There are 4 types of calculation for coordinates' movement.  
+  It seems possible to be realized by looping.
+  </details>
+
+  <details>
+    <summary>2-1. How sort the types of calculation?</summary>
+
+  ```
+  ## type 1 : %% 4 = 1
+  ## type 2 : %% 4 = 2
+  ## type 3 : %% 4 = 3
+  ## type 4 : %% 4 = 4
+  ```
+  </details>
+
+  <details>
+    <summary>3. Generating Fibonacci Coordinates by Looping</summary>
+
+  ```R
+  x <- 0
+  y <- 0
+
+  for (j in 2:n) {
+    if (j %% 2 == 1) {
+      x[j] <- x[j-1]
+      if (j %% 4 == 1) {
+        y[j] <- y[j-1] + series[j-1]  ## type 1
+      } else {
+        y[j] <- y[j-1] - series[j-1]  ## type 3
+        }
+    }
+    else if (j %% 2 == 0) {
+      y[j] <- y[j-1]
+      if (j %% 4 == 2) {
+        x[j] <- x[j-1] + series[j-1]  ## type 2
+      } else {
+        x[j] <- x[j-1] - series[j-1]  ## type 4
+        }
+    }
   }
-}
-```
+  ```
+  </details>
 
-#### 3-1. Drawing Plot
-```R
-windows(width=5, height=5)
-plot(x[1:12], y[1:12], type="l", 
-     main="Fibonacci Tornado")
-abline(h=0, v=0, col="gray", lty=3)
-```
-![Fibonacci Tornado](Images/Fibonacci_20170507_Tornado.PNG)
+  <details>
+    <summary>3-1. Drawing Plot</summary>
 
-#### Bonus. Seeing it's Aproximate to the Golden Ratio.
+  ```R
+  windows(width=5, height=5)
+  plot(x[1:12], y[1:12], type="l", 
+      main="Fibonacci Tornado")
+  abline(h=0, v=0, col="gray", lty=3)
+  ```
+  </details>
 
-```R
-fibonacci.ratio <- c()
+  ![Fibonacci Tornado](Images/Fibonacci_20170507_Tornado.PNG)
 
-for (k in 1:n) {
-  fibonacci.ratio[k] = series[k+1]/series[k]
-}
-```
-```R
-windows(width=10, height=5)
-par(mfrow=c(1,2))
-plot(fibonacci.ratio[1:12],  type="l",
-     main="Aproxmate to the Golden Ratio")
-abline(h=1.618, col="red", lty=3)
-plot(log(series[1:12]), type="l", 
-     main="Natural Logarithm of Fibonacci Series")
-```
-![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series_Golden_Ratio.PNG)
+
+  <details>
+    <summary>Bonus. Seeing it's Aproximate to the Golden Ratio</summary>
+
+  ```R
+  fibonacci.ratio <- c()
+
+  for (k in 1:n) {
+    fibonacci.ratio[k] = series[k+1]/series[k]
+  }
+  ```
+  ```R
+  windows(width=10, height=5)
+  par(mfrow=c(1,2))
+  plot(fibonacci.ratio[1:12],  type="l",
+      main="Aproxmate to the Golden Ratio")
+  abline(h=1.618, col="red", lty=3)
+  plot(log(series[1:12]), type="l", 
+      main="Natural Logarithm of Fibonacci Series")
+  ```
+  </details>
+
+  ![Fibonacci Series - Golden Ratio](Images/Fibonacci_20170507_Series_Golden_Ratio.PNG)
