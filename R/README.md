@@ -16,9 +16,11 @@
 - It's not the linked list, but the data strurture that consists of key & value!
 
 #### `List.r`
-  ```R
-  # 0. Set a sample data
 
+  <details>
+    <summary>0. Set a sample data</summary>
+
+  ```R
   Chuhan <- list(
       "ruler" = "Liu Bei",
       "general" = c("Guan Yu", "Zhang Fei"),
@@ -26,22 +28,23 @@
   )
   Chuhan
   ```
-  <details>
-    <summary>Results</summary>
 
-    $ruler
-    [1] "Liu Bei"
+  ```
+  $ruler
+  [1] "Liu Bei"
 
-    $general
-    [1] "Guan Yu"   "Zhang Fei"
+  $general
+  [1] "Guan Yu"   "Zhang Fei"
 
-    $advisor
-    [1] "Zhuge Liang"
+  $advisor
+  [1] "Zhuge Liang"
+  ```
   </details>
 
-  ```R
-  # 1. Read by key
+  <details>
+    <summary>1. Read by key</summary>
 
+  ```R
   Chuhan["ruler"]
   Chuhan[1]                                       # the same with Chuhan["ruler"]
   Chuhan[[1]]
@@ -53,46 +56,47 @@
   print(Chuhan[[2]][1])
   cat(Chuhan[[2]][1])
   ```
-  <details>
-    <summary>Results</summary>
 
-    $ruler
-    [1] "Liu Bei"
+  ```
+  $ruler
+  [1] "Liu Bei"
 
-    $ruler
-    [1] "Liu Bei"
+  $ruler
+  [1] "Liu Bei"
 
-    [1] "Liu Bei"
+  [1] "Liu Bei"
 
-    $general
-    [1] "Guan Yu"   "Zhang Fei"
+  $general
+  [1] "Guan Yu"   "Zhang Fei"
 
-    $general
-    [1] "Guan Yu"   "Zhang Fei"
+  $general
+  [1] "Guan Yu"   "Zhang Fei"
 
-    [1] "Guan Yu"
+  [1] "Guan Yu"
 
-    [1] "Guan Yu"
+  [1] "Guan Yu"
 
-    Guan Yu
+  Guan Yu
+  ```
   </details>
 
-  ```R
-  # 2. Read by value
+  <details>
+    <summary>2. Read by value</summary>
 
+  ```R
   match("Zhuge Liang", Chuhan)                    # get the index of the value
   Chuhan[match("Zhuge Liang", Chuhan)]            # the key & value from the index
   names(Chuhan[match("Zhuge Liang", Chuhan)])     # read only the key
   ```
-  <details>
-    <summary>Results</summary>
 
-    [1] 3
+  ```
+  [1] 3
 
-    $advisor
-    [1] "Zhuge Liang"
+  $advisor
+  [1] "Zhuge Liang"
 
-    [1] "advisor"
+  [1] "advisor"
+  ```
   </details>
 
 
