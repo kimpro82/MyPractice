@@ -1,4 +1,4 @@
-# [\[My R Practice\]](/#my-r-practice)
+# [\[My R Practice\]](../README.md#my-r-practice)
 
 
 ## List
@@ -120,151 +120,180 @@ runExample("01_hello")
 \* using `plotrix`
 
 #### 0. Call "plotrix" library (install if not exist)
-```R
-if(!requireNamespace("plotrix")) install.packages("plotrix")
-library("plotrix")
-```
+  <details>
+    <summary>Codes</summary>
+
+  ```R
+  if(!requireNamespace("plotrix")) install.packages("plotrix")
+  library("plotrix")
+  ```
+  </details>
 
 #### 1. Monte Carlo method 1
-```R
-r     = 10
-n     = 30000
-```
-```R
-rr    = runif(n, 0, r)                    # rr    : randomly sampled radius
-rrad  = runif(n, 0, 2 * pi)               # rrad  : randomly sampled radian
+  <details>
+    <summary>Codes</summary>
 
-x     = rr * cos(rrad)                    # yes, I am a math genius!
-y     = rr * sin(rrad)
-```
-```R
-windows(width = 7, height = 7)
-plot(x, y, pch = '.', col = "red",
-  main = "1. Monte Carlo method 1")
-abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
-draw.circle(0, 0, r)                      # not exact drawing, crazy
-```
-<img src="Images/Scatter_20210816_1_Monte_Carlo_method_1.png" width="500" height="500" alt = "1. Monte Carlo method 1">
+  ```R
+  r     = 10
+  n     = 30000
+  ```
+  ```R
+  rr    = runif(n, 0, r)                    # rr    : randomly sampled radius
+  rrad  = runif(n, 0, 2 * pi)               # rrad  : randomly sampled radian
+
+  x     = rr * cos(rrad)                    # yes, I am a math genius!
+  y     = rr * sin(rrad)
+  ```
+  ```R
+  windows(width = 7, height = 7)
+  plot(x, y, pch = '.', col = "red",
+    main = "1. Monte Carlo method 1")
+  abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+  draw.circle(0, 0, r)                      # not exact drawing, crazy
+  ```
+  </details>
+
+  <img src="Images/Scatter_20210816_1_Monte_Carlo_method_1.png" width="500" height="500" alt = "1. Monte Carlo method 1">
 
 #### 1.1 Fit the circle on the coordinates
-```R
-windows(width = 7, height = 7)
-plot(x, y, pch = '.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
-  main = "1.1 Monte Carlo method (with modified asp ratio)")
-abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
-draw.circle(0, 0, r)
-```
-<img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="500" height="500" alt = "1.1 Fit the circle on the coordinates">
+  <details>
+    <summary>Codes</summary>
+
+  ```R
+  windows(width = 7, height = 7)
+  plot(x, y, pch = '.', col = "red", asp = 1, # modify asp(aspect ratio) option as 1
+    main = "1.1 Monte Carlo method (with modified asp ratio)")
+  abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+  draw.circle(0, 0, r)
+  ```
+  </details>
+
+  <img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="500" height="500" alt = "1.1 Fit the circle on the coordinates">
 
 #### 2. Monte Carlo method 2 (disperse the crowded central population)
-```R
-x   = c(); y = c()
-cnt = 0
-```
-```R
-while (cnt < n)                           # insert points only in the circle
-{
-  temp = runif(2, -r, r)
-  if (temp[1]^2 + temp[2]^2 < r^2)
+  <details>
+    <summary>Codes</summary>
+
+  ```R
+  x   = c(); y = c()
+  cnt = 0
+  ```
+  ```R
+  while (cnt < n)                           # insert points only in the circle
   {
-    x   = c(x, temp[1])
-    y   = c(y, temp[2])
-    cnt = cnt + 1                         # I miss ++ operator ……
-  }
-}
-```
-```R
-windows(width = 7, height = 7)
-plot(x, y, pch = '.', col = "red", asp = 1,
-  main = "2. Monte Carlo method 2 (disperse the crowded central pop.)")
-abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
-draw.circle(0, 0, r)
-```
-<img src="Images/Scatter_20210816_2_Monte_Carlo_method_2.png" width="500" height="500" alt = "2. Monte Carlo method 2 (disperse the crowded central population)">
-
-#### 3. Points with lattice spacing
-```R
-x         = c(); y = c()
-area      = pi * r^2
-interval  = sqrt(area / n)
-num       = as.integer(floor(2 * r / interval))
-temp      = c(-r, -r)
-```
-```R
-for (i in 1:num)
-{
-  temp[1] = temp[1] + interval
-
-  for (j in 1:num)
-  {
-    temp[2] = temp[2] + interval
-
+    temp = runif(2, -r, r)
     if (temp[1]^2 + temp[2]^2 < r^2)
     {
-      x = c(x, temp[1])
-      y = c(y, temp[2])
+      x   = c(x, temp[1])
+      y   = c(y, temp[2])
+      cnt = cnt + 1                         # I miss ++ operator ……
     }
   }
+  ```
+  ```R
+  windows(width = 7, height = 7)
+  plot(x, y, pch = '.', col = "red", asp = 1,
+    main = "2. Monte Carlo method 2 (disperse the crowded central pop.)")
+  abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+  draw.circle(0, 0, r)
+  ```
+  </details>
 
-  temp[2] = -r
-}
-```
-```R
-length(x); length(y)
-```
-> [1] 29988  
-> [1] 29988
-```R
-windows(width = 7, height = 7)
-plot(x, y, pch = '.', col = "red", asp = 1,
-  main = "3. Points with lattice spacing")
-abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
-draw.circle(0, 0, r)
-```
+  <img src="Images/Scatter_20210816_2_Monte_Carlo_method_2.png" width="500" height="500" alt = "2. Monte Carlo method 2 (disperse the crowded central population)">
+
+#### 3. Points with lattice spacing
+  <details>
+    <summary>Codes</summary>
+
+  ```R
+  x         = c(); y = c()
+  area      = pi * r^2
+  interval  = sqrt(area / n)
+  num       = as.integer(floor(2 * r / interval))
+  temp      = c(-r, -r)
+  ```
+  ```R
+  for (i in 1:num)
+  {
+    temp[1] = temp[1] + interval
+
+    for (j in 1:num)
+    {
+      temp[2] = temp[2] + interval
+
+      if (temp[1]^2 + temp[2]^2 < r^2)
+      {
+        x = c(x, temp[1])
+        y = c(y, temp[2])
+      }
+    }
+
+    temp[2] = -r
+  }
+  ```
+  ```R
+  length(x); length(y)
+  ```
+  > [1] 29988  
+  > [1] 29988
+  ```R
+  windows(width = 7, height = 7)
+  plot(x, y, pch = '.', col = "red", asp = 1,
+    main = "3. Points with lattice spacing")
+  abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+  draw.circle(0, 0, r)
+  ```
+  </details>
+
 <img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="500" height="500" alt = "3. Points with lattice spacing">
 
 #### 3.1 Points with lattice spacing including outside the circle
-```R
-x     = c(); y = c(); xyCol = c()
-temp  = c(-r, -r)
-```
-```R
-for (i in 1:num)
-{
-  temp[1] = temp[1] + interval
-  
-  for (j in 1:num)
+  <details>
+    <summary>Codes</summary>
+
+  ```R
+  x     = c(); y = c(); xyCol = c()
+  temp  = c(-r, -r)
+  ```
+  ```R
+  for (i in 1:num)
   {
-    temp[2] = temp[2] + interval
+    temp[1] = temp[1] + interval
+    
+    for (j in 1:num)
+    {
+      temp[2] = temp[2] + interval
 
-    x = c(x, temp[1])
-    y = c(y, temp[2])
+      x = c(x, temp[1])
+      y = c(y, temp[2])
 
-    if (temp[1]^2 + temp[2]^2 < r^2) xyCol = c(xyCol,"red")
-    else xyCol = c(xyCol,"blue")
+      if (temp[1]^2 + temp[2]^2 < r^2) xyCol = c(xyCol,"red")
+      else xyCol = c(xyCol,"blue")
+    }
+
+    temp[2] = -r
   }
+  ```
+  ```R
+  length(x); length(y)
+  ```
+  > [1] 38025  
+  > [1] 38025
+  ```R
+  length(xyCol); length(xyCol[xyCol=="red"]); length(xyCol[xyCol=="blue"])
+  ```
+  > [1] 38025  
+  > [1] 29988  
+  > [1] 8037
+  ```R
+  windows(width = 7, height = 7)
+  plot(x, y, pch = '.', col = xyCol, asp = 1,
+    main = "3.1 Points with lattice spacing 2")
+  abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
+  draw.circle(0, 0, r)
+  ```
+  </details>
 
-  temp[2] = -r
-}
-```
-```R
-length(x); length(y)
-```
-> [1] 38025  
-> [1] 38025
-```R
-length(xyCol); length(xyCol[xyCol=="red"]); length(xyCol[xyCol=="blue"])
-```
-> [1] 38025  
-> [1] 29988  
-> [1] 8037
-```R
-windows(width = 7, height = 7)
-plot(x, y, pch = '.', col = xyCol, asp = 1,
-  main = "3.1 Points with lattice spacing 2")
-abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
-draw.circle(0, 0, r)
-```
 <img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="500" height="500" alt = "3.1 Points with lattice spacing including outside the circle">
 
 

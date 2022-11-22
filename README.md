@@ -84,8 +84,9 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Hello World (2021.05.12)](/C&Cpp#hello-world-20210512)
 
 
-## [My R Practice](/R#my-r-practice)
+## [My R Practice](R/README.md#my-r-practice)
 
+- [`List` Practice in R (2022.11.22)](/R#list-in-r-20221122)
 - [`Shiny` - 1st Trial (2022.05.04)](/R#shiny---1st-trial-20220504)
 - [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
