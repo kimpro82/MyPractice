@@ -119,9 +119,8 @@ runExample("01_hello")
 \* Scatter points in a circle in various ways  
 \* using `plotrix`
 
-#### 0. Call "plotrix" library (install if not exist)
   <details>
-    <summary>Codes</summary>
+    <summary>0. Call "plotrix" library (install if not exist)</summary>
 
   ```R
   if(!requireNamespace("plotrix")) install.packages("plotrix")
@@ -129,9 +128,8 @@ runExample("01_hello")
   ```
   </details>
 
-#### 1. Monte Carlo method 1
   <details>
-    <summary>Codes</summary>
+    <summary>1. Monte Carlo method 1</summary>
 
   ```R
   r     = 10
@@ -155,9 +153,8 @@ runExample("01_hello")
 
   <img src="Images/Scatter_20210816_1_Monte_Carlo_method_1.png" width="500" height="500" alt = "1. Monte Carlo method 1">
 
-#### 1.1 Fit the circle on the coordinates
   <details>
-    <summary>Codes</summary>
+    <summary>1.1 Fit the circle on the coordinates</summary>
 
   ```R
   windows(width = 7, height = 7)
@@ -170,9 +167,8 @@ runExample("01_hello")
 
   <img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="500" height="500" alt = "1.1 Fit the circle on the coordinates">
 
-#### 2. Monte Carlo method 2 (disperse the crowded central population)
   <details>
-    <summary>Codes</summary>
+    <summary>2. Monte Carlo method 2 (disperse the crowded central population)</summary>
 
   ```R
   x   = c(); y = c()
@@ -201,9 +197,8 @@ runExample("01_hello")
 
   <img src="Images/Scatter_20210816_2_Monte_Carlo_method_2.png" width="500" height="500" alt = "2. Monte Carlo method 2 (disperse the crowded central population)">
 
-#### 3. Points with lattice spacing
   <details>
-    <summary>Codes</summary>
+    <summary>3. Points with lattice spacing</summary>
 
   ```R
   x         = c(); y = c()
@@ -247,9 +242,8 @@ runExample("01_hello")
 
 <img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="500" height="500" alt = "3. Points with lattice spacing">
 
-#### 3.1 Points with lattice spacing including outside the circle
   <details>
-    <summary>Codes</summary>
+    <summary>3.1 Points with lattice spacing including outside the circle</summary>
 
   ```R
   x     = c(); y = c(); xyCol = c()
