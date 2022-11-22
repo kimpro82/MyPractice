@@ -301,84 +301,96 @@ runExample("01_hello")
 \* get permutations and combinations  
 \* using `gtools`
 
-#### Factorial
-```R
-factorial(4)    # 4! = 4 * 3 * 2 * 1
-```
-> [1] 24
+  <details>
+    <summary>Factorial</summary>
 
-#### Permutation
-```R
-# loading gtools library
-if (!requireNamespace("gtools")) {
-    install.packages('gtools')
-}
-library(gtools)                             # for using permutations() and combinations()
-```
-```R
-# ?permutations
-# permutations(n, r, v=1:n, set=TRUE, repeats.allowed=FALSE)
-# n                 Size of the source vector
-# r                 Size of the target vectors
-# v                 Source vector. Defaults to 1:n
-# set               Logical flag indicating whether duplicates should be removed from the source vector v. Defaults to TRUE.
-# repeats.allowed   Logical flag indicating whether the constructed vectors may include duplicated values. Defaults to FALSE.
-```
-```R
-balls <- c("Red", "Yellow", "Blue")
-```
-```R
-permutations(3, 2, v = balls, repeats.allowed = TRUE)  # 3Π2
-```
-> [1,] "Blue"   "Blue"  
-> [2,] "Blue"   "Red"  
-> [3,] "Blue"   "Yellow"  
-> [4,] "Red"    "Blue"  
-> [5,] "Red"    "Red"  
-> [6,] "Red"    "Yellow"  
-> [7,] "Yellow" "Blue"  
-> [8,] "Yellow" "Red"  
-> [9,] "Yellow" "Yellow"
-```R
-permutations(3, 2, v = balls, repeats.allowed = FALSE) # 3P2
-permutations(3, 2, v = balls)
-```
-> [1,] "Blue"   "Red"  
-> [2,] "Blue"   "Yellow"  
-> [3,] "Red"    "Blue"  
-> [4,] "Red"    "Yellow"  
-> [5,] "Yellow" "Blue"  
-> [6,] "Yellow" "Red"
+  ```R
+  factorial(4)    # 4! = 4 * 3 * 2 * 1
+  ```
+  > [1] 24
+  </details>
 
-#### Combination
-```R
-combn(balls, 2)
-```
-> [1,] "Red"    "Red"  "Yellow"  
-> [2,] "Yellow" "Blue" "Blue"
-```R
-combinations(3, 2, v = balls, repeats.allowed = TRUE)  # 3H2
-```
-> [1,] "Blue"   "Blue"  
-> [2,] "Blue"   "Red"  
-> [3,] "Blue"   "Yellow"  
-> [4,] "Red"    "Red"  
-> [5,] "Red"    "Yellow"  
-> [6,] "Yellow" "Yellow"
-```R
-combinations(3, 2, v = balls, repeats.allowed = FALSE) # 3C2
-```
-> [1,] "Blue" "Red"  
-> [2,] "Blue" "Yellow"  
-> [3,] "Red"  "Yellow"
+  <details>
+    <summary>Permutation</summary>
 
-#### Number of cases
-```R
-prod(4, 2)                                  # 4P2
-choose(4, 2)                                # 4C2
-```
-> [1] 8  
-> [1] 6
+  ```R
+  # loading gtools library
+  if (!requireNamespace("gtools")) {
+      install.packages('gtools')
+  }
+  library(gtools)                             # for using permutations() and combinations()
+  ```
+  ```R
+  # ?permutations
+  # permutations(n, r, v=1:n, set=TRUE, repeats.allowed=FALSE)
+  # n                 Size of the source vector
+  # r                 Size of the target vectors
+  # v                 Source vector. Defaults to 1:n
+  # set               Logical flag indicating whether duplicates should be removed from the source vector v. Defaults to TRUE.
+  # repeats.allowed   Logical flag indicating whether the constructed vectors may include duplicated values. Defaults to FALSE.
+  ```
+  ```R
+  balls <- c("Red", "Yellow", "Blue")
+  ```
+  ```R
+  permutations(3, 2, v = balls, repeats.allowed = TRUE)  # 3Π2
+  ```
+  > [1,] "Blue"   "Blue"  
+  > [2,] "Blue"   "Red"  
+  > [3,] "Blue"   "Yellow"  
+  > [4,] "Red"    "Blue"  
+  > [5,] "Red"    "Red"  
+  > [6,] "Red"    "Yellow"  
+  > [7,] "Yellow" "Blue"  
+  > [8,] "Yellow" "Red"  
+  > [9,] "Yellow" "Yellow"
+  ```R
+  permutations(3, 2, v = balls, repeats.allowed = FALSE) # 3P2
+  permutations(3, 2, v = balls)
+  ```
+  > [1,] "Blue"   "Red"  
+  > [2,] "Blue"   "Yellow"  
+  > [3,] "Red"    "Blue"  
+  > [4,] "Red"    "Yellow"  
+  > [5,] "Yellow" "Blue"  
+  > [6,] "Yellow" "Red"
+  </details>
+
+  <details>
+    <summary>Combination</summary>
+
+  ```R
+  combn(balls, 2)
+  ```
+  > [1,] "Red"    "Red"  "Yellow"  
+  > [2,] "Yellow" "Blue" "Blue"
+  ```R
+  combinations(3, 2, v = balls, repeats.allowed = TRUE)  # 3H2
+  ```
+  > [1,] "Blue"   "Blue"  
+  > [2,] "Blue"   "Red"  
+  > [3,] "Blue"   "Yellow"  
+  > [4,] "Red"    "Red"  
+  > [5,] "Red"    "Yellow"  
+  > [6,] "Yellow" "Yellow"
+  ```R
+  combinations(3, 2, v = balls, repeats.allowed = FALSE) # 3C2
+  ```
+  > [1,] "Blue" "Red"  
+  > [2,] "Blue" "Yellow"  
+  > [3,] "Red"  "Yellow"
+  </details>
+
+  <details>
+    <summary>Number of cases</summary>
+
+  ```R
+  prod(4, 2)                                  # 4P2
+  choose(4, 2)                                # 4C2
+  ```
+  > [1] 8  
+  > [1] 6
+  </details>
 
 
 ## [Generating Array and Variables by for Loop (2019.12.06)](#list)
