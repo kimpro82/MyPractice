@@ -149,9 +149,9 @@ runExample("01_hello")
   abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
   draw.circle(0, 0, r)                      # not exact drawing, crazy
   ```
-  </details>
 
   <img src="Images/Scatter_20210816_1_Monte_Carlo_method_1.png" width="500" height="500" alt = "1. Monte Carlo method 1">
+  </details>
 
   <details>
     <summary>1.1 Fit the circle on the coordinates</summary>
@@ -163,9 +163,9 @@ runExample("01_hello")
   abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
   draw.circle(0, 0, r)
   ```
-  </details>
 
   <img src="Images/Scatter_20210816_1_1_Fit_the_circle_on_the_coordinates.png" width="500" height="500" alt = "1.1 Fit the circle on the coordinates">
+  </details>
 
   <details>
     <summary>2. Monte Carlo method 2 (disperse the crowded central population)</summary>
@@ -238,9 +238,9 @@ runExample("01_hello")
   abline(v = -round(r*1.3):round(r*1.3), h = -r:r, col = "gray")
   draw.circle(0, 0, r)
   ```
-  </details>
 
-<img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="500" height="500" alt = "3. Points with lattice spacing">
+  <img src="Images/Scatter_20210816_3_Points_with_lattice_spacing.png" width="500" height="500" alt = "3. Points with lattice spacing">
+  </details>
 
   <details>
     <summary>3.1 Points with lattice spacing including outside the circle</summary>
@@ -428,9 +428,9 @@ answer for a question at chatting room
   }
 
   ```
-  </details>
 
   ![generating variable names](Images/Generating_variable_names_20191206_2.png)
+  </details>
 
   <details>
     <summary>2.1 generating variable names with considering sort</summary>
@@ -465,11 +465,12 @@ answer for a question at chatting room
     assign(name, c())
   }
   ```
-  </details>
 
-![code improvement trial of 2.1](Images/Generating_variable_names_20191206_2_1_1.PNG)  
-Hmm …… is it too much?  
-It can be more clearly effective when *n* is larger, but now seems not yet.  
+  ![code improvement trial of 2.1](Images/Generating_variable_names_20191206_2_1_1.PNG)
+
+  Hmm …… is it too much?  
+  It can be more clearly effective when *n* is larger, but now seems not yet.  
+  </details>
 
 
 ## [Fibonacci Tornado (2017.05.07)](#list)
