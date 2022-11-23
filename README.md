@@ -86,12 +86,12 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My R Practice](R/README.md#my-r-practice)
 
-- [`List` Practice in R (2022.11.22)](/R#list-in-r-20221122)
-- [`Shiny` - 1st Trial (2022.05.04)](/R#shiny---1st-trial-20220504)
-- [Scatter Points in a Circle (2021.08.16)](/R#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](/R#permutations-and-combinations-20210405)
-- [Generating Array and Variables by for Loop (2019.12.06)](/R#generating-array-and-variables-by-for-loop-20191206)
-- [Fibonacci Tornado (2017.05.07)](/R#fibonacci-tornado-20170507)
+- [`List` Practice in R (2022.11.22)](./R/README.md#list-in-r-20221122)
+- [`Shiny` - 1st Trial (2022.05.04)](./R/README.md#shiny---1st-trial-20220504)
+- [Scatter Points in a Circle (2021.08.16)](./R/README.md#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](./R/README.md#permutations-and-combinations-20210405)
+- [Generating Array and Variables by for Loop (2019.12.06)](./R/README.md#generating-array-and-variables-by-for-loop-20191206)
+- [Fibonacci Tornado (2017.05.07)](./R/README.md#fibonacci-tornado-20170507)
 
 
 ## [My Web Practice](/Web#my-web-practice)
