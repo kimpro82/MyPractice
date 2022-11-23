@@ -13,7 +13,7 @@
 
 ## [`List` Practice in R (2022.11.22)](#list)
 
-- It's not the linked list, but the data strurture that consists of key & value!
+- It's not the linked list that we used to know, but the data strurture that consists of key & value!
 
 #### `List.r`
 
