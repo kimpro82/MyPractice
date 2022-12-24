@@ -58,7 +58,7 @@ end
 print "\n"
 
 
-# UDF : return the last line's evaluated result without return
+# Return : return the last line's evaluated result without return in UDF
 
 def Say()
     a = "I hate you"
