@@ -127,7 +127,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Ruby Practice](./Ruby/)
 
-- [Ruby's Crazy Syntax](./Ruby/README.md#rubys-crazy-syntax-20221224)
+- [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
 
 
 ## [My BASIC Practice](/BASIC#my-qbasic-practice)
