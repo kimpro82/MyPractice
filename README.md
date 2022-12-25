@@ -14,6 +14,7 @@ miscellaneous petty works
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
+- [My **Ruby** Practice](#my-ruby-practice)
 - [My **BASIC** Practice](#my-basic-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
@@ -122,6 +123,11 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 ## [My Golang Practice](/Golang#my-golang-practice)
 
 - [Grade (2021.12.06)](/Golang#grade-20211206)
+
+
+## [My Ruby Practice](./Ruby/)
+
+- [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
 
 
 ## [My BASIC Practice](/BASIC#my-qbasic-practice)
