@@ -57,6 +57,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My VBA Practice](/VBA#my-vba-practice)
 
+- [`Erase` Statement (2023.01.03)](./VBA/README.md#erase-statement-20230103)
 - [File System : `Folder.Files` (2022.07.15)](/VBA##folder-object--files-property-20220715)
 - [File System : `File.DateCreated` (2022.07.12)](/VBA##file-object--datecreated-property-20220712)
 - [`ByRef` vs `ByVal` (2022.06.05)](/VBA#byref-vs-byval-20220605)
