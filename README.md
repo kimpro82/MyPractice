@@ -57,16 +57,17 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My VBA Practice](/VBA#my-vba-practice)
 
-- [File System : `Folder.Files` (2022.07.15)](/VBA##folder-object--files-property-20220715)
-- [File System : `File.DateCreated` (2022.07.12)](/VBA##file-object--datecreated-property-20220712)
-- [`ByRef` vs `ByVal` (2022.06.05)](/VBA#byref-vs-byval-20220605)
-- [Declare Plural Variable (2022.06.04)](/VBA#declare-plural-variable-20220604)
-- [Color Scroll 2 (2021.12.01)](/VBA#color-scroll-2-20211201)
-- [Variable Scope (2011.11.29)](/VBA#variable-scope-20111129)
-- [Control Formula Calculation Option (2021.11.08)](/VBA#control-formula-calculation-option-20211108)
-- [Read Binary File (2021.08.23)](/VBA#read-binary-file-20210823)
-- [Try ~ Catch ~ Finally (2021.07.28)](/VBA#try-catch-finally-20210728)
-- [Color Scroll (2020.11.14)](/VBA#color-scroll-20201114)
+- [`Erase` Statement (2023.01.03)](./VBA/README.md#erase-statement-20230103)
+- [File System : `Folder.Files` (2022.07.15)](./VBA/README.md#folder-object--files-property-20220715)
+- [File System : `File.DateCreated` (2022.07.12)](./VBA/README.md#file-object--datecreated-property-20220712)
+- [`ByRef` vs `ByVal` (2022.06.05)](./VBA/README.md#byref-vs-byval-20220605)
+- [Declare Plural Variable (2022.06.04)](./VBA#declare-plural-variable-20220604)
+- [Color Scroll 2 (2021.12.01)](./VBA/README.md#color-scroll-2-20211201)
+- [Variable Scope (2011.11.29)](./VBA/README.md#variable-scope-20111129)
+- [Control Formula Calculation Option (2021.11.08)](./VBA/README.md#control-formula-calculation-option-20211108)
+- [Read Binary File (2021.08.23)](./VBA/README.md#read-binary-file-20210823)
+- [Try ~ Catch ~ Finally (2021.07.28)](./VBA/README.md#try-catch-finally-20210728)
+- [Color Scroll (2020.11.14)](./VBA/README.md#color-scroll-20201114)
 
 
 ## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
