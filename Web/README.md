@@ -1,4 +1,4 @@
-# [My Web Practice]
+# [My Web Practice](../README.md#my-web-practice)
 
 HTML, CSS and JavaScript
 
@@ -18,7 +18,7 @@ HTML, CSS and JavaScript
 - A practice to customize mouse cursor figure in web
 - Reference  
   : [[Sololearn] CSS > Properties> 34. Customizing the Mouse Cursor > The cursor Property Values](https://www.sololearn.com/learning/1023/1110/1291/1)
-- Future task :  
+- Future tasks  
   · Refine repetitive codes by *JavaScript* or such  
   · Move the cursor by *AutoHotKey* automatically
 
