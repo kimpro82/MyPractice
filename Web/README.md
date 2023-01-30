@@ -415,160 +415,188 @@ HTML, CSS and JavaScript
 
 
 ## [Script Tag's Location (2022.01.02)](#list)
+
 - A topic suggested from my friend [*Alibaba*](https://github.com/abiriadev)
 - Compare the results from where the `script` tag is located
 - Arrange `script` tag into the `head` with external `.js` file link and don't forget the option **`defer`**
 
-### Case 1. Script tag in the Head
+  ### Case 1. Script tag in the Head
 
-![Script tag in the Head](Images/ScriptInHTML_Head.PNG)
+  ![Script tag in the Head](Images/ScriptInHTML_Head.PNG)
 
-#### `ScriptInHTML_Head.html`
-```html
-……
-    <head>
+  <details>
+    <summary>Codes : ScriptInHTML_Head.html</summary>
 
-        <meta charset="EUC-KR">
-        <title>Script in the Head</title>
-        <link rel="stylesheet" href="ScriptInHTML.css">
-        <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
+  ```html
+  ……
+      <head>
 
-    </head>
-……
-```
-#### `ScriptInHTML_Head.css`
-```css
-p {
-	text-align: center;
-	font-family: Brush Script MT, Georgia, Garamond, Times New Roman, serif;
-	/* font reference ☞ https://www.w3schools.com/css/css_font.asp */
-    color: blue;
-	font-size: 700%;
-	margin: 0;
-}
-```
+          <meta charset="EUC-KR">
+          <title>Script in the Head</title>
+          <link rel="stylesheet" href="ScriptInHTML.css">
+          <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
 
-### Case 2. Script tag in the Bottom of the Body
+      </head>
+  ……
+  ```
+  </details>
+  <details>
+    <summary>Codes : ScriptInHTML_Head.css</summary>
 
-![Script tag in the Bottom of the Body](Images/ScriptInHTML_BodyEnd.PNG)
+  ```css
+  p {
+    text-align: center;
+    font-family: Brush Script MT, Georgia, Garamond, Times New Roman, serif;
+    /* font reference ☞ https://www.w3schools.com/css/css_font.asp */
+      color: blue;
+    font-size: 700%;
+    margin: 0;
+  }
+  ```
+  </details>
 
-#### `ScriptInHTML_BodyEnd.html`
-```html
-……
-    <body>
+  ### Case 2. Script tag in the Bottom of the Body
 
-        <p>Be the reads!</p>
-        <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
+  ![Script tag in the Bottom of the Body](Images/ScriptInHTML_BodyEnd.PNG)
 
-    </body>
-……
-```
+  <details>
+    <summary>Codes : ScriptInHTML_BodyEnd.html</summary>
 
-### Case 3. Script tag with `defer` option
+  ```html
+  ……
+      <body>
 
-![Script tag in the External .js file](Images/ScriptInExternalJS.PNG)
+          <p>Be the reads!</p>
+          <script>document.getElementsByTagName('p')[0].style.color = "red"</script>
 
-#### `ScriptWithDefer.html`
-```html
-……
-    <head>
+      </body>
+  ……
+  ```
+  </details>
 
-        ……
-        <script defer src="ScriptInExternalJS.js"></script>
-        <!-- don't forget "defer" ! -->
+  ### Case 3. Script tag with `defer` option
 
-    </head>
-……
-```
-#### `ScriptWithDefer.js`
-```js
-document.getElementsByTagName('p')[0].style.color = "red"
-```
+  ![Script tag in the External .js file](Images/ScriptInExternalJS.PNG)
+
+  <details>
+    <summary>Codes : ScriptWithDefer.html</summary>
+
+  ```html
+  ……
+      <head>
+
+          ……
+          <script defer src="ScriptInExternalJS.js"></script>
+          <!-- don't forget "defer" ! -->
+
+      </head>
+  ……
+  ```
+  </details>
+  <details>
+    <summary>Codes : ScriptWithDefer.js</summary>
+
+  ```js
+  document.getElementsByTagName('p')[0].style.color = "red"
+  ```
+  </details>
 
 
 ## [Colorful Show (2020.03.04)](#list)
-This is a colorful 'Show'.
 
-![Colorful Show](Images/ColorfulShow.gif)
+- This is a colorful 'Show'.
 
-#### `ColorfulShow.html`
-```html
-<!DOCTYPE html>
+  ![Colorful Show](Images/ColorfulShow.gif)
 
-<html>
+  <details>
+    <summary>Codes : ColorfulShow.html</summary>
 
-<head>
-	<meta charset="EUC-KR">
-	<title>Colorful Show</title>
-  	<link rel="stylesheet" href="ColorfulShow.css">
-</head>
+  ```html
+  <!DOCTYPE html>
 
-<body>
-	<p id='chameleon'>Show</p>
-  	<script src="ColorfulShow.js">
-		<!--
-			<script> can be located in <head> or <body>. 
-			But, in this case, we should consider execution sequence.
-		-->
-		
-	</script> 
-</body>
+  <html>
 
-</html>
-```
+  <head>
+    <meta charset="EUC-KR">
+    <title>Colorful Show</title>
+      <link rel="stylesheet" href="ColorfulShow.css">
+  </head>
 
-#### `ColorfulShow.css`
-```css
-@charset "EUC-KR";
+  <body>
+    <p id='chameleon'>Show</p>
+      <script src="ColorfulShow.js">
+      <!--
+        <script> can be located in <head> or <body>. 
+        But, in this case, we should consider execution sequence.
+      -->
+      
+    </script> 
+  </body>
 
-#chameleon {
-	text-align: center;
-	font-family: "Times New Roman", Times, serif;
-	font-size: 1000%;
-}
-```
+  </html>
+  ```
+  </details>
+  <details>
+    <summary>Codes : ColorfulShow.css</summary>
 
-#### `ColorfulShow.js`
-```javascript
-function changeColor() {
-	randNumDec = Math.floor(Math.random() * Math.pow(256, 3));
-		/*
-		 * Math.random() returns a number lower than 1.
-	 	 * Math.floor() returns the largest integer less than or equal to a given number.
-		 * 256**3 is for the RGB color range between #000000 ~ #FFFFFF.
-		 */
-	randNumHex = randNumDec.toString(16); /* Convert Decimal to Hexadecimal */
+  ```css
+  @charset "EUC-KR";
 
-	/* document.write(randNumHex, "<br>"); */
-		/* document.write() returns real HTML codes. */
-		/* document.write(typeof randColor);
-		 * string
-		 */
+  #chameleon {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1000%;
+  }
+  ```
+  </details>
+  <details>
+    <summary>Codes : ColorfulShow.js</summary>
 
-	document.getElementById('chameleon').style.color = '#' + randNumHex;
-}
+  ```javascript
+  function changeColor() {
+    randNumDec = Math.floor(Math.random() * Math.pow(256, 3));
+      /*
+      * Math.random() returns a number lower than 1.
+      * Math.floor() returns the largest integer less than or equal to a given number.
+      * 256**3 is for the RGB color range between #000000 ~ #FFFFFF.
+      */
+    randNumHex = randNumDec.toString(16); /* Convert Decimal to Hexadecimal */
 
-setInterval(changeColor, 1000);
-```
+    /* document.write(randNumHex, "<br>"); */
+      /* document.write() returns real HTML codes. */
+      /* document.write(typeof randColor);
+      * string
+      */
+
+    document.getElementById('chameleon').style.color = '#' + randNumHex;
+  }
+
+  setInterval(changeColor, 1000);
+  ```
+  </details>
 
 
 ## [Ganzi (2017.04.03)](#list)
+
 - A simple Javascript practice
 
-![Ganzi](Images/Ganzi.gif)
+  ![Ganzi](Images/Ganzi.gif)
 
-#### `Ganzi.html`
-```html
-<div id ="Zure">Ganzi</div>
+  <details>
+    <summary>Codes : Ganzi.html</summary>
 
-<script type="text/javascript">
-  
-function thunder() {
-	var x = document.getElementById("Zure");
-	var storm = document.write(x.innerHTML + " Storm");
-	Zure.replace(x,storm);
-}
-setInterval(thunder, 3000);
-	
-</script>
-```
+  ```html
+  <div id ="Zure">Ganzi</div>
+
+  <script type="text/javascript">
+    
+  function thunder() {
+    var x = document.getElementById("Zure");
+    var storm = document.write(x.innerHTML + " Storm");
+    Zure.replace(x,storm);
+  }
+  setInterval(thunder, 3000);
+    
+  </script>
+  ```
+  </details>
