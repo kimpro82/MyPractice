@@ -5,11 +5,142 @@ HTML, CSS and JavaScript
 
 ### List
 
+- [Mouse Cursor Customization (2023.01.29)](#mouse-cursor-customization-20230129)
 - [Bootstrap : Magic Stick (2022.01.28)](#bootstrap--magic-stick-20220128)
 - [Dove's Step 1 (2022.01.13)](#doves-step-1-20220113)
 - [Script Tag's Location (2022.01.02)](#script-tags-location-20220102)
 - [Colorful Show (2020.03.04)](#colorful-show-20200304)
 - [Ganzi (2017.04.03)](#ganzi-20170403)
+
+
+## [Mouse Cursor Customization (2023.01.29)](#list)
+
+- A practice to customize mouse cursor figure in web
+- Future task :
+  - Refine repetitive codes by *JavaScript* or such
+  - Move the cursor by *AutoHotKey* automatically
+
+  ![Mouse Cursor Customization](./Images/Cursor.gif)
+
+  <details>
+    <summary>Codes : Cursor.html</summary>
+
+  ```html
+  <!DOCTYPE html>
+
+  <html lang="en">
+
+      <head>
+          <meta charset="utf-8">
+          <title>Mouse Cursor Customization</title>
+          <meta name="author" content="kimpro82">
+          <link rel="stylesheet" href="./Cursor.css">
+      </head>
+
+      <body>
+          <div id="box">
+              <h2>Mouse Cursor Customization</h2>
+
+              <br>
+
+              <span class="auto">auto</span>
+              <span class="crosshair">crosshair</span>
+              <span class="default">default</span>
+              <span class="help">help</span>
+              <span class="text">text</span>
+              <span class="wait">wait</span>
+
+              <br>
+
+              <span class="n-resize">n-resize</span>
+              <span class="s-resize">s-resize</span>
+              <span class="ne-resize">ne-resize</span>
+              <span class="sw-resize">sw-resize</span>
+              
+              <br>
+
+              <span class="nw-resize">nw-resize</span>
+              <span class="se-resize">se-resize</span>
+              <span class="e-resize">e-resize</span>
+              <span class="w-resize">w-resize</span>
+
+              <br>
+
+              <span class="pointer">pointer</span>
+              <span class="progress">progress</span>
+              <span class="not-allowed">not-allowed</span>
+              <span class="no-drop">no-drop</span>
+
+              <br>
+
+              <span class="vertical-text">vertical-text</span>
+              <span class="all-scroll">all-scroll</span>
+              <span class="col-resize">col-resize</span>
+              <span class="row-resize">row-resize</span>
+          </div>
+
+          <br>
+          &nbsp;                                              <!-- to stay cursor when capture -->
+      </body>
+
+  </html>
+  ```
+  </details>
+
+  <details>
+    <summary>Codes : Cursor.css</summary>
+
+  ```css
+  @charset "EUC-KR";
+
+  body
+  {
+      font-weight: bold;
+  }
+
+  #box
+  {
+      text-align: center;
+      display: inline-block;
+      border: 1px solid;
+      padding: 5px;
+      margin: 5px;
+  }
+
+  span
+  {
+      display: inline-block;
+      border: 1px solid;
+      padding: 5px;
+      margin: 5px;
+  }
+
+  .auto           { cursor: auto;         }
+  .crosshair      { cursor: crosshair;    }
+  .default        { cursor: default;      }
+  .help           { cursor: help;         }
+  .text           { cursor: text;         }
+  .wait           { cursor: wait;         }
+
+  .n-resize       { cursor: n-resize;     }
+  .s-resize       { cursor: s-resize;     }
+  .ne-resize      { cursor: ne-resize;    }
+  .sw-resize      { cursor: sw-resize;    }
+  .nw-resize      { cursor: nw-resize;    }
+  .se-resize      { cursor: se-resize;    }
+  .e-resize       { cursor: e-resize;     }
+  .w-resize       { cursor: w-resize;     }
+
+  .pointer        { cursor: pointer;      }
+  .progress       { cursor: progress;     }
+  .not-allowed    { cursor: not-allowed;  }
+  .no-drop        { cursor: no-drop;      }
+  .vertical-text  { cursor: vertical-text;}
+  .all-scroll     { cursor: all-scroll;   }
+  .col-resize     { cursor: col-resize;   }
+  .row-resize     { cursor: row-resize;   }
+  ```
+  </details>
 
 
 ## [Bootstrap : Magic Stick (2022.01.28)](#list)
