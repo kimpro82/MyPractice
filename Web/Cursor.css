@@ -1,0 +1,48 @@
+@charset "EUC-KR";
+
+body
+{
+    font-weight: bold;
+}
+
+#box
+{
+    text-align: center;
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+span
+{
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+.auto           { cursor: auto;         }
+.crosshair      { cursor: crosshair;    }
+.default        { cursor: default;      }
+.help           { cursor: help;         }
+.text           { cursor: text;         }
+.wait           { cursor: wait;         }
+
+.n-resize       { cursor: n-resize;     }
+.s-resize       { cursor: s-resize;     }
+.ne-resize      { cursor: ne-resize;    }
+.sw-resize      { cursor: sw-resize;    }
+.nw-resize      { cursor: nw-resize;    }
+.se-resize      { cursor: se-resize;    }
+.e-resize       { cursor: e-resize;     }
+.w-resize       { cursor: w-resize;     }
+
+.pointer        { cursor: pointer;      }
+.progress       { cursor: progress;     }
+.not-allowed    { cursor: not-allowed;  }
+.no-drop        { cursor: no-drop;      }
+.vertical-text  { cursor: vertical-text;}
+.all-scroll     { cursor: all-scroll;   }
+.col-resize     { cursor: col-resize;   }
+.row-resize     { cursor: row-resize;   }
