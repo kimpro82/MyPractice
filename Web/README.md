@@ -56,6 +56,8 @@ HTML, CSS and JavaScript
     <summary>Codes: Cursor2.js (new)</summary>
 
   ```js
+  // Declare an array of kewords for cursor property
+  // Reference ☞ https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
   var cursorTypes = [
       ["auto", "default", "none"],
       ["context-menu", "help", "pointer", "progress", "wait"],
