@@ -112,7 +112,7 @@ HTML, CSS and JavaScript
 - Reference  
   : [[Sololearn] CSS > Properties> 34. Customizing the Mouse Cursor > The cursor Property Values](https://www.sololearn.com/learning/1023/1110/1291/1)
 - Future tasks  
-  · Refine repetitive codes by *JavaScript* or such  
+  · Refine repetitive codes by *JavaScript* or such → [(done)](#mouse-cursor-customization-2-20230206)  
   · Move the cursor by *AutoHotKey* automatically
 
   ![Mouse Cursor Customization](./Images/Cursor.gif)
