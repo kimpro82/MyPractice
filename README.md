@@ -98,6 +98,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Web Practice](./Web/README.md#my-web-practice)
 
+- [Mouse Cursor Customization 2 (2023.02.06)](./Web/README.md#mouse-cursor-customization-2-20230206)
 - [Mouse Cursor Customization (2023.01.29)](./Web/README.md#mouse-cursor-customization-20230129)
 - [Bootstrap : Magic Stick (2022.01.28)](./Web/README.md#bootstrap--magic-stick-20220128)
 - [Dove's Step 1 (2022.01.13)](./Web/README.md#doves-step-1-20220113)

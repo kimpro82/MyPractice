@@ -5,12 +5,103 @@ HTML, CSS and JavaScript
 
 ### List
 
+- [Mouse Cursor Customization 2 (2023.02.06)](#mouse-cursor-customization-2-20230206)
 - [Mouse Cursor Customization (2023.01.29)](#mouse-cursor-customization-20230129)
 - [Bootstrap : Magic Stick (2022.01.28)](#bootstrap--magic-stick-20220128)
 - [Dove's Step 1 (2022.01.13)](#doves-step-1-20220113)
 - [Script Tag's Location (2022.01.02)](#script-tags-location-20220102)
 - [Colorful Show (2020.03.04)](#colorful-show-20200304)
 - [Ganzi (2017.04.03)](#ganzi-20170403)
+
+
+## [Mouse Cursor Customization 2 (2023.02.06)](#list)
+
+- Advanced code from [Mouse Cursor Customization (2023.01.29)](#mouse-cursor-customization-20230129)
+  - Refine repetitive codes by *JavaScript* : use `.createElement()` `.style.cursor` `.appendChild()`
+  - Update keywords from the reference : [[mdn web docs] References > CSS > cursor](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
+- Future tasks : Move the cursor by *AutoHotKey* automatically
+
+  ![Mouse Cursor Customization 2](./Images/Cursor2.gif)
+
+  <details>
+    <summary>Codes (mainly changed) : Cursor2.html</summary>
+
+  ```html
+      <head>
+          ……
+          <script defer src="./Cursor2.js" type="text/javascript"></script>
+          ……
+      </head>
+  ```
+  ```html
+      <body>
+          <div id="box">
+              <h2>Mouse Cursor Customization 2</h2>
+              <!-- Elements will be added by js -->
+          </div>
+          ……
+      </body>
+  ```
+  </details>
+
+  <details>
+    <summary>Codes (mainly changed) : Cursor2.css</summary>
+
+  ```css
+  /* All blocks for classes related with cursor have been removed in CSS file. */
+  ```
+  </details>
+
+  <details>
+    <summary>Codes (new): Cursor2.js</summary>
+
+  ```js
+  var cursorTypes = [
+      ["auto", "default", "none"],
+      ["context-menu", "help", "pointer", "progress", "wait"],
+      ["cell", "crosshair", "text", "vertical-text"],
+      ["alias", "copy", "move"],
+      ["no-drop", "not-allowed", "grab", "grabbing"],
+      ["n-resize", "e-resize", "s-resize", "w-resize"],
+      ["ne-resize", "nw-resize", "se-resize", "sw-resize"],
+      ["ew-resize", "ns-resize", "nesw-resize", "nwse-resize"],
+      ["zoom-in", "zoom-out"]
+  ]
+
+  // A function to generate span elements with inner text and cursor style
+  function genBoxes(cursorTypes)
+  {
+      // Declare an object to indicate the element where new elements will be appended
+      var obj = document.getElementById("box")
+
+      // Loop for the array cursorTypes
+      for (r in cursorTypes)
+      {
+          for (el in cursorTypes[r])
+          {
+              // Test : ok
+              // console.log(cursorTypes[r][el])
+
+              // Generate a box with style
+              var newBox = document.createElement("span")
+              // newBox.className = cursorTypes[r][el]                            // not needed
+              newBox.innerText = cursorTypes[r][el]
+              newBox.style.cursor = cursorTypes[r][el]
+
+              // Append it
+              obj.appendChild(newBox)
+          }
+
+          // Line replacement
+          var br = document.createElement("br")
+          obj.appendChild(br)
+      }
+  }
+
+  // Run
+  genBoxes(cursorTypes)
+  ```
+  </details>
 
 
 ## [Mouse Cursor Customization (2023.01.29)](#list)
