@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+body
+{
+    font-weight: bold;
+}
+
+#box
+{
+    text-align: center;
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+span
+{
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px;
+    margin: 5px;
+}
