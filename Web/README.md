@@ -24,7 +24,7 @@ HTML, CSS and JavaScript
   ![Mouse Cursor Customization 2](./Images/Cursor2.gif)
 
   <details>
-    <summary>Codes (mainly changed) : Cursor2.html</summary>
+    <summary>Codes : Cursor2.html (mainly changed)</summary>
 
   ```html
       <head>
@@ -45,7 +45,7 @@ HTML, CSS and JavaScript
   </details>
 
   <details>
-    <summary>Codes (mainly changed) : Cursor2.css</summary>
+    <summary>Codes : Cursor2.css (mainly changed)</summary>
 
   ```css
   /* All blocks for classes related with cursor have been removed in CSS file. */
@@ -53,7 +53,7 @@ HTML, CSS and JavaScript
   </details>
 
   <details>
-    <summary>Codes (new): Cursor2.js</summary>
+    <summary>Codes: Cursor2.js (new)</summary>
 
   ```js
   var cursorTypes = [
