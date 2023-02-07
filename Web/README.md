@@ -53,7 +53,7 @@ HTML, CSS and JavaScript
   </details>
 
   <details>
-    <summary>Codes: Cursor2.js (new)</summary>
+    <summary>Codes : Cursor2.js (new)</summary>
 
   ```js
   // Declare an array of kewords for cursor property
