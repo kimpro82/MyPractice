@@ -5,6 +5,7 @@ HTML, CSS and JavaScript
 
 ### List
 
+- [Mouse Cursor Customization 2 (2023.02.06)](#mouse-cursor-customization-2-20230206)
 - [Mouse Cursor Customization (2023.01.29)](#mouse-cursor-customization-20230129)
 - [Bootstrap : Magic Stick (2022.01.28)](#bootstrap--magic-stick-20220128)
 - [Dove's Step 1 (2022.01.13)](#doves-step-1-20220113)
@@ -13,13 +14,105 @@ HTML, CSS and JavaScript
 - [Ganzi (2017.04.03)](#ganzi-20170403)
 
 
+## [Mouse Cursor Customization 2 (2023.02.06)](#list)
+
+- Advanced code from [Mouse Cursor Customization (2023.01.29)](#mouse-cursor-customization-20230129)
+  - Refine repetitive codes by *JavaScript* : use `.createElement()` `.style.cursor` `.appendChild()`
+  - Update keywords from the reference : [[mdn web docs] References > CSS > cursor](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
+- Future tasks : Move the cursor by *AutoHotKey* automatically
+
+  ![Mouse Cursor Customization 2](./Images/Cursor2.gif)
+
+  <details>
+    <summary>Codes : Cursor2.html (mainly changed)</summary>
+
+  ```html
+      <head>
+          ……
+          <script defer src="./Cursor2.js" type="text/javascript"></script>
+          ……
+      </head>
+  ```
+  ```html
+      <body>
+          <div id="box">
+              <h2>Mouse Cursor Customization 2</h2>
+              <!-- Elements will be added by js -->
+          </div>
+          ……
+      </body>
+  ```
+  </details>
+
+  <details>
+    <summary>Codes : Cursor2.css (mainly changed)</summary>
+
+  ```css
+  /* All blocks for classes related with cursor have been removed in CSS file. */
+  ```
+  </details>
+
+  <details>
+    <summary>Codes : Cursor2.js (new)</summary>
+
+  ```js
+  // Declare an array of kewords for cursor property
+  // Reference ☞ https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+  var cursorTypes = [
+      ["auto", "default", "none"],
+      ["context-menu", "help", "pointer", "progress", "wait"],
+      ["cell", "crosshair", "text", "vertical-text"],
+      ["alias", "copy", "move"],
+      ["no-drop", "not-allowed", "grab", "grabbing"],
+      ["n-resize", "e-resize", "s-resize", "w-resize"],
+      ["ne-resize", "nw-resize", "se-resize", "sw-resize"],
+      ["ew-resize", "ns-resize", "nesw-resize", "nwse-resize"],
+      ["zoom-in", "zoom-out"]
+  ]
+
+  // A function to generate span elements with inner text and cursor style
+  function genBoxes(cursorTypes)
+  {
+      // Declare an object to indicate the element where new elements will be appended
+      var obj = document.getElementById("box")
+
+      // Loop for the array cursorTypes
+      for (r in cursorTypes)
+      {
+          for (el in cursorTypes[r])
+          {
+              // Test : ok
+              // console.log(cursorTypes[r][el])
+
+              // Generate a box with style
+              var newBox = document.createElement("span")
+              // newBox.className = cursorTypes[r][el]                            // not needed
+              newBox.innerText = cursorTypes[r][el]
+              newBox.style.cursor = cursorTypes[r][el]
+
+              // Append it
+              obj.appendChild(newBox)
+          }
+
+          // Line replacement
+          var br = document.createElement("br")
+          obj.appendChild(br)
+      }
+  }
+
+  // Run
+  genBoxes(cursorTypes)
+  ```
+  </details>
+
+
 ## [Mouse Cursor Customization (2023.01.29)](#list)
 
 - A practice to customize mouse cursor figure in web
 - Reference  
   : [[Sololearn] CSS > Properties> 34. Customizing the Mouse Cursor > The cursor Property Values](https://www.sololearn.com/learning/1023/1110/1291/1)
 - Future tasks  
-  · Refine repetitive codes by *JavaScript* or such  
+  · Refine repetitive codes by *JavaScript* or such → [(done)](#mouse-cursor-customization-2-20230206)  
   · Move the cursor by *AutoHotKey* automatically
 
   ![Mouse Cursor Customization](./Images/Cursor.gif)
