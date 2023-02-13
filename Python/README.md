@@ -47,7 +47,7 @@ I'm sorry `C++` …… I betrayed you.
 
   print(domain)
   ```
-
+  The regex `[\w\.-_*]+@` is not the only answer, anyway it seems to work well.
   ```
   not.found
   ```
