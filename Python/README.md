@@ -5,6 +5,7 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
+- [`re.sub()` (2023.02.12)](#resub-20230212)
 - [Vertical Alignment 2 (2022.04.27)](#vertical-alignment-2-20220427)
 - [Arguements Parsing (2022.03.24)](#arguements-parsing-20220324)
 - [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
@@ -28,6 +29,29 @@ I'm sorry `C++` …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [`re.sub()` (2023.02.12)](#list)
+
+- Get domain from e-mail address by `re.sub()`
+- A partial practice for [Coursera](https://www.coursera.org/) > [Using Databases with Python (University of Michigan)](https://www.coursera.org/learn/python-databases) > [Week 2 > Assignment 2](https://www.coursera.org/learn/python-databases/gradedLti/WOD7V/counting-email-in-a-database)
+
+  <details>
+    <summary>Codes : ReSub.py</summary>
+
+  ```py
+  import re
+
+  email = "404@not.found"
+  domain = re.sub(r"[\w\.-_*]+@", "", email)
+
+  print(domain)
+  ```
+
+  ```
+  not.found
+  ```
+  </details>
 
 
 ## [Vertical Alignment 2 (2022.04.27)](#list)
