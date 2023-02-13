@@ -595,7 +595,7 @@ ModuleSample.call()
 - Import `csv`
 - Seems that _dictionary type_ is not so suitable to generate random paragraphs
 
-  ### `WordMix.py`
+  #### `WordMix.py`
 
   <details>
     <summary>0. Check If Words.csv Exists</summary>
@@ -769,6 +769,8 @@ ModuleSample.call()
 
 - find how to get random lists without overlapping values
 - use `random` `random.randint` `random.sample`
+
+  #### `SuffleList.py`
 
   ```python
   import random
@@ -962,6 +964,8 @@ ModuleSample.call()
 
 - Simply Generating `Fibonacci Series` by Python
 
+  #### `FibonacciSeries.py`
+
   ```python
   a = [1, 1]
   n = 2
@@ -978,6 +982,8 @@ ModuleSample.call()
 ## [Generate List (2019.12.07)](#list)
 
 - Generate lists by various ways
+
+  #### `GenerateList.py`
 
   ```python
   list1 = [[0,0], [0,0], [0,0], [0,0]]
@@ -997,6 +1003,8 @@ ModuleSample.call()
 
 - Generate normal distributed sample with limited range
 - Use `numpy` `matplotlib.pyplot` `scipy`
+
+  #### `LimitedRangeSampling.py`
 
   <details>
     <summary>Generate a normal distribution with limited range [25, 75]</summary>
@@ -1150,6 +1158,8 @@ ModuleSample.call()
 - Input the correct passworld within 5 trials or die
 - Practice `if`~`else`, `break`/`continue`, `time.sleep()` and so on
 
+  #### `Password.py`
+
   <details>
     <summary>Codes : Password.py</summary>
 
@@ -1187,6 +1197,8 @@ ModuleSample.call()
 
 - Simple Python `class` practice
 
+  #### `Class.py`
+
   ```python
   class MyFirstClass :
       
@@ -1209,6 +1221,8 @@ What the `__hell__`?
 ## [`while` (2017.05.15)](#list)
 
 - Simple Python practice
+
+  #### `While.py`
 
   ```python
   death_entropy = 100
