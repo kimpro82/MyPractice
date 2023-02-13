@@ -36,7 +36,7 @@ I'm sorry `C++` …… I betrayed you.
 - Get domain from e-mail address by `re.sub()`
 - A partial practice for [Coursera](https://www.coursera.org/) > [Using Databases with Python (University of Michigan)](https://www.coursera.org/learn/python-databases) > [Week 2 > Assignment 2](https://www.coursera.org/learn/python-databases/gradedLti/WOD7V/counting-email-in-a-database)
 
-  <details>
+  <details open="">
     <summary>Codes : ReSub.py</summary>
 
   ```py
@@ -962,35 +962,35 @@ ModuleSample.call()
 
 - Simply Generating `Fibonacci Series` by Python
 
-```python
-a = [1, 1]
-n = 2
+  ```python
+  a = [1, 1]
+  n = 2
 
-while n<10 : # length = 10
-    a.append(a[n-2] + a[n-1])
-    n += 1
+  while n<10 : # length = 10
+      a.append(a[n-2] + a[n-1])
+      n += 1
 
-print(a)
-```
-> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]  
+  print(a)
+  ```
+  > [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]  
 
 
 ## [Generate List (2019.12.07)](#list)
-generate lists by various ways
 
-```python
-list1 = [[0,0], [0,0], [0,0], [0,0]]
-list2 = [[0,0]] * 4
-list3 = [0,0] * 4
+- Generate lists by various ways
 
-print(list1, "\n", list2, "\n", list3)
-list1 == list2
-```
+  ```python
+  list1 = [[0,0], [0,0], [0,0], [0,0]]
+  list2 = [[0,0]] * 4
+  list3 = [0,0] * 4
 
-> [[0, 0], [0, 0], [0, 0], [0, 0]]  
-> [[0, 0], [0, 0], [0, 0], [0, 0]]  
-> [0, 0, 0, 0, 0, 0, 0, 0]  
-> True  
+  print(list1, "\n", list2, "\n", list3)
+  list1 == list2
+  ```
+  > [[0, 0], [0, 0], [0, 0], [0, 0]]  
+  > [[0, 0], [0, 0], [0, 0], [0, 0]]  
+  > [0, 0, 0, 0, 0, 0, 0, 0]  
+  > True  
 
 
 ## [Limited Range Sampling (2019.09.22)](#list)
@@ -1082,8 +1082,8 @@ list1 == list2
 
 ## [`with` ~ `open()` (2019.07.21)](#list)
 
-- read binary file
-- convert decimal number ↔ hexadecimal number
+- Read binary file
+- Convert decimal number ↔ hexadecimal number
 
   <details>
     <summary>Codes : WithOpen.py</summary>
@@ -1184,36 +1184,46 @@ list1 == list2
 
 
 ## [Class (2018.02.07)](#list)
-a simple Python `class` practice
 
-```python
-class MyFirstClass :
-    
-    def Family(self, name, role):
-        print(name, "is a(an)", role, "in my family")
+- Simple Python `class` practice
 
-Do = MyFirstClass()
+  ```python
+  class MyFirstClass :
+      
+      def Family(self, name, role):
+          print(name, "is a(an)", role, "in my family")
 
-Do.Family("Kim", "Husband")
-Do.Family("Shin", "Wife")
-Do.Family("Kim", "Future Baby")
-```
+  Do = MyFirstClass()
 
-![Python_Class_Test](Images/Class.PNG)
+  Do.Family("Kim", "Husband")
+  Do.Family("Shin", "Wife")
+  Do.Family("Kim", "Future Baby")
+  ```
 
-I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__init__` and so on.
+  ![Python_Class_Test](Images/Class.PNG)
+
+  I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__init__` and so on.  
 What the `__hell__`?
 
 
 ## [`while` (2017.05.15)](#list)
-a simple Python practice
 
-```python
-death_entropy = 100
-my_entropy = 1
+- Simple Python practice
 
-while(my_entropy < death_entropy) :
-    print(my_entropy)
-    my_entropy += 1
-print('Nirvana')
-```
+  ```python
+  death_entropy = 100
+  my_entropy = 1
+
+  while(my_entropy < death_entropy) :
+      print(my_entropy)
+      my_entropy += 1
+  print('Nirvana')
+  ```
+  ```
+  1
+  2
+  3
+  ……
+  100
+  Nirvana
+  ```
