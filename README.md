@@ -31,9 +31,9 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 ## [My Python Practice](./Python#my-python-practice)
 
 - [`re.sub()` (2023.02.12)](./Python/README.md#resub-20230212)
-- [Vertical Alignment 2 (2022.04.27)](./Python/README.md#vertical-alignment-2-20220427)
+- [Vertical Alignment 2 with *f-string* (2022.04.27)](./Python/README.md#vertical-alignment-2-with-f-string-20220427)
 - [Arguements Parsing (2022.03.24)](./Python/README.md#arguements-parsing-20220324)
-- [Vertical Alignment (2021.12.21)](./Python/README.md#vertical-alignment-20211221)
+- [Vertical Alignment with Korean Letters (2021.12.21)](./Python/README.md#vertical-alignment-with-korean-letters-20211221)
 - [Iterator (2021.06.17)](./Python/README.md#iterator-20210617)
 - [`if` ~ `while` ~ `true` (2021.05.04)](./Python/README.md#if--while--true-20210504)
 - [`re.split()` (2021.04.29)](./Python/README.md#resplit-20210429)
