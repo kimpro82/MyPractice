@@ -595,315 +595,372 @@ ModuleSample.call()
 - Import `csv`
 - Seems that _dictionary type_ is not so suitable to generate random paragraphs
 
-#### 0. Check If Words.csv Exists
-```python
-import os
-```
-```python
-path = "C:\\Users\\……\\Python\\Words.csv"
-# \\ : escape character of \
-os.path.isfile(path)
-```
-> True
+  ### `WordMix.py`
 
-#### 1. Read Words.csv simply 
-```python
-import csv
-```
-```python
-with open(path,'r', encoding='utf-8') as f:
-    reader = csv.DictReader(f)
+  <details>
+    <summary>0. Check If Words.csv Exists</summary>
 
-    for c in reader:
-        for k, v in c.items():
-            print(v, end= ' ')
-        print("\n")
-```
-> 멍청하게 떡볶이 먹고 배탈 나는 똥개  
-> 어리석게 꼭지에서 주식 사는 너구리  
-> 정신 못 차리고 반바지에 긴 양말 신은 코흘리개  
-> 한심하게 노래방 가서 고해 부르는 개미햝기  
-> 아무 생각없이 담뱃불 붙이다 앞머리 불 붙은 이등병
+  ```python
+  import os
+  ```
+  ```python
+  path = "C:\\Users\\……\\Python\\Words.csv"
+  # \\ : escape character of \
+  os.path.isfile(path)
+  ```
+  > True
+  </details>
 
-#### 1-1. Read Words.csv as dictionary type
-```python
-with open(path,'r', encoding='utf-8') as f:
-    reader = csv.DictReader(f)
+  <details>
+    <summary>1. Read Words.csv simply</summary>
 
-    for row in reader:
-        print(row)
-```
-> {'\ufeff수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
-> {'\ufeff수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
-> {'\ufeff수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
-> {'\ufeff수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
-> {'\ufeff수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  ```python
+  import csv
+  ```
+  ```python
+  with open(path,'r', encoding='utf-8') as f:
+      reader = csv.DictReader(f)
 
-#### 1-2. Get rid of '\ufeff' from the head of data
-```python
-with open(path,'r', encoding='utf-8-sig') as f:
-    reader = csv.DictReader(f)
+      for c in reader:
+          for k, v in c.items():
+              print(v, end= ' ')
+          print("\n")
+  ```
+  > 멍청하게 떡볶이 먹고 배탈 나는 똥개  
+  > 어리석게 꼭지에서 주식 사는 너구리  
+  > 정신 못 차리고 반바지에 긴 양말 신은 코흘리개  
+  > 한심하게 노래방 가서 고해 부르는 개미햝기  
+  > 아무 생각없이 담뱃불 붙이다 앞머리 불 붙은 이등병
+  </details>
 
-    for row in reader:
-        print(row)
-```
-> {'수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
-> {'수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
-> {'수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
-> {'수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
-> {'수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  <details>
+    <summary>1-1. Read Words.csv as dictionary type</summary>
+
+  ```python
+  with open(path,'r', encoding='utf-8') as f:
+      reader = csv.DictReader(f)
+
+      for row in reader:
+          print(row)
+  ```
+  > {'\ufeff수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
+  > {'\ufeff수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
+  > {'\ufeff수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
+  > {'\ufeff수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
+  > {'\ufeff수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  </details>
+
+  <details>
+    <summary>1-2. Get rid of '\ufeff' from the head of data</summary>
+
+  ```python
+  with open(path,'r', encoding='utf-8-sig') as f:
+      reader = csv.DictReader(f)
+
+      for row in reader:
+          print(row)
+  ```
+  > {'수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
+  > {'수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
+  > {'수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
+  > {'수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
+  > {'수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  </details>
 
 
 ## [Count Words (2020.11.10)](#list)
+
 - Count words without duplication from .txt file
 - import `re` for using `regular expression`
 
-```python
-import os
-import re
-```
+  <details>
+    <summary>Codes : CountWords.py</summary>
 
-```python
-# Check if the target file exists
-path = "C:\\...\\Python\\subtitle - 1.1.txt"
-os.path.isfile(path)
-```
-> True
+  ```python
+  import os
+  import re
+  ```
 
-```python
-# Call words' list with duplication
-document_raw = open(path, 'r')
-document_lower = document_raw.read().lower()
-words_duplication = re.findall(r'\b[a-z]{3,15}\b', document_lower)
-# Regular expression to avoid meaningless or wrong words
-```
+  ```python
+  # Check if the target file exists
+  path = "C:\\...\\Python\\subtitle - 1.1.txt"
+  os.path.isfile(path)
+  ```
+  > True
 
-```python
-# Remove duplication from the list
-words = set(words_duplication)
-print(len(words))
-```
-> 455
+  ```python
+  # Call words' list with duplication
+  document_raw = open(path, 'r')
+  document_lower = document_raw.read().lower()
+  words_duplication = re.findall(r'\b[a-z]{3,15}\b', document_lower)
+  # Regular expression to avoid meaningless or wrong words
+  ```
+
+  ```python
+  # Remove duplication from the list
+  words = set(words_duplication)
+  print(len(words))
+  ```
+  > 455
+  </details>
 
 
 ## [Operator Precedence (2020.06.28)](#list)
-answer for my friend YW Jang's question
 
-```python
-print("F" == "M")
-```
-> False
+- Answer for my friend *YW Jang*'s question
+- Reference ☞ https://www.programiz.com/python-programming/precedence-associativity
 
-```python
-print(bool("m"))
-```
-> True
+  <details>
+    <summary>Codes : CountWords.py</summary>
 
-`==` runs prior to `or` in Python
+  ```python
+  print("F" == "M")
+  ```
+  > False
 
-```python
-print("F" == "M" or "m")
-print(("F" == "M") or "m") # the same with the above line
-```
-> True
+  ```python
+  print(bool("m"))
+  ```
+  > True
 
-☞ reference : https://www.programiz.com/python-programming/precedence-associativity
+  `==` runs prior to `or` in Python
+
+  ```python
+  print("F" == "M" or "m")
+  print(("F" == "M") or "m") # the same with the above line
+  ```
+  > True
+  </details>
 
 
 ## [`print()` (2020.03.31)](#list)
-simple practice with `print()`
 
-```python
-#1. Print normally
-print("위")
-print("아래")
-```
-> 위  
-> 아래
+- Simple practice with `print()`
 
-```python
-#2. Write on the same line
-print("왼쪽", end='')
-print("에 붙여서 계속")
-```
-> 왼쪽에 붙여서 계속
+  <details>
+    <summary>Codes : Print.py</summary>
 
-```python
-#3. Change lines within one function
-print("줄을\n막\n바꿔")
-```
-> 줄을  
-> 막  
-> 바꿔
+  ```python
+  #1. Print normally
+  print("위")
+  print("아래")
+  ```
+  > 위  
+  > 아래
+
+  ```python
+  #2. Write on the same line
+  print("왼쪽", end='')
+  print("에 붙여서 계속")
+  ```
+  > 왼쪽에 붙여서 계속
+
+  ```python
+  #3. Change lines within one function
+  print("줄을\n막\n바꿔")
+  ```
+  > 줄을  
+  > 막  
+  > 바꿔
+  </details>
 
 
 ## [Shuffle List (2020.03.30)](#list)
+
 - find how to get random lists without overlapping values
 - use `random` `random.randint` `random.sample`
 
-```python
-import random
-```
+  ```python
+  import random
+  ```
 
-#### Trial 1 : Use `random.randint()`
-```python
-shufflelist1 = []
+  <details>
+    <summary>Trial 1 : Use random.randint()</summary>
 
-for i in range(0,20) :
-    random.seed(330 + i)
-    shufflelist1.append(random.randint(1, 20))
+  ```python
+  shufflelist1 = []
 
-print(shufflelist1) # There are overlapping values.
-```
-> [20, 11, 8, 18, 8, 5, 1, 7, 4, 5, 13, 19, 4, 7, 13, 10, 18, 12, 11, 14]
+  for i in range(0,20) :
+      random.seed(330 + i)
+      shufflelist1.append(random.randint(1, 20))
 
-#### Trial 2 : Use `random.sample()`
-```python
-random.seed(330)
-shufflelist2 = random.sample(range(1, 21), 20)
+  print(shufflelist1) # There are overlapping values.
+  ```
+  </details>
 
-print(shufflelist2) # random.sample() offers values without overlapping.
-```
-> [20, 3, 2, 13, 1, 6, 10, 9, 15, 11, 14, 4, 18, 8, 16, 17, 7, 19, 12, 5]
+  > [20, 11, 8, 18, 8, 5, 1, 7, 4, 5, 13, 19, 4, 7, 13, 10, 18, 12, 11, 14]
 
-#### Trial 3 : Use `while` Statement
-```python
-shufflelist3 = []
-loopnum = 0
+  <details>
+    <summary>Trial 2 : Use random.sample()</summary>
 
-while len(shufflelist3) < 20 :
-    random.seed(330 + loopnum)
-    r = random.randint(1,20)
-    if r not in shufflelist3 : shufflelist3.append(r)
-    loopnum += 1
+  ```python
+  random.seed(330)
+  shufflelist2 = random.sample(range(1, 21), 20)
 
-print(shufflelist3)
-# It seems similar with Trial 1's sequence but there's no overlapping values.
-```
-> [20, 11, 8, 18, 5, 1, 7, 4, 13, 19, 10, 12, 14, 6, 2, 3, 17, 16, 15, 9]  
-```python
-print(loopnum) # It shows how many times overlapping numbers are rejected.
-```
-> 87
+  print(shufflelist2) # random.sample() offers values without overlapping.
+  ```
+  </details>
+
+  > [20, 3, 2, 13, 1, 6, 10, 9, 15, 11, 14, 4, 18, 8, 16, 17, 7, 19, 12, 5]
+
+  <details>
+    <summary>Trial 3 : Use while Statement</summary>
+
+  ```python
+  shufflelist3 = []
+  loopnum = 0
+
+  while len(shufflelist3) < 20 :
+      random.seed(330 + loopnum)
+      r = random.randint(1,20)
+      if r not in shufflelist3 : shufflelist3.append(r)
+      loopnum += 1
+
+  print(shufflelist3)
+  # It seems similar with Trial 1's sequence but there's no overlapping values.
+  ```
+  </details>
+
+  > [20, 11, 8, 18, 5, 1, 7, 4, 13, 19, 10, 12, 14, 6, 2, 3, 17, 16, 15, 9]  
+  ```python
+  print(loopnum) # It shows how many times overlapping numbers are rejected.
+  ```
+  > 87
 
 
 ## [Random Seed Influence (2020.01.05)](#list)
-make sure the range of `random.seed()`'s influence  
-☞ `random.seed()` affects just one time!
 
-```python
-import random
-```
+- Make sure the range of `random.seed()`'s influence  
+  ☞ `random.seed()` affects just one time!
 
-```python
-# case 1
-print(random.random())
-print(random.random())
-print(random.random())
-```
-> 0.48515227527760874  
-> 0.48808537244754757  
-> 0.9509662749522355
+  <details>
+    <summary>Codes : RandomSeedInfluence.py</summary>
 
-```python
-# case 2
-random.seed(105)
-print(random.random())
-print(random.random())
-print(random.random())
-```
-> **0.8780993490764925**  
-> 0.3491186468357038  
-> 0.7907236599059974
+  ```python
+  import random
+  ```
 
-```python
-# case 2-1
-random.seed(105); print(random.random())
-random.seed(105); print(random.random())
-random.seed(105); print(random.random())
-```
-> **0.8780993490764925**  
-> **0.8780993490764925**  
-> **0.8780993490764925**
+  ```python
+  # case 1
+  print(random.random())
+  print(random.random())
+  print(random.random())
+  ```
+  > 0.48515227527760874  
+  > 0.48808537244754757  
+  > 0.9509662749522355
 
-```python
-# case 3
-random.seed(105)
-for i in range(0,3) :
-    print(random.random())
-```
-> **0.8780993490764925**  
-> 0.3491186468357038  
-> 0.7907236599059974
+  ```python
+  # case 2
+  random.seed(105)
+  print(random.random())
+  print(random.random())
+  print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > 0.3491186468357038  
+  > 0.7907236599059974
 
-```python
-# case 3-1
-for i in range(0,3) :
-    random.seed(105); print(random.random())
-```
-> **0.8780993490764925**  
-> **0.8780993490764925**  
-> **0.8780993490764925**
+  ```python
+  # case 2-1
+  random.seed(105); print(random.random())
+  random.seed(105); print(random.random())
+  random.seed(105); print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > **0.8780993490764925**  
+  > **0.8780993490764925**
+
+  ```python
+  # case 3
+  random.seed(105)
+  for i in range(0,3) :
+      print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > 0.3491186468357038  
+  > 0.7907236599059974
+
+  ```python
+  # case 3-1
+  for i in range(0,3) :
+      random.seed(105); print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > **0.8780993490764925**  
+  > **0.8780993490764925**
+  </details>
 
 
 ## [Square Root (2020.01.01)](#list)
-an algorithm to find n's square root without `math.sqrt()`  
-- adjusted 2020.01.04 : rearrange methods' order in `for` Loop for improving intuitive understanding
 
-```python
-import random
-import math
-import matplotlib.pyplot as plt
+- An algorithm to find n's square root without `math.sqrt()`
+- Adjusted 2020.01.04 : rearrange methods' order in `for` Loop for improving intuitive understanding
 
-n = 2 # should be larger than 1
-k = 20 # run loop k times
+  <details>
+    <summary>Codes : SquareRoot.py</summary>
 
-squareroot = []
-lowerlimit, upperlimit = 1, n
+  ```python
+  import random
+  import math
+  import matplotlib.pyplot as plt
 
-for i in range(k) :
+  n = 2 # should be larger than 1
+  k = 20 # run loop k times
 
-    random.seed(20200104) # can be removed
-    squareroot.append(random.uniform(lowerlimit, upperlimit))
-    square = squareroot[i] ** 2
-    print(i+1, squareroot[i], square, square-n)
+  squareroot = []
+  lowerlimit, upperlimit = 1, n
 
-    if square == n :
-        break;
-    elif square < n :
-        # print("smaller")
-        lowerlimit = max(squareroot[i], lowerlimit)
-    else :
-        # print("larger")
-        upperlimit = min(squareroot[i], upperlimit)
+  for i in range(k) :
 
-myplot = plt.plot(range(k), squareroot)
-# myplot.hlines(math.sqrt(n), color="red", linestyle="--") # doesn't work
-```
-> 1 1.224709461308563 1.4999132646187106 -0.5000867353812894  
-> 2 1.3989245806155413 1.956989982250368 -0.04301001774963198  
-> 3 1.5339919143112415 2.3531311931722674 0.3531311931722674  
-> (중략)  
-> 19 1.4141854421168503 1.9999204646952313 -7.953530476867421e-05  
-> 20 1.4141980335178153 1.9999560780056558 -4.3921994344220394e-05 
+      random.seed(20200104) # can be removed
+      squareroot.append(random.uniform(lowerlimit, upperlimit))
+      square = squareroot[i] ** 2
+      print(i+1, squareroot[i], square, square-n)
 
-![approximate to the exact square root](Images/Square_Root_20200104.png)
+      if square == n :
+          break;
+      elif square < n :
+          # print("smaller")
+          lowerlimit = max(squareroot[i], lowerlimit)
+      else :
+          # print("larger")
+          upperlimit = min(squareroot[i], upperlimit)
 
-```python
-# practice
-random.random()
-random.randrange(1,n) # output only integer
-random.uniform(1,n) # output float
-list(range(10))
-```
-> 0.2508550895840985  
-> 1  
-> 1.2710268293926659  
-> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
+  myplot = plt.plot(range(k), squareroot)
+  # myplot.hlines(math.sqrt(n), color="red", linestyle="--") # doesn't work
+  ```
+  </details>
+
+  > 1 1.224709461308563 1.4999132646187106 -0.5000867353812894  
+  > 2 1.3989245806155413 1.956989982250368 -0.04301001774963198  
+  > 3 1.5339919143112415 2.3531311931722674 0.3531311931722674  
+  > (중략)  
+  > 19 1.4141854421168503 1.9999204646952313 -7.953530476867421e-05  
+  > 20 1.4141980335178153 1.9999560780056558 -4.3921994344220394e-05 
+
+  ![approximate to the exact square root](Images/Square_Root_20200104.png)
+
+  <details>
+    <summary>Practice</summary>
+
+  ```python
+  # practice
+  random.random()
+  random.randrange(1,n) # output only integer
+  random.uniform(1,n) # output float
+  list(range(10))
+  ```
+  > 0.2508550895840985  
+  > 1  
+  > 1.2710268293926659  
+  > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
+  </details>
 
 
 ## [Fibonacci Series (2019.12.18)](#list)
-Simply Generating `Fibonacci Series` by Python
+
+- Simply Generating `Fibonacci Series` by Python
 
 ```python
 a = [1, 1]
@@ -937,167 +994,193 @@ list1 == list2
 
 
 ## [Limited Range Sampling (2019.09.22)](#list)
+
 - Generate normal distributed sample with limited range
 - Use `numpy` `matplotlib.pyplot` `scipy`
 
-#### Generate a normal distribution with limited range [25, 75]
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import stats
+  <details>
+    <summary>Generate a normal distribution with limited range [25, 75]</summary>
 
-mu, sigma, n = 50, 10, 1000
-llimit, rlimit = 25, 75
+  ```python
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from scipy import stats
 
-data = np.random.normal(mu, sigma, n)
-```
+  mu, sigma, n = 50, 10, 1000
+  llimit, rlimit = 25, 75
 
-#### Method 0. Generating initial data (not trimmed yet)
-```python
-plt.hist(data)
-stats.describe(data)[0:2] # [0] : nobs, [1] : minmax
-```
-![hist0](Images/Generate_Limited_Range_ND_hist_0.png)
-> (1000, (16.763171096395133, 76.969552776105601))
+  data = np.random.normal(mu, sigma, n)
+  ```
+  </details>
 
-#### Method 1. Trim with rack of amount
-```python
-data1 = data[(data >= llimit) & (data <= rlimit)]
-```
-```python
-plt.hist(data1)
-stats.describe(data1)[0:2]
-```
-![hist1](Images/Generate_Limited_Range_ND_hist_1.png)
-> (991, (25.600374595125377, 74.942171158969671))
+  <details>
+    <summary>Method 0. Generating initial data (not trimmed yet)</summary>
 
-#### Method 2. Check each one trial
-```python
-data2, amount = [], 0
+  ```python
+  plt.hist(data)
+  stats.describe(data)[0:2] # [0] : nobs, [1] : minmax
+  ```
+  ![hist0](Images/Generate_Limited_Range_ND_hist_0.png)
+  > (1000, (16.763171096395133, 76.969552776105601))
+  </details>
 
-while amount < n :
-    data_temp = np.random.normal(mu, sigma, 1)
-    if (data_temp >= llimit) & (data_temp <= rlimit) :
-        data2 = np.append(data2, data_temp)
-        amount += 1
-```
-```python
-plt.hist(data2)
-stats.describe(data2)[0:2]
-```
-![hist2](Images/Generate_Limited_Range_ND_hist_2.png)
-> (1000, (25.987274047611137, 73.473315070409228))
+  <details>
+    <summary>Method 1. Trim with rack of amount</summary>
 
-#### Method 3. Generate one round and fill the lack
-```python
-data3 = data[(data >= llimit) & (data <= rlimit)]
-amount = len(data3)
+  ```python
+  data1 = data[(data >= llimit) & (data <= rlimit)]
+  ```
+  ```python
+  plt.hist(data1)
+  stats.describe(data1)[0:2]
+  ```
+  ![hist1](Images/Generate_Limited_Range_ND_hist_1.png)
+  > (991, (25.600374595125377, 74.942171158969671))
+  </details>
 
-while amount < n :
-    data_temp = np.random.normal(mu, sigma, 1)
-    if (data_temp >= llimit) & (data_temp <= rlimit) :
-        data3 = np.append(data3, data_temp)
-        amount += 1
-```
-```python
-plt.hist(data3)
-stats.describe(data3)[0:2]
-```
-![hist3](Images/Generate_Limited_Range_ND_hist_3.png)
-> (1000, (25.600374595125377, 74.942171158969671))
+  <details>
+    <summary>Method 2. Check each one trial</summary>
+
+  ```python
+  data2, amount = [], 0
+
+  while amount < n :
+      data_temp = np.random.normal(mu, sigma, 1)
+      if (data_temp >= llimit) & (data_temp <= rlimit) :
+          data2 = np.append(data2, data_temp)
+          amount += 1
+  ```
+  ```python
+  plt.hist(data2)
+  stats.describe(data2)[0:2]
+  ```
+  ![hist2](Images/Generate_Limited_Range_ND_hist_2.png)
+  > (1000, (25.987274047611137, 73.473315070409228))
+  </details>
+
+  <details>
+    <summary>Method 3. Generate one round and fill the lack</summary>
+
+  ```python
+  data3 = data[(data >= llimit) & (data <= rlimit)]
+  amount = len(data3)
+
+  while amount < n :
+      data_temp = np.random.normal(mu, sigma, 1)
+      if (data_temp >= llimit) & (data_temp <= rlimit) :
+          data3 = np.append(data3, data_temp)
+          amount += 1
+  ```
+  ```python
+  plt.hist(data3)
+  stats.describe(data3)[0:2]
+  ```
+  ![hist3](Images/Generate_Limited_Range_ND_hist_3.png)
+  > (1000, (25.600374595125377, 74.942171158969671))
+  </details>
 
 
 ## [`with` ~ `open()` (2019.07.21)](#list)
+
 - read binary file
 - convert decimal number ↔ hexadecimal number
 
-```python
-# get current working directory
-import os
+  <details>
+    <summary>Codes : WithOpen.py</summary>
 
-os.getcwd()
-print(os.getcwd())
+  ```python
+  # get current working directory
+  import os
 
-# check if the file exists
-os.path.isfile("path")
-```
-> True
+  os.getcwd()
+  print(os.getcwd())
 
-```python
-import binascii
+  # check if the file exists
+  os.path.isfile("path")
+  ```
+  > True
 
-# with statement
-with open('path','rb') as f: # rb : read & binary
-    string = f.read()
-    print(string[0:10])
-    print(binascii.b2a_hex(string[0:10]))
-```
-> b'1990.02.19'  
-> b'313939302e30322e3139'
+  ```python
+  import binascii
 
-```python
-# with statement X
-f = open('path','rb')
-data = f.read()
-print(data[0:10])
-print(binascii.b2a_hex(data[0:10]))
-f.close()
-```
-> b'1990.02.19'  
-> b'313939302e30322e3139'
+  # with statement
+  with open('path','rb') as f: # rb : read & binary
+      string = f.read()
+      print(string[0:10])
+      print(binascii.b2a_hex(string[0:10]))
+  ```
+  > b'1990.02.19'  
+  > b'313939302e30322e3139'
 
-```python
-# decimal → hexadecimal
-hex(30000)
-hex(3000000)
-hex(100)
-```
-> '0x7530'  
-> '0x2dc6c0'  
-> '0x64'
+  ```python
+  # with statement X
+  f = open('path','rb')
+  data = f.read()
+  print(data[0:10])
+  print(binascii.b2a_hex(data[0:10]))
+  f.close()
+  ```
+  > b'1990.02.19'  
+  > b'313939302e30322e3139'
 
-```python
-# hexadecimal → decimal
-int('7530', 16)
-int('2dc6c0', 16)
-int('64', 16)
-```
-> 30000  
-> 3000000  
-> 100
+  ```python
+  # decimal → hexadecimal
+  hex(30000)
+  hex(3000000)
+  hex(100)
+  ```
+  > '0x7530'  
+  > '0x2dc6c0'  
+  > '0x64'
+
+  ```python
+  # hexadecimal → decimal
+  int('7530', 16)
+  int('2dc6c0', 16)
+  int('64', 16)
+  ```
+  > 30000  
+  > 3000000  
+  > 100
+  </details>
 
 
 ## [Password (2019.05.24)](#list)
-input the correct passworld within 5 trials or die  
-practice if~else, break/continue, time.sleep() and so on
 
-```python
-import time # for using time.sleep()
+- Input the correct passworld within 5 trials or die
+- Practice `if`~`else`, `break`/`continue`, `time.sleep()` and so on
 
-chance = 0
-pw_original = "mymy" # password. a word that calls a pass. you nahm sayin?
+  <details>
+    <summary>Codes : Password.py</summary>
 
-while chance < 5 :
-    pw_input = input("Input your password : ")
+  ```python
+  import time # for using time.sleep()
 
-    # right
-    if pw_original == pw_input :
-        print("You entered the correct password")
-        break
-    
-    # wrong
-    else:
-        chance += 1
-        print("You entered the wrong passwords", chance, "times.")
-        if chance == 5 :
-            print("You bad guys will be delayed as a penalty.")
-            time.sleep(3)
-        else :
-            continue
+  chance = 0
+  pw_original = "mymy" # password. a word that calls a pass. you nahm sayin?
 
-# Of course, saving the original password in this file is somewhat stupid.
-# But, yes I am.
-```
+  while chance < 5 :
+      pw_input = input("Input your password : ")
+
+      # right
+      if pw_original == pw_input :
+          print("You entered the correct password")
+          break
+      
+      # wrong
+      else:
+          chance += 1
+          print("You entered the wrong passwords", chance, "times.")
+          if chance == 5 :
+              print("You bad guys will be delayed as a penalty.")
+              time.sleep(3)
+          else :
+              continue
+
+  # Of course, saving the original password in this file is somewhat stupid.
+  # But, yes I am.
+  ```
+  </details>
 
 
 ## [Class (2018.02.07)](#list)
