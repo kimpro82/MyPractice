@@ -1,13 +1,14 @@
-# My Python Practice
+# [My Python Practice](../README.md#my-python-practice)
 
 I'm sorry `C++` …… I betrayed you.
 
 
 ### \<List>
 
-- [Vertical Alignment 2 (2022.04.27)](#vertical-alignment-2-20220427)
+- [`re.sub()` (2023.02.12)](#resub-20230212)
+- [Vertical Alignment 2 with *f-string* (2022.04.27)](#vertical-alignment-2-with-f-string-20220427)
 - [Arguements Parsing (2022.03.24)](#arguements-parsing-20220324)
-- [Vertical Alignment (2021.12.21)](#vertical-alignment-20211221)
+- [Vertical Alignment with Korean Letters (2021.12.21)](#vertical-alignment-with-korean-letters-20211221)
 - [Iterator (2021.06.17)](#iterator-20210617)
 - [`if` ~ `while` ~ `true` (2021.05.04)](#if--while--true-20210504)
 - [`re.split()` (2021.04.29)](#resplit-20210429)
@@ -30,1013 +31,1213 @@ I'm sorry `C++` …… I betrayed you.
 - [`while` (2017.05.15)](#while-20170515)
 
 
-## [Vertical Alignment 2 (2022.04.27)](#list)
+## [`re.sub()` (2023.02.12)](#list)
+
+- Get domain from e-mail address by `re.sub()`
+- A partial practice for [Coursera](https://www.coursera.org/) > [Using Databases with Python (University of Michigan)](https://www.coursera.org/learn/python-databases) > [Week 2 > Assignment 2](https://www.coursera.org/learn/python-databases/gradedLti/WOD7V/counting-email-in-a-database)
+
+  <details open="">
+    <summary>Codes : ReSub.py</summary>
+
+  ```py
+  import re
+
+  email = "404@not.found"
+  domain = re.sub(r"[\w\.-_*]+@", "", email)
+
+  print(domain)
+  ```
+  The regex `[\w\.-_*]+@` is not the only answer, anyway it seems to work well.
+  ```
+  not.found
+  ```
+  </details>
+
+
+## [Vertical Alignment 2 with *f-string* (2022.04.27)](#list)
 
 - I dreamed of making a new open source library to do it for a while, but *f-string* is too strong …… This devil has broken my dear dream!
 - Reference ☞ https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 
-```python
-sample = [
-    ['이렇게', '하면'],
-    ['줄이', '잘 맞을까'],
-    ['모르겠네', '어디'],
-    ['한 번', '볼까'],
-]
-```
+  ```python
+  sample = [
+      ['이렇게', '하면'],
+      ['줄이', '잘 맞을까'],
+      ['모르겠네', '어디'],
+      ['한 번', '볼까'],
+  ]
+  ```
 
-### 1. Normal Approach
-```python
-# 1. Normal Approach
-print("# 1. Normal Approach")
-for el in sample :
-    print(el[0], el[1])
-```
-```
-# 1. Normal Approach
-이렇게 하면
-줄이 잘 맞을까
-모르겠네 어디
-한 번 볼까
-```
+  <details>
+    <summary>1. Normal Approach</summary>
 
-### 2. Use *f-string*
-```python
-# 2. Use f-string
-sample[3][0] = '두 번'
-print("\n# 2. Use f-string")
-for el in sample :
-    print(f"{el[0]:<10}", f"{el[1]:<10}")                   # Korean letters drive it to insanity
-```
-```
-# 2. Use f-string
-이렇게        하면
-줄이         잘 맞을까
-모르겠네       어디
-두 번        볼까
-```
+  ```python
+  # 1. Normal Approach
+  print("# 1. Normal Approach")
+  for el in sample :
+      print(el[0], el[1])
+  ```
+  ```
+  # 1. Normal Approach
+  이렇게 하면
+  줄이 잘 맞을까
+  모르겠네 어디
+  한 번 볼까
+  ```
+  </details>
 
-### 2.1 Use *f-string* : Handle Korean letters
-```python
-# 2.1 Use f-string : Handle Korean letters
-sample[3][0] = '세 번'
-print("\n# 2.1 Use f-string 2 : Handle Korean letters")
-for r in sample :
-    length = [10, 10]
-    for c in range(2) :
-        for char in r[c] :
-            if char >= '가' :
-                length[c] -= 1
-    # print(length[0], length[1])                           # test : ok
-    # print(f"{r[0]:<length[0]} {r[1]:<length[1]}")         # ValueError: Invalid format specifier; length[] → {length[]}
-    print(f"{r[0]:<{length[0]}} {r[1]:<{length[1]}}")
-```
-```
-# 2.1 Use f-string 2 : Handle Korean letters
-이렇게     하면
-줄이       잘 맞을까
-모르겠네   어디
-세 번      볼까
-```
+  <details>
+    <summary>2. Use f-string</summary>
 
-### 2.2 Use *f-string* : Change alignment direction
-```python
-sample[3][0] = '네 번'
-print("\n2.2 Use f-string : Change alignment direction")
-for r in sample :
-    length = [10, 10]
-    for c in range(2) :
-        for char in r[c] :
-            if char >= '가' :
-                length[c] -= 1
-    print(f"{r[0]:>{length[0]}} {r[1]:>{length[1]}}")
-```
-```
-2.2 Use f-string : Change alignment direction
-    이렇게       하면
-      줄이  잘 맞을까
+  ```python
+  # 2. Use f-string
+  sample[3][0] = '두 번'
+  print("\n# 2. Use f-string")
+  for el in sample :
+      print(f"{el[0]:<10}", f"{el[1]:<10}")                   # Korean letters drive it to insanity
+  ```
+  ```
+  # 2. Use f-string
+  이렇게        하면
+  줄이         잘 맞을까
   모르겠네       어디
-     네 번       볼까
-```
+  두 번        볼까
+  ```
+  </details>
 
-### 2.3 Use *f-string* : Code generalization & individual alignment control
-```python
-sample[3][0] = '다섯 번'
-print("\n2.3 Use f-string : Code generalization & individual alignment control")
-for r in sample :
-    length = [10] * len(r)
-    for c in range(len(r)) :
-        for char in r[c] :
-            if char >= '가' :
-                length[c] -= 1
-        if c == 1 :
-            print(f"{r[c]:>{length[c]}}", end = '')
-        else :
-            print(f"{r[c]:<{length[c]}}", end = '')
-    print()
-```
-```
-2.3 Use f-string : Code generalization & individual alignment control
-이렇게          하면
-줄이       잘 맞을까
-모르겠네        어디
-다섯 번         볼까
-```
+  <details>
+    <summary>2.1 Use f-string : Handle Korean letters</summary>
+
+  ```python
+  # 2.1 Use f-string : Handle Korean letters
+  sample[3][0] = '세 번'
+  print("\n# 2.1 Use f-string 2 : Handle Korean letters")
+  for r in sample :
+      length = [10, 10]
+      for c in range(2) :
+          for char in r[c] :
+              if char >= '가' :
+                  length[c] -= 1
+      # print(length[0], length[1])                           # test : ok
+      # print(f"{r[0]:<length[0]} {r[1]:<length[1]}")         # ValueError: Invalid format specifier; length[] → {length[]}
+      print(f"{r[0]:<{length[0]}} {r[1]:<{length[1]}}")
+  ```
+  ```
+  # 2.1 Use f-string 2 : Handle Korean letters
+  이렇게     하면
+  줄이       잘 맞을까
+  모르겠네   어디
+  세 번      볼까
+  ```
+  </details>
+
+  <details>
+    <summary>2.2 Use f-string : Change alignment direction</summary>
+
+  ```python
+  sample[3][0] = '네 번'
+  print("\n2.2 Use f-string : Change alignment direction")
+  for r in sample :
+      length = [10, 10]
+      for c in range(2) :
+          for char in r[c] :
+              if char >= '가' :
+                  length[c] -= 1
+      print(f"{r[0]:>{length[0]}} {r[1]:>{length[1]}}")
+  ```
+  ```
+  2.2 Use f-string : Change alignment direction
+      이렇게       하면
+        줄이  잘 맞을까
+    모르겠네       어디
+      네 번       볼까
+  ```
+  </details>
+
+  <details>
+    <summary>2.3 Use f-string : Code generalization & individual alignment control</summary>
+
+  ```python
+  sample[3][0] = '다섯 번'
+  print("\n2.3 Use f-string : Code generalization & individual alignment control")
+  for r in sample :
+      length = [10] * len(r)
+      for c in range(len(r)) :
+          for char in r[c] :
+              if char >= '가' :
+                  length[c] -= 1
+          if c == 1 :
+              print(f"{r[c]:>{length[c]}}", end = '')
+          else :
+              print(f"{r[c]:<{length[c]}}", end = '')
+      print()
+  ```
+  ```
+  2.3 Use f-string : Code generalization & individual alignment control
+  이렇게          하면
+  줄이       잘 맞을까
+  모르겠네        어디
+  다섯 번         볼까
+  ```
+  </details>
 
 
 ## [Arguements Parsing (2022.03.24)](#list)
+
 - A practice to parse arguments from command line to `.py` script file
 - Reference ☞ https://en.wikipedia.org/wiki/Command-line_argument_parsing
 
-#### ArguementParsing.py
-```python
-import sys
-```
-```python
-def ArguementParsing() :
-    if len(sys.argv) > 1 :                          # not > 0; sys.argv[0] is the script file name
-        for arg in sys.argv :
-            print(arg)
-    else :
-        print("No arguments has been received.")
-```
-```python
-# test
-def test() :
-    for arg in list(sys.argv) :
-        print(arg)
-```
-```python
-if __name__ == "__main__" :
-    ArguementParsing()
-    # test()                                        # 0(path) 1 2 3
-```
+  <details>
+    <summary>Codes : ArguementParsing.py</summary>
 
-#### ArguementParsing.bat
-```bat
-python ArguementParsing.py
-python ArguementParsing.py a b c
-```
+  ```python
+  import sys
+  ```
+  ```python
+  def ArguementParsing() :
+      if len(sys.argv) > 1 :                          # not > 0; sys.argv[0] is the script file name
+          for arg in sys.argv :
+              print(arg)
+      else :
+          print("No arguments has been received.")
+  ```
+  ```python
+  # test
+  def test() :
+      for arg in list(sys.argv) :
+          print(arg)
+  ```
+  ```python
+  if __name__ == "__main__" :
+      ArguementParsing()
+      # test()                                        # 0(path) 1 2 3
+  ```
+  </details>
 
-#### Output
-```
->python ArguementParsing.py
-No arguments has been received.
+  <details>
+    <summary>Codes : ArguementParsing.bat</summary>
 
->python ArguementParsing.py a b c
-ArguementParsing.py
-a
-b
-c
-```
+  ```bat
+  python ArguementParsing.py
+  python ArguementParsing.py a b c
+  ```
+  </details>
+
+  <details open="">
+    <summary>Output</summary>
+  
+  ```
+  > python ArguementParsing.py
+  No arguments has been received.
+
+  > python ArguementParsing.py a b c
+  ArguementParsing.py
+  a
+  b
+  c
+  ```
+  </details>
 
 
-## [Vertical Alignment (2021.12.21)](#list)
+## [Vertical Alignment with Korean Letters (2021.12.21)](#list)
+
 - A solution for the problem to **align text vertically** with both of English and Korean letters
 
-```python
-# Korean letter's length is also measured as 1
-abcd = "abcd"
-ssjj = "삼성전자"
+  <details>
+    <summary>Codes : VerticalAlignment.py</summary>
 
-print(len(abcd))
-print(len(ssjj))
-```
-> 4  
-> 4
+  ```python
+  # Korean letter's length is also measured as 1
+  abcd = "abcd"
+  ssjj = "삼성전자"
 
-```python
-# How to count Korean letter's length as 2
-length = 0
-for char in ssjj :
-    if char >= '가' :
-        length += 2
-print(length)
-```
-> 8
+  print(len(abcd))
+  print(len(ssjj))
+  ```
+  ```
+  4  
+  4
+  ```
 
-```python
-# Vertical alignment
-list = ["abcd", "삼성전자"]
+  ```python
+  # How to count Korean letter's length as 2
+  length = 0
+  for char in ssjj :
+      if char >= '가' :
+          length += 2
+  print(length)
+  ```
+  ```
+  8
+  ```
 
-# trial 1
-for i in list :
-    print(i, '\t', 100)
-```
-> abcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100  
-> 삼성전자&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
+  ```python
+  # Vertical alignment
+  list = ["abcd", "삼성전자"]
 
-```python
-# trial 2
-for i in list :
-    length = 10
-    for char in i :
-        if char >= '가' :
-            length -= 2
-        else :
-            length -= 1
-    i += length * ' '
-    print(i, 100, sep = '')
-```
-> abcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100  
-> 삼성전자&nbsp;&nbsp;100  
-> (arranged vertically in the console output)
+  # trial 1
+  for i in list :
+      print(i, '\t', 100)
+  ```
+  ```
+  abcd     100
+  삼성전자         100
+  ```
+
+  ```python
+  # trial 2
+  for i in list :
+      length = 10
+      for char in i :
+          if char >= '가' :
+              length -= 2
+          else :
+              length -= 1
+      i += length * ' '
+      print(i, 100, sep = '')
+  ```
+  </details>
+
+  ```
+  abcd      100
+  삼성전자  100
+  ```
+  Thses are arranged vertically well in the console output. Please believe me ……
 
 
 ## [Iterator (2021.06.17)](#list)
+
 - Originally started from a stupid question : Can a `method` call other method in the same class?
 - I've just realized it was really obvious (Why does `the constructor` exist?)
 - This code is a strange station, that two methods call each other with `iterator`
 
-```python
-turn = 0
+  <details>
+    <summary>Codes : Iterator.py</summary>
 
-class Bros :
+  ```python
+  turn = 0
 
-    def __init__(self) :
-        global turn
-        turn += 1
-        print("<Conversation " + str(turn) + ">")
-        self.conversation = iter(["Hey bro", "Wassup"])
-        self.n = 0
+  class Bros :
 
-    def bros1(self) :
-        print(self.bros1.__name__ + " : " + next(self.conversation))
-        if (self.n < 1) :
-            self.n += 1
-            self.bros2()
-        else :
-            print()
+      def __init__(self) :
+          global turn
+          turn += 1
+          print("<Conversation " + str(turn) + ">")
+          self.conversation = iter(["Hey bro", "Wassup"])
+          self.n = 0
 
-    def bros2(self) :
-        print(self.bros2.__name__ + " : " + next(self.conversation))
-        if (self.n < 1) :
-            self.n += 1
-            self.bros1()
-        else :
-            print()
-```
-```python
-if __name__ == "__main__" :
+      def bros1(self) :
+          print(self.bros1.__name__ + " : " + next(self.conversation))
+          if (self.n < 1) :
+              self.n += 1
+              self.bros2()
+          else :
+              print()
 
-    Bros1 = Bros()
-    Bros1.bros1()
+      def bros2(self) :
+          print(self.bros2.__name__ + " : " + next(self.conversation))
+          if (self.n < 1) :
+              self.n += 1
+              self.bros1()
+          else :
+              print()
+  ```
+  ```python
+  if __name__ == "__main__" :
 
-    Bros2 = Bros()
-    Bros2.bros2()
-```
+      Bros1 = Bros()
+      Bros1.bros1()
 
-> <Conversation 1>  
-> bros1 : Hey bro  
-> bros2 : Wassup
+      Bros2 = Bros()
+      Bros2.bros2()
+  ```
+  </details>
 
-> <Conversation 2>  
-> bros2 : Hey bro  
-> bros1 : Wassup
+  <details open="">
+    <summary>Output</summary>
+
+  > <Conversation 1>  
+  > bros1 : Hey bro  
+  > bros2 : Wassup
+
+  > <Conversation 2>  
+  > bros2 : Hey bro  
+  > bros1 : Wassup
+  </details>
 
 
 ## [`if` ~ `while` ~ `true` (2021.05.04)](#list)
+
 - A practice of using `if` and `while`
 - All the strings and numbers *except* `0` and `False` are regarded as `True`
 
-```python
-if True :
-    print(True)
+  <details>
+    <summary>Codes : IfWhileTrue.py</summary>
 
-if False :
-    print(False)
+  ```python
+  if True :
+      print(True)
 
-if 'abc' :
-    print('abc')
+  if False :
+      print(False)
 
-a = 1
-if a :
-    print(a)
+  if 'abc' :
+      print('abc')
 
-b = 0
-if b :
-    print(b)
+  a = 1
+  if a :
+      print(a)
 
-c = -1
-if c :
-    print(c)
-```
-> True  
-> abc  
-> 1  
-> -1
+  b = 0
+  if b :
+      print(b)
 
-```python
-while True :
-    print(True)
-    break
+  c = -1
+  if c :
+      print(c)
+  ```
+  > True  
+  > abc  
+  > 1  
+  > -1
 
-while False :
-    print(False)
-    break
+  ```python
+  while True :
+      print(True)
+      break
 
-while '123' :
-    print('123')
-    break
-```
-> True  
-> 123
+  while False :
+      print(False)
+      break
+
+  while '123' :
+      print('123')
+      break
+  ```
+  > True  
+  > 123
+  </details>
+
 
 ## [`re.split()` (2021.04.29)](#list)
+
 - Seperating a `string` by plural delimiters
 - Using regular expression (`re`)
 
-```Python
-txt = 'one two/three.four'
+  ```Python
+  txt = 'one two/three.four'
 
-# 1. string.split()
-print(txt.split())                  # default : ' '
-print(txt.split('/'))
-# print(txt.split(' ').split('/'))    # Error
+  # 1. string.split()
+  print(txt.split())                  # default : ' '
+  print(txt.split('/'))
+  # print(txt.split(' ').split('/'))    # Error
 
-# 2. Regular Expression
-import re
-print(re.split("[ /.]", txt))       # Enter delimiters directly
-print(re.split("\W", txt))          # \W = a-zA-Z0-9
-```
-> ['one', 'two/three.four']  
-> ['one two', 'three.four']  
-> ['one', 'two', 'three', 'four']  
-> ['one', 'two', 'three', 'four']
+  # 2. Regular Expression
+  import re
+  print(re.split("[ /.]", txt))       # Enter delimiters directly
+  print(re.split("\W", txt))          # \W = a-zA-Z0-9
+  ```
+  > ['one', 'two/three.four']  
+  > ['one two', 'three.four']  
+  > ['one', 'two', 'three', 'four']  
+  > ['one', 'two', 'three', 'four']
 
 
 ## [`__name__ == '__main__'` (2021.04.26)](#list)
+
 - A practice of importing and running `module` in Python
 - Using `__name__` and `__main__`
 
-#### ModuleSample.py
-```python
-if __name__ == '__main__' :
-    print("Don't call me yet.")
+  #### ModuleSample.py
+  ```python
+  if __name__ == '__main__' :
+      print("Don't call me yet.")
 
-def call() :
-    print("Call me now.")
-```
-> Don't call me yet.
+  def call() :
+      print("Call me now.")
+  ```
+  > Don't call me yet.
 
-#### ModuleRun.py
-```python
-import ModuleSample
+  #### ModuleRun.py
+  ```python
+  import ModuleSample
 
-ModuleSample.call()
-```
-> Call me now.
+  ModuleSample.call()
+  ```
+  > Call me now.
 
 
 ## [Turtle (2021.03.24)](#list)
+
 - A practice of python module `turtle`
 - Very easy!
 
-![Turtle Practice](Images/Turtle.gif)
+  ![Turtle Practice](Images/Turtle.gif)
 
-#### Codes
-```python
-import turtle
-import time
+  <details>
+    <summary>Codes : Turtle.py</summary>
 
-turtle.setup(width = 300, height = 300)
-turtle.title("My turtle practice")
+  ```python
+  import turtle
+  import time
 
-turtle.hideturtle()         # hide turtle : make the moving speed faster
+  turtle.setup(width = 300, height = 300)
+  turtle.title("My turtle practice")
 
-
-turtle.home()               # set the position (0, 0)
-turtle.position()
-
-turtle.penup()              # penup() = pu() = up() : move without drawing
-turtle.setpos(0, 125)
-
-turtle.pendown()            # pendown() = pd() = down() : move with drawing
-turtle.right(180)
-turtle.circle(125)          # 1st circle
-
-turtle.penup()
-turtle.setpos(0, 100)
-
-turtle.pendown()
-time.sleep(0.3)
-turtle.circle(100)          # 2nd circle
-
-turtle.delay(20)
-
-time.sleep(0.5)
-turtle.circle(100, steps=3) # 1st triangle
-
-turtle.penup()
-turtle.setpos(0, -100)
-turtle.right(180)
-
-turtle.pendown()
-turtle.circle(100, steps=3) # 2nd triangle
-
-turtle.penup()
-turtle.setpos(0, 100)
-turtle.right(180)
-
-turtle.delay(30)
-
-turtle.pendown()
-turtle.circle(100, steps=6) # hexagon
+  turtle.hideturtle()         # hide turtle : make the moving speed faster
 
 
-turtle.mainloop()           # avoid the screen closing
-```
+  turtle.home()               # set the position (0, 0)
+  turtle.position()
+
+  turtle.penup()              # penup() = pu() = up() : move without drawing
+  turtle.setpos(0, 125)
+
+  turtle.pendown()            # pendown() = pd() = down() : move with drawing
+  turtle.right(180)
+  turtle.circle(125)          # 1st circle
+
+  turtle.penup()
+  turtle.setpos(0, 100)
+
+  turtle.pendown()
+  time.sleep(0.3)
+  turtle.circle(100)          # 2nd circle
+
+  turtle.delay(20)
+
+  time.sleep(0.5)
+  turtle.circle(100, steps=3) # 1st triangle
+
+  turtle.penup()
+  turtle.setpos(0, -100)
+  turtle.right(180)
+
+  turtle.pendown()
+  turtle.circle(100, steps=3) # 2nd triangle
+
+  turtle.penup()
+  turtle.setpos(0, 100)
+  turtle.right(180)
+
+  turtle.delay(30)
+
+  turtle.pendown()
+  turtle.circle(100, steps=6) # hexagon
+
+
+  turtle.mainloop()           # avoid the screen closing
+  ```
+  </details>
+
 
 ## [`map()` (2021.02.16)](#list)
+
 - To find how `map()` runs
-- I guessed the result of running `map()` would be something to contain hidden elements.
-- But actually it is a `generator type object`, so has not futural list data before I request by `list()`.
-- StackOverflow ☞ https://stackoverflow.com/questions/66225592/
-- Additional reference ☞ https://realpython.com/python-map-function/#getting-started-with-pythons-map
+  - I guessed the result of running `map()` would be something to contain hidden elements.
+  - But actually it is a `generator type object`, so has not futural list data before I request by `list()`.
+- References
+  - StackOverflow ☞ https://stackoverflow.com/questions/66225592/
+  - https://realpython.com/python-map-function/#getting-started-with-pythons-map
 
-#### Codes
-```python
-def details(txt) :
-    print("elements :", txt)
-    print("type :", type(txt))
-    try :
-        print("elements' type :", type(txt[0]), "\n")
-    except :
-        print("elements' type : an error occurs.\n")
+  <details>
+    <summary>Codes : Map.py</summary>
 
-txt = "1 2 3 4 5"
-details(txt)
+  ```python
+  def details(txt) :
+      print("elements :", txt)
+      print("type :", type(txt))
+      try :
+          print("elements' type :", type(txt[0]), "\n")
+      except :
+          print("elements' type : an error occurs.\n")
 
-txtsplit = txt.split()
-details(txtsplit)
+  txt = "1 2 3 4 5"
+  details(txt)
 
-txtmap = map(int, txt.split())
-details(txtmap) # an error occurs
+  txtsplit = txt.split()
+  details(txtsplit)
 
-txtlist = list(txtmap)
-details(txtlist)
-```
+  txtmap = map(int, txt.split())
+  details(txtmap) # an error occurs
 
-#### Results
-```python
-elements : 1 2 3 4 5
-type : <class 'str'>
-elements' type : <class 'str'>
+  txtlist = list(txtmap)
+  details(txtlist)
+  ```
+  </details>
 
-elements : ['1', '2', '3', '4', '5']
-type : <class 'list'>
-elements' type : <class 'str'>
+  <details>
+    <summary>Results</summary>
 
-elements : <map object at 0x7fefcdfe8dc0>
-type : <class 'map'>
-elements' type : an error occurs.
+  ```python
+  elements : 1 2 3 4 5
+  type : <class 'str'>
+  elements' type : <class 'str'>
 
-elements : [1, 2, 3, 4, 5]
-type : <class 'list'>
-elements' type : <class 'int'>
-```
+  elements : ['1', '2', '3', '4', '5']
+  type : <class 'list'>
+  elements' type : <class 'str'>
+
+  elements : <map object at 0x7fefcdfe8dc0>
+  type : <class 'map'>
+  elements' type : an error occurs.
+
+  elements : [1, 2, 3, 4, 5]
+  type : <class 'list'>
+  elements' type : <class 'int'>
+  ```
+  </details>
 
 
 ## [Words Mix (2021.01.13)](#list)
+
 - Read a _csv_ file into a _dictionary_
 - Import `csv`
 - Seems that _dictionary type_ is not so suitable to generate random paragraphs
 
-#### 0. Check If Words.csv Exists
-```python
-import os
-```
-```python
-path = "C:\\Users\\……\\Python\\Words.csv"
-# \\ : escape character of \
-os.path.isfile(path)
-```
-> True
+  #### `WordMix.py`
 
-#### 1. Read Words.csv simply 
-```python
-import csv
-```
-```python
-with open(path,'r', encoding='utf-8') as f:
-    reader = csv.DictReader(f)
+  <details>
+    <summary>0. Check If Words.csv Exists</summary>
 
-    for c in reader:
-        for k, v in c.items():
-            print(v, end= ' ')
-        print("\n")
-```
-> 멍청하게 떡볶이 먹고 배탈 나는 똥개  
-> 어리석게 꼭지에서 주식 사는 너구리  
-> 정신 못 차리고 반바지에 긴 양말 신은 코흘리개  
-> 한심하게 노래방 가서 고해 부르는 개미햝기  
-> 아무 생각없이 담뱃불 붙이다 앞머리 불 붙은 이등병
+  ```python
+  import os
+  ```
+  ```python
+  path = "C:\\Users\\……\\Python\\Words.csv"
+  # \\ : escape character of \
+  os.path.isfile(path)
+  ```
+  > True
+  </details>
 
-#### 1-1. Read Words.csv as dictionary type
-```python
-with open(path,'r', encoding='utf-8') as f:
-    reader = csv.DictReader(f)
+  <details>
+    <summary>1. Read Words.csv simply</summary>
 
-    for row in reader:
-        print(row)
-```
-> {'\ufeff수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
-> {'\ufeff수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
-> {'\ufeff수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
-> {'\ufeff수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
-> {'\ufeff수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  ```python
+  import csv
+  ```
+  ```python
+  with open(path,'r', encoding='utf-8') as f:
+      reader = csv.DictReader(f)
 
-#### 1-2. Get rid of '\ufeff' from the head of data
-```python
-with open(path,'r', encoding='utf-8-sig') as f:
-    reader = csv.DictReader(f)
+      for c in reader:
+          for k, v in c.items():
+              print(v, end= ' ')
+          print("\n")
+  ```
+  > 멍청하게 떡볶이 먹고 배탈 나는 똥개  
+  > 어리석게 꼭지에서 주식 사는 너구리  
+  > 정신 못 차리고 반바지에 긴 양말 신은 코흘리개  
+  > 한심하게 노래방 가서 고해 부르는 개미햝기  
+  > 아무 생각없이 담뱃불 붙이다 앞머리 불 붙은 이등병
+  </details>
 
-    for row in reader:
-        print(row)
-```
-> {'수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
-> {'수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
-> {'수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
-> {'수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
-> {'수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  <details>
+    <summary>1-1. Read Words.csv as dictionary type</summary>
+
+  ```python
+  with open(path,'r', encoding='utf-8') as f:
+      reader = csv.DictReader(f)
+
+      for row in reader:
+          print(row)
+  ```
+  > {'\ufeff수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
+  > {'\ufeff수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
+  > {'\ufeff수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
+  > {'\ufeff수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
+  > {'\ufeff수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  </details>
+
+  <details>
+    <summary>1-2. Get rid of '\ufeff' from the head of data</summary>
+
+  ```python
+  with open(path,'r', encoding='utf-8-sig') as f:
+      reader = csv.DictReader(f)
+
+      for row in reader:
+          print(row)
+  ```
+  > {'수식어1': '멍청하게', '수식어2': '떡볶이 먹고 배탈 나는', '명사': '똥개'}  
+  > {'수식어1': '어리석게', '수식어2': '꼭지에서 주식 사는', '명사': '너구리'}  
+  > {'수식어1': '정신 못 차리고', '수식어2': '반바지에 긴 양말 신은', '명사': '코흘리개'}  
+  > {'수식어1': '한심하게', '수식어2': '노래방 가서 고해 부르는', '명사': '개미햝기'}  
+  > {'수식어1': '아무 생각없이', '수식어2': '담뱃불 붙이다 앞머리 불 붙은', '명사': '이등병'}
+  </details>
 
 
 ## [Count Words (2020.11.10)](#list)
+
 - Count words without duplication from .txt file
 - import `re` for using `regular expression`
 
-```python
-import os
-import re
-```
+  <details>
+    <summary>Codes : CountWords.py</summary>
 
-```python
-# Check if the target file exists
-path = "C:\\...\\Python\\subtitle - 1.1.txt"
-os.path.isfile(path)
-```
-> True
+  ```python
+  import os
+  import re
+  ```
 
-```python
-# Call words' list with duplication
-document_raw = open(path, 'r')
-document_lower = document_raw.read().lower()
-words_duplication = re.findall(r'\b[a-z]{3,15}\b', document_lower)
-# Regular expression to avoid meaningless or wrong words
-```
+  ```python
+  # Check if the target file exists
+  path = "C:\\...\\Python\\subtitle - 1.1.txt"
+  os.path.isfile(path)
+  ```
+  > True
 
-```python
-# Remove duplication from the list
-words = set(words_duplication)
-print(len(words))
-```
-> 455
+  ```python
+  # Call words' list with duplication
+  document_raw = open(path, 'r')
+  document_lower = document_raw.read().lower()
+  words_duplication = re.findall(r'\b[a-z]{3,15}\b', document_lower)
+  # Regular expression to avoid meaningless or wrong words
+  ```
+
+  ```python
+  # Remove duplication from the list
+  words = set(words_duplication)
+  print(len(words))
+  ```
+  > 455
+  </details>
 
 
 ## [Operator Precedence (2020.06.28)](#list)
-answer for my friend YW Jang's question
 
-```python
-print("F" == "M")
-```
-> False
+- Answer for my friend *YW Jang*'s question
+- Reference ☞ https://www.programiz.com/python-programming/precedence-associativity
 
-```python
-print(bool("m"))
-```
-> True
+  <details>
+    <summary>Codes : CountWords.py</summary>
 
-`==` runs prior to `or` in Python
+  ```python
+  print("F" == "M")
+  ```
+  > False
 
-```python
-print("F" == "M" or "m")
-print(("F" == "M") or "m") # the same with the above line
-```
-> True
+  ```python
+  print(bool("m"))
+  ```
+  > True
 
-☞ reference : https://www.programiz.com/python-programming/precedence-associativity
+  `==` runs prior to `or` in Python
+
+  ```python
+  print("F" == "M" or "m")
+  print(("F" == "M") or "m") # the same with the above line
+  ```
+  > True
+  </details>
 
 
 ## [`print()` (2020.03.31)](#list)
-simple practice with `print()`
 
-```python
-#1. Print normally
-print("위")
-print("아래")
-```
-> 위  
-> 아래
+- Simple practice with `print()`
 
-```python
-#2. Write on the same line
-print("왼쪽", end='')
-print("에 붙여서 계속")
-```
-> 왼쪽에 붙여서 계속
+  <details>
+    <summary>Codes : Print.py</summary>
 
-```python
-#3. Change lines within one function
-print("줄을\n막\n바꿔")
-```
-> 줄을  
-> 막  
-> 바꿔
+  ```python
+  #1. Print normally
+  print("위")
+  print("아래")
+  ```
+  > 위  
+  > 아래
+
+  ```python
+  #2. Write on the same line
+  print("왼쪽", end='')
+  print("에 붙여서 계속")
+  ```
+  > 왼쪽에 붙여서 계속
+
+  ```python
+  #3. Change lines within one function
+  print("줄을\n막\n바꿔")
+  ```
+  > 줄을  
+  > 막  
+  > 바꿔
+  </details>
 
 
 ## [Shuffle List (2020.03.30)](#list)
+
 - find how to get random lists without overlapping values
 - use `random` `random.randint` `random.sample`
 
-```python
-import random
-```
+  #### `SuffleList.py`
 
-#### Trial 1 : Use `random.randint()`
-```python
-shufflelist1 = []
+  ```python
+  import random
+  ```
 
-for i in range(0,20) :
-    random.seed(330 + i)
-    shufflelist1.append(random.randint(1, 20))
+  <details>
+    <summary>Trial 1 : Use random.randint()</summary>
 
-print(shufflelist1) # There are overlapping values.
-```
-> [20, 11, 8, 18, 8, 5, 1, 7, 4, 5, 13, 19, 4, 7, 13, 10, 18, 12, 11, 14]
+  ```python
+  shufflelist1 = []
 
-#### Trial 2 : Use `random.sample()`
-```python
-random.seed(330)
-shufflelist2 = random.sample(range(1, 21), 20)
+  for i in range(0,20) :
+      random.seed(330 + i)
+      shufflelist1.append(random.randint(1, 20))
 
-print(shufflelist2) # random.sample() offers values without overlapping.
-```
-> [20, 3, 2, 13, 1, 6, 10, 9, 15, 11, 14, 4, 18, 8, 16, 17, 7, 19, 12, 5]
+  print(shufflelist1) # There are overlapping values.
+  ```
+  </details>
 
-#### Trial 3 : Use `while` Statement
-```python
-shufflelist3 = []
-loopnum = 0
+  > [20, 11, 8, 18, 8, 5, 1, 7, 4, 5, 13, 19, 4, 7, 13, 10, 18, 12, 11, 14]
 
-while len(shufflelist3) < 20 :
-    random.seed(330 + loopnum)
-    r = random.randint(1,20)
-    if r not in shufflelist3 : shufflelist3.append(r)
-    loopnum += 1
+  <details>
+    <summary>Trial 2 : Use random.sample()</summary>
 
-print(shufflelist3)
-# It seems similar with Trial 1's sequence but there's no overlapping values.
-```
-> [20, 11, 8, 18, 5, 1, 7, 4, 13, 19, 10, 12, 14, 6, 2, 3, 17, 16, 15, 9]  
-```python
-print(loopnum) # It shows how many times overlapping numbers are rejected.
-```
-> 87
+  ```python
+  random.seed(330)
+  shufflelist2 = random.sample(range(1, 21), 20)
+
+  print(shufflelist2) # random.sample() offers values without overlapping.
+  ```
+  </details>
+
+  > [20, 3, 2, 13, 1, 6, 10, 9, 15, 11, 14, 4, 18, 8, 16, 17, 7, 19, 12, 5]
+
+  <details>
+    <summary>Trial 3 : Use while Statement</summary>
+
+  ```python
+  shufflelist3 = []
+  loopnum = 0
+
+  while len(shufflelist3) < 20 :
+      random.seed(330 + loopnum)
+      r = random.randint(1,20)
+      if r not in shufflelist3 : shufflelist3.append(r)
+      loopnum += 1
+
+  print(shufflelist3)
+  # It seems similar with Trial 1's sequence but there's no overlapping values.
+  ```
+  </details>
+
+  > [20, 11, 8, 18, 5, 1, 7, 4, 13, 19, 10, 12, 14, 6, 2, 3, 17, 16, 15, 9]  
+  ```python
+  print(loopnum) # It shows how many times overlapping numbers are rejected.
+  ```
+  > 87
 
 
 ## [Random Seed Influence (2020.01.05)](#list)
-make sure the range of `random.seed()`'s influence  
-☞ `random.seed()` affects just one time!
 
-```python
-import random
-```
+- Make sure the range of `random.seed()`'s influence  
+  ☞ `random.seed()` affects just one time!
 
-```python
-# case 1
-print(random.random())
-print(random.random())
-print(random.random())
-```
-> 0.48515227527760874  
-> 0.48808537244754757  
-> 0.9509662749522355
+  <details>
+    <summary>Codes : RandomSeedInfluence.py</summary>
 
-```python
-# case 2
-random.seed(105)
-print(random.random())
-print(random.random())
-print(random.random())
-```
-> **0.8780993490764925**  
-> 0.3491186468357038  
-> 0.7907236599059974
+  ```python
+  import random
+  ```
 
-```python
-# case 2-1
-random.seed(105); print(random.random())
-random.seed(105); print(random.random())
-random.seed(105); print(random.random())
-```
-> **0.8780993490764925**  
-> **0.8780993490764925**  
-> **0.8780993490764925**
+  ```python
+  # case 1
+  print(random.random())
+  print(random.random())
+  print(random.random())
+  ```
+  > 0.48515227527760874  
+  > 0.48808537244754757  
+  > 0.9509662749522355
 
-```python
-# case 3
-random.seed(105)
-for i in range(0,3) :
-    print(random.random())
-```
-> **0.8780993490764925**  
-> 0.3491186468357038  
-> 0.7907236599059974
+  ```python
+  # case 2
+  random.seed(105)
+  print(random.random())
+  print(random.random())
+  print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > 0.3491186468357038  
+  > 0.7907236599059974
 
-```python
-# case 3-1
-for i in range(0,3) :
-    random.seed(105); print(random.random())
-```
-> **0.8780993490764925**  
-> **0.8780993490764925**  
-> **0.8780993490764925**
+  ```python
+  # case 2-1
+  random.seed(105); print(random.random())
+  random.seed(105); print(random.random())
+  random.seed(105); print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > **0.8780993490764925**  
+  > **0.8780993490764925**
+
+  ```python
+  # case 3
+  random.seed(105)
+  for i in range(0,3) :
+      print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > 0.3491186468357038  
+  > 0.7907236599059974
+
+  ```python
+  # case 3-1
+  for i in range(0,3) :
+      random.seed(105); print(random.random())
+  ```
+  > **0.8780993490764925**  
+  > **0.8780993490764925**  
+  > **0.8780993490764925**
+  </details>
 
 
 ## [Square Root (2020.01.01)](#list)
-an algorithm to find n's square root without `math.sqrt()`  
-- adjusted 2020.01.04 : rearrange methods' order in `for` Loop for improving intuitive understanding
 
-```python
-import random
-import math
-import matplotlib.pyplot as plt
+- An algorithm to find n's square root without `math.sqrt()`
+- Adjusted 2020.01.04 : rearrange methods' order in `for` Loop for improving intuitive understanding
 
-n = 2 # should be larger than 1
-k = 20 # run loop k times
+  <details>
+    <summary>Codes : SquareRoot.py</summary>
 
-squareroot = []
-lowerlimit, upperlimit = 1, n
+  ```python
+  import random
+  import math
+  import matplotlib.pyplot as plt
 
-for i in range(k) :
+  n = 2 # should be larger than 1
+  k = 20 # run loop k times
 
-    random.seed(20200104) # can be removed
-    squareroot.append(random.uniform(lowerlimit, upperlimit))
-    square = squareroot[i] ** 2
-    print(i+1, squareroot[i], square, square-n)
+  squareroot = []
+  lowerlimit, upperlimit = 1, n
 
-    if square == n :
-        break;
-    elif square < n :
-        # print("smaller")
-        lowerlimit = max(squareroot[i], lowerlimit)
-    else :
-        # print("larger")
-        upperlimit = min(squareroot[i], upperlimit)
+  for i in range(k) :
 
-myplot = plt.plot(range(k), squareroot)
-# myplot.hlines(math.sqrt(n), color="red", linestyle="--") # doesn't work
-```
-> 1 1.224709461308563 1.4999132646187106 -0.5000867353812894  
-> 2 1.3989245806155413 1.956989982250368 -0.04301001774963198  
-> 3 1.5339919143112415 2.3531311931722674 0.3531311931722674  
-> (중략)  
-> 19 1.4141854421168503 1.9999204646952313 -7.953530476867421e-05  
-> 20 1.4141980335178153 1.9999560780056558 -4.3921994344220394e-05 
+      random.seed(20200104) # can be removed
+      squareroot.append(random.uniform(lowerlimit, upperlimit))
+      square = squareroot[i] ** 2
+      print(i+1, squareroot[i], square, square-n)
 
-![approximate to the exact square root](Images/Square_Root_20200104.png)
+      if square == n :
+          break;
+      elif square < n :
+          # print("smaller")
+          lowerlimit = max(squareroot[i], lowerlimit)
+      else :
+          # print("larger")
+          upperlimit = min(squareroot[i], upperlimit)
 
-```python
-# practice
-random.random()
-random.randrange(1,n) # output only integer
-random.uniform(1,n) # output float
-list(range(10))
-```
-> 0.2508550895840985  
-> 1  
-> 1.2710268293926659  
-> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
+  myplot = plt.plot(range(k), squareroot)
+  # myplot.hlines(math.sqrt(n), color="red", linestyle="--") # doesn't work
+  ```
+  </details>
+
+  > 1 1.224709461308563 1.4999132646187106 -0.5000867353812894  
+  > 2 1.3989245806155413 1.956989982250368 -0.04301001774963198  
+  > 3 1.5339919143112415 2.3531311931722674 0.3531311931722674  
+  > (중략)  
+  > 19 1.4141854421168503 1.9999204646952313 -7.953530476867421e-05  
+  > 20 1.4141980335178153 1.9999560780056558 -4.3921994344220394e-05 
+
+  ![approximate to the exact square root](Images/Square_Root_20200104.png)
+
+  <details>
+    <summary>Practice</summary>
+
+  ```python
+  # practice
+  random.random()
+  random.randrange(1,n) # output only integer
+  random.uniform(1,n) # output float
+  list(range(10))
+  ```
+  > 0.2508550895840985  
+  > 1  
+  > 1.2710268293926659  
+  > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  
+  </details>
 
 
 ## [Fibonacci Series (2019.12.18)](#list)
-Simply Generating `Fibonacci Series` by Python
 
-```python
-a = [1, 1]
-n = 2
+- Simply Generating `Fibonacci Series` by Python
 
-while n<10 : # length = 10
-    a.append(a[n-2] + a[n-1])
-    n += 1
+  #### `FibonacciSeries.py`
 
-print(a)
-```
-> [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]  
+  ```python
+  a = [1, 1]
+  n = 2
+
+  while n<10 : # length = 10
+      a.append(a[n-2] + a[n-1])
+      n += 1
+
+  print(a)
+  ```
+  > [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]  
 
 
 ## [Generate List (2019.12.07)](#list)
-generate lists by various ways
 
-```python
-list1 = [[0,0], [0,0], [0,0], [0,0]]
-list2 = [[0,0]] * 4
-list3 = [0,0] * 4
+- Generate lists by various ways
 
-print(list1, "\n", list2, "\n", list3)
-list1 == list2
-```
+  #### `GenerateList.py`
 
-> [[0, 0], [0, 0], [0, 0], [0, 0]]  
-> [[0, 0], [0, 0], [0, 0], [0, 0]]  
-> [0, 0, 0, 0, 0, 0, 0, 0]  
-> True  
+  ```python
+  list1 = [[0,0], [0,0], [0,0], [0,0]]
+  list2 = [[0,0]] * 4
+  list3 = [0,0] * 4
+
+  print(list1, "\n", list2, "\n", list3)
+  list1 == list2
+  ```
+  > [[0, 0], [0, 0], [0, 0], [0, 0]]  
+  > [[0, 0], [0, 0], [0, 0], [0, 0]]  
+  > [0, 0, 0, 0, 0, 0, 0, 0]  
+  > True  
 
 
 ## [Limited Range Sampling (2019.09.22)](#list)
+
 - Generate normal distributed sample with limited range
 - Use `numpy` `matplotlib.pyplot` `scipy`
 
-#### Generate a normal distribution with limited range [25, 75]
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import stats
+  #### `LimitedRangeSampling.py`
 
-mu, sigma, n = 50, 10, 1000
-llimit, rlimit = 25, 75
+  <details>
+    <summary>Generate a normal distribution with limited range [25, 75]</summary>
 
-data = np.random.normal(mu, sigma, n)
-```
+  ```python
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from scipy import stats
 
-#### Method 0. Generating initial data (not trimmed yet)
-```python
-plt.hist(data)
-stats.describe(data)[0:2] # [0] : nobs, [1] : minmax
-```
-![hist0](Images/Generate_Limited_Range_ND_hist_0.png)
-> (1000, (16.763171096395133, 76.969552776105601))
+  mu, sigma, n = 50, 10, 1000
+  llimit, rlimit = 25, 75
 
-#### Method 1. Trim with rack of amount
-```python
-data1 = data[(data >= llimit) & (data <= rlimit)]
-```
-```python
-plt.hist(data1)
-stats.describe(data1)[0:2]
-```
-![hist1](Images/Generate_Limited_Range_ND_hist_1.png)
-> (991, (25.600374595125377, 74.942171158969671))
+  data = np.random.normal(mu, sigma, n)
+  ```
+  </details>
 
-#### Method 2. Check each one trial
-```python
-data2, amount = [], 0
+  <details>
+    <summary>Method 0. Generating initial data (not trimmed yet)</summary>
 
-while amount < n :
-    data_temp = np.random.normal(mu, sigma, 1)
-    if (data_temp >= llimit) & (data_temp <= rlimit) :
-        data2 = np.append(data2, data_temp)
-        amount += 1
-```
-```python
-plt.hist(data2)
-stats.describe(data2)[0:2]
-```
-![hist2](Images/Generate_Limited_Range_ND_hist_2.png)
-> (1000, (25.987274047611137, 73.473315070409228))
+  ```python
+  plt.hist(data)
+  stats.describe(data)[0:2] # [0] : nobs, [1] : minmax
+  ```
+  ![hist0](Images/Generate_Limited_Range_ND_hist_0.png)
+  > (1000, (16.763171096395133, 76.969552776105601))
+  </details>
 
-#### Method 3. Generate one round and fill the lack
-```python
-data3 = data[(data >= llimit) & (data <= rlimit)]
-amount = len(data3)
+  <details>
+    <summary>Method 1. Trim with rack of amount</summary>
 
-while amount < n :
-    data_temp = np.random.normal(mu, sigma, 1)
-    if (data_temp >= llimit) & (data_temp <= rlimit) :
-        data3 = np.append(data3, data_temp)
-        amount += 1
-```
-```python
-plt.hist(data3)
-stats.describe(data3)[0:2]
-```
-![hist3](Images/Generate_Limited_Range_ND_hist_3.png)
-> (1000, (25.600374595125377, 74.942171158969671))
+  ```python
+  data1 = data[(data >= llimit) & (data <= rlimit)]
+  ```
+  ```python
+  plt.hist(data1)
+  stats.describe(data1)[0:2]
+  ```
+  ![hist1](Images/Generate_Limited_Range_ND_hist_1.png)
+  > (991, (25.600374595125377, 74.942171158969671))
+  </details>
+
+  <details>
+    <summary>Method 2. Check each one trial</summary>
+
+  ```python
+  data2, amount = [], 0
+
+  while amount < n :
+      data_temp = np.random.normal(mu, sigma, 1)
+      if (data_temp >= llimit) & (data_temp <= rlimit) :
+          data2 = np.append(data2, data_temp)
+          amount += 1
+  ```
+  ```python
+  plt.hist(data2)
+  stats.describe(data2)[0:2]
+  ```
+  ![hist2](Images/Generate_Limited_Range_ND_hist_2.png)
+  > (1000, (25.987274047611137, 73.473315070409228))
+  </details>
+
+  <details>
+    <summary>Method 3. Generate one round and fill the lack</summary>
+
+  ```python
+  data3 = data[(data >= llimit) & (data <= rlimit)]
+  amount = len(data3)
+
+  while amount < n :
+      data_temp = np.random.normal(mu, sigma, 1)
+      if (data_temp >= llimit) & (data_temp <= rlimit) :
+          data3 = np.append(data3, data_temp)
+          amount += 1
+  ```
+  ```python
+  plt.hist(data3)
+  stats.describe(data3)[0:2]
+  ```
+  ![hist3](Images/Generate_Limited_Range_ND_hist_3.png)
+  > (1000, (25.600374595125377, 74.942171158969671))
+  </details>
 
 
 ## [`with` ~ `open()` (2019.07.21)](#list)
-- read binary file
-- convert decimal number ↔ hexadecimal number
 
-```python
-# get current working directory
-import os
+- Read binary file
+- Convert decimal number ↔ hexadecimal number
 
-os.getcwd()
-print(os.getcwd())
+  <details>
+    <summary>Codes : WithOpen.py</summary>
 
-# check if the file exists
-os.path.isfile("path")
-```
-> True
+  ```python
+  # get current working directory
+  import os
 
-```python
-import binascii
+  os.getcwd()
+  print(os.getcwd())
 
-# with statement
-with open('path','rb') as f: # rb : read & binary
-    string = f.read()
-    print(string[0:10])
-    print(binascii.b2a_hex(string[0:10]))
-```
-> b'1990.02.19'  
-> b'313939302e30322e3139'
+  # check if the file exists
+  os.path.isfile("path")
+  ```
+  > True
 
-```python
-# with statement X
-f = open('path','rb')
-data = f.read()
-print(data[0:10])
-print(binascii.b2a_hex(data[0:10]))
-f.close()
-```
-> b'1990.02.19'  
-> b'313939302e30322e3139'
+  ```python
+  import binascii
 
-```python
-# decimal → hexadecimal
-hex(30000)
-hex(3000000)
-hex(100)
-```
-> '0x7530'  
-> '0x2dc6c0'  
-> '0x64'
+  # with statement
+  with open('path','rb') as f: # rb : read & binary
+      string = f.read()
+      print(string[0:10])
+      print(binascii.b2a_hex(string[0:10]))
+  ```
+  > b'1990.02.19'  
+  > b'313939302e30322e3139'
 
-```python
-# hexadecimal → decimal
-int('7530', 16)
-int('2dc6c0', 16)
-int('64', 16)
-```
-> 30000  
-> 3000000  
-> 100
+  ```python
+  # with statement X
+  f = open('path','rb')
+  data = f.read()
+  print(data[0:10])
+  print(binascii.b2a_hex(data[0:10]))
+  f.close()
+  ```
+  > b'1990.02.19'  
+  > b'313939302e30322e3139'
+
+  ```python
+  # decimal → hexadecimal
+  hex(30000)
+  hex(3000000)
+  hex(100)
+  ```
+  > '0x7530'  
+  > '0x2dc6c0'  
+  > '0x64'
+
+  ```python
+  # hexadecimal → decimal
+  int('7530', 16)
+  int('2dc6c0', 16)
+  int('64', 16)
+  ```
+  > 30000  
+  > 3000000  
+  > 100
+  </details>
 
 
 ## [Password (2019.05.24)](#list)
-input the correct passworld within 5 trials or die  
-practice if~else, break/continue, time.sleep() and so on
 
-```python
-import time # for using time.sleep()
+- Input the correct passworld within 5 trials or die
+- Practice `if`~`else`, `break`/`continue`, `time.sleep()` and so on
 
-chance = 0
-pw_original = "mymy" # password. a word that calls a pass. you nahm sayin?
+  #### `Password.py`
 
-while chance < 5 :
-    pw_input = input("Input your password : ")
+  <details>
+    <summary>Codes : Password.py</summary>
 
-    # right
-    if pw_original == pw_input :
-        print("You entered the correct password")
-        break
-    
-    # wrong
-    else:
-        chance += 1
-        print("You entered the wrong passwords", chance, "times.")
-        if chance == 5 :
-            print("You bad guys will be delayed as a penalty.")
-            time.sleep(3)
-        else :
-            continue
+  ```python
+  import time # for using time.sleep()
 
-# Of course, saving the original password in this file is somewhat stupid.
-# But, yes I am.
-```
+  chance = 0
+  pw_original = "mymy" # password. a word that calls a pass. you nahm sayin?
+
+  while chance < 5 :
+      pw_input = input("Input your password : ")
+
+      # right
+      if pw_original == pw_input :
+          print("You entered the correct password")
+          break
+      
+      # wrong
+      else:
+          chance += 1
+          print("You entered the wrong passwords", chance, "times.")
+          if chance == 5 :
+              print("You bad guys will be delayed as a penalty.")
+              time.sleep(3)
+          else :
+              continue
+
+  # Of course, saving the original password in this file is somewhat stupid.
+  # But, yes I am.
+  ```
+  </details>
 
 
 ## [Class (2018.02.07)](#list)
-a simple Python `class` practice
 
-```python
-class MyFirstClass :
-    
-    def Family(self, name, role):
-        print(name, "is a(an)", role, "in my family")
+- Simple Python `class` practice
 
-Do = MyFirstClass()
+  #### `Class.py`
 
-Do.Family("Kim", "Husband")
-Do.Family("Shin", "Wife")
-Do.Family("Kim", "Future Baby")
-```
+  ```python
+  class MyFirstClass :
+      
+      def Family(self, name, role):
+          print(name, "is a(an)", role, "in my family")
 
-![Python_Class_Test](Images/Class.PNG)
+  Do = MyFirstClass()
 
-I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__init__` and so on.
+  Do.Family("Kim", "Husband")
+  Do.Family("Shin", "Wife")
+  Do.Family("Kim", "Future Baby")
+  ```
+
+  ![Python_Class_Test](Images/Class.PNG)
+
+  I found that a simple `class` in Python doesn't need stuffs like `__main__`, `__init__` and so on.  
 What the `__hell__`?
 
 
 ## [`while` (2017.05.15)](#list)
-a simple Python practice
 
-```python
-death_entropy = 100
-my_entropy = 1
+- Simple Python practice
 
-while(my_entropy < death_entropy) :
-    print(my_entropy)
-    my_entropy += 1
-print('Nirvana')
-```
+  #### `While.py`
+
+  ```python
+  death_entropy = 100
+  my_entropy = 1
+
+  while(my_entropy < death_entropy) :
+      print(my_entropy)
+      my_entropy += 1
+  print('Nirvana')
+  ```
+  ```
+  1
+  2
+  3
+  ……
+  100
+  Nirvana
+  ```
