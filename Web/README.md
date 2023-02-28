@@ -5,6 +5,7 @@ HTML, CSS and JavaScript
 
 ### List
 
+- [TypeScript : Hello World (2023.02.28)](#typescript--hello-world-20230228)
 - [Mouse Cursor Customization 2 (2023.02.06)](#mouse-cursor-customization-2-20230206)
 - [Mouse Cursor Customization (2023.01.29)](#mouse-cursor-customization-20230129)
 - [Bootstrap : Magic Stick (2022.01.28)](#bootstrap--magic-stick-20220128)
@@ -12,6 +13,34 @@ HTML, CSS and JavaScript
 - [Script Tag's Location (2022.01.02)](#script-tags-location-20220102)
 - [Colorful Show (2020.03.04)](#colorful-show-20200304)
 - [Ganzi (2017.04.03)](#ganzi-20170403)
+
+
+## [TypeScript : Hello World (2023.02.28)](#list)
+
+- Preparation
+  1. Install node.js   ☞ download from `https://nodejs.org/ko/`
+  2. Install tsc       ☞ type `npm install -g typescript` on the terminal
+- Write `.ts` file with syntax for types
+- Compile it to `.js` file by `tsc.exe` (`.ts` file can't run directly)  
+  : `tsc {filename}.ts`
+
+  <details open="">
+    <summary>Codes : TsHelloWorld.ts</summary>
+
+  ```ts
+  var str : String = "Hello World!"
+  console.log(str)
+  ```
+  </details>
+  <details open="">
+    <summary>Codes : TsHelloWorld.js</summary>
+
+  ```js
+  var str = "Hello World!";
+  console.log(str);
+  ```
+  </details>
+  Hmm …… it's not so impressive yet.
 
 
 ## [Mouse Cursor Customization 2 (2023.02.06)](#list)
