@@ -1,4 +1,5 @@
 Web/bootstrap5/ linguist-vendored
+Web/Ts*.js linguist-vendored
 C&Cpp/*.s linguist-vendored
 
 VBA/*.bas linguist-language=VBA
