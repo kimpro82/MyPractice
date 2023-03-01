@@ -18,8 +18,8 @@ HTML, CSS and JavaScript
 ## [TypeScript : Hello World (2023.02.28)](#list)
 
 - Preparation
-  1. Install node.js   ☞ download from `https://nodejs.org/ko/`
-  2. Install tsc       ☞ type `npm install -g typescript` on the terminal
+  1. Install *node.js*  ☞ download from `https://nodejs.org/ko/`
+  2. Install *tsc*      ☞ type `npm install -g typescript` on the terminal
 - Write `.ts` file with syntax for types
 - Compile it to `.js` file by `tsc.exe` (`.ts` file can't run directly)  
   : `tsc {filename}.ts`
