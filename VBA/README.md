@@ -22,8 +22,9 @@ VBA, maybe it could be my ancient future
 
 ## [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](#list)
 
-- Although the code appears to be working properly, the issue seems to be related to the failure of making a **payment** after the end of the Free trial usage of the *ChatGPT API*.
-- While the problem can be resolved by making a payment, I will pause the phase here as a commemoration of the failure(?).
+- Seems to be related to the **failure of making a payment** after the end of the Free trial usage of the *ChatGPT API*, although the code appears to be working properly
+- Pause the phase here as a commemoration of the failure(?) while the problem can be resolved by making a payment
+- Plan to upload to the [MyBizApps](https://github.com/kimpro82/MyBizApps) repository from the next version (improvised)
 
   ![VBA × ChatGPT](Images/VBA_ChatGPT_Exceeded.PNG)
 
