@@ -58,7 +58,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My VBA Practice](/VBA#my-vba-practice)
 
-- [Simple Q&A with *ChatGPT* (2023.05.02)](./VBA/README.md#simple-qa-with-chatgpt-20230502)
+- [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](./VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
 - [`Erase` Statement (2023.01.03)](./VBA/README.md#erase-statement-20230103)
 - [File System : `Folder.Files` (2022.07.15)](./VBA/README.md#folder-object--files-property-20220715)
 - [File System : `File.DateCreated` (2022.07.12)](./VBA/README.md#file-object--datecreated-property-20220712)

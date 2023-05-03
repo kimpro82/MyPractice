@@ -5,7 +5,7 @@ VBA, maybe it could be my ancient future
 
 ### \<List>
 
-- [Simple Q&A with *ChatGPT* (2023.05.02)](#simple-qa-with-chatgpt-20230502)
+- [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](#simple-qa-with-chatgpt--trial-20230502)
 - [`Erase` Statement (2023.01.03)](#erase-statement-20230103)
 - [File System : `Folder.Files` (2022.07.15)](#folder-object--files-property-20220715)
 - [File System : `File.DateCreated` (2022.07.12)](#file-object--datecreated-property-20220712)
@@ -20,7 +20,7 @@ VBA, maybe it could be my ancient future
 
 
 
-## [Simple Q&A with *ChatGPT* (2023.05.02)](#list)
+## [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](#list)
 
 - Although the code appears to be working properly, the issue seems to be related to the failure of making a **payment** after the end of the Free trial usage of the *ChatGPT API*.
 - While the problem can be resolved by making a payment, I will pause the phase here as a commemoration of the failure(?).
