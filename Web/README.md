@@ -48,6 +48,31 @@ HTML, CSS and JavaScript
   ```
 
   <details>
+    <summary>Codes : Alphabet.yml</summary>
+
+  ```yml
+  A:
+    - "#######."
+    - "#.....#."
+    - "#.....#."
+    - "#######."
+    - "#.....#."
+    - "#.....#."
+    - "#.....#."
+
+  ……
+
+  Z:
+    - "#######."
+    - ".....#.."
+    - "....#..."
+    - "...#...."
+    - "..#....."
+    - ".#......"
+    - "#######."
+  ```
+  </details>
+  <details>
     <summary>Codes : TsBigBlockLettering.ts</summary>
 
   ```ts
