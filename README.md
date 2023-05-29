@@ -6,8 +6,8 @@ miscellaneous petty works
 ### \<List>
 
 - [Github Dashboard](#github-dashboard)
-- [My **Python** Practice](#my-python-practice)
 - [My **VBA** Practice](#my-vba-practice)
+- [My **Python** Practice](#my-python-practice)
 - [My **Web** Practice](#my-web-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
 - [My **R** Practice](#my-r-practice)

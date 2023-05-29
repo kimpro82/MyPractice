@@ -47,7 +47,7 @@ HTML, CSS and JavaScript
   #######.#######.######..#######.#.....#.#.....#.#######.#.....#..#####..#######.#.....#.
   ```
 
-  <br><details>
+  <details>
     <summary>Codes : TsBigBlockLettering.ts</summary>
 
   ```ts
