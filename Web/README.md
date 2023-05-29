@@ -18,7 +18,7 @@ HTML, CSS and JavaScript
 
 ## [TypeScript : Big Block Lettering in Console (2023.05.28)](#list)
 
-- Print big block alphabet letters "horizontally" in console
+- Print big block alphabet letters "horizontally" in console (Upper cases only)
   - Reference ☞ Print it "vertically" https://code.sololearn.com/cMjHm80zOip1
 - Programming language : ~~Not decided~~ TypeScript
   - Prefer ones that have built-in libraries for handling a specific external data file  
