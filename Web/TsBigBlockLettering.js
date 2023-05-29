@@ -19,8 +19,8 @@ rl.question('알파벳 문자열을 입력하세요: ', function (input) {
     var alphabetData = yaml.load(fs.readFileSync('alphabet.yml', 'utf8')); // not .safeLoad()
     // 출력용 배열 초기화
     var outputArray = [];
-    // 알파벳 문자열 출력 함수
-    function printAlphabetString(alphabet) {
+    // 알파벳 문자열을 출력용 배열에 누적하는 함수
+    function accumulateAlphabetString(alphabet) {
         var alphabetDataString = alphabetData[alphabet];
         for (var i = 0; i < alphabetDataString.length; i++) {
             var char = alphabetDataString[i];
@@ -32,15 +32,20 @@ rl.question('알파벳 문자열을 입력하세요: ', function (input) {
             }
         }
     }
-    // 입력받은 알파벳 문자열 출력
+    // 입력받은 알파벳 문자열을 출력용 배열에 누적
     for (var i = 0; i < upperCaseInput.length; i++) {
         var char = upperCaseInput[i];
         if (alphabetData.hasOwnProperty(char)) {
-            printAlphabetString(char);
+            accumulateAlphabetString(char);
         }
     }
     // 출력용 배열 출력
-    for (var i = 0; i < outputArray.length; i++) {
-        console.log(outputArray[i]);
+    if (outputArray.length > 0) {
+        for (var i = 0; i < outputArray.length; i++) {
+            console.log(outputArray[i]);
+        }
+    }
+    else {
+        console.log('입력한 알파벳 문자열에 해당하는 데이터가 없습니다.');
     }
 });
