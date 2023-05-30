@@ -136,7 +136,7 @@ HTML, CSS and JavaScript
   <details>
     <summary>Codes : tsconfig.json</summary>
 
-  ※ `fs` requires `node` environment to run, not for browser.
+  ※ The `fs` library requires execution in a `node`(Node.js) environment, not in a browser one.
   ```ts
   {
       "compilerOptions": {
