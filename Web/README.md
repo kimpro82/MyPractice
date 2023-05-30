@@ -133,7 +133,21 @@ HTML, CSS and JavaScript
   });
   ```
   </details>
+  <details>
+    <summary>Codes : tsconfig.json</summary>
 
+  ※ `fs` requires `node` environment to run, not for browser.
+  ```ts
+  {
+      "compilerOptions": {
+          "target": "es6",
+          "module": "commonjs",
+          "moduleResolution": "node",
+          "esModuleInterop": true
+      }
+  }
+  ```
+  </details>
 
 ## [TypeScript : Hello World (2023.02.28)](#list)
 
