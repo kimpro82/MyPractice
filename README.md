@@ -6,8 +6,8 @@ miscellaneous petty works
 ### \<List>
 
 - [Github Dashboard](#github-dashboard)
-- [My **Python** Practice](#my-python-practice)
 - [My **VBA** Practice](#my-vba-practice)
+- [My **Python** Practice](#my-python-practice)
 - [My **Web** Practice](#my-web-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
 - [My **R** Practice](#my-r-practice)
@@ -26,6 +26,22 @@ miscellaneous petty works
 making a dashboard for managing Gitgub contributions by using `Github API`
 
 - Outline (2020.04.19)
+
+
+## [My VBA Practice](/VBA#my-vba-practice)
+
+- [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](./VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
+- [`Erase` Statement (2023.01.03)](./VBA/README.md#erase-statement-20230103)
+- [File System : `Folder.Files` (2022.07.15)](./VBA/README.md#folder-object--files-property-20220715)
+- [File System : `File.DateCreated` (2022.07.12)](./VBA/README.md#file-object--datecreated-property-20220712)
+- [`ByRef` vs `ByVal` (2022.06.05)](./VBA/README.md#byref-vs-byval-20220605)
+- [Declare Plural Variable (2022.06.04)](./VBA#declare-plural-variable-20220604)
+- [Color Scroll 2 (2021.12.01)](./VBA/README.md#color-scroll-2-20211201)
+- [Variable Scope (2011.11.29)](./VBA/README.md#variable-scope-20111129)
+- [Control Formula Calculation Option (2021.11.08)](./VBA/README.md#control-formula-calculation-option-20211108)
+- [Read Binary File (2021.08.23)](./VBA/README.md#read-binary-file-20210823)
+- [Try ~ Catch ~ Finally (2021.07.28)](./VBA/README.md#try-catch-finally-20210728)
+- [Color Scroll (2020.11.14)](./VBA/README.md#color-scroll-20201114)
 
 
 ## [My Python Practice](./Python#my-python-practice)
@@ -56,24 +72,9 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [`while` (2017.05.15)](./Python/README.md#while-20170515)
 
 
-## [My VBA Practice](/VBA#my-vba-practice)
-
-- [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](./VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
-- [`Erase` Statement (2023.01.03)](./VBA/README.md#erase-statement-20230103)
-- [File System : `Folder.Files` (2022.07.15)](./VBA/README.md#folder-object--files-property-20220715)
-- [File System : `File.DateCreated` (2022.07.12)](./VBA/README.md#file-object--datecreated-property-20220712)
-- [`ByRef` vs `ByVal` (2022.06.05)](./VBA/README.md#byref-vs-byval-20220605)
-- [Declare Plural Variable (2022.06.04)](./VBA#declare-plural-variable-20220604)
-- [Color Scroll 2 (2021.12.01)](./VBA/README.md#color-scroll-2-20211201)
-- [Variable Scope (2011.11.29)](./VBA/README.md#variable-scope-20111129)
-- [Control Formula Calculation Option (2021.11.08)](./VBA/README.md#control-formula-calculation-option-20211108)
-- [Read Binary File (2021.08.23)](./VBA/README.md#read-binary-file-20210823)
-- [Try ~ Catch ~ Finally (2021.07.28)](./VBA/README.md#try-catch-finally-20210728)
-- [Color Scroll (2020.11.14)](./VBA/README.md#color-scroll-20201114)
-
-
 ## [My Web Practice](./Web/README.md#my-web-practice)
 
+- [TypeScript : Big Block Lettering in Console (2023.05.28)](./Web/README.md#typescript--big-block-lettering-in-console-20230528)
 - [TypeScript : Hello World (2023.02.28)](./Web/README.md#typescript--hello-world-20230228)
 - [Mouse Cursor Customization 2 (2023.02.06)](./Web/README.md#mouse-cursor-customization-2-20230206)
 - [Mouse Cursor Customization (2023.01.29)](./Web/README.md#mouse-cursor-customization-20230129)

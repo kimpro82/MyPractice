@@ -1,5 +1,7 @@
 /.git
 /.vscode
+/Web/node_modules
+/Web/package*
 
 *.exe
 *.class
