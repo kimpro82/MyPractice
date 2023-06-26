@@ -3,12 +3,102 @@
 
 ## List
 
+- [Slicing String with `substr()` (2023.06.26)](#slicing-string-with-substr-20230626)
 - [`List` Practice in R (2022.11.22)](#list-in-r-20221122)
 - [`Shiny` - 1st Trial (2022.05.04)](#shiny---1st-trial-20220504)
 - [Scatter Points in a Circle (2021.08.16)](#scatter-points-in-a-circle-20210816)
 - [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
 - [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
 - [Fibonacci Tornado (2017.05.07)](#fibonacci-tornado-20170507)
+
+
+## [Slicing String with `substr()` (2023.06.26)](#list)
+
+- Dealing with strings in R is a hidden trap
+
+  #### `Substr.r`
+
+  ```r
+  str <- "R도 명색이 프로그래밍 언어인데, 문자열 슬라이싱이 안 될 리가 없잖아. 근데 왜 안 돼? 왜 나 괴롭혀?"
+  ```
+
+  <details>
+    <summary>Trial 1 : Do like other general languages</summary>
+
+  ```r
+  str[1:3]
+  # The entire string is considered as the 1st element of a vector.
+  # The 2nd and 3rd elements of the vector are regarded as empty.
+  ```
+  ```txt
+  [1] "R도 명색이 프로그래밍 언어인데, 문자열 슬라이싱이 안 될 리가 없잖아. 근데 왜 안 돼? 왜 나 괴롭혀?"
+  [2] NA
+  [3] NA
+  ```
+  </details>
+  <details open="">
+    <summary>Trial 2 : Use substr()</summary>
+
+  ```r
+  substr(str, 1, 19)
+  substr(str, 20, 41)
+  substr(str, 42, 100)
+  ```
+  ```txt
+  [1] "R도 명색이 프로그래밍 언어인데, "
+  [1] "문자열 슬라이싱이 안 될 리가 없잖아. "
+  [1] "근데 왜 안 돼? 왜 나 괴롭혀?"
+  ```
+  </details>
+  <details>
+    <summary>Trial 2-1 : For loop with substr()</summary>
+
+  ```r
+  for (i in 1:nchar(str)) {                                                       # not length()
+      cat(substr(str, i, i), seq = " ")
+  }
+  ```
+  ```txt
+  R  도     명  색  이     프  로  그  래  밍     언  어  인  데  ,     문  자  열     슬  라  이  싱  이     안     될     리  가     없  잖  아  .     근  데     왜     안     돼  ?     왜     나     괴  롭  혀  ?
+  ```
+  </details>
+  <details>
+    <summary>Trial 3 : Use strsplit()</summary>
+
+  ```r
+  strsplit1 <- strsplit(str, split = "[,] |[.] ", fixed = FALSE)
+  strsplit2 <- strsplit(str, split = "[,.] ", fixed = FALSE)
+  strsplit1
+  strsplit2
+
+  strsplit2[1]
+  strsplit2[[1]]
+  strsplit2[[1]][1]
+
+  cat(strsplit2[[1]])
+  cat(strsplit2[[1]][1])
+  ```
+  ```txt
+  [[1]]
+  [1] "R도 명색이 프로그래밍 언어인데"      "문자열 슬라이싱이 안 될 리가 없잖아" "근데 왜 안 돼? 왜 나 괴롭혀?"
+
+  [[1]]
+  [1] "R도 명색이 프로그래밍 언어인데"      "문자열 슬라이싱이 안 될 리가 없잖아" "근데 왜 안 돼? 왜 나 괴롭혀?"
+  ```
+  ```txt
+  [[1]]
+  [1] "R도 명색이 프로그래밍 언어인데"      "문자열 슬라이싱이 안 될 리가 없잖아" "근데 왜 안 돼? 왜 나 괴롭혀?"
+
+  [1] "R도 명색이 프로그래밍 언어인데"      "문자열 슬라이싱이 안 될 리가 없잖아" "근데 왜 안 돼? 왜 나 괴롭혀?"
+
+  [1] "R도 명색이 프로그래밍 언어인데"
+  ```
+  ```txt
+  R도 명색이 프로그래밍 언어인데 문자열 슬라이싱이 안 될 리가 없잖아 근데 왜 안 돼? 왜 나 괴롭혀?
+
+  R도 명색이 프로그래밍 언어인데
+  ```
+  </details>
 
 
 ## [`List` Practice in R (2022.11.22)](#list)
