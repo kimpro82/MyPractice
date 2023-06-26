@@ -105,7 +105,7 @@
 
 - It's not the linked list that we used to know, but the data strurture that consists of key & value!
 
-#### `List.r`
+  #### `List.r`
 
   <details>
     <summary>0. Set a sample data</summary>
@@ -195,19 +195,20 @@
 - Hello Shiny
 - Reference ☞ https://shiny.rstudio.com/tutorial/written-tutorial/lesson1/
 
-```r
-if (!requireNamespace("shiny")) install.packages("shiny")
-library("shiny")
+  ```r
+  if (!requireNamespace("shiny")) install.packages("shiny")
+  library("shiny")
 
-runExample("01_hello")
-```
+  runExample("01_hello")
+  ```
 
-![Hello Shiny](Images/Shiny_20220505_RunExample.PNG)
+  ![Hello Shiny](Images/Shiny_20220505_RunExample.PNG)
 
 
 ## [Scatter Points in a Circle (2021.08.16)](#list)
-\* Scatter points in a circle in various ways  
-\* using `plotrix`
+
+- Scatter points in a circle in various ways  
+- Use `plotrix`
 
   <details>
     <summary>0. Call "plotrix" library (install if not exist)</summary>
@@ -284,7 +285,6 @@ runExample("01_hello")
   draw.circle(0, 0, r)
   ```
   </details>
-
   <img src="Images/Scatter_20210816_2_Monte_Carlo_method_2.png" width="500" height="500" alt = "2. Monte Carlo method 2 (disperse the crowded central population)">
 
   <details>
@@ -378,12 +378,13 @@ runExample("01_hello")
   ```
   </details>
 
-<img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="500" height="500" alt = "3.1 Points with lattice spacing including outside the circle">
+  <img src="Images/Scatter_20210816_3_1_Points_with_lattice_spacing_2.png" width="500" height="500" alt = "3.1 Points with lattice spacing including outside the circle">
 
 
 ## [Permutations and Combinations (2021.04.05)](#list)
-\* get permutations and combinations  
-\* using `gtools`
+
+- get permutations and combinations  
+- using `gtools`
 
   <details>
     <summary>Factorial</summary>
@@ -478,9 +479,10 @@ runExample("01_hello")
 
 
 ## [Generating Array and Variables by for Loop (2019.12.06)](#list)
-answer for a question at chatting room  
-\* R array-related data structure is actually defined as vector, matrix and array about each dimension's array.  
-\* I call it just 'array' by common mathematical notion here, but it is different from R's strict data structure definition.  
+
+- answer for a question at chatting room  
+  - R array-related data structure is actually defined as vector, matrix and array about each dimension's array.  
+  - I call it just 'array' by common mathematical notion here, but it is different from R's strict data structure definition.  
 
   <details>
     <summary>1. generating array by for loop</summary>
@@ -537,7 +539,7 @@ answer for a question at chatting room
   ```
   </details>
 
-![generating variable names with considering sort](Images/Generating_variable_names_20191206_2_1.png)
+  ![generating variable names with considering sort](Images/Generating_variable_names_20191206_2_1.png)
 
   <details>
     <summary>2.1.1 code improvement trial of 2.1</summary>
@@ -564,7 +566,8 @@ answer for a question at chatting room
 
 
 ## [Fibonacci Tornado (2017.05.07)](#list)
-generating Fibonacci Series and Fibonacci Coordinates by looping
+
+- Generating Fibonacci Series and Fibonacci Coordinates by looping
 
   <details>
     <summary>1. Generating Fibonacci Series</summary>
