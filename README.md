@@ -103,6 +103,7 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My R Practice](R/README.md#my-r-practice)
 
+- [Slicing String with `substr()` (2023.06.26)](./R/README.md#slicing-string-with-substr-20230626)
 - [`List` Practice in R (2022.11.22)](./R/README.md#list-in-r-20221122)
 - [`Shiny` - 1st Trial (2022.05.04)](./R/README.md#shiny---1st-trial-20220504)
 - [Scatter Points in a Circle (2021.08.16)](./R/README.md#scatter-points-in-a-circle-20210816)
