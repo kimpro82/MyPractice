@@ -8,9 +8,9 @@ miscellaneous petty works
 - [Github Dashboard](#github-dashboard)
 - [My **VBA** Practice](#my-vba-practice)
 - [My **Python** Practice](#my-python-practice)
+- [My **R** Practice](#my-r-practice)
 - [My **Web** Practice](#my-web-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
-- [My **R** Practice](#my-r-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
@@ -72,6 +72,17 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [`while` (2017.05.15)](./Python/README.md#while-20170515)
 
 
+## [My R Practice](R/README.md#my-r-practice)
+
+- [Slicing String with `substr()` (2023.06.26)](./R/README.md#slicing-string-with-substr-20230626)
+- [`List` Practice in R (2022.11.22)](./R/README.md#list-in-r-20221122)
+- [`Shiny` - 1st Trial (2022.05.04)](./R/README.md#shiny---1st-trial-20220504)
+- [Scatter Points in a Circle (2021.08.16)](./R/README.md#scatter-points-in-a-circle-20210816)
+- [Permutations and Combinations (2021.04.05)](./R/README.md#permutations-and-combinations-20210405)
+- [Generating Array and Variables by for Loop (2019.12.06)](./R/README.md#generating-array-and-variables-by-for-loop-20191206)
+- [Fibonacci Tornado (2017.05.07)](./R/README.md#fibonacci-tornado-20170507)
+
+
 ## [My Web Practice](./Web/README.md#my-web-practice)
 
 - [TypeScript : Big Block Lettering in Console (2023.05.28)](./Web/README.md#typescript--big-block-lettering-in-console-20230528)
@@ -99,17 +110,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Template (2021.07.23)](/C&Cpp#template-20210723)
 - [Stack Overflow (2021.05.18)](/C&Cpp#stack-overflow-20210518)
 - [Hello World (2021.05.12)](/C&Cpp#hello-world-20210512)
-
-
-## [My R Practice](R/README.md#my-r-practice)
-
-- [Slicing String with `substr()` (2023.06.26)](./R/README.md#slicing-string-with-substr-20230626)
-- [`List` Practice in R (2022.11.22)](./R/README.md#list-in-r-20221122)
-- [`Shiny` - 1st Trial (2022.05.04)](./R/README.md#shiny---1st-trial-20220504)
-- [Scatter Points in a Circle (2021.08.16)](./R/README.md#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](./R/README.md#permutations-and-combinations-20210405)
-- [Generating Array and Variables by for Loop (2019.12.06)](./R/README.md#generating-array-and-variables-by-for-loop-20191206)
-- [Fibonacci Tornado (2017.05.07)](./R/README.md#fibonacci-tornado-20170507)
 
 
 ## [My C# Practice](/CSharp#my-c-practice)
@@ -140,9 +140,10 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My BASIC Practice](/BASIC#my-qbasic-practice)
 
-- [Draw A Car (2022.02.09)](/BASIC#draw-a-car-20220209)
-- [Play Music (2021.02.20)](/BASIC#play-music-20210220)
-- [Hello World (2020.02.27)](/BASIC#hello-world-20200227)
+- [Line Numbering (2023.07.19)](./BASIC/README.md#line-numbering-20230719)
+- [Draw A Car (2022.02.09)](/BASIC/README.md#draw-a-car-20220209)
+- [Play Music (2021.02.20)](/BASIC/README.md#play-music-20210220)
+- [Hello World (2020.02.27)](/BASIC/README.md#hello-world-20200227)
 
 
 ## [My Verilog Practice](/Verilog#my-verilog-practice)
