@@ -5,9 +5,35 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
 
 ### \<List>
 
+- [Line Numbering (2023.07.19)](#line-numbering-20230719)
 - [Draw A Car (2022.02.09)](#draw-a-car-20220209)
 - [Play Music (2021.02.20)](#play-music-20210220)
 - [Hello World (2020.02.27)](#hello-world-20200227)
+
+
+## [Line Numbering (2023.07.19)](#list)
+
+- I intended to write *GW-BASIC* code, but I actually executed it in *QuickBASIC*.
+- However, since it is a superset, it seems to be fine.
+
+```bas
+'-10 print "-10"        ' A negative line number causes an error
+0 CLS
+10 PRINT "10"
+15 GOTO 30
+20 PRINT "20"           ' Pass
+30 PRINT "30"
+30.5 PRINT "30.5"       ' Decimal point is available
+65535 PRINT "65535"
+65536 PRINT "65536"     ' The line number can be over 65536
+```
+```txt
+10
+30
+30.5
+65535
+65536
+```
 
 
 ## [Draw A Car (2022.02.09)](#list)
