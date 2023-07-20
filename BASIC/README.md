@@ -14,7 +14,8 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
 ## [Line Numbering (2023.07.19)](#list)
 
 - I intended to write *GW-BASIC* code, but I actually executed it in *QuickBASIC*.
-- However, since it is a superset, it seems to be fine.
+- Unexpectedly, many things are allowed, including aspects that were not even considered.  
+  Ex) Line numbers including decimal points, reversed, or exceeding 65535 ……
 
   <details open="">
     <summary>Codes : LineNum.bas</summary>
@@ -26,18 +27,30 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
   15 GOTO 30
   20 PRINT "20"           ' Pass
   30 PRINT "30"
-  30.5 PRINT "30.5"       ' Decimal point is available
+  25 PRINT "25"           ' Decreasing numbering is OK
+  30.5 PRINT "30.5"       ' Decimal point is allowed
+  A: GOTO C
+  B: PRINT "B"
+  C: PRINT "C"            ' Alphanumeric line labels can be mixed
+  PRINT "No label"        ' Lines without labeling is also available
   65535 PRINT "65535"
   65536 PRINT "65536"     ' The line number can be over 65536
   ```
   ```txt
   10
   30
+  25
   30.5
+  C
+  No label
   65535
   65536
   ```
   </details>
+
+- References
+  - *The BASIC Program Line* from [QUICKBASIC 4.5 Help file](https://hwiegman.home.xs4all.nl/qb45-man/index.html)
+  - [Q73084: Differences Between GW-BASIC and QBasic](https://jeffpar.github.io/kbarchive/kb/073/Q73084/)
 
 
 ## [Draw A Car (2022.02.09)](#list)
