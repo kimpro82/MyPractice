@@ -36,7 +36,7 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
     65531 PRINT 65531   ' Syntax rrror
     ```
   - Loaded on the GW-BASIC console
-    ```txt
+    ```bas
     10 PRINT 10
     20 PRINT 20
     30 GOTO 50
