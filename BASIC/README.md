@@ -5,11 +5,62 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
 
 ### \<List>
 
+- [Line Numbering 2 (2023.07.22)](#line-numbering-2-20230722)
 - [Line Numbering (2023.07.19)](#line-numbering-20230719)
 - [Draw A Car (2022.02.09)](#draw-a-car-20220209)
 - [Play Music (2021.02.20)](#play-music-20210220)
 - [Hello World (2020.02.27)](#hello-world-20200227)
 
+
+## [Line Numbering 2 (2023.07.22)](#list)
+
+- Finally I've got [GW-BASIC 3.23](https://web.archive.org/web/20091027112638/http://geocities.com/KindlyRat/GWBASIC.html)!
+- Line numbers are allowed only when they are not exceeding `65529` and without decimal points.
+- Reversed line numbers are automatically rearranged as increasing order
+
+  <details open="">
+    <summary>Codes : LINENUM2.BAS</summary>
+
+  - Saved in the file
+    ```bas
+    10 PRINT 10
+    20 PRINT 20
+    30 GOTO 50
+    40 PRINT 40         ' Pass
+    50 PRINT 50
+    60 PRINT 60
+    55 PRINT 55         ' Rearranged as increasing order
+    70.5 PRINT 70.5     ' Syntax rrror; 70 .5 PRINT 70.5
+    65530 PRINT 65530   ' Syntax rrror; 6553 0 PRINT 65530!
+    65529 PRINT 65529   ' 65529!
+    65531 PRINT 65531   ' Syntax rrror
+    ```
+  - Loaded on the GW-BASIC console
+    ```txt
+    10 PRINT 10
+    20 PRINT 20
+    30 GOTO 50
+    40 PRINT 40             ' Pass
+    50 PRINT 50
+    55 PRINT 55             ' Rearranged as increasing order
+    60 PRINT 60
+    70 .5 PRINT 70.5                ' Syntax rrror; 70 .5 PRINT 70.5
+    6553 0 PRINT 65530!     ' Syntax rrror; 6553 0 PRINT 65530!
+    65529 PRINT 65529!      ' 65529!
+    Syntax rrror
+    ```
+  - Output
+    ```txt
+    RUN
+    10
+    20
+    50
+    55
+    60
+    Syntax error in 70
+    Ok
+    ```
+  </details>
 
 ## [Line Numbering (2023.07.19)](#list)
 
