@@ -47,7 +47,7 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
     70 .5 PRINT 70.5                ' Syntax rrror; 70 .5 PRINT 70.5
     6553 0 PRINT 65530!     ' Syntax rrror; 6553 0 PRINT 65530!
     65529 PRINT 65529!      ' 65529!
-    Syntax rrror
+    Syntax error
     ```
   - Output
     ```txt
