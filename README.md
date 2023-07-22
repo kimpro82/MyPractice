@@ -14,8 +14,8 @@ miscellaneous petty works
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
-- [My **Ruby** Practice](#my-ruby-practice)
 - [My **BASIC** Practice](#my-basic-practice)
+- [My **Ruby** Practice](#my-ruby-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Dart** Practice](#my-dart-practice)
@@ -133,11 +133,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Grade (2021.12.06)](/Golang#grade-20211206)
 
 
-## [My Ruby Practice](./Ruby/)
-
-- [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
-
-
 ## [My BASIC Practice](/BASIC#my-qbasic-practice)
 
 - [Line Numbering 2 (2023.07.22)](./BASIC/README.md#line-numbering-2-20230722)
@@ -145,6 +140,11 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Draw A Car (2022.02.09)](/BASIC/README.md#draw-a-car-20220209)
 - [Play Music (2021.02.20)](/BASIC/README.md#play-music-20210220)
 - [Hello World (2020.02.27)](/BASIC/README.md#hello-world-20200227)
+
+
+## [My Ruby Practice](./Ruby/)
+
+- [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
 
 
 ## [My Verilog Practice](/Verilog#my-verilog-practice)
