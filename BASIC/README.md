@@ -15,8 +15,27 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
 ## [Line Numbering 2 (2023.07.22)](#list)
 
 - Finally I've got [GW-BASIC 3.23](https://web.archive.org/web/20091027112638/http://geocities.com/KindlyRat/GWBASIC.html)!
-- Line numbers are allowed only when they are not exceeding `65529` and without decimal points.
 - Reversed line numbers are automatically rearranged as increasing order
+- Line numbers are allowed only when they are not exceeding `65529` and without decimal points.
+
+  <details>
+    <summary>Why `65529`, not `65535`?</summary>
+
+  - [Variances in Basic highest line numbers](https://retrocomputing.stackexchange.com/questions/13347/variances-in-basic-highest-line-numbers)  [(retrocomputing.stackexchange.com)](https://retrocomputing.stackexchange.com/)
+
+    > Line numbers are stored as a two byte word but the largest allowed by the input routines is 65529. Primarily because this is an easier limit to test rather than checking for overflow. The line number is converted from ASCII to binary a character at a time using a pretty standard algorithm. Start with a 16 bit value `line` = 0. For each digit multiply `line` by 10 and add the digit to `line`.  
+    >  
+    >  To check if the line number is acceptable, compare `line` against 6552 before multiplying it by 10. This will guarantee the value is <= 65529 because a digit can add only 9 at most.
+  </details>
+  <details>
+    <summary>What does `!` mean?</summary>
+
+  - [Microsoft > Learn > Documentation > .NET > Visual Basic](https://learn.microsoft.com/en-us/dotnet/visual-basic/) > [Single Data Type](https://learn.microsoft.com/en-us/dotnet/visual-basic/language-reference/data-types/single-data-type)
+
+    This is not exactly GW-BASIC, but it is a descendant with some traces of its syntax.
+
+    > Type Characters. Appending the literal type character `F` to a literal forces it to the `Single` data type. Appending the identifier type character `!` to any identifier forces it to `Single`.
+  </details>
 
   <details open="">
     <summary>Codes : LINENUM2.BAS</summary>
