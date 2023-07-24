@@ -5,11 +5,81 @@ My Nostalgia; codes for **the old BASIC product family** (*GW-BASIC*, *QuickBASI
 
 ### \<List>
 
+- [Line Numbering 2 (2023.07.22)](#line-numbering-2-20230722)
 - [Line Numbering (2023.07.19)](#line-numbering-20230719)
 - [Draw A Car (2022.02.09)](#draw-a-car-20220209)
 - [Play Music (2021.02.20)](#play-music-20210220)
 - [Hello World (2020.02.27)](#hello-world-20200227)
 
+
+## [Line Numbering 2 (2023.07.22)](#list)
+
+- Finally I've got [GW-BASIC 3.23](https://web.archive.org/web/20091027112638/http://geocities.com/KindlyRat/GWBASIC.html)!
+- Reversed line numbers are automatically rearranged as increasing order
+- Line numbers are allowed only when they are not exceeding `65529` and without decimal points.
+
+  <details>
+    <summary>Why `65529`, not `65535`?</summary>
+
+  - [Variances in Basic highest line numbers](https://retrocomputing.stackexchange.com/questions/13347/variances-in-basic-highest-line-numbers)  [(retrocomputing.stackexchange.com)](https://retrocomputing.stackexchange.com/)
+
+    > Line numbers are stored as a two byte word but the largest allowed by the input routines is 65529. Primarily because this is an easier limit to test rather than checking for overflow. The line number is converted from ASCII to binary a character at a time using a pretty standard algorithm. Start with a 16 bit value `line` = 0. For each digit multiply `line` by 10 and add the digit to `line`.  
+    >  
+    >  To check if the line number is acceptable, compare `line` against 6552 before multiplying it by 10. This will guarantee the value is <= 65529 because a digit can add only 9 at most.
+  </details>
+  <details>
+    <summary>What does `!` mean?</summary>
+
+  - [Microsoft > Learn > Documentation > .NET > Visual Basic](https://learn.microsoft.com/en-us/dotnet/visual-basic/) > [Single Data Type](https://learn.microsoft.com/en-us/dotnet/visual-basic/language-reference/data-types/single-data-type)
+
+    This is not exactly GW-BASIC, but it is a descendant with some traces of its syntax.
+
+    > Type Characters. Appending the literal type character `F` to a literal forces it to the `Single` data type. Appending the identifier type character `!` to any identifier forces it to `Single`.
+  </details>
+
+  <details open="">
+    <summary>Codes : LINENUM2.BAS</summary>
+
+  - Saved in the file
+    ```bas
+    10 PRINT 10
+    20 PRINT 20
+    30 GOTO 50
+    40 PRINT 40         ' Pass
+    50 PRINT 50
+    60 PRINT 60
+    55 PRINT 55         ' Rearranged as increasing order
+    70.5 PRINT 70.5     ' Syntax rrror; 70 .5 PRINT 70.5
+    65530 PRINT 65530   ' Syntax rrror; 6553 0 PRINT 65530!
+    65529 PRINT 65529   ' 65529!
+    65531 PRINT 65531   ' Syntax rrror
+    ```
+  - Loaded on the GW-BASIC console
+    ```bas
+    10 PRINT 10
+    20 PRINT 20
+    30 GOTO 50
+    40 PRINT 40             ' Pass
+    50 PRINT 50
+    55 PRINT 55             ' Rearranged as increasing order
+    60 PRINT 60
+    70 .5 PRINT 70.5                ' Syntax rrror; 70 .5 PRINT 70.5
+    6553 0 PRINT 65530!     ' Syntax rrror; 6553 0 PRINT 65530!
+    65529 PRINT 65529!      ' 65529!
+    Syntax error
+    ```
+  - Output
+    ```txt
+    RUN
+    10
+    20
+    50
+    55
+    60
+    Syntax error in 70
+    Ok
+    ```
+  </details>
 
 ## [Line Numbering (2023.07.19)](#list)
 
