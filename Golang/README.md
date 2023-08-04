@@ -15,6 +15,9 @@
   - Future Improvements
     - Further explore assembly language
     - Dig more into topics related to memory, such as stacks and heaps
+  - References
+    - [go.dev](https://go.dev/) > [A Quick Guide to Go's Assembler](https://go.dev/doc/asm#introduction)
+    - [Github > teh-cmc](https://github.com/teh-cmc) > [go-internals](https://github.com/teh-cmc/go-internals) > [Chapter I: A Primer on Go Assembly](https://github.com/teh-cmc/go-internals/tree/master/chapter1_assembly_primer)
   - Codes
     <details open="">
       <summary>Assembler1.go</summary>
