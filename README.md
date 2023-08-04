@@ -130,7 +130,8 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Golang Practice](/Golang#my-golang-practice)
 
-- [Grade (2021.12.06)](/Golang#grade-20211206)
+- [Assembly Practice 1 (2023.08.04)](./Golang/README.md#assembly-practice-1-20230804)
+- [Grade (2021.12.06)](./Golang/README.md#grade-20211206)
 
 
 ## [My BASIC Practice](/BASIC#my-qbasic-practice)
