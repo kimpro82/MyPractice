@@ -1,4 +1,4 @@
-# My Golang Practice
+# [My Golang Practice](../README.md#my-golang-practice)
 
   While not fond of the `{}` convention, can't give up on goroutines.
 
