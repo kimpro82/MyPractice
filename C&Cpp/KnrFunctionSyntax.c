@@ -18,5 +18,6 @@ int main()
 
     printf("Result  (K&R) : %d\n", result);
     printf("Result2 (ANSI): %d\n", result2);
+
     return 0;
 }
