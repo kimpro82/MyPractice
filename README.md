@@ -96,12 +96,13 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Ganzi (2017.04.03)](./Web/README.md#ganzi-20170403)
 
 
-## [My C/C++ Practice](/C%26Cpp#my-cc-practice)
+## [My C/C++ Practice](./C%Cpp#my-cc-practice)
 
-- [Conditional Compile with `#ifdef` (2022.08.30)](/C%26Cpp#conditional-compile-with-ifdef-20220830)
-- [File I/O (2022.08.27)](/C%26Cpp#file-io-20220827)
-- [GCC Optimization Option Practice (2022.08.16)](/C%26Cpp#gcc-optimization-option-practice-20220816)
-- [`printf()` format test (2022.04.25)](/C%26Cpp#printf-format-test-20220425)
+- [*K&R C* Style Function Declaration (2023.08.20)](./C%Cpp#kr-c-style-function-declaration-20230820)
+- [Conditional Compile with `#ifdef` (2022.08.30)](./C%Cpp#conditional-compile-with-ifdef-20220830)
+- [File I/O (2022.08.27)](./C%Cpp#file-io-20220827)
+- [GCC Optimization Option Practice (2022.08.16)](./C%Cpp#gcc-optimization-option-practice-20220816)
+- [`printf()` format test (2022.04.25)](./C%Cpp#printf-format-test-20220425)
 - [Binary Search 1 (2022.04.19)](/C&Cpp#binary-search-1-20220419)
 - [Binary Search 0 (2022.02.11)](/C&Cpp#binary-search-0-20220211)
 - [Increment and Decrement Operators (2022.02.01)](/C&Cpp#increment-and-decrement-operators-20220201)
