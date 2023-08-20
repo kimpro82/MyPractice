@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [*K&R C* Style Function Declaration (2023.08.20)](#kr-c-style-function-declaration-20230820)
 - [Conditional Compile with `#ifdef` (2022.08.30)](#conditional-compile-with-ifdef-20220830)
 - [File I/O (2022.08.27)](#file-io-20220827)
 - [GCC Optimization Option Practice (2022.08.16)](#gcc-optimization-option-practice-20220816)
@@ -30,6 +31,68 @@ The final destination of programming
 
 using namespace std;
 ```
+
+
+## [*K&R C* Style Function Declaration (2023.08.20)](#list)
+
+- A comparison between the *K&R* style and *ANSI C* style function declaration methods
+- What is *K&R* C? → [[Wikipedia] C (programming language) > History > K&R C](https://en.wikipedia.org/wiki/C_(programming_language)#K&R_C)
+  <details>
+    <summary>According to ChatGPT</summary>
+
+    ```yml
+    - Pros:
+      - Conciseness: The K&R style reduces the length of the function declaration, making it more concise.
+
+    - Cons:
+      - Readability: Without parameter names, it can be difficult to understand the purpose of each parameter.
+      - Lack of Type Safety: Since only data types are mentioned, there's no type checking for function arguments.
+      - Maintenance: If parameter order or types change, you need to update both the declaration and definition.
+    ```
+    ```yml
+    - Conclusion:
+      While the K&R style was used in early C development due to limitations of the time, the ANSI C style has become the recommended practice. It improves code readability, provides better type safety, and enhances maintainability. The ANSI C style also aligns with modern coding standards and best practices, making it the preferred choice for most developers today.
+    ```
+  </details>
+- Example
+  <details open="">
+    <summary>Codes : KnrFunctionSyntax.c</summary>
+
+  ```c
+  int add(a, b)                           // K&R 스타일 함수 선언: 매개변수 이름을 생략하고 데이터 타입만 표시
+      int a, b;                           // 실제 매개변수 이름과 데이터 타입은 별도로 기술
+  {
+      return a + b;
+  }
+  ```
+  ```c
+  int add2(int a, int b)                  // ANSI C 스타일 함수 선언: 매개변수와 데이터 타입을 함께 명시
+  {
+      return a + b;
+  }
+  ```
+  ```c
+  int main()
+  {
+      int result = add(5, 3);              // K&R 스타일 함수 호출
+      int result2 = add2(5, 3);            // ANSI C 스타일 함수 호출
+
+      printf("Result  (K&R) : %d\n", result);
+      printf("Result2 (ANSI): %d\n", result2);
+
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Output</summary>
+
+  - Surprisingly, the *K&R* style code has been compiled successfully even in recent compilation environments. The above code was compiled using MinGW.org GCC-6.3.0-1 and executed without any issues.
+  ```c
+  Result  (K&R) : 8
+  Result2 (ANSI): 8
+  ```
+  </details>
 
 
 ## [Conditional Compile with `#ifdef` (2022.08.30)](#list)
