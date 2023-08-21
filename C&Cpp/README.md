@@ -40,19 +40,16 @@ using namespace std;
   <details>
     <summary>According to ChatGPT</summary>
 
-    ```yml
-    - Pros:
-      - Conciseness: The K&R style reduces the length of the function declaration, making it more concise.
-
-    - Cons:
-      - Readability: Without parameter names, it can be difficult to understand the purpose of each parameter.
-      - Lack of Type Safety: Since only data types are mentioned, there's no type checking for function arguments.
-      - Maintenance: If parameter order or types change, you need to update both the declaration and definition.
-    ```
-    ```yml
-    - Conclusion:
-      While the K&R style was used in early C development due to limitations of the time, the ANSI C style has become the recommended practice. It improves code readability, provides better type safety, and enhances maintainability. The ANSI C style also aligns with modern coding standards and best practices, making it the preferred choice for most developers today.
-    ```
+    > - Pros:
+    >   - Conciseness: The K&R style reduces the length of the function declaration, making it more concise.
+    >
+    > - Cons:
+    >   - Readability: Without parameter names, it can be difficult to understand the purpose of each parameter.
+    >   - Lack of Type Safety: Since only data types are mentioned, there's no type checking for function arguments.
+    >   - Maintenance: If parameter order or types change, you need to update both the declaration and definition.
+    >
+    > - Conclusion:
+    >   While the K&R style was used in early C development due to limitations of the time, the ANSI C style has become the recommended practice. It improves code readability, provides better type safety, and enhances maintainability. The ANSI C style also aligns with modern coding standards and best practices, making it the preferred choice for most developers today.
   </details>
 - Example
   <details open="">
