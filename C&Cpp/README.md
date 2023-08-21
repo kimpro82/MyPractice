@@ -278,7 +278,6 @@ The final destination of programming
   · https://wiki.kldp.org/wiki.php/GccOptimizationOptions  
   · https://www.rapidtables.com/code/linux/gcc/gcc-o.html
 
-  </details>
   <details open="">
     <summary>Codes : OptimizePractice.c</summary>
 
@@ -336,50 +335,55 @@ The final destination of programming
 
 - I wrote the below codes in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
   (All the variables are declared as *long long* type.)
-```cpp
-// test
-// printf("min : %lld, max : %lld, dist : %lld, sum1 : %lld, sum2 : %lld\n", min, max, dist, sum1, sum2);
-```
+  ```cpp
+  // test
+  // printf("min : %lld, max : %lld, dist : %lld, sum1 : %lld, sum2 : %lld\n", min, max, dist, sum1, sum2);
+  ```
 - I will never miss the criminal!
 
-#### `printf.c` & `printf.cpp`
-The codes except each of the headers are the same.
-```c
-int main()
-{
-    char text[] = "%d %ld %lld\n";
-    printf(text, __SCHAR_MAX__, __SCHAR_MAX__, __SCHAR_MAX__);
-    printf(text, __INT8_MAX__, __INT8_MAX__, __INT8_MAX__);
-    printf(text, __SHRT_MAX__, __SHRT_MAX__, __SHRT_MAX__);
-    printf(text, __INT16_MAX__, __INT16_MAX__, __INT16_MAX__);
-    printf(text, __INT_MAX__, __INT_MAX__, __INT_MAX__);
-    printf(text, __LONG_MAX__, __LONG_MAX__, __LONG_MAX__);
-    printf(text, __INT32_MAX__, __INT32_MAX__, __INT32_MAX__);
-    printf(text, __LONG_LONG_MAX__, __LONG_LONG_MAX__, __LONG_LONG_MAX__);
-    printf(text, __INT64_MAX__, __INT64_MAX__, __INT64_MAX__);
+  <details open="">
+    <summary>Codes : printf.c & printf.cpp</summary>
 
-    return 0;
-}
-```
+  The codes except each of the headers are the same.
+  ```c
+  int main()
+  {
+      char text[] = "%d %ld %lld\n";
+      printf(text, __SCHAR_MAX__, __SCHAR_MAX__, __SCHAR_MAX__);
+      printf(text, __INT8_MAX__, __INT8_MAX__, __INT8_MAX__);
+      printf(text, __SHRT_MAX__, __SHRT_MAX__, __SHRT_MAX__);
+      printf(text, __INT16_MAX__, __INT16_MAX__, __INT16_MAX__);
+      printf(text, __INT_MAX__, __INT_MAX__, __INT_MAX__);
+      printf(text, __LONG_MAX__, __LONG_MAX__, __LONG_MAX__);
+      printf(text, __INT32_MAX__, __INT32_MAX__, __INT32_MAX__);
+      printf(text, __LONG_LONG_MAX__, __LONG_LONG_MAX__, __LONG_LONG_MAX__);
+      printf(text, __INT64_MAX__, __INT64_MAX__, __INT64_MAX__);
 
-#### Output
-```
-127 127 8458399796925825151
-127 127 8458399796925825151
-32767 32767 8458399796925857791
-32767 32767 8458399796925857791
-2147483647 2147483647 8458399799073308671
-2147483647 2147483647 8458399799073308671
-2147483647 2147483647 8458399799073308671
--1 2147483647 9223372036854775807
--1 2147483647 9223372036854775807
-```
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
 
-#### Implications
-- `%d` and `%ld` don't make trouble with reading `char` or `short`, but `%lld` is something special.
-- Make sure `int` == `long` == `int32` in the current standard environment
-- **-1** seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it.  
-  And the partial number `1 111 …… 1111` indicates -1 as [2's complement](https://en.wikipedia.org/wiki/Two%27s_complement).
+  ```
+  127 127 8458399796925825151
+  127 127 8458399796925825151
+  32767 32767 8458399796925857791
+  32767 32767 8458399796925857791
+  2147483647 2147483647 8458399799073308671
+  2147483647 2147483647 8458399799073308671
+  2147483647 2147483647 8458399799073308671
+  -1 2147483647 9223372036854775807
+  -1 2147483647 9223372036854775807
+  ```
+  </details>
+
+- Implications
+  - `%d` and `%ld` don't make trouble with reading `char` or `short`, but `%lld` is something special.
+  - Make sure `int` == `long` == `int32` in the current standard environment
+  - **-1** seems interesting. `__LONG_LONG_MAX__`(== `__INT64_MAX__`) is `0 111 …… 1111`, but `%d` reads only partial digits from it.  
+    And the partial number `1 111 …… 1111` indicates -1 as [2's complement](https://en.wikipedia.org/wiki/Two%27s_complement).
 
 
 ## [Binary Search 1 (2022.04.19)](#list)
@@ -388,115 +392,120 @@ int main()
   but couldn't find why the traversal results are wrong.
 - There was a crazy mistake …… It stole my two months!
 
-#### `BinarySearch.c`
-```c
-#include <stdio.h>
-#include <stdlib.h>                             // malloc()
-```
-```c
-typedef struct _tNode                           // It makes using struct easier to declare it with typedef
-{
-    int value;
-    struct _tNode* left;                        // Node* left : why does it not work?
-    struct _tNode* right;                       // should be declared as a pointer
-} Node;
-```
-```c
-Node* insert(Node* root, int value)             // The location of '*' doesn't matter
-{
-    if (root == NULL)
-    {
-        Node* root = malloc(sizeof(Node));      // malloc : instead of `new` in C++
-        root->value = value;
-        root->left = NULL;
-        root->right = NULL;
+  <details>
+    <summary>Codes : BinarySearch.c</summary>
 
-        return root;
-    }
-    else
-    {
-        if (root->value > value) root->left = insert(root->left, value);
-        else root->right = insert(root->right, value);
-    }
+  ```c
+  #include <stdio.h>
+  #include <stdlib.h>                             // malloc()
+  ```
+  ```c
+  typedef struct _tNode                           // It makes using struct easier to declare it with typedef
+  {
+      int value;
+      struct _tNode* left;                        // Node* left : why does it not work?
+      struct _tNode* right;                       // should be declared as a pointer
+  } Node;
+  ```
+  ```c
+  Node* insert(Node* root, int value)             // The location of '*' doesn't matter
+  {
+      if (root == NULL)
+      {
+          Node* root = malloc(sizeof(Node));      // malloc : instead of `new` in C++
+          root->value = value;
+          root->left = NULL;
+          root->right = NULL;
 
-    return root;
-}
+          return root;
+      }
+      else
+      {
+          if (root->value > value) root->left = insert(root->left, value);
+          else root->right = insert(root->right, value);
+      }
 
-Node* delete(Node* root, int value) 
-{
-    if (root == NULL) return root;
+      return root;
+  }
 
-    if (root->value > value) root->left = delete(root->left, value);
-    else if (root->value < value) root->right = delete(root->right, value);
-    else
-    {
-        // ing~~~
-    }
+  Node* delete(Node* root, int value) 
+  {
+      if (root == NULL) return root;
 
-    return root;
-}
-```
-`delete()` is still imcomplete.
-```c
-void preOrder(Node* root)
-{
-    if (root == NULL) return;
+      if (root->value > value) root->left = delete(root->left, value);
+      else if (root->value < value) root->right = delete(root->right, value);
+      else
+      {
+          // ing~~~
+      }
 
-    printf("%d ", root->value);
-    preOrder(root->left);
-    preOrder(root->right);
-}
+      return root;
+  }
+  ```
+  `delete()` is still imcomplete.
+  ```c
+  void preOrder(Node* root)
+  {
+      if (root == NULL) return;
 
-void inOrder(Node* root)
-{
-    if (root == NULL) return;
+      printf("%d ", root->value);
+      preOrder(root->left);
+      preOrder(root->right);
+  }
 
-    inOrder(root->left);
-    printf("%d ", root->value);
-    inOrder(root->right);
-}
+  void inOrder(Node* root)
+  {
+      if (root == NULL) return;
 
-void postOrder(Node* root)
-{
-    if (root == NULL) return;
+      inOrder(root->left);
+      printf("%d ", root->value);
+      inOrder(root->right);
+  }
 
-    postOrder(root->left);
-    postOrder(root->right);
-    printf("%d ", root->value);
-}
-```
-I wrote all the inside function names as `preOrder()` …… crazy~~~
-```c
-int main()
-{
-    Node* root = NULL;
+  void postOrder(Node* root)
+  {
+      if (root == NULL) return;
 
-    int arr[6] = {6, 3, 4, 7, 13, 10};
-    int len = sizeof(arr) / sizeof(int);
-    for (int i = 0; i < len; i++) root = insert(root, arr[i]);
+      postOrder(root->left);
+      postOrder(root->right);
+      printf("%d ", root->value);
+  }
+  ```
+  I wrote all the inside function names as `preOrder()` …… crazy~~~
+  ```c
+  int main()
+  {
+      Node* root = NULL;
 
-    printf("Preorder traversal : ");
-    preOrder(root);
-    putchar('\n');
+      int arr[6] = {6, 3, 4, 7, 13, 10};
+      int len = sizeof(arr) / sizeof(int);
+      for (int i = 0; i < len; i++) root = insert(root, arr[i]);
 
-    printf("Inorder traversal : ");
-    inOrder(root);
-    putchar('\n');
+      printf("Preorder traversal : ");
+      preOrder(root);
+      putchar('\n');
 
-    printf("Postorder traversal : ");
-    postOrder(root);
-    putchar('\n');
+      printf("Inorder traversal : ");
+      inOrder(root);
+      putchar('\n');
 
-    return 0;
-}
-```
+      printf("Postorder traversal : ");
+      postOrder(root);
+      putchar('\n');
 
-#### Output
-```
-Preorder traversal : 6 3 4 7 13 10
-Inorder traversal : 3 4 6 7 10 13
-Postorder traversal : 4 3 10 13 7 6
-```
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
+
+  ```
+  Preorder traversal : 6 3 4 7 13 10
+  Inorder traversal : 3 4 6 7 10 13
+  Postorder traversal : 4 3 10 13 7 6
+  ```
+  </details>
 
 
 ## [Binary Search 0 (2022.02.11)](#list)
@@ -505,99 +514,114 @@ Postorder traversal : 4 3 10 13 7 6
   but it just returns only `true` or `false` depending on the element's presence.
 - Of course, this function seems very **powerful** for sorted data.
 
-#### `BinarySearch.cpp`
-```cpp
-#include <iostream>
-#include <vector>
-#include <algorithm>
-```
-```cpp
-int main()
-{
-    vector<int> vec = {2, 4, 6, 8, 10, 12};                     // should be sorted
-    vector<int> vec2 = {3, 6, 9, 12};
+  <details open="">
+    <summary>Codes : BinarySearch.cpp</summary>
 
-    for (auto v : vec2)
-    {
-        // binary_search() : a function to just return true or false if the value exists
-        bool ans = binary_search(vec.begin(), vec.end(), v);
-        cout << v << ' ' << ans << endl;
-    }
+  ```cpp
+  #include <iostream>
+  #include <vector>
+  #include <algorithm>
+  ```
+  ```cpp
+  int main()
+  {
+      vector<int> vec = {2, 4, 6, 8, 10, 12};                     // should be sorted
+      vector<int> vec2 = {3, 6, 9, 12};
 
-    return 0;
-}
-```
+      for (auto v : vec2)
+      {
+          // binary_search() : a function to just return true or false if the value exists
+          bool ans = binary_search(vec.begin(), vec.end(), v);
+          cout << v << ' ' << ans << endl;
+      }
 
-#### Output
-```
-3 0
-6 1
-9 0
-12 1
-```
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
+
+  ```
+  3 0
+  6 1
+  9 0
+  12 1
+  ```
+  </details>
 
 
 ## [Increment and Decrement Operators (2022.02.01)](#list)
 
 - Some extreme(?) experiments about `++` and `--` operators
 
-#### `IncDecOperator.c`
-```c
-int main()
-{
-    int a = 1, b = 1, c = 1, d = 1, e = 1, f = 1;
+  <details open="">
+    <summary>Codes : IncDecOperator.c</summary>
 
-    a++;
-    --b;
-    // no problem
+  ```c
+  int main()
+  {
+      int a = 1, b = 1, c = 1, d = 1, e = 1, f = 1;
 
-    c = ++c;
-    d = d++;
-    // gcc - no problem
-    // clang - warning: multiple unsequenced modifications to 'c' [-Wunsequenced]
+      a++;
+      --b;
+      // no problem
 
-    // e = ++e--;
-    // ++e--;
-    // f++--++;
-    // f++++++;
-    // gcc - error: lvalue required as increment operand
-    // clang - error: expression is not assignable
+      c = ++c;
+      d = d++;
+      // gcc - no problem
+      // clang - warning: multiple unsequenced modifications to 'c' [-Wunsequenced]
 
-    printf("Good-bye %d %d %d %d\n", a, b, c, d);
+      // e = ++e--;
+      // ++e--;
+      // f++--++;
+      // f++++++;
+      // gcc - error: lvalue required as increment operand
+      // clang - error: expression is not assignable
 
-    return 0;
-}
-```
+      printf("Good-bye %d %d %d %d\n", a, b, c, d);
 
-#### Output
-```
-Good-bye 2 0 2 1
-```
+      return 0;
+  }
+  ```
+  </details>
+  <details>
+    <summary>Results</summary>
+
+  ```
+  Good-bye 2 0 2 1
+  ```
+  </details>
 
 
 ## [Prevent Garbage Value (2022.01.21)](#list)
 
 - The way to prevent variable declaration from garbage value
 
-#### `PreventGarbageValue.cpp`
-```cpp
-int main()
-{
-    int garbage;
-    int noGarbage{};
+  <details open="">
+    <summary>Codes : PreventGarbageValue.cpp</summary>
 
-    cout << garbage << endl;
-    cout << noGarbage << endl;
+  ```cpp
+  int main()
+  {
+      int garbage;
+      int noGarbage{};
 
-    return 0;
-}
-```
+      cout << garbage << endl;
+      cout << noGarbage << endl;
 
-#### Output
-```
-2686816
-0
-```
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
+
+  ```
+  2686816
+  0
+  ```
+  </details>
 
 
 ## [Containers : Deque, Stack and Queue (2021.10.14)](#list)
