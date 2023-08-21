@@ -21,16 +21,16 @@ The final destination of programming
 
 
 ※ All codes include the following top lines. :
-```c
-// C
-#include <stdio.h>
-```
-```cpp
-// CPP
-#include <iostream>
+  ```c
+  // C
+  #include <stdio.h>
+  ```
+  ```cpp
+  // CPP
+  #include <iostream>
 
-using namespace std;
-```
+  using namespace std;
+  ```
 
 
 ## [*K&R C* Style Function Declaration (2023.08.20)](#list)
@@ -48,7 +48,7 @@ using namespace std;
     >   - Lack of Type Safety: Since only data types are mentioned, there's no type checking for function arguments.
     >   - Maintenance: If parameter order or types change, you need to update both the declaration and definition.
     >
-    > - Conclusion:
+    > - Conclusion:  
     >   While the K&R style was used in early C development due to limitations of the time, the ANSI C style has become the recommended practice. It improves code readability, provides better type safety, and enhances maintainability. The ANSI C style also aligns with modern coding standards and best practices, making it the preferred choice for most developers today.
   </details>
 - Example
@@ -100,89 +100,101 @@ using namespace std;
   - 조건부 컴파일 (TCP School) http://www.tcpschool.com/c/c_compile_condCompile
   - 조건부 컴파일 (C언어 / Wikidocs) https://wikidocs.net/13348
   - (C/C++) 조건부 컴파일로 디버깅용 출력 한방에 없애기 (BOJ) https://www.acmicpc.net/blog/view/110
+- ※ When the macro `fileio` is on, *Ahnlab V3 Lite* recognizes `a.exe` as a malware!
 
-&nbsp;&nbsp;※ When the macro `fileio` is on, *Ahnlab V3 Lite* recognizes `a.exe` as a malware!
+  <details>
+    <summary>Codes : ConditionalCompile.c</summary>
 
-#### `ConditionalCompile.c`
-```c
-int main()
-{
-    char txt[] = "I am your father.\n";
+  ```c
+  int main()
+  {
+      char txt[] = "I am your father.\n";
 
-    #ifdef fileio
-        char fileName[] = "ConditionalCompile.txt";
+      #ifdef fileio
+          char fileName[] = "ConditionalCompile.txt";
 
-        FILE* pf = fopen(fileName, "w");       // w : make a new empty file
-        fprintf(pf, txt);
-        fclose(pf);
+          FILE* pf = fopen(fileName, "w");       // w : make a new empty file
+          fprintf(pf, txt);
+          fclose(pf);
 
-        printf("%s has been generated.\n", fileName);
-    #else
-        printf("%s", txt);
-    #endif
+          printf("%s has been generated.\n", fileName);
+      #else
+          printf("%s", txt);
+      #endif
 
-    return 0;
-}
-```
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Codes : ConditionalCompile.cpp</summary>
 
-#### `ConditionalCompile.cpp`
-```cpp
-#include <iostream>
-#include <fstream>
-#define endl '\n'
+  ```cpp
+  #include <iostream>
+  #include <fstream>
+  #define endl '\n'
 
-using namespace std;
-```
-```cpp
-int main()
-{
-    string txt = "I am your father.";
+  using namespace std;
+  ```
+  ```cpp
+  int main()
+  {
+      string txt = "I am your father.";
 
-    #ifdef fileio
-        ofstream ofs;
-        string fileName = "ConditionalCompile.txt";
-        ofs.open(fileName, ios::out);           // ios::out : make a new empty file
-        ofs << txt << endl;
-        ofs.close();
-        cout << fileName << " has been generated." << endl;
-    #else
-        cout << txt << endl;
-    #endif
+      #ifdef fileio
+          ofstream ofs;
+          string fileName = "ConditionalCompile.txt";
+          ofs.open(fileName, ios::out);           // ios::out : make a new empty file
+          ofs << txt << endl;
+          ofs.close();
+          cout << fileName << " has been generated." << endl;
+      #else
+          cout << txt << endl;
+      #endif
 
-    return 0;
-}
-```
+      return 0;
+  }
+  ```
+  </details>
+  <details>
+    <summary>Commands : ConditionalCompile_c.bat</summary>
 
-#### `ConditionalCompile_c.bat` `ConditionalCompile_cpp.bat`
-The couple of files have the same results.
-```bat
-:: #ifdef fileio
-gcc -Dfileio conditionalcompile.c
-a
+  The couple of files have the same results.
+  ```bat
+  :: #ifdef fileio
+  gcc -Dfileio conditionalcompile.c
+  a
 
-:: #else
-gcc conditionalcompile.c
-a
-```
-> ConditionalCompile.txt has been generated.  
-> I am your father.
-```bat
-:: #ifdef fileio
-g++ -Dfileio conditionalcompile.cpp
-a
+  :: #else
+  gcc conditionalcompile.c
+  a
+  ```
+  > ConditionalCompile.txt has been generated.  
+  > I am your father.
+  </details>
+  <details open="">
+    <summary>Commands : ConditionalCompile_cpp.bat</summary>
 
-:: #else
-g++ conditionalcompile.cpp
-a
-```
-> ConditionalCompile.txt has been generated.  
-> I am your father.
+  ```bat
+  :: #ifdef fileio
+  g++ -Dfileio conditionalcompile.cpp
+  a
 
-#### `ConditionalCompile.txt`
-```txt
-I am your father.
+  :: #else
+  g++ conditionalcompile.cpp
+  a
+  ```
+  > ConditionalCompile.txt has been generated.  
+  > I am your father.
+  </details>
+  <details open="">
+    <summary>Results : ConditionalCompile.txt</summary>
 
-```
+  ```txt
+  I am your father.
+
+  ```
+  </details>
 
 
 ## [File I/O (2022.08.27)](#list)
