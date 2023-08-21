@@ -49,7 +49,7 @@ The final destination of programming
     >   - Maintenance: If parameter order or types change, you need to update both the declaration and definition.
     >
     > - Conclusion:  
-    >   While the K&R style was used in early C development due to limitations of the time, the ANSI C style has become the recommended practice. It improves code readability, provides better type safety, and enhances maintainability. The ANSI C style also aligns with modern coding standards and best practices, making it the preferred choice for most developers today.
+    >   - While the K&R style was used in early C development due to limitations of the time, the ANSI C style has become the recommended practice. It improves code readability, provides better type safety, and enhances maintainability. The ANSI C style also aligns with modern coding standards and best practices, making it the preferred choice for most developers today.
   </details>
 - Example
   <details open="">
@@ -84,7 +84,7 @@ The final destination of programming
   <details open="">
     <summary>Output</summary>
 
-  - Surprisingly, the *K&R* style code has been compiled successfully even in recent compilation environments. The above code was compiled using MinGW.org GCC-6.3.0-1 and executed without any issues.
+  Surprisingly, the *K&R* style code has been compiled successfully even in recent compilation environments. The above code was compiled using MinGW.org GCC-6.3.0-1 and executed without any issues.
   ```c
   Result  (K&R) : 8
   Result2 (ANSI): 8
