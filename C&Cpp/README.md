@@ -202,62 +202,69 @@ The final destination of programming
 - A practice of file input/ouput in **C/C++**
 - Further discussion : how to read *Korean* string from external file
 
-#### `FileIO.c`
-```c
-int main()
-{
-    // Write file
-    FILE* pf1 = fopen("FileIO.txt", "w");       // w : make a new empty file
-    fprintf(pf1, "My wife is crazy.\n");
-    fprintf(pf1, "Really crazy.\n");
-    fclose(pf1);
+  <details>
+    <summary>Codes : FileIO.c</summary>
 
-    // Read file
-    FILE* pf2 = fopen("FileIO.txt", "r");       // r : read-only
-    char txt[__INT16_MAX__];
-    fread(txt, 1, __INT16_MAX__, pf2);
-    printf("%s", txt);
-    fclose(pf2);
+  ```c
+  int main()
+  {
+      // Write file
+      FILE* pf1 = fopen("FileIO.txt", "w");       // w : make a new empty file
+      fprintf(pf1, "My wife is crazy.\n");
+      fprintf(pf1, "Really crazy.\n");
+      fclose(pf1);
 
-    return 0;
-}
-```
+      // Read file
+      FILE* pf2 = fopen("FileIO.txt", "r");       // r : read-only
+      char txt[__INT16_MAX__];
+      fread(txt, 1, __INT16_MAX__, pf2);
+      printf("%s", txt);
+      fclose(pf2);
 
-#### `FileIO.cpp`
-```cpp
-#include <iostream>
-#include <fstream>
-#define endl '\n'
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Codes : FileIO.cpp</summary>
 
-using namespace std;
-```
-```cpp
-int main()
-{
-    // Write file
-    ofstream ofs;
-    ofs.open("FileIO.txt", ios::out);           // ios::out : make a new empty file
-    ofs << "My wife is crazy." << endl;
-    ofs << "Really crazy." << endl;
-    ofs.close();
+  ```cpp
+  #include <iostream>
+  #include <fstream>
+  #define endl '\n'
 
-    // Read file
-    ifstream ifs;
-    string line;
-    ifs.open("FileIO.txt", ios::in);            // ios::in : read-only
-    while(getline(ifs, line)) cout << line << endl;
-    ifs.close();
+  using namespace std;
+  ```
+  ```cpp
+  int main()
+  {
+      // Write file
+      ofstream ofs;
+      ofs.open("FileIO.txt", ios::out);           // ios::out : make a new empty file
+      ofs << "My wife is crazy." << endl;
+      ofs << "Really crazy." << endl;
+      ofs.close();
 
-    return 0;
-}
-```
+      // Read file
+      ifstream ifs;
+      string line;
+      ifs.open("FileIO.txt", ios::in);            // ios::in : read-only
+      while(getline(ifs, line)) cout << line << endl;
+      ifs.close();
 
-#### `FileIO.txt`
-```txt
-My wife is crazy.
-Really crazy.
+      return 0;
+  }
+  ```
+  </details>
+  <details open="">
+    <summary>Results : FileIO.txt</summary>
 
-```
+  ```txt
+  My wife is crazy.
+  Really crazy.
+
+  ```
+  </details>
 
 
 ## [GCC Optimization Option Practice (2022.08.16)](#list)
@@ -271,52 +278,59 @@ Really crazy.
   · https://wiki.kldp.org/wiki.php/GccOptimizationOptions  
   · https://www.rapidtables.com/code/linux/gcc/gcc-o.html
 
-#### `OptimizePractice.c`
-```c
-void operate(int i, int* p)
-{
-    if (i % 2 != 0) (*p)++;
-}
-```
-```c
-int main()
-{
-    int num = 0;
-    int* p = &num;
+  </details>
+  <details open="">
+    <summary>Codes : OptimizePractice.c</summary>
 
-    for (int i = 0; i < 10; i++) operate(i, p);
+  ```c
+  void operate(int i, int* p)
+  {
+      if (i % 2 != 0) (*p)++;
+  }
+  ```
+  ```c
+  int main()
+  {
+      int num = 0;
+      int* p = &num;
 
-    printf("%d\n", num);
+      for (int i = 0; i < 10; i++) operate(i, p);
 
-    return 0;
-}
-```
-> 5
+      printf("%d\n", num);
 
-#### `OptimizePractice.bat` (Old)
-```batch
-gcc -O0 -S OptimizePractice.c -o OptimizePractice_O0.s
-gcc -O1 -S OptimizePractice.c -o OptimizePractice_O1.s
-gcc -O2 -S OptimizePractice.c -o OptimizePractice_O2.s
-gcc -O3 -S OptimizePractice.c -o OptimizePractice_O3.s
-gcc -Os -S OptimizePractice.c -o OptimizePractice_Os.s
-gcc -Ofast -S OptimizePractice.c -o OptimizePractice_Ofast.s
-```
+      return 0;
+  }
+  ```
+  > 5
+  </details>
+  <details>
+    <summary>Codes : OptimizePractice.bat (Old)</summary>
 
-#### `OptimizePractice.bat` (New)
-```batch
-@echo off
+  ```batch
+  gcc -O0 -S OptimizePractice.c -o OptimizePractice_O0.s
+  gcc -O1 -S OptimizePractice.c -o OptimizePractice_O1.s
+  gcc -O2 -S OptimizePractice.c -o OptimizePractice_O2.s
+  gcc -O3 -S OptimizePractice.c -o OptimizePractice_O3.s
+  gcc -Os -S OptimizePractice.c -o OptimizePractice_Os.s
+  gcc -Ofast -S OptimizePractice.c -o OptimizePractice_Ofast.s
+  ```
+  </details>
+  <details open="">
+    <summary>Codes : OptimizePractice.bat (New)</summary>
 
-set name=OptimizePractice
-set options=O0 O1 O2 O3 Os Ofast
-@REM There should be no space on the both side of "="
+  ```batch
+  @echo off
 
-for %%i in (%options%) do (
-    @REM echo %%i
-    gcc -%%i -S %name%.c -o %name%_%%i.s
-)
-```
+  set name=OptimizePractice
+  set options=O0 O1 O2 O3 Os Ofast
+  @REM There should be no space on the both side of "="
 
+  for %%i in (%options%) do (
+      @REM echo %%i
+      gcc -%%i -S %name%.c -o %name%_%%i.s
+  )
+  ```
+  </details>
 
 ## [`printf()` format test (2022.04.25)](#list)
 
