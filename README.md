@@ -18,6 +18,7 @@ miscellaneous petty works
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
+- [My **COBOL** Practice](#my-cobol-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
 
