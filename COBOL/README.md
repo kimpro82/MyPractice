@@ -14,6 +14,7 @@ COBOL never dies
   - Comments must start with '*' in column 7
   - DIVISION, SECTION headers must start from column 8
   - Do not exceed column 80
+  - Reference ☞ [COBOL (Wikipedia)](https://en.wikipedia.org/wiki/COBOL)
 - Compiled by *cobc (GnuCOBOL) 3.1.2.0* in [replit](https://replit.com/)
 - Codes and Output
   <details open="">
