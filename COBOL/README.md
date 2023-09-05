@@ -10,7 +10,8 @@ COBOL never dies
 
 ## [Hello World (2023.09.04)](#list)
 
-- COBOL requires crazy indentation rules (Reference ☞ [COBOL (Wikipedia)](https://en.wikipedia.org/wiki/COBOL))
+- COBOL requires crazy indentation rules  
+  (Reference ☞ [[Wikipedia] COBOL > Features > Code format](https://en.wikipedia.org/wiki/COBOL#Code_format))
   - Comments must start with `*` in column 7
   - DIVISION, SECTION headers must start from column 8
   - Do not exceed column 80
