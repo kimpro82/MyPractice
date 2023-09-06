@@ -1,6 +1,8 @@
-Web/bootstrap5/ linguist-vendored
-Web/Ts*.js linguist-vendored
 C&Cpp/*.s linguist-vendored
+Web/Ts*.js linguist-vendored
+Web/bootstrap5/ linguist-vendored
 
-VBA/*.bas linguist-language=VBA
 BASIC/*.bas linguist-language=BASIC
+Dart/*.dart linguist-language=Dart
+Ruby/*.rb linguist-language=Ruby
+VBA/*.bas linguist-language=VBA
