@@ -18,6 +18,7 @@ miscellaneous petty works
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
+- [My **Clojure** Practice](#my-clojure-practice)
 - [My **COBOL** Practice](#my-cobol-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
@@ -160,6 +161,11 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 - [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
 - [Infinity (2021.12.07)](/AutoHotKey#infinity-20211207)
+
+
+## [My Clojure Practice](/Clojure/)
+
+- [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
 
 
 ## [My COBOL Practice](/COBOL/)
