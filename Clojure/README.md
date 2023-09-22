@@ -1,6 +1,6 @@
 # [My Clojure Practice](../README.md#my-cobol-practice)
 
-want to get closer to ~~high salary~~ *Clojure* and Function Programming
+want to get closer to ~~high salary~~ *Clojure* and *Functional Programming*
 
 
 ### \<List>
