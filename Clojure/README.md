@@ -1,4 +1,4 @@
-# [My Clojure Practice](../README.md#my-cobol-practice)
+# [My Clojure Practice](../README.md#my-clojure-practice)
 
 want to get closer to ~~high salary~~ *Clojure* and *Functional Programming*
 
