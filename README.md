@@ -17,8 +17,8 @@ miscellaneous petty works
 - [My **BASIC** Practice](#my-basic-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
-- [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Clojure** Practice](#my-clojure-practice)
+- [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **COBOL** Practice](#my-cobol-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
@@ -157,15 +157,16 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Array Indexing (2022.09.06)](/Verilog#array-indexing-20220906)
 
 
+## [My Clojure Practice](/Clojure/)
+
+- [Sequence Processing (`->>` `reduce` `apply`) (2023.09.26)](/Clojure/README.md#sequence-processing---reduce-apply-20230926)
+- [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
+
+
 ## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
 
 - [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
 - [Infinity (2021.12.07)](/AutoHotKey#infinity-20211207)
-
-
-## [My Clojure Practice](/Clojure/)
-
-- [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
 
 
 ## [My COBOL Practice](/COBOL/)
