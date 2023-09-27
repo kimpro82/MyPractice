@@ -1,6 +1,6 @@
 # [My Clojure Practice](../README.md#my-clojure-practice)
 
-want to get closer to [~~high salary~~](https://insights.stackoverflow.com/survey/2021#work-salary) *Clojure* and *Functional Programming*
+want to get closer to [~~high salary~~](https://insights.stackoverflow.com/survey/2021#section-salary-salary-and-experience-by-language) *Clojure* and *Functional Programming*
 
 
 ### \<List>
