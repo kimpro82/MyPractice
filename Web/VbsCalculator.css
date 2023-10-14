@@ -2,14 +2,14 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
   }
-  
+
   .calculator {
     width: 200px;
     margin: 0 auto;
     border: 1px solid #ccc;
     padding: 10px;
   }
-  
+
   input[type="text"] {
     width: 90%;
     margin-bottom: 10px;
@@ -22,8 +22,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
   } */
-  
+
   button {
     padding: 10px;
   }
-  
