@@ -87,6 +87,8 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 ## [My Web Practice](./Web/README.md#my-web-practice)
 
+- [VBScript : Web Calculator (2023.10.14)](./Web/README.md#vbscript--web-calculator-20231014)
+- [VBScript : Hello World (2023.10.14)](./Web/README.md#vbscript--hello-world-20231014)
 - [TypeScript : Big Block Lettering in Console (2023.05.28)](./Web/README.md#typescript--big-block-lettering-in-console-20230528)
 - [TypeScript : Hello World (2023.02.28)](./Web/README.md#typescript--hello-world-20230228)
 - [Mouse Cursor Customization 2 (2023.02.06)](./Web/README.md#mouse-cursor-customization-2-20230206)

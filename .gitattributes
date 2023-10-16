@@ -3,6 +3,8 @@ Web/Ts*.js linguist-vendored
 Web/bootstrap5/ linguist-vendored
 
 BASIC/*.bas linguist-language=BASIC
+Clojure/*.clj linguist-language=Clojure
 Dart/*.dart linguist-language=Dart
 Ruby/*.rb linguist-language=Ruby
 VBA/*.bas linguist-language=VBA
+Web/*.vbs linguist-language=VBScript
