@@ -2,8 +2,8 @@
 
 This is a repository primarily for storing codes related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
 
-- Web-related codes → [MyWebPractice](https://github.com/kimpro82/MyWebPractice)
-- AI-related codes → [MyAIPractice](https://github.com/kimpro82/MyAIPractice)
+- [MyAIPractice](https://github.com/kimpro82/MyAIPractice) : AI-related codes
+- [MyWebPractice](https://github.com/kimpro82/MyWebPractice) : Web-related codes
 
 
 ### \<List>
