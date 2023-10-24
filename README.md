@@ -9,7 +9,6 @@ miscellaneous petty works
 - [My **VBA** Practice](#my-vba-practice)
 - [My **Python** Practice](#my-python-practice)
 - [My **R** Practice](#my-r-practice)
-- [My **Web** Practice](#my-web-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
@@ -83,21 +82,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Permutations and Combinations (2021.04.05)](./R/README.md#permutations-and-combinations-20210405)
 - [Generating Array and Variables by for Loop (2019.12.06)](./R/README.md#generating-array-and-variables-by-for-loop-20191206)
 - [Fibonacci Tornado (2017.05.07)](./R/README.md#fibonacci-tornado-20170507)
-
-
-## [My Web Practice](./Web/README.md#my-web-practice)
-
-- [VBScript : Web Calculator (2023.10.14)](./Web/README.md#vbscript--web-calculator-20231014)
-- [VBScript : Hello World (2023.10.14)](./Web/README.md#vbscript--hello-world-20231014)
-- [TypeScript : Big Block Lettering in Console (2023.05.28)](./Web/README.md#typescript--big-block-lettering-in-console-20230528)
-- [TypeScript : Hello World (2023.02.28)](./Web/README.md#typescript--hello-world-20230228)
-- [Mouse Cursor Customization 2 (2023.02.06)](./Web/README.md#mouse-cursor-customization-2-20230206)
-- [Mouse Cursor Customization (2023.01.29)](./Web/README.md#mouse-cursor-customization-20230129)
-- [Bootstrap : Magic Stick (2022.01.28)](./Web/README.md#bootstrap--magic-stick-20220128)
-- [Dove's Step 1 (2022.01.13)](./Web/README.md#doves-step-1-20220113)
-- [Script Tag's Location (2022.01.02)](./Web/README.md#script-tags-location-20220102)
-- [Colorful Show (2020.03.04)](./Web/README.md#colorful-show-20200304)
-- [Ganzi (2017.04.03)](./Web/README.md#ganzi-20170403)
 
 
 ## [My C/C++ Practice](/C&Cpp/README.md#my-cc-practice)
