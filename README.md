@@ -4,6 +4,7 @@ This is a repository primarily for storing codes related to **learning programmi
 
 - [MyAIPractice](https://github.com/kimpro82/MyAIPractice) : AI-related codes
 - [MyWebPractice](https://github.com/kimpro82/MyWebPractice) : Web-related codes
+- [MyLegacyPractice](https://github.com/kimpro82/MyLegacyPractice) : Old school codes
 
 
 ### \<List>
@@ -16,12 +17,10 @@ This is a repository primarily for storing codes related to **learning programmi
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
 - [My **Golang** Practice](#my-golang-practice)
-- [My **BASIC** Practice](#my-basic-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Clojure** Practice](#my-clojure-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
-- [My **COBOL** Practice](#my-cobol-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
 
@@ -126,15 +125,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Grade (2021.12.06)](./Golang/README.md#grade-20211206)
 
 
-## [My BASIC Practice](/BASIC#my-qbasic-practice)
-
-- [Line Numbering 2 (2023.07.22)](./BASIC/README.md#line-numbering-2-20230722)
-- [Line Numbering (2023.07.19)](./BASIC/README.md#line-numbering-20230719)
-- [Draw A Car (2022.02.09)](/BASIC/README.md#draw-a-car-20220209)
-- [Play Music (2021.02.20)](/BASIC/README.md#play-music-20210220)
-- [Hello World (2020.02.27)](/BASIC/README.md#hello-world-20200227)
-
-
 ## [My Ruby Practice](./Ruby/)
 
 - [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
@@ -156,11 +146,6 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 
 - [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
 - [Infinity (2021.12.07)](/AutoHotKey#infinity-20211207)
-
-
-## [My COBOL Practice](/COBOL/)
-
-- [Hello World (2023.09.04)](/COBOL/README.md#hello-world-20230904)
 
 
 ## [My Dart Practice](/Dart#my-dart-practice)
