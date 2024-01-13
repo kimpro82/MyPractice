@@ -9,26 +9,19 @@ This is a repository primarily for storing codes related to **learning programmi
 
 ### \<List>
 
-- [Github Dashboard](#github-dashboard)
 - [My **VBA** Practice](#my-vba-practice)
 - [My **Python** Practice](#my-python-practice)
 - [My **R** Practice](#my-r-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
-- [My **Golang** Practice](#my-golang-practice)
-- [My **Ruby** Practice](#my-ruby-practice)
-- [My **Verilog** Practice](#my-verilog-practice)
-- [My **Clojure** Practice](#my-clojure-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
+- [My **Golang** Practice](#my-golang-practice)
+- [My **Verilog** Practice](#my-verilog-practice)
+- [My **Ruby** Practice](#my-ruby-practice)
+- [My **Clojure** Practice](#my-clojure-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
-
-## [Github Dashboard](/GithubDashboard#my-python-practice---github-dashboard)
-
-making a dashboard for managing Gitgub contributions by using `Github API`
-
-- Outline (2020.04.19)
 
 
 ## [My VBA Practice](/VBA#my-vba-practice)
@@ -119,15 +112,16 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [`java.util.Date` (2021.03.08)](./Java/README.md#javautildate-20210308)
 
 
+## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
+
+- [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
+- [Infinity (2021.12.07)](/AutoHotKey#infinity-20211207)
+
+
 ## [My Golang Practice](./Golang/)
 
 - [Assembly Practice 1 (2023.08.04)](./Golang/README.md#assembly-practice-1-20230804)
 - [Grade (2021.12.06)](./Golang/README.md#grade-20211206)
-
-
-## [My Ruby Practice](./Ruby/)
-
-- [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
 
 
 ## [My Verilog Practice](/Verilog#my-verilog-practice)
@@ -136,16 +130,15 @@ making a dashboard for managing Gitgub contributions by using `Github API`
 - [Array Indexing (2022.09.06)](/Verilog#array-indexing-20220906)
 
 
+## [My Ruby Practice](./Ruby/)
+
+- [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
+
+
 ## [My Clojure Practice](/Clojure/)
 
 - [Sequence Processing (`->>` `reduce` `apply`) (2023.09.26)](/Clojure/README.md#sequence-processing---reduce-apply-20230926)
 - [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
-
-
-## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
-
-- [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
-- [Infinity (2021.12.07)](/AutoHotKey#infinity-20211207)
 
 
 ## [My Dart Practice](/Dart#my-dart-practice)
