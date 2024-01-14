@@ -23,8 +23,7 @@ This is a repository primarily for storing codes related to **learning programmi
 - [My **Dart** Practice](#my-dart-practice)
 
 
-
-## [My VBA Practice](/VBA#my-vba-practice)
+## [My VBA Practice](/VBA/)
 
 - [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](./VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
 - [`Erase` Statement (2023.01.03)](./VBA/README.md#erase-statement-20230103)
@@ -40,7 +39,7 @@ This is a repository primarily for storing codes related to **learning programmi
 - [Color Scroll (2020.11.14)](./VBA/README.md#color-scroll-20201114)
 
 
-## [My Python Practice](./Python#my-python-practice)
+## [My Python Practice](/Python/)
 
 - [`re.sub()` (2023.02.12)](./Python/README.md#resub-20230212)
 - [Vertical Alignment 2 with *f-string* (2022.04.27)](./Python/README.md#vertical-alignment-2-with-f-string-20220427)
@@ -68,7 +67,7 @@ This is a repository primarily for storing codes related to **learning programmi
 - [`while` (2017.05.15)](./Python/README.md#while-20170515)
 
 
-## [My R Practice](R/README.md#my-r-practice)
+## [My R Practice](/R/)
 
 - [Slicing String with `substr()` (2023.06.26)](./R/README.md#slicing-string-with-substr-20230626)
 - [`List` Practice in R (2022.11.22)](./R/README.md#list-in-r-20221122)
@@ -79,7 +78,7 @@ This is a repository primarily for storing codes related to **learning programmi
 - [Fibonacci Tornado (2017.05.07)](./R/README.md#fibonacci-tornado-20170507)
 
 
-## [My C/C++ Practice](/C&Cpp/README.md#my-cc-practice)
+## [My C/C++ Practice](/C&Cpp/)
 
 - [*K&R C* Style Function Declaration (2023.08.20)](/C&Cpp/README.md#kr-c-style-function-declaration-20230820)
 - [Conditional Compile with `#ifdef` (2022.08.30)](/C&Cpp/README.md#conditional-compile-with-ifdef-20220830)
@@ -96,7 +95,7 @@ This is a repository primarily for storing codes related to **learning programmi
 - [Hello World (2021.05.12)](/C&Cpp/README.md#hello-world-20210512)
 
 
-## [My C# Practice](/CSharp#my-c-practice)
+## [My C# Practice](/CSharp/)
 
 - GCD (2021.03.30)
 - Terminal GUI (2021.03.24)
@@ -104,7 +103,7 @@ This is a repository primarily for storing codes related to **learning programmi
 - Overloading (2021.02.02)
 
 
-## [My Java Practice](/Java#my-java-practice)
+## [My Java Practice](/Java/)
 
 - [`for` loop with skipping expressions (2022.10.15)](./Java/README.md#for-loop-with-skipping-expressions-20221015)
 - [Multi-Thread (2021.04.13)](./Java/README.md#multi-thread-20210413)
@@ -112,25 +111,26 @@ This is a repository primarily for storing codes related to **learning programmi
 - [`java.util.Date` (2021.03.08)](./Java/README.md#javautildate-20210308)
 
 
-## [My Auto Hot Key Practice](/AutoHotKey#my-auto-hot-key-practice)
+## [My Auto Hot Key Practice](/AutoHotKey/)
 
+- [GUI Calculator (2024.01.13)](#gui-calculator-20240113)
 - [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
 - [Infinity (2021.12.07)](/AutoHotKey#infinity-20211207)
 
 
-## [My Golang Practice](./Golang/)
+## [My Golang Practice](/Golang/)
 
 - [Assembly Practice 1 (2023.08.04)](./Golang/README.md#assembly-practice-1-20230804)
 - [Grade (2021.12.06)](./Golang/README.md#grade-20211206)
 
 
-## [My Verilog Practice](/Verilog#my-verilog-practice)
+## [My Verilog Practice](/Verilog/)
 
 - [Type Casting (2022.09.06)](/Verilog#type-casting-20220906)
 - [Array Indexing (2022.09.06)](/Verilog#array-indexing-20220906)
 
 
-## [My Ruby Practice](./Ruby/)
+## [My Ruby Practice](/Ruby/)
 
 - [Ruby's Crazy Syntax (2022.12.24)](./Ruby/README.md#rubys-crazy-syntax-20221224)
 
@@ -141,6 +141,6 @@ This is a repository primarily for storing codes related to **learning programmi
 - [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
 
 
-## [My Dart Practice](/Dart#my-dart-practice)
+## [My Dart Practice](/Dart/)
 
 - [Hello World (2022.07.17)](/Dart#hello-world-20220717)
