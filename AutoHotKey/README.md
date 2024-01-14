@@ -13,8 +13,11 @@ Boys be ambitious …… !
 ## [GUI Calculator (2024.01.13)](#list)
 
 - A Practice of GUI coding with *AutoHotKey*
+  - Can choose Real / Test mode
 
   ![GUI Calculator](./Images/GUICalculator.gif)
+  &nbsp;&nbsp;
+  ![GUI Calculator (Test Mode)](./Images/GUICalculator_TestMode.gif)
 
 - Future Improvements
   - Improved design: Add colors, fonts, etc.
