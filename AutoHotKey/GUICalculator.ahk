@@ -57,7 +57,6 @@ EMPTY := ""
 return
 
 
-
 Btn:
 
   CurrentText := A_GuiControl                               ; A_GuiControl : Get the text on the each button
@@ -134,7 +133,6 @@ Btn:
     GuiControl,, DebugText, % CurrentText " / " JustAnswered " / " Num1 " " Operator " " Num2 " = " Answer
 
   return
-
 
 
 GuiClose:
