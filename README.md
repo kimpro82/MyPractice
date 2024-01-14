@@ -97,10 +97,10 @@ This is a repository primarily for storing codes related to **learning programmi
 
 ## [My C# Practice](/CSharp/)
 
-- GCD (2021.03.30)
-- Terminal GUI (2021.03.24)
-- Polymorphism (2021.02.18)
-- Overloading (2021.02.02)
+- [GCD (2021.03.30)](/CSharp/README.md#gcdcs-20210330)
+- [Terminal GUI (2021.03.24)](/CSharp/README.md#terminalguics-20210324)
+- [Polymorphism (2021.02.18)](/CSharp/README.md#polymorphismcs-20210218)
+- [Overloading (2021.02.02)](/CSharp/README.md#overloadingcs-20210202)
 
 
 ## [My Java Practice](/Java/)
@@ -113,9 +113,9 @@ This is a repository primarily for storing codes related to **learning programmi
 
 ## [My Auto Hot Key Practice](/AutoHotKey/)
 
-- [GUI Calculator (2024.01.13)](#gui-calculator-20240113)
-- [Hello World (2022.09.03)](/AutoHotKey#hello-world-20220903)
-- [Infinity (2021.12.07)](/AutoHotKey#infinity-20211207)
+- [GUI Calculator (2024.01.13)](/AutoHotKey/README.md#gui-calculator-20240113)
+- [Hello World (2022.09.03)](/AutoHotKey/README.md#hello-world-20220903)
+- [Infinity (2021.12.07)](/AutoHotKey/README.md#infinity-20211207)
 
 
 ## [My Golang Practice](/Golang/)
@@ -126,8 +126,8 @@ This is a repository primarily for storing codes related to **learning programmi
 
 ## [My Verilog Practice](/Verilog/)
 
-- [Type Casting (2022.09.06)](/Verilog#type-casting-20220906)
-- [Array Indexing (2022.09.06)](/Verilog#array-indexing-20220906)
+- [Type Casting (2022.09.06)](/Verilog/README.md#type-casting-20220906)
+- [Array Indexing (2022.09.06)](/Verilog/README.md#array-indexing-20220906)
 
 
 ## [My Ruby Practice](/Ruby/)
@@ -143,4 +143,4 @@ This is a repository primarily for storing codes related to **learning programmi
 
 ## [My Dart Practice](/Dart/)
 
-- [Hello World (2022.07.17)](/Dart#hello-world-20220717)
+- [Hello World (2022.07.17)](/Dart/README.md#hello-world-20220717)
