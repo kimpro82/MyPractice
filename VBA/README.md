@@ -5,6 +5,7 @@ VBA, maybe it could be my ancient future
 
 ### \<List>
 
+- [`Enum` Statement (2024.02.11)](#enum-statement-20240211)
 - [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](#simple-qa-with-chatgpt--trial-20230502)
 - [`Erase` Statement (2023.01.03)](#erase-statement-20230103)
 - [File System : `Folder.Files` (2022.07.15)](#folder-object--files-property-20220715)
@@ -19,6 +20,138 @@ VBA, maybe it could be my ancient future
 - [Color Scroll (2020.11.14)](#color-scroll-20201114)
 
 
+## [`Enum` Statement (2024.02.11)](#list)
+
+- Practice to use `Enum` statement
+  - Declare the `Enum` data type and observe how values are assigned
+  - Apply `For` loops, `Select`~`Case` statements to iterate through them
+- References
+  - [Microsoft Learn](https://learn.microsoft.com/) > [VBA](https://learn.microsoft.com/office/vba/) > [Enum statement](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/enum-statement)
+  - [VBA Planet](https://vbaplanet.com/) > [VBA Enums](https://vbaplanet.com/enums.php)
+  - [WallStreetMojo](https://www.wallstreetmojo.com/) > [VBA ENUM](https://www.wallstreetmojo.com/vba-enum/)
+
+- Code and Output
+  <details>
+    <summary>Code : Enum.bas</summary>
+
+  ```vba
+  Option Explicit
+  ```
+  ```vba
+  Private Const SHEET_NAME As String = "ENUM"
+  ```
+  ```vba
+  ' Define enumerations for days of the week
+  Private Enum DaysOfWeek1
+      Sunday                              ' Sunday as the first day
+      Monday
+      Tuesday
+      Wednesday
+      Thursday
+      Friday
+      Saturday
+  End Enum
+
+  Private Enum DaysOfWeek2
+      Sunday = 1                          ' Sunday assigned numerical value 1
+      Monday
+      Tuesday
+      Wednesday
+      Thursday
+      Friday
+      Saturday
+  End Enum
+
+  Private Enum DaysOfWeek3
+      Sunday = 1                          ' Sunday assigned numerical value 1
+      Monday = 1                          ' Monday assigned numerical value 1
+      Tuesday = 2
+      Wednesday = 3
+      Thursday = 5
+      Friday = 8
+      Saturday = 13
+  End Enum
+
+  Private Enum DaysOfWeek4
+      Sunday = 1                          ' Sunday assigned numerical value 1
+      Monday = 3
+      Tuesday = 5
+      Wednesday = 7
+      Thursday = 6
+      Friday = 4
+      Saturday = 2
+  End Enum
+  ```
+  ```vba
+  ' Function to iterate through each day of the week in an enum
+  Sub TestEnumLoop(num As Integer)
+
+      Dim outputText As String
+      outputText = "TestEnumLoop(" & num & ") : "
+
+      Select Case num
+      Case 1
+          Dim currentDay1 As DaysOfWeek1
+          For currentDay1 = DaysOfWeek1.Sunday To DaysOfWeek1.Saturday
+              outputText = outputText & currentDay1 & " "
+          Next currentDay1
+      Case 2
+          Dim currentDay2 As DaysOfWeek2
+          For currentDay2 = DaysOfWeek2.Sunday To DaysOfWeek2.Saturday
+              outputText = outputText & currentDay2 & " "
+          Next currentDay2
+      Case 3
+          Dim currentDay3 As DaysOfWeek3
+          For currentDay3 = DaysOfWeek3.Sunday To DaysOfWeek3.Saturday
+              outputText = outputText & currentDay3 & " "
+          Next currentDay3
+      Case 4
+          Dim currentDay4 As DaysOfWeek4
+          For currentDay4 = DaysOfWeek4.Sunday To DaysOfWeek4.Saturday
+              outputText = outputText & currentDay4 & " "
+          Next currentDay4
+      Case 5
+          Dim currentDay5 As DaysOfWeek1
+          For currentDay5 = DaysOfWeek1.Sunday To DaysOfWeek1.Saturday
+              Select Case currentDay5
+                  Case DaysOfWeek1.Saturday, DaysOfWeek1.Sunday
+                      outputText = outputText & currentDay5 & " "
+                  Case Else
+                      outputText = outputText & "X" & " "
+              End Select
+          Next currentDay5
+      End Select
+
+      Debug.Print outputText
+
+  End Sub
+  ```
+  ```vba
+  ' Main function to run all TestEnumLoop functions
+  Private Sub Main()
+
+      Sheets(SHEET_NAME).Cells.Clear      ' Clear sheet before running tests
+
+      Call TestEnumLoop(1)
+      Call TestEnumLoop(2)
+      Call TestEnumLoop(3)
+      Call TestEnumLoop(4)
+      Call TestEnumLoop(5)
+
+  End Sub
+  ```
+  </details>
+  <details open="">
+    <summary>Output</summary>
+
+  ```txt
+  TestEnumLoop(1) : 0 1 2 3 4 5 6 
+  TestEnumLoop(2) : 1 2 3 4 5 6 7 
+  TestEnumLoop(3) : 1 2 3 4 5 6 7 8 9 10 11 12 13 
+  TestEnumLoop(4) : 1 2 
+  TestEnumLoop(5) : 0 X X X X X 6 
+  ```
+  </details>
 
 ## [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](#list)
 
@@ -29,7 +162,7 @@ VBA, maybe it could be my ancient future
   ![VBA × ChatGPT](Images/VBA_ChatGPT_Exceeded.PNG)
 
   <details>
-    <summary>Codes : ChatGPT_QA_0.bas</summary>
+    <summary>Code : ChatGPT_QA_0.bas</summary>
 
   ```vba
   Option Explicit
@@ -114,7 +247,7 @@ VBA, maybe it could be my ancient future
   - `Erase Dynamic Array` : completely sets it back as *Type()*
 
   <details>
-    <summary>Codes : Erase.bas</summary>
+    <summary>Code : Erase.bas</summary>
 
   ```vba
   Option Explicit
@@ -191,7 +324,7 @@ VBA, maybe it could be my ancient future
   ![Get File List](Images/VBA_File_GetFileList.PNG)
 
   <details>
-    <summary>Codes : File_GetFolders.bas</summary>
+    <summary>Code : File_GetFolders.bas</summary>
 
   ```vba
   Option Explicit
@@ -253,7 +386,7 @@ VBA, maybe it could be my ancient future
   ![File Object](Images/VBA_File_DateCreated.PNG)
 
   <details>
-    <summary>Codes : File_DateCreated.bas</summary>
+    <summary>Code : File_DateCreated.bas</summary>
 
   ```vba
   Option Explicit
@@ -296,7 +429,7 @@ VBA, maybe it could be my ancient future
 
 
   <details>
-    <summary>Codes : ByRef_vs_ByVal.bas</summary>
+    <summary>Code : ByRef_vs_ByVal.bas</summary>
 
   ```vba
   Option Explicit
@@ -348,7 +481,7 @@ VBA, maybe it could be my ancient future
   ※ Reference ☞ [[Microsoft Docs] VBA > VarType function > Return values](https://docs.microsoft.com/en-us/office/vba/language/reference/user-interface-help/vartype-function#return-values)
 
   <details>
-    <summary>Codes : DeclarePluralVariable.bas</summary>
+    <summary>Code : DeclarePluralVariable.bas</summary>
 
   ```vba
   Option Explicit
@@ -386,7 +519,7 @@ VBA, maybe it could be my ancient future
   ![Color Scroll 2](Images/VBA_ColorScroll2.gif)
 
   <details>
-    <summary>Codes : ColorScroll2.bas</summary>
+    <summary>Code : ColorScroll2.bas</summary>
 
   ```vba
   Option Explicit
@@ -474,7 +607,7 @@ VBA, maybe it could be my ancient future
   ![Variable Scope](Images/VBA_Scope.gif)
 
   <details>
-    <summary>Codes : Scope.bas</summary>
+    <summary>Code : Scope.bas</summary>
 
   ```vba
   '----------------------------------------------------------------------------------------
@@ -528,7 +661,7 @@ VBA, maybe it could be my ancient future
   ![VBA Formula Calc. Option = xlAutomatic](Images/VBA_FormulaCalcOption_xlAutomatic.gif)
 
   <details>
-    <summary>Codes : FormulaCalcOption.bas</summary>
+    <summary>Code : FormulaCalcOption.bas</summary>
 
   ```VBA
   Option Explicit
@@ -573,7 +706,7 @@ VBA, maybe it could be my ancient future
   ![VBA Formula Calc. Option = xlManual](Images/VBA_FormulaCalcOption_xlManual.gif)
 
   <details>
-    <summary>Codes : FormulaCalcOption.bas</summary>
+    <summary>Code : FormulaCalcOption.bas</summary>
 
   ```VBA
   ' Skip excel formula calculation temporarily
@@ -594,7 +727,7 @@ VBA, maybe it could be my ancient future
 - `path` requires absoulte one
 
   <details>
-    <summary>Codes : ReadBinaryFile.bas - Trial 1</summary>
+    <summary>Code : ReadBinaryFile.bas - Trial 1</summary>
 
   ```vba
   Option Explicit
@@ -643,7 +776,7 @@ VBA, maybe it could be my ancient future
   ![Read Binary - Debug](Images/VBA_ReadBinary_Debug.PNG)
 
   <details>
-    <summary>Codes : ReadBinaryFile.bas - Trial 2</summary>
+    <summary>Code : ReadBinaryFile.bas - Trial 2</summary>
 
   ☞ receive advice from [Can't read binary file data (StackOverflow)](https://stackoverflow.com/questions/68892076/cant-read-binary-file-data)
 
@@ -671,7 +804,7 @@ VBA, maybe it could be my ancient future
   ![TryCatchFinally_ErrorMsgBox](Images/VBA_TryCatchFinally_ErrorMsgBox.PNG)
 
   <details>
-    <summary>Codes : TryCatchFinally.bas</summary>
+    <summary>Code : TryCatchFinally.bas</summary>
 
   ```vba
   Option Explicit
@@ -713,7 +846,7 @@ VBA, maybe it could be my ancient future
   ![Color Scroll](Images/VBA_ColorScroll.PNG)
 
   <details>
-    <summary>Codes : ColorScroll.bas</summary>
+    <summary>Code : ColorScroll.bas</summary>
 
   ```vba
   Option Explicit
