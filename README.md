@@ -1,10 +1,10 @@
 # [My Practice]
 
-This is a repository primarily for storing codes related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
+This is a repository primarily for storing code related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
 
-- [MyAIPractice](https://github.com/kimpro82/MyAIPractice) : AI-related codes
-- [MyWebPractice](https://github.com/kimpro82/MyWebPractice) : Web-related codes
-- [MyLegacyPractice](https://github.com/kimpro82/MyLegacyPractice) : Old school codes
+- [MyAIPractice](https://github.com/kimpro82/MyAIPractice) : AI-related code
+- [MyWebPractice](https://github.com/kimpro82/MyWebPractice) : Web-related code
+- [MyLegacyPractice](https://github.com/kimpro82/MyLegacyPractice) : Old school code
 
 
 ### \<List>
