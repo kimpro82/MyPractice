@@ -25,7 +25,7 @@ VBA, maybe it could be my ancient future
 - Practice to use `Enum` statement
   - Declare the `Enum` data type and observe how values are assigned
   - Apply `For` loops, `Select`~`Case` statements to iterate through them
-    - `For` loop seems inappropriate only when the values are continuous and sequential
+    - `For` loop seems adoptable only when the values are continuous and sequential
 - References
   - [Microsoft Learn](https://learn.microsoft.com/) > [VBA](https://learn.microsoft.com/office/vba/) > [Enum statement](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/enum-statement)
   - [VBA Planet](https://vbaplanet.com/) > [VBA Enums](https://vbaplanet.com/enums.php)
