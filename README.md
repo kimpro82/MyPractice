@@ -1,10 +1,10 @@
 # [My Practice]
 
-This is a repository primarily for storing codes related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
+This is a repository primarily for storing code related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
 
-- [MyAIPractice](https://github.com/kimpro82/MyAIPractice) : AI-related codes
-- [MyWebPractice](https://github.com/kimpro82/MyWebPractice) : Web-related codes
-- [MyLegacyPractice](https://github.com/kimpro82/MyLegacyPractice) : Old school codes
+- [MyAIPractice](https://github.com/kimpro82/MyAIPractice) : AI-related code
+- [MyWebPractice](https://github.com/kimpro82/MyWebPractice) : Web-related code
+- [MyLegacyPractice](https://github.com/kimpro82/MyLegacyPractice) : Old school code
 
 
 ### \<List>
@@ -25,6 +25,7 @@ This is a repository primarily for storing codes related to **learning programmi
 
 ## [My VBA Practice](/VBA/)
 
+- [`Enum` Statement (2024.02.11)](/VBA/README.md#enum-statement-20240211)
 - [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](/VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
 - [`Erase` Statement (2023.01.03)](/VBA/README.md#erase-statement-20230103)
 - [File System : `Folder.Files` (2022.07.15)](/VBA/README.md#folder-object--files-property-20220715)
