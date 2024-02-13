@@ -26,6 +26,7 @@ VBA, maybe it could be my ancient future
   - Declare the `Enum` data type and observe how values are assigned
   - Apply `For` loops, `Select`~`Case` statements to iterate through them
     - `For` loop seems adoptable only when the values are continuous and sequential
+  - Can enhance readability by using `Enum`'s element names that convey meaning rather than just plain integers when indexing arrays
 - References
   - [Microsoft Learn](https://learn.microsoft.com/) > [VBA](https://learn.microsoft.com/office/vba/) > [Enum statement](https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/enum-statement)
   - [VBA Planet](https://vbaplanet.com/) > [VBA Enums](https://vbaplanet.com/enums.php)
@@ -43,6 +44,11 @@ VBA, maybe it could be my ancient future
   ```
   ```vba
   ' Define enumerations for days of the week
+
+  '------------------------------------------------------------------
+  ' Enum DaysOfWeek1
+  ' Description: Enumerates the days of the week starting from Sunday.
+  '------------------------------------------------------------------
   Private Enum DaysOfWeek1
       Sunday                              ' Sunday as the first day
       Monday
@@ -53,6 +59,11 @@ VBA, maybe it could be my ancient future
       Saturday
   End Enum
 
+  '------------------------------------------------------------------
+  ' Enum DaysOfWeek2
+  ' Description: Enumerates the days of the week starting from Sunday
+  '             and assigns numerical values starting from 1.
+  '------------------------------------------------------------------
   Private Enum DaysOfWeek2
       Sunday = 1                          ' Sunday assigned numerical value 1
       Monday
@@ -63,6 +74,11 @@ VBA, maybe it could be my ancient future
       Saturday
   End Enum
 
+  '------------------------------------------------------------------
+  ' Enum DaysOfWeek3
+  ' Description: Enumerates the days of the week and assigns custom
+  '             numerical values to each day.
+  '------------------------------------------------------------------
   Private Enum DaysOfWeek3
       Sunday = 1                          ' Sunday assigned numerical value 1
       Monday = 1                          ' Monday assigned numerical value 1
@@ -73,8 +89,13 @@ VBA, maybe it could be my ancient future
       Saturday = 13
   End Enum
 
+  '------------------------------------------------------------------
+  ' Enum DaysOfWeek4
+  ' Description: Enumerates the days of the week and assigns custom
+  '             numerical values to each day.
+  '------------------------------------------------------------------
   Private Enum DaysOfWeek4
-      Sunday = 1                          ' Sunday assigned numerical value 1
+      Sunday = 1
       Monday = 3
       Tuesday = 5
       Wednesday = 7
@@ -85,6 +106,14 @@ VBA, maybe it could be my ancient future
   ```
   ```vba
   ' Function to iterate through each day of the week in an enum
+
+  '------------------------------------------------------------------
+  ' TestEnumLoop
+  ' Description: Iterates through each day of the week in the specified
+  '              enum and prints the result to the Immediate Window.
+  ' Parameters:
+  '   - num: Integer indicating which enumeration to test.
+  '------------------------------------------------------------------
   Sub TestEnumLoop(num As Integer)
 
       Dim outputText As String
@@ -121,6 +150,14 @@ VBA, maybe it could be my ancient future
                       outputText = outputText & "X" & " "
               End Select
           Next currentDay5
+      Case 6
+          outputText = outputText & DaysOfWeek4.Sunday & " "
+          outputText = outputText & DaysOfWeek4.Monday & " "
+          outputText = outputText & DaysOfWeek4.Tuesday & " "
+          outputText = outputText & DaysOfWeek4.Wednesday & " "
+          outputText = outputText & DaysOfWeek4.Thursday & " "
+          outputText = outputText & DaysOfWeek4.Friday & " "
+          outputText = outputText & DaysOfWeek4.Saturday & " "
       End Select
 
       Debug.Print outputText
@@ -129,6 +166,12 @@ VBA, maybe it could be my ancient future
   ```
   ```vba
   ' Main function to run all TestEnumLoop functions
+
+  '------------------------------------------------------------------
+  ' Main
+  ' Description: Clears the specified sheet and runs all TestEnumLoop
+  '              functions to test different enumerations.
+  '------------------------------------------------------------------
   Private Sub Main()
 
       Sheets(SHEET_NAME).Cells.Clear      ' Clear sheet before running tests
@@ -138,6 +181,7 @@ VBA, maybe it could be my ancient future
       Call TestEnumLoop(3)
       Call TestEnumLoop(4)
       Call TestEnumLoop(5)
+      Call TestEnumLoop(6)
 
   End Sub
   ```
@@ -151,8 +195,10 @@ VBA, maybe it could be my ancient future
   TestEnumLoop(3) : 1 2 3 4 5 6 7 8 9 10 11 12 13 
   TestEnumLoop(4) : 1 2 
   TestEnumLoop(5) : 0 X X X X X 6 
+  TestEnumLoop(6) : 1 3 5 7 6 4 2 
   ```
   </details>
+
 
 ## [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](#list)
 
