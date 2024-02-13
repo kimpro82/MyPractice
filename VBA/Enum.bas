@@ -1,5 +1,7 @@
+'===============================================================================
 ' Enum Statement Practice
 ' 2024.02.11
+'===============================================================================
 
 
 Option Explicit
@@ -7,7 +9,13 @@ Option Explicit
 
 Private Const SHEET_NAME As String = "ENUM"
 
+
 ' Define enumerations for days of the week
+
+'------------------------------------------------------------------
+' Enum DaysOfWeek1
+' Description: Enumerates the days of the week starting from Sunday.
+'------------------------------------------------------------------
 Private Enum DaysOfWeek1
     Sunday                              ' Sunday as the first day
     Monday
@@ -18,6 +26,11 @@ Private Enum DaysOfWeek1
     Saturday
 End Enum
 
+'------------------------------------------------------------------
+' Enum DaysOfWeek2
+' Description: Enumerates the days of the week starting from Sunday
+'             and assigns numerical values starting from 1.
+'------------------------------------------------------------------
 Private Enum DaysOfWeek2
     Sunday = 1                          ' Sunday assigned numerical value 1
     Monday
@@ -28,6 +41,11 @@ Private Enum DaysOfWeek2
     Saturday
 End Enum
 
+'------------------------------------------------------------------
+' Enum DaysOfWeek3
+' Description: Enumerates the days of the week and assigns custom
+'             numerical values to each day.
+'------------------------------------------------------------------
 Private Enum DaysOfWeek3
     Sunday = 1                          ' Sunday assigned numerical value 1
     Monday = 1                          ' Monday assigned numerical value 1
@@ -38,8 +56,13 @@ Private Enum DaysOfWeek3
     Saturday = 13
 End Enum
 
+'------------------------------------------------------------------
+' Enum DaysOfWeek4
+' Description: Enumerates the days of the week and assigns custom
+'             numerical values to each day.
+'------------------------------------------------------------------
 Private Enum DaysOfWeek4
-    Sunday = 1                          ' Sunday assigned numerical value 1
+    Sunday = 1
     Monday = 3
     Tuesday = 5
     Wednesday = 7
@@ -50,6 +73,14 @@ End Enum
 
 
 ' Function to iterate through each day of the week in an enum
+
+'------------------------------------------------------------------
+' TestEnumLoop
+' Description: Iterates through each day of the week in the specified
+'              enum and prints the result to the Immediate Window.
+' Parameters:
+'   - num: Integer indicating which enumeration to test.
+'------------------------------------------------------------------
 Sub TestEnumLoop(num As Integer)
 
     Dim outputText As String
@@ -86,6 +117,14 @@ Sub TestEnumLoop(num As Integer)
                     outputText = outputText & "X" & " "
             End Select
         Next currentDay5
+    Case 6
+        outputText = outputText & DaysOfWeek4.Sunday & " "
+        outputText = outputText & DaysOfWeek4.Monday & " "
+        outputText = outputText & DaysOfWeek4.Tuesday & " "
+        outputText = outputText & DaysOfWeek4.Wednesday & " "
+        outputText = outputText & DaysOfWeek4.Thursday & " "
+        outputText = outputText & DaysOfWeek4.Friday & " "
+        outputText = outputText & DaysOfWeek4.Saturday & " "
     End Select
 
     Debug.Print outputText
@@ -94,6 +133,12 @@ End Sub
 
 
 ' Main function to run all TestEnumLoop functions
+
+'------------------------------------------------------------------
+' Main
+' Description: Clears the specified sheet and runs all TestEnumLoop
+'              functions to test different enumerations.
+'------------------------------------------------------------------
 Private Sub Main()
 
     Sheets(SHEET_NAME).Cells.Clear      ' Clear sheet before running tests
@@ -103,5 +148,6 @@ Private Sub Main()
     Call TestEnumLoop(3)
     Call TestEnumLoop(4)
     Call TestEnumLoop(5)
+    Call TestEnumLoop(6)
 
 End Sub
