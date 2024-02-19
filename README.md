@@ -23,7 +23,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Dart** Practice](#my-dart-practice)
 
 
-## [My VBA Practice](/VBA/)
+## [My VBA Practice](#list)
 
 - [`Enum` Statement (2024.02.11)](/VBA/README.md#enum-statement-20240211)
 - [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](/VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
@@ -40,7 +40,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [Color Scroll (2020.11.14)](/VBA/README.md#color-scroll-20201114)
 
 
-## [My Python Practice](/Python/)
+## [My Python Practice](#list)
 
 - [`re.sub()` (2023.02.12)](/Python/README.md#resub-20230212)
 - [Vertical Alignment 2 with *f-string* (2022.04.27)](/Python/README.md#vertical-alignment-2-with-f-string-20220427)
@@ -68,8 +68,9 @@ This is a repository primarily for storing code related to **learning programmin
 - [`while` (2017.05.15)](/Python/README.md#while-20170515)
 
 
-## [My R Practice](/R/)
+## [My R Practice](#list)
 
+- [`any()` & `all()` Practice (2024.02.19)](/R/README.md#any--all-practice-20240219)
 - [Slicing String with `substr()` (2023.06.26)](/R/README.md#slicing-string-with-substr-20230626)
 - [`List` Practice in R (2022.11.22)](/R/README.md#list-in-r-20221122)
 - [`Shiny` - 1st Trial (2022.05.04)](/R/README.md#shiny---1st-trial-20220504)
@@ -79,7 +80,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [Fibonacci Tornado (2017.05.07)](/R/README.md#fibonacci-tornado-20170507)
 
 
-## [My C/C++ Practice](/C&Cpp/)
+## [My C/C++ Practice](#list)
 
 - [*K&R C* Style Function Declaration (2023.08.20)](/C&Cpp/README.md#kr-c-style-function-declaration-20230820)
 - [Conditional Compile with `#ifdef` (2022.08.30)](/C&Cpp/README.md#conditional-compile-with-ifdef-20220830)
@@ -96,7 +97,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [Hello World (2021.05.12)](/C&Cpp/README.md#hello-world-20210512)
 
 
-## [My C# Practice](/CSharp/)
+## [My C# Practice](#list)
 
 - [GCD (2021.03.30)](/CSharp/README.md#gcdcs-20210330)
 - [Terminal GUI (2021.03.24)](/CSharp/README.md#terminalguics-20210324)
@@ -104,7 +105,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [Overloading (2021.02.02)](/CSharp/README.md#overloadingcs-20210202)
 
 
-## [My Java Practice](/Java/)
+## [My Java Practice](#list)
 
 - [`for` loop with skipping expressions (2022.10.15)](/Java/README.md#for-loop-with-skipping-expressions-20221015)
 - [Multi-Thread (2021.04.13)](/Java/README.md#multi-thread-20210413)
@@ -112,36 +113,36 @@ This is a repository primarily for storing code related to **learning programmin
 - [`java.util.Date` (2021.03.08)](/Java/README.md#javautildate-20210308)
 
 
-## [My Auto Hot Key Practice](/AutoHotKey/)
+## [My Auto Hot Key Practice](#list)
 
 - [GUI Calculator (2024.01.13)](/AutoHotKey/README.md#gui-calculator-20240113)
 - [Hello World (2022.09.03)](/AutoHotKey/README.md#hello-world-20220903)
 - [Infinity (2021.12.07)](/AutoHotKey/README.md#infinity-20211207)
 
 
-## [My Golang Practice](/Golang/)
+## [My Golang Practice](#list)
 
 - [Assembly Practice 1 (2023.08.04)](/Golang/README.md#assembly-practice-1-20230804)
 - [Grade (2021.12.06)](/Golang/README.md#grade-20211206)
 
 
-## [My Verilog Practice](/Verilog/)
+## [My Verilog Practice](#list)
 
 - [Type Casting (2022.09.06)](/Verilog/README.md#type-casting-20220906)
 - [Array Indexing (2022.09.06)](/Verilog/README.md#array-indexing-20220906)
 
 
-## [My Ruby Practice](/Ruby/)
+## [My Ruby Practice](#list)
 
 - [Ruby's Crazy Syntax (2022.12.24)](/Ruby/README.md#rubys-crazy-syntax-20221224)
 
 
-## [My Clojure Practice](/Clojure/)
+## [My Clojure Practice](#list)
 
 - [Sequence Processing (`->>` `reduce` `apply`) (2023.09.26)](/Clojure/README.md#sequence-processing---reduce-apply-20230926)
 - [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
 
 
-## [My Dart Practice](/Dart/)
+## [My Dart Practice](#list)
 
 - [Hello World (2022.07.17)](/Dart/README.md#hello-world-20220717)
