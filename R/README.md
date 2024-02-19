@@ -1,8 +1,11 @@
-# [\[My R Practice\]](../README.md#my-r-practice)
+# [My R Practice](../README.md#my-r-practice)
+
+The true analysts use R, different from computer geeks using Python!
 
 
-## List
+### List
 
+- [`any()` & `all()` Practice (2024.02.19)](#any--all-practice-20240219)
 - [Slicing String with `substr()` (2023.06.26)](#slicing-string-with-substr-20230626)
 - [`List` Practice in R (2022.11.22)](#list-in-r-20221122)
 - [`Shiny` - 1st Trial (2022.05.04)](#shiny---1st-trial-20220504)
@@ -10,6 +13,73 @@
 - [Permutations and Combinations (2021.04.05)](#permutations-and-combinations-20210405)
 - [Generating Array and Variables by for Loop (2019.12.06)](#generating-array-and-variables-by-for-loop-20191206)
 - [Fibonacci Tornado (2017.05.07)](#fibonacci-tornado-20170507)
+
+
+## [`any()` & `all()` Practice (2024.02.19)](#list)
+
+- Practice to use `any()` `all()` and `duplicated()` in R
+  - An in-depth study from [Lottery Number Generator (2024.02.15)](https://github.com/kimpro82/MyBizApps/blob/main/R/Lotto/README.md#lottery-number-generator-20240215)
+
+  #### `AnyAll.r`
+
+  <details open="">
+    <summary>0. Declare a vector</summary>
+
+  ```r
+  vec <- c(1:10)
+  ```
+  </details>
+  <details>
+    <summary>1. Understanding the error</summary>
+
+  ```r
+  # - code          : length(nums) == 6 && !(luckyNum %in% nums)
+  # - error message : 'length = 6' in coercion to 'logical(1)'
+  length(vec)                             # Output the length of the vector
+  length(vec) == 10                       # Check if the length is equal to 10
+  3 %in% vec                              # Check if 3 is present in the vector
+  !(3 %in% vec)                           # Check if 3 is not present in the vector
+  length(vec) == 10 && !(3 %in% vec)      # Combine length check and presence check
+  # Explanation:
+  #   The error occurred because `luckyNum` was a vector, not a scalar value.
+  ```
+  ```r
+  [1] 10
+  [1] TRUE
+  [1] TRUE
+  [1] FALSE
+  [1] FALSE
+  ```
+  </details>
+  <details open="">
+    <summary>2. any() & all()</summary>
+
+  ```r
+  vec > 5                                 # Check which elements are greater than 5
+  any(vec > 5)                            # Check if any element is greater than 5
+  all(vec > 5)                            # Check if all elements are greater than 5
+  ```
+  ```r
+  [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+  [1] TRUE
+  [1] FALSE
+  ```
+  </details>
+  <details>
+    <summary>3. duplicated() with any() & all()</summary>
+
+  ```r
+  vec2 <- c(vec, 9:12)
+  duplicated(vec2)                        # Check for duplicated elements in the vector
+  any(duplicated(vec2))                   # Check if any element is duplicated
+  all(duplicated(vec2))                   # Check if all elements are duplicated
+  ```
+  ```r
+  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE
+  [1] TRUE
+  [1] FALSE
+  ```
+  </details>
 
 
 ## [Slicing String with `substr()` (2023.06.26)](#list)
