@@ -19,6 +19,9 @@ The true analysts use R, different from computer geeks using Python!
 
 - Practice to use `any()` `all()` and `duplicated()` in R
   - An in-depth study from [Lottery Number Generator (2024.02.15)](https://github.com/kimpro82/MyBizApps/blob/main/R/Lotto/README.md#lottery-number-generator-20240215)
+- References
+  - [RDocumentation](https://www.rdocumentation.org/) > [any: Are Some Values True?](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/any)
+  - [Statistics Globe](https://statisticsglobe.com/) > [The all & any R Functions | 4 Example Codes](https://statisticsglobe.com/all-any-r-function/)
 
   #### `AnyAll.r`
 
