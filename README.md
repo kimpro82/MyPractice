@@ -20,6 +20,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Clojure** Practice](#my-clojure-practice)
+- [My ShellScript Practice](#my-shellscript-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
 
@@ -141,6 +142,11 @@ This is a repository primarily for storing code related to **learning programmin
 
 - [Sequence Processing (`->>` `reduce` `apply`) (2023.09.26)](/Clojure/README.md#sequence-processing---reduce-apply-20230926)
 - [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
+
+
+## [My ShellScript Practice](#list)
+
+- [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](/Shell/README.md#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
 
 ## [My Dart Practice](#list)
