@@ -10,7 +10,7 @@ Shell we dance?
 
 ## [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](#list)
 
-- I'm suddenly curious about these
+- I've been suddenly curious about these
 - Code and Result
   <details>
     <summary>CMD : TotalSize.cmd</summary>
