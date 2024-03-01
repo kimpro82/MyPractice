@@ -5,4 +5,4 @@ get-childitem
 echo ""
 get-childitem *.ps1
 
-get-childitem | Measure-Object -property length -sum
+get-childitem | measure-object -property length -sum

@@ -77,7 +77,7 @@ Shell we dance?
   ```
 
   ```powershell
-  get-childitem | Measure-Object -property length -sum
+  get-childitem | measure-object -property length -sum
   ```
   ```powershell
   Count    : 3
