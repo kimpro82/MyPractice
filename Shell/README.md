@@ -11,9 +11,14 @@ Shell we dance?
 ## [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](#list)
 
 - I've been suddenly curious about these
+- References
+  - [Microsoft Learn](https://learn.microsoft.com/) > [Windows Server](https://learn.microsoft.com/windows-server/) > [dir](https://learn.microsoft.com/windows-server/administration/windows-commands/dir)
+  - [Microsoft Learn](https://learn.microsoft.com/) > [PowerShell](https://learn.microsoft.com/powershell/) > [Get-ChildItem](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem)
+  - [Wikipedia](https://en.wikipedia.org/) > [ls](https://en.wikipedia.org/wiki/Ls)
+  - [Wikipedia](https://en.wikipedia.org/) > [du (Unix)](https://en.wikipedia.org/wiki/Du_(Unix))
 - Code and Result
   <details>
-    <summary>CMD : TotalSize.cmd</summary>
+    <summary>cmd : TotalSize.cmd</summary>
 
   ```cmd
   dir
