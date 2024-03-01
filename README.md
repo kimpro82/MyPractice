@@ -20,7 +20,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Clojure** Practice](#my-clojure-practice)
-- [My ShellScript Practice](#my-shellscript-practice)
+- [My **ShellScript** Practice](#my-shellscript-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
 
