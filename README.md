@@ -2,16 +2,16 @@
 
 This is a repository primarily for storing code related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
 
-- [MyAIPractice](https://github.com/kimpro82/MyAIPractice) : AI-related code
-- [MyWebPractice](https://github.com/kimpro82/MyWebPractice) : Web-related code
-- [MyLegacyPractice](https://github.com/kimpro82/MyLegacyPractice) : Old school code
-
+- [My AI Practice](https://github.com/kimpro82/MyAIPractice)
+- [My Web Practice](https://github.com/kimpro82/MyWebPractice)
+- [My Functional Programming Practice](https://github.com/kimpro82/MyFunctionalProgrammingPractice)
+- [My Legacy Practice](https://github.com/kimpro82/MyLegacyPractice)
+- [My Esolang Practice](https://github.com/kimpro82/MyEsolangPractice)
 
 ### \<List>
 
 - [My **VBA** Practice](#my-vba-practice)
 - [My **Python** Practice](#my-python-practice)
-- [My **R** Practice](#my-r-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
@@ -19,7 +19,6 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Golang** Practice](#my-golang-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
-- [My **Clojure** Practice](#my-clojure-practice)
 - [My **ShellScript** Practice](#my-shellscript-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
@@ -57,28 +56,12 @@ This is a repository primarily for storing code related to **learning programmin
 - [Count Words (2020.11.10)](/Python/README.md#count-words-20201110)
 - [Operator Precedence (2020.06.28)](/Python/README.md#operator-precedence-20200628)
 - [`print()` (2020.03.31)](/Python/README.md#print-20200331)
-- [Shuffle List (2020.03.30)](/Python/README.md#shuffle-list-20200330)
-- [Random Seed Influence (2020.01.05)](/Python/README.md#random-seed-influence-20200105)
-- [Square Root (2020.01.01) (adjusted 2020.01.04)](/Python/README.md#square-root-20200101)
 - [Fibonacci Series (2019.12.18)](/Python/README.md#fibonacci-series-20191218)
 - [Generate List (2019.12.07)](/Python/README.md#generate-list-20191207)
-- [Limited Range Sampling (2019.09.22)](/Python/README.md#limited-range-sampling-20190922)
 - [`with` ~ `open()` (2019.07.21)](/Python/README.md#with--open-20190721)
 - [Password (2019.05.24)](/Python/README.md#password-20190524)
 - [Class (2018.02.07)](/Python/README.md#class-20180207)
 - [`while` (2017.05.15)](/Python/README.md#while-20170515)
-
-
-## [My R Practice](#list)
-
-- [`any()` & `all()` Practice (2024.02.19)](/R/README.md#any--all-practice-20240219)
-- [Slicing String with `substr()` (2023.06.26)](/R/README.md#slicing-string-with-substr-20230626)
-- [`List` Practice in R (2022.11.22)](/R/README.md#list-in-r-20221122)
-- [`Shiny` - 1st Trial (2022.05.04)](/R/README.md#shiny---1st-trial-20220504)
-- [Scatter Points in a Circle (2021.08.16)](/R/README.md#scatter-points-in-a-circle-20210816)
-- [Permutations and Combinations (2021.04.05)](/R/README.md#permutations-and-combinations-20210405)
-- [Generating Array and Variables by for Loop (2019.12.06)](/R/README.md#generating-array-and-variables-by-for-loop-20191206)
-- [Fibonacci Tornado (2017.05.07)](/R/README.md#fibonacci-tornado-20170507)
 
 
 ## [My C/C++ Practice](#list)
@@ -136,12 +119,6 @@ This is a repository primarily for storing code related to **learning programmin
 ## [My Ruby Practice](#list)
 
 - [Ruby's Crazy Syntax (2022.12.24)](/Ruby/README.md#rubys-crazy-syntax-20221224)
-
-
-## [My Clojure Practice](#list)
-
-- [Sequence Processing (`->>` `reduce` `apply`) (2023.09.26)](/Clojure/README.md#sequence-processing---reduce-apply-20230926)
-- [Filtering Even Numbers (2023.09.22)](/Clojure/README.md#filtering-even-numbers-20230922)
 
 
 ## [My ShellScript Practice](#list)
