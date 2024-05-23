@@ -31,7 +31,8 @@ I'm sorry `C++` …… I betrayed you.
 ## [`hello_world("print")` (2024.05.23)](#list)
 
 - Just for fun ☞ [related meme](https://www.reddit.com/r/ProgrammerHumor/comments/13u2mfm/_/)   
-
+  - Other language version ☞ [Bash](/Shell/README.md#hello_worldecho-20240523) [TypeScript]()
+- Code and Result
   <details>
     <summary>Code : HelloWorldPrint.py</summary>
 
@@ -63,7 +64,7 @@ I'm sorry `C++` …… I betrayed you.
   ```
   </details>
   <details open="">
-    <summary>Output</summary>
+    <summary>Result</summary>
 
   ```py
   hello_world
