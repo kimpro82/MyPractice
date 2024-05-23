@@ -5,15 +5,15 @@ Shell we dance?
 
 ### \<List>
 
-- [`hello_world("echo")` (2024.05.23)](#hello_worldecho-20240523)
+- [`helloWorld("echo")` (2024.05.23)](#helloworldecho-20240523)
 - [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
 
 
-## [`hello_world("echo")` (2024.05.23)](#list)
+## [`helloWorld("echo")` (2024.05.23)](#list)
 
 - Just for fun ☞ [related meme](https://www.reddit.com/r/ProgrammerHumor/comments/13u2mfm/_/)
-  - Other language version ☞ [Python](/Python/README.md#hello_worldprint-20240523) [TypeScript]()
+  - Other language version ☞ [Python](/Python/README.md#hello_worldprint-20240523) [TypeScript](https://github.com/kimpro82/MyWebPractice/blob/main/TypeScript/README.md#helloworldconsolelog-20240523)
 - Code and Result
   <details>
     <summary>Code : helloWorldEcho.sh</summary>
