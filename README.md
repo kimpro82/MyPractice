@@ -43,7 +43,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My Python Practice](#list)
 
-- - [`hello_world("print")` (2024.05.23)](/Python/README.md#hello_worldprint-20240523)
+- [`hello_world("print")` (2024.05.23)](/Python/README.md#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](/Python/README.md#resub-20230212)
 - [Vertical Alignment 2 with *f-string* (2022.04.27)](/Python/README.md#vertical-alignment-2-with-f-string-20220427)
 - [Arguements Parsing (2022.03.24)](/Python/README.md#arguements-parsing-20220324)
