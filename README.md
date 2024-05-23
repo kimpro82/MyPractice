@@ -125,7 +125,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My ShellScript Practice](#list)
 
-- [`hello_world("echo")` (2024.05.23)](/Shell/README.md#hello_worldecho-20240523)
+- [`helloWorld("echo")` (2024.05.23)](/Shell/README.md#helloworldecho-20240523)
 - [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](/Shell/README.md#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
 
