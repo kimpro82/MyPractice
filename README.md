@@ -8,6 +8,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [My Legacy Practice](https://github.com/kimpro82/MyLegacyPractice)
 - [My Esolang Practice](https://github.com/kimpro82/MyEsolangPractice)
 
+
 ### \<List>
 
 - [My **VBA** Practice](#my-vba-practice)
@@ -42,6 +43,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My Python Practice](#list)
 
+- [`hello_world("print")` (2024.05.23)](/Python/README.md#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](/Python/README.md#resub-20230212)
 - [Vertical Alignment 2 with *f-string* (2022.04.27)](/Python/README.md#vertical-alignment-2-with-f-string-20220427)
 - [Arguements Parsing (2022.03.24)](/Python/README.md#arguements-parsing-20220324)
@@ -123,6 +125,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My ShellScript Practice](#list)
 
+- [`helloWorld("echo")` (2024.05.23)](/Shell/README.md#helloworldecho-20240523)
 - [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](/Shell/README.md#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
 

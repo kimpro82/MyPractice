@@ -5,6 +5,7 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
+- [`hello_world("print")` (2024.05.23)](#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](#resub-20230212)
 - [Vertical Alignment 2 with *f-string* (2022.04.27)](#vertical-alignment-2-with-f-string-20220427)
 - [Arguements Parsing (2022.03.24)](#arguements-parsing-20220324)
@@ -26,6 +27,49 @@ I'm sorry `C++` …… I betrayed you.
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
 
+
+## [`hello_world("print")` (2024.05.23)](#list)
+
+- Just for fun ☞ [related meme](https://www.reddit.com/r/ProgrammerHumor/comments/13u2mfm/_/)   
+  - Other language version ☞ [Bash](/Shell/README.md#hello_worldecho-20240523) [TypeScript](https://github.com/kimpro82/MyWebPractice/blob/main/TypeScript/README.md#helloworldconsolelog-20240523)
+- Code and Result
+  <details>
+    <summary>Code : HelloWorldPrint.py</summary>
+
+  ```py
+  import sys
+  ```
+  ```py
+  def hello_world(func_name):
+      """
+      Dynamically call the given function using its name.
+      The name of the current executing function is passed as an argument.
+
+      Caution:
+          Using eval() can pose security risks!
+
+      Args:
+          func_name (str): Name of the function to be called
+
+      Returns:
+          None
+      """
+      current_func_name = sys._getframe().f_code.co_name
+      func = eval(func_name)
+      func(current_func_name)
+  ```
+  ```py
+  if __name__ == "__main__":
+      hello_world("print")
+  ```
+  </details>
+  <details open="">
+    <summary>Result</summary>
+
+  ```py
+  hello_world
+  ```
+  </details>
 
 ## [`re.sub()` (2023.02.12)](#list)
 

@@ -5,7 +5,49 @@ Shell we dance?
 
 ### \<List>
 
+- [`helloWorld("echo")` (2024.05.23)](#helloworldecho-20240523)
 - [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
+
+
+
+## [`helloWorld("echo")` (2024.05.23)](#list)
+
+- Just for fun ☞ [related meme](https://www.reddit.com/r/ProgrammerHumor/comments/13u2mfm/_/)
+  - Other language version ☞ [Python](/Python/README.md#hello_worldprint-20240523) [TypeScript](https://github.com/kimpro82/MyWebPractice/blob/main/TypeScript/README.md#helloworldconsolelog-20240523)
+- Code and Result
+  <details>
+    <summary>Code : helloWorldEcho.sh</summary>
+
+  ```bash
+  #!/bin/bash
+  ```
+  ```bash
+  helloWorld() {
+      # Retrieves the current function name and calls the given function dynamically.
+      #
+      # Arguments:
+      #     funcName (str): The name of the function to call.
+      # Returns:
+      #     None
+      local funcName=$1
+      local currentFuncName="${FUNCNAME[0]}"
+
+      # Invokes the function with the given name and passes the current function name as an argument.
+      "$funcName" "$currentFuncName"
+  }
+  ```
+  ```bash
+  # Call the helloWorld function.
+  helloWorld "echo"
+  ```
+  </details>
+  <details open="">
+    <summary>Result</summary>
+
+  ```shell
+  helloWorld
+  ```
+  </details>
 
 
 ## [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](#list)
