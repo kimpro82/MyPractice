@@ -2,11 +2,11 @@
 
 This is a repository primarily for storing code related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
 
-- [My AI Practice](https://github.com/kimpro82/MyAIPractice)
-- [My Web Practice](https://github.com/kimpro82/MyWebPractice)
+- [My Data Science Practice](https://github.com/kimpro82/MyDataSciencePractice)
+- [My Esolang Practice](https://github.com/kimpro82/MyEsolangPractice)
 - [My Functional Programming Practice](https://github.com/kimpro82/MyFunctionalProgrammingPractice)
 - [My Legacy Practice](https://github.com/kimpro82/MyLegacyPractice)
-- [My Esolang Practice](https://github.com/kimpro82/MyEsolangPractice)
+- [My Web Practice](https://github.com/kimpro82/MyWebPractice)
 
 
 ### \<List>
