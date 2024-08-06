@@ -5,6 +5,7 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
+- [Extract 3-Bit Palette Indices (2024.08.04)](#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](#resub-20230212)
 - [Vertical Alignment 2 with *f-string* (2022.04.27)](#vertical-alignment-2-with-f-string-20220427)
@@ -26,6 +27,79 @@ I'm sorry `C++` …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [Extract 3-Bit Palette Indices (2024.08.04)](#list)
+
+- A practice to extract 3-bit palette indices for [Get Portraits from `KAODATA.DAT` (Trial 2) (2024.08.05)](https://github.com/kimpro82/MyGame/blob/main/RTK2/Python/README.md#get-portraits-from-kaodatadat-trial-2-20230805)
+- Code and Results
+  <details>
+    <summary>Code : Extract3BitPaletteIndices.py</summary>
+
+  ```py
+  IS_TEST = True
+  ```
+  ```py
+  def extract_3_bit_palette_indices(data):
+      """
+      Extracts 3-bit palette indices from the given byte data.
+
+      Args:
+          data (list of int): The byte data to extract 3-bit palette indices from.
+
+      Returns:
+          list of int: The extracted 3-bit palette indices.
+      """
+      bit_list = []
+      for index, byte in enumerate(data):
+          for bit_position in range(8):
+              bit = (byte >> (7 - bit_position)) & 1
+              bit_list.append(bit)  # Extract individual bits
+          if IS_TEST:
+              print(f"data[{index}] : {byte:3d} {bin(byte):10s} {bit_list[-8:]}")
+
+      # Extract 3-bit palette indices
+      palette_indices = []
+      for index in range(0, len(bit_list), 3):
+          if index + 2 < len(bit_list):
+              palette_index = (bit_list[index] << 2) | (bit_list[index + 1] << 1) | bit_list[index + 2]
+              if IS_TEST:
+                  print(f"palette_index[{int(index/3)}] : {bit_list[index:index+3]} {bin(palette_index):5s} {palette_index}")
+              palette_indices.append(palette_index)
+      return palette_indices
+  ```
+  ```py
+  if __name__ == "__main__":
+      # Test data
+      test_data = [224, 84, 64]
+
+      # Extract 3-bit palette indices
+      extracted_palette_indices = extract_3_bit_palette_indices(test_data)
+      print("Extracted 3-bit palette indices:", extracted_palette_indices)
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
+
+  ```txt
+  data[0] : 224 0b11100000 [1, 1, 1, 0, 0, 0, 0, 0]
+  data[1] :  84 0b1010100  [0, 1, 0, 1, 0, 1, 0, 0]
+  data[2] :  64 0b1000000  [0, 1, 0, 0, 0, 0, 0, 0]
+  ```
+  ```txt
+  palette_index[0] : [1, 1, 1] 0b111 7
+  palette_index[1] : [0, 0, 0] 0b0   0
+  palette_index[2] : [0, 0, 0] 0b0   0
+  palette_index[3] : [1, 0, 1] 0b101 5
+  palette_index[4] : [0, 1, 0] 0b10  2
+  palette_index[5] : [0, 0, 1] 0b1   1
+  palette_index[6] : [0, 0, 0] 0b0   0
+  palette_index[7] : [0, 0, 0] 0b0   0
+  ```
+  ```txt
+  Extracted 3-bit palette indices: [7, 0, 0, 5, 2, 1, 0, 0]
+  ```
+  </details>
 
 
 ## [`hello_world("print")` (2024.05.23)](#list)

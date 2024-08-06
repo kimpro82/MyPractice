@@ -2,11 +2,11 @@
 
 This is a repository primarily for storing code related to **learning programming languages and the fundamentals of computer science**. Depending on each code's purpose and the programming language used, some are stored in separate ones.
 
-- [My AI Practice](https://github.com/kimpro82/MyAIPractice)
-- [My Web Practice](https://github.com/kimpro82/MyWebPractice)
+- [My Data Science Practice](https://github.com/kimpro82/MyDataSciencePractice)
+- [My Esolang Practice](https://github.com/kimpro82/MyEsolangPractice)
 - [My Functional Programming Practice](https://github.com/kimpro82/MyFunctionalProgrammingPractice)
 - [My Legacy Practice](https://github.com/kimpro82/MyLegacyPractice)
-- [My Esolang Practice](https://github.com/kimpro82/MyEsolangPractice)
+- [My Web Practice](https://github.com/kimpro82/MyWebPractice)
 
 
 ### \<List>
@@ -43,6 +43,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My Python Practice](#list)
 
+- [Extract 3-Bit Palette Indices (2024.08.04)](/Python/README.md#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](/Python/README.md#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](/Python/README.md#resub-20230212)
 - [Vertical Alignment 2 with *f-string* (2022.04.27)](/Python/README.md#vertical-alignment-2-with-f-string-20220427)
