@@ -43,6 +43,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My Python Practice](#list)
 
+- [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](/Python/README.md#asyncio--compare-sync-function-handling-and-full-async-requests-20240906)
 - [Extract 3-Bit Palette Indices (2024.08.04)](/Python/README.md#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](/Python/README.md#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](/Python/README.md#resub-20230212)

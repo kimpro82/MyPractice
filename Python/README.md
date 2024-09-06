@@ -5,6 +5,7 @@ I'm sorry `C++` …… I betrayed you.
 
 ### \<List>
 
+- [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--compare-sync-function-handling-and-full-async-requests-20240906)
 - [Extract 3-Bit Palette Indices (2024.08.04)](#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](#resub-20230212)
@@ -27,6 +28,218 @@ I'm sorry `C++` …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#list)
+
+- Review of how to reuse synchronous code within an asynchronous context
+  - Using `asyncio.loop.run_in_executor()`
+- Comparison between code using `aiohttp` for full asynchronous execution and the re-used synchronous code
+  - Results show no significant difference. In cases where a synchronous function is already written and internal computation is less significant compared to network latency, reusing the synchronous function as-is, rather than rewriting it asynchronously, seems to be a more reasonable choice.
+  - `asyncio_1_handling_sync_funtion.py`
+    <details>
+      <summary>Import modules</summary>
+
+    ```py
+    import asyncio
+    import time
+    import requests
+    ```
+    </details>
+    <details>
+      <summary>def fetch_sync()</summary>
+
+    ```py
+    def fetch_sync(url):
+        """
+        Sends a synchronous HTTP GET request to the provided URL and measures the time taken for the request.
+
+        Args:
+            url (str): The URL to send the request to.
+
+        Returns:
+            float: The time taken for the HTTP request in seconds.
+        """
+        start_time = time.time()                # Record the start time
+        _ = requests.get(url, timeout=100)       # The results are not needed
+        elapsed_time = time.time() - start_time # Calculate elapsed time
+        return elapsed_time
+    ```
+    </details>
+    <details>
+      <summary>async def fetch_async()</summary>
+
+    ```py
+    async def fetch_async(loop, url):
+        """
+        Asynchronously executes a synchronous HTTP request function using `run_in_executor`.
+
+        Args:
+            loop (asyncio.AbstractEventLoop): The event loop to run the task in.
+            url (str): The URL to send the request to.
+
+        Returns:
+            float: The time taken for the HTTP request in seconds.
+        """
+        return await loop.run_in_executor(None, fetch_sync, url)
+    ```
+    </details>
+    <details>
+      <summary>async def main</summary>
+
+    ```py
+    async def main(base_url, delay_time, n):
+        """
+        The main asynchronous function that constructs the URLs and sends multiple requests concurrently,
+        measuring and printing the time taken for each request and the total time for all requests.
+
+        Args:
+            base_url (str): The base URL for the HTTP requests.
+            delay_time (int): The delay time to append to the base URL (used in URL path).
+            n (int): The number of requests to send.
+
+        Returns:
+            None
+        """
+        loop = asyncio.get_event_loop()
+
+        url = f"{base_url}/{delay_time}"
+
+        tasks = [fetch_async(loop, url) for _ in range(n)]
+
+        start_time = time.time()
+
+        results = await asyncio.gather(*tasks)
+
+        print(f"Tasks completed in {time.time() - start_time:.2f} seconds")
+
+        for i, elapsed_time in enumerate(results, 1):
+            print(f"Response {i} took {elapsed_time:.2f} seconds")
+    ```
+    </details>
+    <details>
+      <summary>Run</summary>
+
+    ```py
+    if __name__ == "__main__":
+        BASE_URL = "https://httpbin.org/delay"
+        DELAY_TIME = 3
+        N = 10
+
+        asyncio.run(main(BASE_URL, DELAY_TIME, N))
+    ```
+    </details>
+  - `asyncio_2_entire_async.py`
+    <details>
+      <summary>Import modules</summary>
+
+    ```py
+    import asyncio
+    import time
+    import aiohttp
+    ```
+    </details>
+    <details>
+      <summary>async def fetch()</summary>
+
+    ```py
+    async def fetch(url):
+        """
+        Asynchronously performs an HTTP GET request to the provided URL and measures the time taken for the request.
+
+        Args:
+            url (str): The URL to send the request to.
+
+        Returns:
+            float: The time taken for the HTTP request in seconds.
+        """
+        start_time = time.time()  # Record the start time
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url) as response:
+                await response.text()  # Read the response to ensure completion
+        elapsed_time = time.time() - start_time  # Calculate elapsed time
+        return elapsed_time
+    ```
+    </details>
+    <details>
+      <summary>async def main()</summary>
+
+    ```py
+    async def main(base_url, delay_time, n):
+        """
+        The main asynchronous function that constructs the URLs and sends multiple requests concurrently,
+        measuring and printing the time taken for each request and the total time for all requests.
+
+        Args:
+            base_url (str): The base URL for the HTTP requests.
+            delay_time (int): The delay time to append to the base URL (used in URL path).
+            n (int): The number of requests to send.
+
+        Returns:
+            None
+        """
+        url = f"{base_url}/{delay_time}"
+
+        # Create `n` asynchronous tasks, each sending a request to the same URL.
+        tasks = [fetch(url) for _ in range(n)]
+
+        start_time = time.time()
+
+        results = await asyncio.gather(*tasks)
+
+        print(f"Tasks completed in {time.time() - start_time:.2f} seconds")
+
+        for i, elapsed_time in enumerate(results, 1):
+            print(f"Response {i} took {elapsed_time:.2f} seconds")
+    ```
+    </details>
+    <details>
+      <summary>Run</summary>
+
+    ```py
+    if __name__ == "__main__":
+        BASE_URL = "https://httpbin.org/delay"
+        DELAY_TIME = 3
+        N = 10
+
+        asyncio.run(main(BASE_URL, DELAY_TIME, N))
+    ```
+    </details>
+  - Results
+    <details open="">
+      <summary>asyncio_1_handling_sync_funtion</summary>
+
+    ```txt
+    Tasks completed in 5.70 seconds
+    Response 1 took 3.62 seconds
+    Response 2 took 5.70 seconds
+    Response 3 took 4.57 seconds
+    Response 4 took 4.02 seconds
+    Response 5 took 3.82 seconds
+    Response 6 took 4.11 seconds
+    Response 7 took 4.83 seconds
+    Response 8 took 3.84 seconds
+    Response 9 took 3.98 seconds
+    Response 10 took 5.30 seconds
+    ```
+    </details>
+    <details open="">
+      <summary>asyncio_2_entire_async</summary>
+
+    ```txt
+    Tasks completed in 5.65 seconds
+    Response 1 took 5.50 seconds
+    Response 2 took 3.39 seconds
+    Response 3 took 3.73 seconds
+    Response 4 took 3.31 seconds
+    Response 5 took 3.64 seconds
+    Response 6 took 5.16 seconds
+    Response 7 took 5.64 seconds
+    Response 8 took 4.11 seconds
+    Response 9 took 3.72 seconds
+    Response 10 took 3.44 seconds
+    ```
+    </details>
 
 
 ## [Extract 3-Bit Palette Indices (2024.08.04)](#list)
