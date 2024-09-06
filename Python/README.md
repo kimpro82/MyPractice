@@ -35,8 +35,7 @@ I'm sorry `C++` …… I betrayed you.
 - Review of how to reuse synchronous code within an asynchronous context
   - Using `asyncio.loop.run_in_executor()`
 - Comparison between code using `aiohttp` for full asynchronous execution and the re-used synchronous code
-  - Results show no significant difference. In cases where network latency outweighs internal computation, reusing synchronous functions appears to be a more reasonable choice
-- Code and Results
+  - Results show no significant difference. In cases where a synchronous function is already written and internal computation is less significant compared to network latency, reusing the synchronous function as-is, rather than rewriting it asynchronously, seems to be a more reasonable choice.
   - `asyncio_1_handling_sync_funtion.py`
     <details>
       <summary>Import modules</summary>
