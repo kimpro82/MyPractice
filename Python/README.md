@@ -89,33 +89,33 @@ I'm sorry `C++` …… I betrayed you.
       <summary>async def main</summary>
 
     ```py
-    async def main(_base_url, _delay_time, _n):
+    async def main(base_url, delay_time, n):
         """
         The main asynchronous function that constructs the URLs and sends multiple requests concurrently,
         measuring and printing the time taken for each request and the total time for all requests.
 
         Args:
-            _base_url (str): The base URL for the HTTP requests.
-            _delay_time (int): The delay time to append to the base URL (used in URL path).
-            _n (int): The number of requests to send.
+            base_url (str): The base URL for the HTTP requests.
+            delay_time (int): The delay time to append to the base URL (used in URL path).
+            n (int): The number of requests to send.
 
         Returns:
             None
         """
-        _loop = asyncio.get_event_loop()
+        loop = asyncio.get_event_loop()
 
-        _url = f"{_base_url}/{_delay_time}"
+        url = f"{base_url}/{delay_time}"
 
-        _tasks = [fetch_async(_loop, _url) for _ in range(_n)]
+        tasks = [fetch_async(loop, url) for _ in range(n)]
 
-        _start_time = time.time()
+        start_time = time.time()
 
-        _results = await asyncio.gather(*_tasks)
+        results = await asyncio.gather(*tasks)
 
-        print(f"Tasks completed in {time.time() - _start_time:.2f} seconds")
+        print(f"Tasks completed in {time.time() - start_time:.2f} seconds")
 
-        for _i, _elapsed_time in enumerate(_results, 1):
-            print(f"Response {_i} took {_elapsed_time:.2f} seconds")
+        for i, elapsed_time in enumerate(results, 1):
+            print(f"Response {i} took {elapsed_time:.2f} seconds")
     ```
     </details>
     <details>
