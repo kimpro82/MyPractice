@@ -5,9 +5,179 @@ Shell we dance?
 
 ### \<List>
 
+- [JScript via `cscript` on Windows : 2. Read CSV (2024.09.26)](#jscript-via-cscript-on-windows--2-read-csv-20240926)
+- [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](#jscript-via-cscript-on-windows--1-dir-20240926)
 - [`helloWorld("echo")` (2024.05.23)](#helloworldecho-20240523)
 - [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
+
+
+## [JScript via `cscript` on Windows : 2. Read CSV (2024.09.26)](#list)
+
+- A more advanced exercise compared to [JScript via `cscript` on Windows: 1. `DIR` (2024.09.26)](#jscript-via-cscript-on-windows--1-dir-20240926)
+  - The main focus was to explore whether **JSON** could be handled as a script language in Windows, but it turned out to be **impossible**
+    - JScript follows the ECMAScript standard, but it hasn’t been updated in a long time, and many commonly used JavaScript keywords are not supported
+    - In short, using JavaScript as-is in the Windows script environment is not easy
+  - Instead, since the tool was already in hand, practiced by reading a CSV file: successful
+    - Example data source: https://www.forbes.com/forbes-400/
+- Code and Results
+  <details>
+    <summary>Code : ReadCSV.ts</summary>
+
+  ```ts
+  const COLUMN_WIDTH: number = 24; // Fixed column width for each cell in the output
+  ```
+  ```ts
+  // Create FileSystemObject
+  var fso: any = WScript.CreateObject("Scripting.FileSystemObject");
+
+  // Get the command-line arguments
+  var args: any = WScript.Arguments;
+
+  // Check if the CSV file path is provided as an argument
+  if (args.length < 1) {
+      WScript.Echo("Usage: cscript JScript_RunViaCscript.js <csvFileName>");
+      WScript.Quit(1);
+  }
+  ```
+  ```ts
+  // Get the CSV file name from the argument
+  var csvFileName: string = args.Item(0);
+
+  // Get the current folder where the script is running
+  var scriptFullPath: string = WScript.ScriptFullName;
+  var currentFolder: string = fso.GetParentFolderName(scriptFullPath);
+
+  // Construct the full path to the CSV file
+  var csvFilePath: string = fso.BuildPath(currentFolder, csvFileName);
+
+  // Exit early if the file doesn't exist
+  if (!fso.FileExists(csvFilePath)) {
+      WScript.Echo("File not found: " + csvFilePath);
+      WScript.Quit(1);
+  }
+  ```
+  ```ts
+  // Function to read CSV content from file
+  function readCsvFile(filePath: string): string {
+      var file = fso.OpenTextFile(filePath, 1); // 1 = ForReading
+      var content = file.ReadAll();
+      file.Close();
+      return content;
+  }
+  ```
+  ```ts
+  // Function to manually trim whitespace from both ends of a string
+  function manualTrim(str: string): string {
+      var start: number = 0;
+      var end: number = str.length - 1;
+
+      while (start <= end && (str.charAt(start) === ' ' || str.charAt(start) === '\t')) {
+          start++;
+      }
+      while (end >= start && (str.charAt(end) === ' ' || str.charAt(end) === '\t')) {
+          end--;
+      }
+      return str.substring(start, end + 1);
+  }
+  ```
+  ```ts
+  // Function to pad a string to a specified width by appending spaces
+  function padString(str: string, width: number): string {
+      str = manualTrim(str); // Trim the string first
+      var paddedString: string = str;
+      while (paddedString.length < width) {
+          paddedString += " "; // Append spaces until reaching the desired width
+      }
+      return paddedString;
+  }
+  ```
+  ```ts
+  // Function to print the separator line
+  function printSeparatorLine(columns: number) {
+      var separatorLine: string = "";
+      for (var i = 0; i < columns * COLUMN_WIDTH; i++) {
+          separatorLine += "-";
+      }
+      WScript.Echo(separatorLine);
+  }
+  ```
+  ```ts
+  // Function to print headers
+  function printHeaders(headers: string[]) {
+      var headerOutput: string = "";
+      for (var h = 0; h < headers.length; h++) {
+          headerOutput += padString(headers[h], COLUMN_WIDTH);
+      }
+      WScript.Echo(headerOutput);
+  }
+  ```
+  ```ts
+  // Function to process CSV content
+  function processCsvContent(csvContent: string) {
+      var lines: string[] = csvContent.split("\r\n");
+      var headers: string[] = lines[0].split(",");
+
+      printSeparatorLine(headers.length);
+      printHeaders(headers);
+      printSeparatorLine(headers.length);
+
+      for (var i = 1; i < lines.length; i++) {
+          var line: string = lines[i];
+          var trimmedLine: string = manualTrim(line);
+          if (trimmedLine !== "") {
+              var row: string[] = trimmedLine.split(",");
+              var record: string = "";
+              for (var j = 0; j < headers.length; j++) {
+                  record += padString(row[j] ? manualTrim(row[j]) : "N/A", COLUMN_WIDTH);
+              }
+              WScript.Echo(record);
+          }
+      }
+
+      printSeparatorLine(headers.length);
+  }
+  ```
+  ```ts
+  // Main execution flow
+  var csvContent: string = readCsvFile(csvFilePath);
+  processCsvContent(csvContent);
+  ```
+  </details>
+  <details open="">
+    <summary>Code : ReadCSV.js (Compiled from ReadCSV.ts)</summary>
+
+  ```bat
+  tsc ReadCSV.ts --target es5 --outDir .
+  ```
+  ```txt
+  (code omitted)
+  ```
+  </details>
+  <details open="">
+    <summary>Run & Results</summary>
+
+  ```bat
+  cscript ReadCSV.js WealthiestAmericans_2023.csv
+  ```
+  ```txt
+  ------------------------------------------------------------------------------------------------------------------------------------------------
+  Rank                    Name                    Net Worth (Billion $)   Age                     State                   Source
+  ------------------------------------------------------------------------------------------------------------------------------------------------
+  1                       Elon Musk               251                     52                      Texas                   Tesla & SpaceX
+  2                       Jeff Bezos              161                     59                      Washington              Amazon
+  3                       Larry Ellison           158                     79                      California              Oracle
+  4                       Warren Buffett          121                     93                      Nebraska                Berkshire Hathaway
+  5                       Larry Page              114                     50                      California              Google
+  6                       Bill Gates              111                     67                      Washington              Microsoft
+  7                       Sergey Brin             110                     50                      California              Google
+  8                       Mark Zuckerberg         106                     39                      California              Facebook
+  9                       Steve Ballmer           101                     67                      Washington              Microsoft
+  10                      Michael Bloomberg       96.3                    81                      New York                Bloomberg LP
+  ……
+  ------------------------------------------------------------------------------------------------------------------------------------------------
+  ```
+  </details>
 
 
 ## [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](#list)
@@ -15,7 +185,7 @@ Shell we dance?
 - Practicing JScript as a Windows scripting language, as an alternative to Batchfile or PowerShell
   - Reference : [네이버 블로그 > 릿드](https://blog.naver.com/jktk1/) > [[JS] VBS 대신에 JS 사용하기](https://blog.naver.com/jktk1/223595638352)
   - Not strictly necessary, but compiled from TypeScript
-  - Basic execution of the `DIR` command: Success
+  - Basic execution of the `DIR` command: Successful
 - Code and Results
   <details>
     <summary>Code : DIR.ts</summary>
