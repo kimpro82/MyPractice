@@ -127,6 +127,8 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My ShellScript Practice](#list)
 
+- [JScript via `cscript` on Windows : 2. Read CSV (2024.09.27)](/Shell/README.md#jscript-via-cscript-on-windows--2-read-csv-20240926)
+- [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](/Shell/README.md#jscript-via-cscript-on-windows--1-dir-20240926)
 - [`helloWorld("echo")` (2024.05.23)](/Shell/README.md#helloworldecho-20240523)
 - [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](/Shell/README.md#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
