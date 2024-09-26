@@ -5,14 +5,14 @@ Shell we dance?
 
 ### \<List>
 
-- [JScript via `cscript` on Windows : 2. Read CSV (2024.09.26)](#jscript-via-cscript-on-windows--2-read-csv-20240926)
+- [JScript via `cscript` on Windows : 2. Read CSV (2024.09.27)](#jscript-via-cscript-on-windows--2-read-csv-20240926)
 - [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](#jscript-via-cscript-on-windows--1-dir-20240926)
 - [`helloWorld("echo")` (2024.05.23)](#helloworldecho-20240523)
 - [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
 
 
-## [JScript via `cscript` on Windows : 2. Read CSV (2024.09.26)](#list)
+## [JScript via `cscript` on Windows : 2. Read CSV (2024.09.27)](#list)
 
 - A more advanced exercise compared to [JScript via `cscript` on Windows: 1. `DIR` (2024.09.26)](#jscript-via-cscript-on-windows--1-dir-20240926)
   - The main focus was to explore whether **JSON** could be handled as a script language in Windows, but it turned out to be **impossible**
