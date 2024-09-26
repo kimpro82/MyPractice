@@ -14,7 +14,7 @@ Shell we dance?
 
 ## [JScript via `cscript` on Windows : 2. Read CSV (2024.09.27)](#list)
 
-- A more advanced exercise compared to [JScript via `cscript` on Windows: 1. `DIR` (2024.09.26)](#jscript-via-cscript-on-windows--1-dir-20240926)
+- A more advanced exercise compared to [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](#jscript-via-cscript-on-windows--1-dir-20240926)
   - The main focus was to explore whether **JSON** could be handled as a script language in Windows, but it turned out to be **impossible**
     - JScript follows the ECMAScript standard, but it hasn’t been updated in a long time, and many commonly used JavaScript keywords are not supported
     - In short, using JavaScript as-is in the Windows script environment is not easy
