@@ -16,11 +16,11 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **C**/**C++** Practice](#my-cc-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
+- [My **ShellScript** Practice](#my-shellscript-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Golang** Practice](#my-golang-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
-- [My **ShellScript** Practice](#my-shellscript-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
 
@@ -101,6 +101,14 @@ This is a repository primarily for storing code related to **learning programmin
 - [`java.util.Date` (2021.03.08)](/Java/README.md#javautildate-20210308)
 
 
+## [My ShellScript Practice](#list)
+
+- [JScript via `cscript` on Windows : 2. Read CSV (2024.09.27)](/Shell/README.md#jscript-via-cscript-on-windows--2-read-csv-20240926)
+- [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](/Shell/README.md#jscript-via-cscript-on-windows--1-dir-20240926)
+- [`helloWorld("echo")` (2024.05.23)](/Shell/README.md#helloworldecho-20240523)
+- [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](/Shell/README.md#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
+
+
 ## [My Auto Hot Key Practice](#list)
 
 - [GUI Calculator (2024.01.13)](/AutoHotKey/README.md#gui-calculator-20240113)
@@ -123,14 +131,6 @@ This is a repository primarily for storing code related to **learning programmin
 ## [My Ruby Practice](#list)
 
 - [Ruby's Crazy Syntax (2022.12.24)](/Ruby/README.md#rubys-crazy-syntax-20221224)
-
-
-## [My ShellScript Practice](#list)
-
-- [JScript via `cscript` on Windows : 2. Read CSV (2024.09.27)](/Shell/README.md#jscript-via-cscript-on-windows--2-read-csv-20240926)
-- [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](/Shell/README.md#jscript-via-cscript-on-windows--1-dir-20240926)
-- [`helloWorld("echo")` (2024.05.23)](/Shell/README.md#helloworldecho-20240523)
-- [Get the Total Size of Folders/Files Matching Specific Criteria (2024.02.29)](/Shell/README.md#get-the-total-size-of-foldersfiles-matching-specific-criteria-20240229)
 
 
 ## [My Dart Practice](#list)
