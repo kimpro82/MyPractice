@@ -264,7 +264,7 @@ Shell we dance?
 - Just for fun ☞ [related meme](https://www.reddit.com/r/ProgrammerHumor/comments/13u2mfm/_/)
   - Other language version ☞ [Python](/Python/README.md#hello_worldprint-20240523) [TypeScript](https://github.com/kimpro82/MyWebPractice/blob/main/TypeScript/README.md#helloworldconsolelog-20240523)
 - Code and Results
-  <details>
+  <details open="">
     <summary>Code : helloWorldEcho.sh</summary>
 
   ```bash
@@ -285,14 +285,14 @@ Shell we dance?
       "$funcName" "$currentFuncName"
   }
   ```
+  </details>
+  <details open="">
+    <summary>Run & Results</summary>
+
   ```bash
   # Call the helloWorld function.
   helloWorld "echo"
   ```
-  </details>
-  <details open="">
-    <summary>Results</summary>
-
   ```shell
   helloWorld
   ```
