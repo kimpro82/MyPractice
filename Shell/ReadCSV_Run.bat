@@ -1,1 +1,1 @@
-cscript ReadCSV.js ReadCSV.csv
+cscript ReadCSV.js WealthiestAmericans_2023.csv
