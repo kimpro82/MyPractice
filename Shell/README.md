@@ -10,11 +10,90 @@ Shell we dance?
 
 
 
+## [JScript via `cscript` on Windows : 1. `DIR` (2024.09.26)](#list)
+
+- Practicing JScript as a Windows scripting language, as an alternative to Batchfile or PowerShell
+  - Reference : [네이버 블로그 > 릿드](https://blog.naver.com/jktk1/) > [[JS] VBS 대신에 JS 사용하기](https://blog.naver.com/jktk1/223595638352)
+  - Not strictly necessary, but compiled from TypeScript
+  - Basic execution of the `DIR` command: Success
+- Code and Results
+  <details>
+    <summary>Code : DIR.ts</summary>
+
+  ```ts
+  // Define interfaces for better type checking
+  interface WScriptShell {
+      Exec(command: string): WScriptExec;
+  }
+
+  interface WScriptExec {
+      StdOut: {
+          ReadAll(): string;
+      };
+  }
+
+  // Use type assertion to tell TypeScript the type of WScript
+  const shell: WScriptShell = (WScript as any).CreateObject("WScript.Shell");
+
+  // Execute 'dir' command to list files in the current directory
+  const exec: WScriptExec = shell.Exec("cmd /c dir");
+
+  // Read the output from the command
+  const output: string = exec.StdOut.ReadAll();
+
+  // Print the output
+  (WScript as any).Echo(output);
+  ```
+  </details>
+  <details open="">
+    <summary>Code : DIR.js (Compiled from DIR.ts)</summary>
+
+  ```bat
+  tsc DIR.ts --target es5 --outDir .
+  ```
+  ```js
+  // Use type assertion to tell TypeScript the type of WScript
+  var shell = WScript.CreateObject("WScript.Shell");
+  // Execute 'dir' command to list files in the current directory
+  var exec = shell.Exec("cmd /c dir");
+  // Read the output from the command
+  var output = exec.StdOut.ReadAll();
+  // Print the output
+  WScript.Echo(output);
+  ```
+  </details>
+  <details open="">
+    <summary>Run & Results</summary>
+
+  ```bat
+  cscript DIR.js
+  ```
+  ```txt
+  ……
+
+   C 드라이브의 볼륨: SSD (C:)
+   볼륨 일련 번호: ****-****
+
+   C:\**** 디렉터리
+
+  2024-09-26  오후 04:46    <DIR>          .
+  2024-09-26  오후 04:46    <DIR>          ..
+  2024-09-26  오후 04:49               410 DIR.js
+  2024-09-26  오후 04:49               679 DIR.ts
+  2024-09-26  오후 04:45                36 DIR_Conv.bat
+  2024-09-26  오후 04:46                16 DIR_Run.bat
+  ……
+                14개 파일              15,937 바이트
+  ……
+  ```
+  </details>
+
+
 ## [`helloWorld("echo")` (2024.05.23)](#list)
 
 - Just for fun ☞ [related meme](https://www.reddit.com/r/ProgrammerHumor/comments/13u2mfm/_/)
   - Other language version ☞ [Python](/Python/README.md#hello_worldprint-20240523) [TypeScript](https://github.com/kimpro82/MyWebPractice/blob/main/TypeScript/README.md#helloworldconsolelog-20240523)
-- Code and Result
+- Code and Results
   <details>
     <summary>Code : helloWorldEcho.sh</summary>
 
@@ -42,7 +121,7 @@ Shell we dance?
   ```
   </details>
   <details open="">
-    <summary>Result</summary>
+    <summary>Results</summary>
 
   ```shell
   helloWorld
@@ -58,7 +137,7 @@ Shell we dance?
   - [Microsoft Learn](https://learn.microsoft.com/) > [PowerShell](https://learn.microsoft.com/powershell/) > [Get-ChildItem](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem)
   - [Wikipedia](https://en.wikipedia.org/) > [ls](https://en.wikipedia.org/wiki/Ls)
   - [Wikipedia](https://en.wikipedia.org/) > [du (Unix)](https://en.wikipedia.org/wiki/Du_(Unix))
-- Code and Result
+- Code and Results
   <details>
     <summary>cmd : TotalSize.cmd</summary>
 
