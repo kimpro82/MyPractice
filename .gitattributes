@@ -1,3 +1,4 @@
 C&Cpp/*.s linguist-vendored
+Shell/*.js linguist-vendored
 
 VBA/*.bas linguist-language=VBA
