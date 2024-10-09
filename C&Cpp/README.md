@@ -647,7 +647,7 @@ The final destination of programming
 ## [GCC Optimization Option Practice (2022.08.16)](#list)
 
 - Generate many assembly(`.s`) files with various optimization options in `GCC`
-- But I've just realized that I'm not ready yet to read their assembly Code ……
+- But I've just realized that I'm not ready yet to read their assembly code ……
 - However, I've found at least that the generally known properties of the optimization options are not fixed absolutely.  
   (For example, `Os` is known as smaller code size but it sometimes returns rather larger one.)
 - References :  
@@ -710,7 +710,7 @@ The final destination of programming
 
 ## [`printf()` format test (2022.04.25)](#list)
 
-- I wrote the below Code in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
+- I wrote the below code in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
   (All the variables are declared as *long long* type.)
   ```cpp
   // test
