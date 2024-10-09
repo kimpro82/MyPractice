@@ -213,16 +213,39 @@ The final destination of programming
         <summary>void writeToFile()</summary>
 
       ```cpp
-      // Function to write data to a file
-      void writeToFile(const string& filename, const string& data)
+      // Common function to write data to a file
+      void writeToFile(const string& filename, const string& data, bool isBinary = false)
       {
-          ofstream file(filename);
+          ofstream file(isBinary ? filename : filename.c_str(), isBinary ? ios::binary : ios::out);
           if (!file.is_open())
           {
               cerr << "Error writing to file: " << filename << endl;
               exit(1);
           }
-          file << data;
+
+          if (isBinary)
+          {
+              // Convert the binary string to bytes and write
+              bitset<8> bits;
+              for (size_t i = 0; i < data.length(); i += 8)
+              {
+                  bits = bitset<8>(data.substr(i, 8));
+                  file.put(static_cast<char>(bits.to_ulong()));
+              }
+
+              // Handle remaining bits
+              if (data.length() % 8 != 0)
+              {
+                  string remainingBits = data.substr(data.length() - (data.length() % 8));
+                  bits = bitset<8>(remainingBits);
+                  file.put(static_cast<char>(bits.to_ulong()));
+              }
+          }
+          else
+          {
+              file << data; // Write the string as is
+          }
+
           file.close();
       }
       ```
@@ -231,7 +254,7 @@ The final destination of programming
         <summary>void writeCodeTable()</summary>
 
       ```cpp
-      // Function to write Huffman code table to a file
+      // Function to write the Huffman code table
       void writeCodeTable(const string& filename, const unordered_map<char, string>& huffmanCode)
       {
           ofstream file(filename);
@@ -249,70 +272,18 @@ The final destination of programming
       ```
       </details>
       <details>
-        <summary>void writeCompressedBinary()</summary>
-
-      ```cpp
-      // Function to write compressed data as binary
-      void writeCompressedBinary(const string& filename, const string& compressedData)
-      {
-          ofstream file(filename, ios::binary);
-          if (!file.is_open())
-          {
-              cerr << "Error writing to binary file: " << filename << endl;
-              exit(1);
-          }
-
-          // Convert the binary string to bytes and write
-          bitset<8> bits;
-          for (size_t i = 0; i < compressedData.length(); i += 8)
-          {
-              bits = bitset<8>(compressedData.substr(i, 8));
-              file.put(static_cast<char>(bits.to_ulong()));
-          }
-
-          // Handle remaining bits
-          if (compressedData.length() % 8 != 0)
-          {
-              string remainingBits = compressedData.substr(compressedData.length() - (compressedData.length() % 8));
-              bits = bitset<8>(remainingBits);
-              file.put(static_cast<char>(bits.to_ulong()));
-          }
-
-          file.close();
-      }
-      ```
-      </details>
-      <details>
-        <summary>void writeCompressedText()</summary>
-
-      ```cpp
-      // Function to write compressed data as text
-      void writeCompressedText(const string& filename, const string& compressedData)
-      {
-          ofstream file(filename);
-          if (!file.is_open())
-          {
-              cerr << "Error writing to text file: " << filename << endl;
-              exit(1);
-          }
-          file << compressedData; // Write the binary string as is
-          file.close();
-      }
-      ```
-      </details>
-      <details>
         <summary>void calculateCompressionRatio()</summary>
 
       ```cpp
       // Function to calculate compression ratio in percentage
       void calculateCompressionRatio(const string& originalData, const string& compressedData)
       {
-          double originalSize = static_cast<double>(originalData.size()); // Original size in bytes
-          double compressedSize = static_cast<double>(ceil(compressedData.size() / 8.0)); // Compressed size in bytes
-          double compressionRatio = (compressedSize / originalSize) * 100; // Convert to percentage
+          int originalSize = static_cast<int>(originalData.size()); // Original size in bytes
+          int compressedSize = static_cast<int>(ceil(compressedData.size() / 8.0)); // Compressed size in bytes
+          double compressionRatio = (static_cast<double>(compressedSize) / originalSize) * 100; // Convert to percentage
 
-          cout << "Original size     : " << static_cast<int>(originalSize) << " bytes" << endl;
-          cout << "Compressed size   : " << static_cast<int>(compressedSize) << " bytes" << endl;
+          cout << "Original size     : " << originalSize << " bytes" << endl;
+          cout << "Compressed size   : " << compressedSize << " bytes" << endl;
 
           // Display rounded compression ratio to two decimal places
           cout << "Compression Ratio : " << round(compressionRatio * 100) / 100 << "%" << endl; // Rounded to 2 decimal places
@@ -348,10 +319,10 @@ The final destination of programming
           string compressedData = compress(data, huffmanCode);
 
           // Step 6: Write compressed data to a text file
-          writeCompressedText(COMPRESSED_TEXT_FILE, compressedData);
+          writeToFile(COMPRESSED_TEXT_FILE, compressedData);
 
           // Step 7: Write compressed data to a binary file
-          writeCompressedBinary(COMPRESSED_BINARY_FILE, compressedData);
+          writeToFile(COMPRESSED_BINARY_FILE, compressedData, true);
 
           // Step 8: Decompress the data
           string decompressedData = decompress(root, compressedData);
