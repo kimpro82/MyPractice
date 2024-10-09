@@ -368,9 +368,22 @@ The final destination of programming
       ```
       </details>
     </details>
+  - Sameple Text : `octobers_song.txt`
+    <details open="">
+      <summary>(Lyrics) "October's Song" from 《The Gang's All Here》 (2022) by Skid Row</summary>
+
+    ```txt
+    Mother step to the light that's before you
+    Mother change in the seasons I see
+    Winter's on the rise
+    Autumn still in my eyes
+    Reborn as daylight dies
+    ……
+    ```
+    </details>
   - Results
     <details open="">
-      <summary>Run</summary>
+      <summary>Console Output</summary>
 
     ```txt
     <Huffman Coding>
@@ -380,6 +393,19 @@ The final destination of programming
     Compression Ratio : 54.21%
 
     Compression and Decompression completed successfully.
+    ```
+    </details>
+    <details open="">
+      <summary>Huffman Code Table</summary>
+
+    ```txt
+    d: 11010
+    f: 1100111
+    A: 110011011
+    p: 11001100
+    r: 110010
+    h: 11011
+    ……
     ```
     </details>
 
