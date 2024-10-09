@@ -21,7 +21,7 @@ The final destination of programming
 - [Hello World (2021.05.12)](#hello-world-20210512)
 
 
-※ All codes include the following top lines. :
+※ All code include the following top lines. :
 
   ```c
   // C
@@ -430,7 +430,7 @@ The final destination of programming
   </details>
 - Example
   <details open="">
-    <summary>Codes : KnrFunctionSyntax.c</summary>
+    <summary>Code : KnrFunctionSyntax.c</summary>
 
   ```c
   int add(a, b)                           // K&R 스타일 함수 선언: 매개변수 이름을 생략하고 데이터 타입만 표시
@@ -480,7 +480,7 @@ The final destination of programming
 - ※ When the macro `fileio` is on, *Ahnlab V3 Lite* recognizes `a.exe` as a malware!
 
   <details>
-    <summary>Codes : ConditionalCompile.c</summary>
+    <summary>Code : ConditionalCompile.c</summary>
 
   ```c
   int main()
@@ -504,7 +504,7 @@ The final destination of programming
   ```
   </details>
   <details open="">
-    <summary>Codes : ConditionalCompile.cpp</summary>
+    <summary>Code : ConditionalCompile.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -580,7 +580,7 @@ The final destination of programming
 - Further discussion : how to read *Korean* string from external file
 
   <details>
-    <summary>Codes : FileIO.c</summary>
+    <summary>Code : FileIO.c</summary>
 
   ```c
   int main()
@@ -603,7 +603,7 @@ The final destination of programming
   ```
   </details>
   <details open="">
-    <summary>Codes : FileIO.cpp</summary>
+    <summary>Code : FileIO.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -647,7 +647,7 @@ The final destination of programming
 ## [GCC Optimization Option Practice (2022.08.16)](#list)
 
 - Generate many assembly(`.s`) files with various optimization options in `GCC`
-- But I've just realized that I'm not ready yet to read their assembly codes ……
+- But I've just realized that I'm not ready yet to read their assembly Code ……
 - However, I've found at least that the generally known properties of the optimization options are not fixed absolutely.  
   (For example, `Os` is known as smaller code size but it sometimes returns rather larger one.)
 - References :  
@@ -656,7 +656,7 @@ The final destination of programming
   · https://www.rapidtables.com/code/linux/gcc/gcc-o.html
 
   <details open="">
-    <summary>Codes : OptimizePractice.c</summary>
+    <summary>Code : OptimizePractice.c</summary>
 
   ```c
   void operate(int i, int* p)
@@ -680,7 +680,7 @@ The final destination of programming
   > 5
   </details>
   <details>
-    <summary>Codes : OptimizePractice.bat (Old)</summary>
+    <summary>Code : OptimizePractice.bat (Old)</summary>
 
   ```batch
   gcc -O0 -S OptimizePractice.c -o OptimizePractice_O0.s
@@ -692,7 +692,7 @@ The final destination of programming
   ```
   </details>
   <details open="">
-    <summary>Codes : OptimizePractice.bat (New)</summary>
+    <summary>Code : OptimizePractice.bat (New)</summary>
 
   ```batch
   @echo off
@@ -710,7 +710,7 @@ The final destination of programming
 
 ## [`printf()` format test (2022.04.25)](#list)
 
-- I wrote the below codes in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
+- I wrote the below Code in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
   (All the variables are declared as *long long* type.)
   ```cpp
   // test
@@ -719,9 +719,9 @@ The final destination of programming
 - I will never miss the criminal!
 
   <details open="">
-    <summary>Codes : printf.c & printf.cpp</summary>
+    <summary>Code : printf.c & printf.cpp</summary>
 
-  The codes except each of the headers are the same.
+  The code except each of the headers are the same.
   ```c
   int main()
   {
@@ -770,7 +770,7 @@ The final destination of programming
 - There was a crazy mistake …… It stole my two months!
 
   <details>
-    <summary>Codes : BinarySearch.c</summary>
+    <summary>Code : BinarySearch.c</summary>
 
   ```c
   #include <stdio.h>
@@ -892,7 +892,7 @@ The final destination of programming
 - Of course, this function seems very **powerful** for sorted data.
 
   <details open="">
-    <summary>Codes : BinarySearch.cpp</summary>
+    <summary>Code : BinarySearch.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -933,7 +933,7 @@ The final destination of programming
 - Some extreme(?) experiments about `++` and `--` operators
 
   <details open="">
-    <summary>Codes : IncDecOperator.c</summary>
+    <summary>Code : IncDecOperator.c</summary>
 
   ```c
   int main()
@@ -976,7 +976,7 @@ The final destination of programming
 - The way to prevent variable declaration from garbage value
 
   <details open="">
-    <summary>Codes : PreventGarbageValue.cpp</summary>
+    <summary>Code : PreventGarbageValue.cpp</summary>
 
   ```cpp
   int main()
@@ -1009,7 +1009,7 @@ The final destination of programming
 - Reference ☞ [코딩 테스트를 위한 자료 구조와 알고리즘 with C++ (길벗, 2020)](https://github.com/gilbutITbook/080239)
 
   <details>
-    <summary>Codes : Containers_Deque.cpp</summary>
+    <summary>Code : Containers_Deque.cpp</summary>
 
   ```cpp
   #include <deque>
@@ -1065,7 +1065,7 @@ The final destination of programming
   > 1 2 3  
   </details>
   <details>
-    <summary>Codes : Containers_Stack.cpp</summary>
+    <summary>Code : Containers_Stack.cpp</summary>
 
   ```cpp
   #include <stack>
@@ -1118,7 +1118,7 @@ The final destination of programming
   > The stack is empty.
   </details>
   <details>
-    <summary>Codes : Containers_Queue.cpp</summary>
+    <summary>Code : Containers_Queue.cpp</summary>
 
   ```cpp
   #include <queue>
@@ -1176,7 +1176,7 @@ The final destination of programming
 - I am so proud!
 
   <details>
-    <summary>Codes : Template.cpp</summary>
+    <summary>Code : Template.cpp</summary>
 
   ```cpp
   template <class T>
@@ -1228,7 +1228,7 @@ The final destination of programming
 - Can he learn them or still stay in beginner's swamps? To be continued …… 
 
   <details>
-    <summary>Codes : StackOverflow.cpp</summary>
+    <summary>Code : StackOverflow.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -1324,7 +1324,7 @@ The final destination of programming
   - `gcc` (for `C`) and `g++` (for `C++`) seem not so different to each other
 
   <details>
-    <summary>Codes : IamYourFather_c.c</summary>
+    <summary>Code : IamYourFather_c.c</summary>
 
   ```c
   #include <stdio.h>
@@ -1352,7 +1352,7 @@ The final destination of programming
   > I am your father.
   </details>
   <details open="">
-    <summary>Codes : IamYourFather_cpp.cpp</summary>
+    <summary>Code : IamYourFather_cpp.cpp</summary>
 
   ```cpp
   #include <iostream>
