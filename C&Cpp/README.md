@@ -5,7 +5,7 @@ The final destination of programming
 
 ### \<List>
 
-- [Huffman Coding Compression Implementation (2024.10.09)](#huffman-coding-compression-implementation-20241009)
+- [Compression Implementation : Huffman Coding (2024.10.09)](#compression-implementation--huffman-coding-20241009)
 - [*K&R C* Style Function Declaration (2023.08.20)](#kr-c-style-function-declaration-20230820)
 - [Conditional Compile with `#ifdef` (2022.08.30)](#conditional-compile-with-ifdef-20220830)
 - [File I/O (2022.08.27)](#file-io-20220827)
@@ -35,7 +35,7 @@ The final destination of programming
   ```
 
 
-## [Huffman Coding Compression Implementation (2024.10.09)](#list)
+## [Compression Implementation : Huffman Coding (2024.10.09)](#list)
 
 - Successfully compressed and decompressed ASCII text data using Huffman coding method
   - In cases where the data is not large enough and the Huffman code table is included in the compressed file, the size after compression may actually be larger
