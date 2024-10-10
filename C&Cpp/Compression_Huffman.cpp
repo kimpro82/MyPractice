@@ -15,8 +15,8 @@ using namespace std;
 
 // Constants for file names
 const string INPUT_FILE             = "Data/octobers_song.txt";
-const string COMPRESSED_TEXT_FILE   = "Data/huffman_compressed.txt"; // Save compressed data as text
-const string COMPRESSED_BINARY_FILE = "Data/huffman_compressed.bin"; // Save compressed data as binary
+const string COMPRESSED_TEXT_FILE   = "Data/huffman_compressed.txt";
+const string COMPRESSED_BINARY_FILE = "Data/huffman_compressed.bin";
 const string DECOMPRESSED_FILE      = "Data/huffman_decompressed.txt";
 const string CODE_TABLE_FILE        = "Data/huffman_table.txt";
 
