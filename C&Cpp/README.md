@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [Compression Implementation : Huffman Coding (2024.10.09)](#compression-implementation--huffman-coding-20241009)
 - [*K&R C* Style Function Declaration (2023.08.20)](#kr-c-style-function-declaration-20230820)
 - [Conditional Compile with `#ifdef` (2022.08.30)](#conditional-compile-with-ifdef-20220830)
 - [File I/O (2022.08.27)](#file-io-20220827)
@@ -20,7 +21,8 @@ The final destination of programming
 - [Hello World (2021.05.12)](#hello-world-20210512)
 
 
-※ All codes include the following top lines. :
+※ All code include the following top lines. :
+
   ```c
   // C
   #include <stdio.h>
@@ -31,6 +33,352 @@ The final destination of programming
 
   using namespace std;
   ```
+
+
+## [Compression Implementation : Huffman Coding (2024.10.09)](#list)
+
+- Successfully compressed and decompressed ASCII text data using Huffman coding method
+  - In cases where the data is not large enough and the Huffman code table is included in the compressed file, the size after compression may actually be larger
+- Reference ☞ [Huffman coding - Wikipedia](https://en.wikipedia.org/wiki/Huffman_coding)
+- Code and Results
+  - Code : `Compression_Huffman.cpp`
+    <details>
+      <summary>More</summary>
+      <details>
+        <summary>Headers and Constants</summary>
+
+      ```cpp
+      #include <iostream>
+      #include <fstream>
+      #include <queue>
+      #include <unordered_map>     // Faster than map (does not maintain order)
+      #include <vector>
+      #include <string>
+      #include <bitset>
+      #include <cmath>             // Include cmath for ceil function
+      #include <iomanip>           // Include iomanip for std::setprecision
+      ```
+      ```cpp
+      using namespace std;
+      ```
+      ```cpp
+      // Constants for file names
+      const string INPUT_FILE             = "Data/octobers_song.txt";
+      const string COMPRESSED_TEXT_FILE   = "Data/huffman_compressed.txt";
+      const string COMPRESSED_BINARY_FILE = "Data/huffman_compressed.bin";
+      const string DECOMPRESSED_FILE      = "Data/huffman_decompressed.txt";
+      const string CODE_TABLE_FILE        = "Data/huffman_table.txt";
+      ```
+      </details>
+      <details>
+        <summary>struct HuffmanNode</summary>
+
+      ```cpp
+      // Node for Huffman Tree
+      struct HuffmanNode
+      {
+          char character;
+          int frequency;
+          HuffmanNode* left;
+          HuffmanNode* right;
+          HuffmanNode(char ch, int freq) : character(ch), frequency(freq), left(nullptr), right(nullptr) {}
+      };
+      ```
+      </details>
+      <details>
+        <summary>struct Compare</summary>
+
+      ```cpp
+      // Compare class for priority queue
+      struct Compare
+      {
+          bool operator()(HuffmanNode* left, HuffmanNode* right)
+          {
+              return left->frequency > right->frequency;
+          }
+      };
+      ```
+      </details>
+      <details>
+        <summary>void generateCodes()</summary>
+
+      ```cpp
+      // Function to generate Huffman Codes
+      void generateCodes(HuffmanNode* root, string code, unordered_map<char, string>& huffmanCode)
+      {
+          if (!root) return;
+          if (!root->left && !root->right)
+          {
+              huffmanCode[root->character] = code;
+          }
+          generateCodes(root->left, code + "0", huffmanCode);
+          generateCodes(root->right, code + "1", huffmanCode);
+      }
+      ```
+      </details>
+      <details>
+        <summary>HuffmanNode* buildHuffmanTree()</summary>
+
+      ```cpp
+      // Function to build Huffman Tree and generate codes
+      HuffmanNode* buildHuffmanTree(const unordered_map<char, int>& freqMap, unordered_map<char, string>& huffmanCode)
+      {
+          priority_queue<HuffmanNode*, vector<HuffmanNode*>, Compare> pq;
+          for (auto pair : freqMap)
+          {
+              pq.push(new HuffmanNode(pair.first, pair.second));
+          }
+
+          while (pq.size() != 1)
+          {
+              HuffmanNode* left = pq.top(); pq.pop();
+              HuffmanNode* right = pq.top(); pq.pop();
+              HuffmanNode* sum = new HuffmanNode('\0', left->frequency + right->frequency);
+              sum->left = left;
+              sum->right = right;
+              pq.push(sum);
+          }
+
+          HuffmanNode* root = pq.top();
+          generateCodes(root, "", huffmanCode);
+          return root;
+      }
+      ```
+      </details>
+      <details>
+        <summary>string compress()</summary>
+
+      ```cpp
+      // Function to compress data
+      string compress(const string& data, const unordered_map<char, string>& huffmanCode)
+      {
+          string compressedData;
+          for (char ch : data)
+          {
+              compressedData += huffmanCode.at(ch);
+          }
+          return compressedData;
+      }
+      ```
+      </details>
+      <details>
+        <summary>string decompress()</summary>
+
+      ```cpp
+      // Function to decompress data
+      string decompress(HuffmanNode* root, const string& compressedData)
+      {
+          string decompressedData;
+          HuffmanNode* current = root;
+          for (char bit : compressedData)
+          {
+              if (bit == '0') current = current->left;
+              else current = current->right;
+
+              if (!current->left && !current->right)
+              {
+                  decompressedData += current->character;
+                  current = root;
+              }
+          }
+          return decompressedData;
+      }
+      ```
+      </details>
+      <details>
+        <summary>string readInputFile()</summary>
+
+      ```cpp
+      // Function to read input data from a file
+      string readInputFile(const string& filename)
+      {
+          ifstream file(filename);
+          if (!file.is_open())
+          {
+              cerr << "Error opening file: " << filename << endl;
+              exit(1);
+          }
+
+          string data, line;
+          while (getline(file, line))
+          {
+              data += line + '\n';
+          }
+          file.close();
+          return data;
+      }
+      ```
+      </details>
+      <details>
+        <summary>void writeToFile()</summary>
+
+      ```cpp
+      // Common function to write data to a file
+      void writeToFile(const string& filename, const string& data, bool isBinary = false)
+      {
+          ofstream file(isBinary ? filename : filename.c_str(), isBinary ? ios::binary : ios::out);
+          if (!file.is_open())
+          {
+              cerr << "Error writing to file: " << filename << endl;
+              exit(1);
+          }
+
+          if (isBinary)
+          {
+              // Convert the binary string to bytes and write
+              bitset<8> bits;
+              for (size_t i = 0; i < data.length(); i += 8)
+              {
+                  bits = bitset<8>(data.substr(i, 8));
+                  file.put(static_cast<char>(bits.to_ulong()));
+              }
+
+              // Handle remaining bits
+              if (data.length() % 8 != 0)
+              {
+                  string remainingBits = data.substr(data.length() - (data.length() % 8));
+                  bits = bitset<8>(remainingBits);
+                  file.put(static_cast<char>(bits.to_ulong()));
+              }
+          }
+          else
+          {
+              file << data; // Write the string as is
+          }
+
+          file.close();
+      }
+      ```
+      </details>
+      <details>
+        <summary>void writeCodeTable()</summary>
+
+      ```cpp
+      // Function to write the Huffman code table
+      void writeCodeTable(const string& filename, const unordered_map<char, string>& huffmanCode)
+      {
+          ofstream file(filename);
+          if (!file.is_open())
+          {
+              cerr << "Error writing to file: " << filename << endl;
+              exit(1);
+          }
+          for (auto pair : huffmanCode)
+          {
+              file << pair.first << ": " << pair.second << endl;
+          }
+          file.close();
+      }
+      ```
+      </details>
+      <details>
+        <summary>void calculateCompressionRatio()</summary>
+
+      ```cpp
+      // Function to calculate compression ratio in percentage
+      void calculateCompressionRatio(const string& originalData, const string& compressedData)
+      {
+          int originalSize = static_cast<int>(originalData.size()); // Original size in bytes
+          int compressedSize = static_cast<int>(ceil(compressedData.size() / 8.0)); // Compressed size in bytes
+          double compressionRatio = (static_cast<double>(compressedSize) / originalSize) * 100; // Convert to percentage
+
+          cout << "Original size     : " << originalSize << " bytes" << endl;
+          cout << "Compressed size   : " << compressedSize << " bytes" << endl;
+
+          // Display rounded compression ratio to two decimal places
+          cout << "Compression Ratio : " << round(compressionRatio * 100) / 100 << "%" << endl; // Rounded to 2 decimal places
+      }
+      ```
+      </details>
+      <details>
+        <summary>int main()</summary>
+
+      ```cpp
+      int main()
+      {
+          cout << "<Huffman Coding>" << endl << endl;
+
+          // Step 1: Read input data from file
+          string data = readInputFile(INPUT_FILE);
+
+          // Step 2: Count frequency of each character
+          unordered_map<char, int> freqMap;
+          for (char ch : data)
+          {
+              freqMap[ch]++;
+          }
+
+          // Step 3: Build Huffman Tree and generate code table
+          unordered_map<char, string> huffmanCode;
+          HuffmanNode* root = buildHuffmanTree(freqMap, huffmanCode);
+
+          // Step 4: Write Huffman code table to a file
+          writeCodeTable(CODE_TABLE_FILE, huffmanCode);
+
+          // Step 5: Compress the input data
+          string compressedData = compress(data, huffmanCode);
+
+          // Step 6: Write compressed data to a text file
+          writeToFile(COMPRESSED_TEXT_FILE, compressedData);
+
+          // Step 7: Write compressed data to a binary file
+          writeToFile(COMPRESSED_BINARY_FILE, compressedData, true);
+
+          // Step 8: Decompress the data
+          string decompressedData = decompress(root, compressedData);
+
+          // Step 9: Write decompressed data to a file
+          writeToFile(DECOMPRESSED_FILE, decompressedData);
+
+          // Step 10: Calculate and display compression ratio
+          calculateCompressionRatio(data, compressedData);
+
+          cout << endl << "Compression and Decompression completed successfully." << endl;
+          return 0;
+      }
+      ```
+      </details>
+    </details>
+  - Sameple Text : `octobers_song.txt`
+    <details open="">
+      <summary>(Lyrics) "October's Song" from 《The Gang's All Here》 (2022) by Skid Row</summary>
+
+    ```txt
+    Mother step to the light that's before you
+    Mother change in the seasons I see
+    Winter's on the rise
+    Autumn still in my eyes
+    Reborn as daylight dies
+    ……
+    ```
+    </details>
+  - Results
+    <details open="">
+      <summary>Console Output</summary>
+
+    ```txt
+    <Huffman Coding>
+
+    Original size     : 1092 bytes
+    Compressed size   : 592 bytes
+    Compression Ratio : 54.21%
+
+    Compression and Decompression completed successfully.
+    ```
+    </details>
+    <details open="">
+      <summary>Huffman Code Table</summary>
+
+    ```txt
+    d: 11010
+    f: 1100111
+    A: 110011011
+    p: 11001100
+    r: 110010
+    h: 11011
+    ……
+    ```
+    </details>
 
 
 ## [*K&R C* Style Function Declaration (2023.08.20)](#list)
@@ -53,7 +401,7 @@ The final destination of programming
   </details>
 - Example
   <details open="">
-    <summary>Codes : KnrFunctionSyntax.c</summary>
+    <summary>Code : KnrFunctionSyntax.c</summary>
 
   ```c
   int add(a, b)                           // K&R 스타일 함수 선언: 매개변수 이름을 생략하고 데이터 타입만 표시
@@ -103,7 +451,7 @@ The final destination of programming
 - ※ When the macro `fileio` is on, *Ahnlab V3 Lite* recognizes `a.exe` as a malware!
 
   <details>
-    <summary>Codes : ConditionalCompile.c</summary>
+    <summary>Code : ConditionalCompile.c</summary>
 
   ```c
   int main()
@@ -127,7 +475,7 @@ The final destination of programming
   ```
   </details>
   <details open="">
-    <summary>Codes : ConditionalCompile.cpp</summary>
+    <summary>Code : ConditionalCompile.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -203,7 +551,7 @@ The final destination of programming
 - Further discussion : how to read *Korean* string from external file
 
   <details>
-    <summary>Codes : FileIO.c</summary>
+    <summary>Code : FileIO.c</summary>
 
   ```c
   int main()
@@ -226,7 +574,7 @@ The final destination of programming
   ```
   </details>
   <details open="">
-    <summary>Codes : FileIO.cpp</summary>
+    <summary>Code : FileIO.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -270,7 +618,7 @@ The final destination of programming
 ## [GCC Optimization Option Practice (2022.08.16)](#list)
 
 - Generate many assembly(`.s`) files with various optimization options in `GCC`
-- But I've just realized that I'm not ready yet to read their assembly codes ……
+- But I've just realized that I'm not ready yet to read their assembly code ……
 - However, I've found at least that the generally known properties of the optimization options are not fixed absolutely.  
   (For example, `Os` is known as smaller code size but it sometimes returns rather larger one.)
 - References :  
@@ -279,7 +627,7 @@ The final destination of programming
   · https://www.rapidtables.com/code/linux/gcc/gcc-o.html
 
   <details open="">
-    <summary>Codes : OptimizePractice.c</summary>
+    <summary>Code : OptimizePractice.c</summary>
 
   ```c
   void operate(int i, int* p)
@@ -303,7 +651,7 @@ The final destination of programming
   > 5
   </details>
   <details>
-    <summary>Codes : OptimizePractice.bat (Old)</summary>
+    <summary>Code : OptimizePractice.bat (Old)</summary>
 
   ```batch
   gcc -O0 -S OptimizePractice.c -o OptimizePractice_O0.s
@@ -315,7 +663,7 @@ The final destination of programming
   ```
   </details>
   <details open="">
-    <summary>Codes : OptimizePractice.bat (New)</summary>
+    <summary>Code : OptimizePractice.bat (New)</summary>
 
   ```batch
   @echo off
@@ -333,7 +681,7 @@ The final destination of programming
 
 ## [`printf()` format test (2022.04.25)](#list)
 
-- I wrote the below codes in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
+- I wrote the below code in [*GCJ 2022 Round 1B*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#google-code-jam-2022---round-1b) - [*Controlled Inflation*](https://github.com/kimpro82/MyCodingContest/tree/master/Google/CodeJam/2022%20Round%201B#controlled-inflation-14pts-21pts), but there's some struggle with `printf()`'s format `%d` `%ld` `%lld`.  
   (All the variables are declared as *long long* type.)
   ```cpp
   // test
@@ -342,9 +690,9 @@ The final destination of programming
 - I will never miss the criminal!
 
   <details open="">
-    <summary>Codes : printf.c & printf.cpp</summary>
+    <summary>Code : printf.c & printf.cpp</summary>
 
-  The codes except each of the headers are the same.
+  The code except each of the headers are the same.
   ```c
   int main()
   {
@@ -393,7 +741,7 @@ The final destination of programming
 - There was a crazy mistake …… It stole my two months!
 
   <details>
-    <summary>Codes : BinarySearch.c</summary>
+    <summary>Code : BinarySearch.c</summary>
 
   ```c
   #include <stdio.h>
@@ -515,7 +863,7 @@ The final destination of programming
 - Of course, this function seems very **powerful** for sorted data.
 
   <details open="">
-    <summary>Codes : BinarySearch.cpp</summary>
+    <summary>Code : BinarySearch.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -556,7 +904,7 @@ The final destination of programming
 - Some extreme(?) experiments about `++` and `--` operators
 
   <details open="">
-    <summary>Codes : IncDecOperator.c</summary>
+    <summary>Code : IncDecOperator.c</summary>
 
   ```c
   int main()
@@ -599,7 +947,7 @@ The final destination of programming
 - The way to prevent variable declaration from garbage value
 
   <details open="">
-    <summary>Codes : PreventGarbageValue.cpp</summary>
+    <summary>Code : PreventGarbageValue.cpp</summary>
 
   ```cpp
   int main()
@@ -632,7 +980,7 @@ The final destination of programming
 - Reference ☞ [코딩 테스트를 위한 자료 구조와 알고리즘 with C++ (길벗, 2020)](https://github.com/gilbutITbook/080239)
 
   <details>
-    <summary>Codes : Containers_Deque.cpp</summary>
+    <summary>Code : Containers_Deque.cpp</summary>
 
   ```cpp
   #include <deque>
@@ -688,7 +1036,7 @@ The final destination of programming
   > 1 2 3  
   </details>
   <details>
-    <summary>Codes : Containers_Stack.cpp</summary>
+    <summary>Code : Containers_Stack.cpp</summary>
 
   ```cpp
   #include <stack>
@@ -741,7 +1089,7 @@ The final destination of programming
   > The stack is empty.
   </details>
   <details>
-    <summary>Codes : Containers_Queue.cpp</summary>
+    <summary>Code : Containers_Queue.cpp</summary>
 
   ```cpp
   #include <queue>
@@ -799,7 +1147,7 @@ The final destination of programming
 - I am so proud!
 
   <details>
-    <summary>Codes : Template.cpp</summary>
+    <summary>Code : Template.cpp</summary>
 
   ```cpp
   template <class T>
@@ -851,7 +1199,7 @@ The final destination of programming
 - Can he learn them or still stay in beginner's swamps? To be continued …… 
 
   <details>
-    <summary>Codes : StackOverflow.cpp</summary>
+    <summary>Code : StackOverflow.cpp</summary>
 
   ```cpp
   #include <iostream>
@@ -947,7 +1295,7 @@ The final destination of programming
   - `gcc` (for `C`) and `g++` (for `C++`) seem not so different to each other
 
   <details>
-    <summary>Codes : IamYourFather_c.c</summary>
+    <summary>Code : IamYourFather_c.c</summary>
 
   ```c
   #include <stdio.h>
@@ -975,7 +1323,7 @@ The final destination of programming
   > I am your father.
   </details>
   <details open="">
-    <summary>Codes : IamYourFather_cpp.cpp</summary>
+    <summary>Code : IamYourFather_cpp.cpp</summary>
 
   ```cpp
   #include <iostream>
