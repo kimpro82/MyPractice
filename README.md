@@ -11,8 +11,8 @@ This is a repository primarily for storing code related to **learning programmin
 
 ### \<List>
 
-- [My **VBA** Practice](#my-vba-practice)
 - [My **Python** Practice](#my-python-practice)
+- [My **VBA** Practice](#my-vba-practice)
 - [My **C**/**C++** Practice](#my-cc-practice)
 - [My **C#** Practice](#my-c-practice)
 - [My **Java** Practice](#my-java-practice)
@@ -22,23 +22,6 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Dart** Practice](#my-dart-practice)
-
-
-## [My VBA Practice](#list)
-
-- [`Enum` Statement (2024.02.11)](/VBA/README.md#enum-statement-20240211)
-- [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](/VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
-- [`Erase` Statement (2023.01.03)](/VBA/README.md#erase-statement-20230103)
-- [File System : `Folder.Files` (2022.07.15)](/VBA/README.md#folder-object--files-property-20220715)
-- [File System : `File.DateCreated` (2022.07.12)](/VBA/README.md#file-object--datecreated-property-20220712)
-- [`ByRef` vs `ByVal` (2022.06.05)](/VBA/README.md#byref-vs-byval-20220605)
-- [Declare Plural Variable (2022.06.04)](/VBA#declare-plural-variable-20220604)
-- [Color Scroll 2 (2021.12.01)](/VBA/README.md#color-scroll-2-20211201)
-- [Variable Scope (2011.11.29)](/VBA/README.md#variable-scope-20111129)
-- [Control Formula Calculation Option (2021.11.08)](/VBA/README.md#control-formula-calculation-option-20211108)
-- [Read Binary File (2021.08.23)](/VBA/README.md#read-binary-file-20210823)
-- [Try ~ Catch ~ Finally (2021.07.28)](/VBA/README.md#try-catch-finally-20210728)
-- [Color Scroll (2020.11.14)](/VBA/README.md#color-scroll-20201114)
 
 
 ## [My Python Practice](#list)
@@ -67,6 +50,23 @@ This is a repository primarily for storing code related to **learning programmin
 - [Password (2019.05.24)](/Python/README.md#password-20190524)
 - [Class (2018.02.07)](/Python/README.md#class-20180207)
 - [`while` (2017.05.15)](/Python/README.md#while-20170515)
+
+
+## [My VBA Practice](#list)
+
+- [`Enum` Statement (2024.02.11)](/VBA/README.md#enum-statement-20240211)
+- [Simple Q&A with *ChatGPT* : Trial (2023.05.02)](/VBA/README.md#simple-qa-with-chatgpt--trial-20230502)
+- [`Erase` Statement (2023.01.03)](/VBA/README.md#erase-statement-20230103)
+- [File System : `Folder.Files` (2022.07.15)](/VBA/README.md#folder-object--files-property-20220715)
+- [File System : `File.DateCreated` (2022.07.12)](/VBA/README.md#file-object--datecreated-property-20220712)
+- [`ByRef` vs `ByVal` (2022.06.05)](/VBA/README.md#byref-vs-byval-20220605)
+- [Declare Plural Variable (2022.06.04)](/VBA#declare-plural-variable-20220604)
+- [Color Scroll 2 (2021.12.01)](/VBA/README.md#color-scroll-2-20211201)
+- [Variable Scope (2011.11.29)](/VBA/README.md#variable-scope-20111129)
+- [Control Formula Calculation Option (2021.11.08)](/VBA/README.md#control-formula-calculation-option-20211108)
+- [Read Binary File (2021.08.23)](/VBA/README.md#read-binary-file-20210823)
+- [Try ~ Catch ~ Finally (2021.07.28)](/VBA/README.md#try-catch-finally-20210728)
+- [Color Scroll (2020.11.14)](/VBA/README.md#color-scroll-20201114)
 
 
 ## [My C/C++ Practice](#list)
