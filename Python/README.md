@@ -1,10 +1,11 @@
 # [My Python Practice](../README.md#my-python-practice)
 
-I'm sorry `C++` …… I betrayed you.
+I'm sorry *C++* …… I betrayed you.
 
 
 ### \<List>
 
+- [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
 - [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--compare-sync-function-handling-and-full-async-requests-20240906)
 - [Extract 3-Bit Palette Indices (2024.08.04)](#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](#hello_worldprint-20240523)
@@ -28,6 +29,122 @@ I'm sorry `C++` …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#list)
+
+- A comparison made between code using *Pydantic* and code without it
+  - *Pydantic* is an excellent library that contributes to improved code productivity
+  - It provides concise representation of data structures and reduces code needed for type conversion, data validation and error handling
+  - Therefore, we should use *Pydantic*. Let's start using it immediately
+  - Official Docs ☞ https://docs.pydantic.dev/
+- `pydantic_with.py`
+  <details open="">
+    <summary>Code</summary>
+
+  ```py
+  from pydantic import BaseModel
+  ```
+  ```py
+  class User(BaseModel):
+      """
+      Represents a user in the system.
+      """
+      id: int
+      name: str
+      is_active: bool
+  ```
+  ```py
+  # Sample user data with string values
+  user_data = {
+      'id': '123',        # Will be automatically converted to int
+      'name': 'Alice',
+      'is_active': 'true' # Will be automatically converted to bool
+  }
+
+  # Create a User instance from the dictionary
+  # Pydantic will automatically validate and convert the data types
+  user = User(**user_data)
+
+  # Print the user object as a JSON string
+  print(user.model_dump_json())
+  ```
+  </details>
+  <details open="">
+    <summary>Code</summary>
+
+  ```txt
+  {"id":123,"name":"Alice","is_active":true}
+  ```
+  </details>
+- `pydantic_without.py`
+  <details>
+    <summary>Code</summary>
+
+  ```py
+  import json
+  ```
+  ```py
+  class UserManual:
+      """
+      Represents a user in the system, demonstrating manual implementation
+      of type validation and JSON serialization.
+      """
+
+      def __init__(self, user_id, name, is_active):
+          """
+          Initialize a UserManual instance.
+
+          Raises:
+              ValueError: If any of the input types are incorrect.
+          """
+          if not isinstance(user_id, int):
+              raise ValueError("id must be an int")
+          if not isinstance(name, str):
+              raise ValueError("name must be a str")
+          if not isinstance(is_active, bool):
+              raise ValueError("is_active must be a bool")
+
+          self.user_id = user_id
+          self.name = name
+          self.is_active = is_active
+
+      def to_json(self):
+          """
+          Convert the UserManual instance to a JSON string.
+          """
+          return json.dumps({
+              'id': self.user_id,
+              'name': self.name,
+              'is_active': self.is_active
+          })
+  ```
+  ```py
+  # Sample user data with string values
+  user_data_manual = {
+      'id': '123',        # Requires explicit conversion to int
+      'name': 'Alice',
+      'is_active': 'true' # Requires explicit conversion to bool
+  }
+
+  # Manually convert data types and create UserManual instance
+  user_manual = UserManual(
+      int(user_data_manual['id']),
+      user_data_manual['name'],
+      user_data_manual['is_active'].lower() == 'true'
+  )
+
+  # Serialize to JSON and print
+  print(user_manual.to_json())
+  ```
+  </details>
+  <details>
+    <summary>Results</summary>
+
+  ```txt
+  {"id": 123, "name": "Alice", "is_active": true}
+  ```
+  </details>
 
 
 ## [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#list)
