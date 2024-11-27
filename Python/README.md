@@ -5,7 +5,7 @@ I'm sorry *C++* …… I betrayed you.
 
 ### \<List>
 
-- [`pydantic` (2024.11.26)](#pydantic-20241126)
+- [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
 - [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--compare-sync-function-handling-and-full-async-requests-20240906)
 - [Extract 3-Bit Palette Indices (2024.08.04)](#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](#hello_worldprint-20240523)
@@ -31,7 +31,7 @@ I'm sorry *C++* …… I betrayed you.
 - [`while` (2017.05.15)](#while-20170515)
 
 
-## [`pydantic` (2024.11.26)](#list)
+## [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#list)
 
 - A comparison made between code using *Pydantic* and code without it
   - *Pydantic* is an excellent library that contributes to improved code productivity
