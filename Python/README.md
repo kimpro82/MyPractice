@@ -7,7 +7,7 @@ I'm sorry *C++* …… I betrayed you.
 
 - [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#pydantic--comparing-with-dataclass-20241127)
 - [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
-- [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--compare-sync-function-handling-and-full-async-requests-20240906)
+- [`asyncio` : Comparing Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--comparing-sync-function-handling-and-full-async-requests-20240906)
 - [Extract 3-Bit Palette Indices (2024.08.04)](#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](#resub-20230212)
@@ -289,7 +289,7 @@ I'm sorry *C++* …… I betrayed you.
   </details>
 
 
-## [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#list)
+## [`asyncio` : Comparing Sync. Function Handling and Full Async. Requests (2024.09.06)](#list)
 
 - Review of how to reuse synchronous code within an asynchronous context
   - Using `asyncio.loop.run_in_executor()`
