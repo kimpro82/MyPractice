@@ -1,5 +1,5 @@
 """
-Compare Pydantic and @dataclass 3 : @dataclass from pydantic.dataclasses
+Comparing Pydantic and @dataclass 3 : @dataclass from pydantic.dataclasses
 2024.11.27
 
 It showcases how Pydantic can enforce data types and value constraints

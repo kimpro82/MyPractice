@@ -1,5 +1,5 @@
 """
-Compare Pydantic and @dataclass 1 : @dataclass without Pydantic
+Comparing Pydantic and @dataclass 1 : @dataclass without Pydantic
 2024.11.27
 
 It showcases basic functionality without data validation.
