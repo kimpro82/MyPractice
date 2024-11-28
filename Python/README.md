@@ -39,9 +39,9 @@ I'm sorry *C++* …… I betrayed you.
   - `pydantic.BaseModel` provides validation functionality.
   - `pydantic.dataclasses` allows the use of validation with the same syntax as `@dataclass`
     - Although it's presumed that the performance is not as good as the original `@dataclass`.
-- `pydantic_dataclass_1.py`
+- Case 1 : `@dataclass` without `pydantic`
   <details>
-    <summary>Code</summary>
+    <summary> : pydantic_dataclass_1.py</summary>
 
   ```py
   from dataclasses import dataclass
@@ -79,9 +79,9 @@ I'm sorry *C++* …… I betrayed you.
   Weird hero's age: -5
   ```
   </details>
-- `pydantic_dataclass_2.py`
+- Case 2 : `pydantic.BaseModel` instead of `@dataclass`
   <details>
-    <summary>Code</summary>
+    <summary>Code : pydantic_dataclass_2.py</summary>
 
   ```py
   from typing import List
@@ -124,9 +124,9 @@ I'm sorry *C++* …… I betrayed you.
       For further information visit https://errors.pydantic.dev/2.10/v/greater_than
   ```
   </details>
-- `pydantic_dataclass_3.py`
+- Case 3 : `@dataclass` from `pydantic.dataclasses`
   <details>
-    <summary>Code</summary>
+    <summary>Code : pydantic_dataclass_3.py</summary>
 
   ```py
   from typing import List
