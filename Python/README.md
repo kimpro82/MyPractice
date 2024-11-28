@@ -213,7 +213,7 @@ I'm sorry *C++* …… I betrayed you.
   ```
   </details>
   <details open="">
-    <summary>Code</summary>
+    <summary>Results</summary>
 
   ```txt
   {"id":123,"name":"Alice","is_active":true}
