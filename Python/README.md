@@ -41,7 +41,7 @@ I'm sorry *C++* …… I betrayed you.
     - Although it's presumed that the performance is not as good as the original `@dataclass`.
 - Case 1 : `@dataclass` without `pydantic`
   <details>
-    <summary> : pydantic_dataclass_1.py</summary>
+    <summary> Code : pydantic_dataclass_1.py</summary>
 
   ```py
   from dataclasses import dataclass
