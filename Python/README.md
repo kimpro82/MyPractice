@@ -5,8 +5,9 @@ I'm sorry *C++* …… I betrayed you.
 
 ### \<List>
 
+- [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#pydantic--comparing-with-dataclass-20241127)
 - [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
-- [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--compare-sync-function-handling-and-full-async-requests-20240906)
+- [`asyncio` : Comparing Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--comparing-sync-function-handling-and-full-async-requests-20240906)
 - [Extract 3-Bit Palette Indices (2024.08.04)](#extract-3-bit-palette-indices-20240804)
 - [`hello_world("print")` (2024.05.23)](#hello_worldprint-20240523)
 - [`re.sub()` (2023.02.12)](#resub-20230212)
@@ -29,6 +30,147 @@ I'm sorry *C++* …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#list)
+
+- Overview
+  - Original `@dataclass` is fast but lacks validation features.
+  - `pydantic.BaseModel` provides validation functionality.
+  - `pydantic.dataclasses` allows the use of validation with the same syntax as `@dataclass`
+    - Although it's presumed that the performance is not as good as the original `@dataclass`.
+- Case 1 : `@dataclass` without `pydantic`
+  <details>
+    <summary> Code : pydantic_dataclass_1.py</summary>
+
+  ```py
+  from dataclasses import dataclass
+  from typing import List
+  ```
+  ```py
+  @dataclass
+  class Superhero:
+      name: str
+      superpowers: List[str]
+      weakness: str
+      age: int
+  ```
+  ```py
+  # Create superheroes
+  batman = Superhero("Batman", ["Rich", "Smart"], "No superpowers", 35)
+  superman = Superhero("Superman", ["Flight", "Super strength"], "Kryptonite", 33)
+
+  # Print superhero information
+  print(f"{batman.name}'s superpowers: {', '.join(batman.superpowers)}")
+  print(f"{superman.name}'s weakness: {superman.weakness}")
+  ```
+  ```py
+  # This case doesn't raise an error but is logically incorrect
+  weird_hero = Superhero("Weird Guy", ["Sleeping"], "Wife", -5)
+  print(f"Weird hero's age: {weird_hero.age}")  # Negative age is allowed
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
+
+  ```txt
+  Batman's superpowers: Rich, Smart
+  Superman's weakness: Kryptonite
+  Weird hero's age: -5
+  ```
+  </details>
+- Case 2 : `pydantic.BaseModel` instead of `@dataclass`
+  <details>
+    <summary>Code : pydantic_dataclass_2.py</summary>
+
+  ```py
+  from typing import List
+  from pydantic import BaseModel, Field
+  ```
+  ```py
+  class Superhero(BaseModel):
+      name: str
+      superpowers: List[str]
+      weakness: str
+      age: int = Field(..., gt=0, lt=1000)
+  ```
+  ```py
+  # Create superheroes
+  batman = Superhero(name="Batman", superpowers=["Rich", "Smart"], weakness="No superpowers", age=35)
+  superman = Superhero(name="Superman", superpowers=["Flight", "Super strength"], weakness="Kryptonite", age=33)
+
+  # Print superhero information
+  print(f"{batman.name}'s superpowers: {', '.join(batman.superpowers)}")
+  print(f"{superman.name}'s weakness: {superman.weakness}")
+  ```
+  ```py
+  # Error case
+  try:
+      weird_hero = Superhero(name="Weird Guy", superpowers=["Sleeping"], weakness="Wife", age=-5)
+      print(f"Weird hero's age: {weird_hero.age}")
+  except ValueError as e:
+      print(f"Error occurred: {e}")
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
+
+  ```txt
+  Batman's superpowers: Rich, Smart
+  Superman's weakness: Kryptonite
+  Error occurred: 1 validation error for Superhero
+  age
+    Input should be greater than 0 [type=greater_than, input_value=-5, input_type=int]
+      For further information visit https://errors.pydantic.dev/2.10/v/greater_than
+  ```
+  </details>
+- Case 3 : `@dataclass` from `pydantic.dataclasses`
+  <details>
+    <summary>Code : pydantic_dataclass_3.py</summary>
+
+  ```py
+  from typing import List
+  from pydantic.dataclasses import dataclass
+  from pydantic import Field
+  ```
+  ```py
+  @dataclass
+  class Superhero:
+      name: str
+      superpowers: List[str]
+      weakness: str
+      age: int = Field(..., gt=0, lt=1000)
+  ```
+  ```py
+  # Create superheroes
+  batman = Superhero("Batman", ["Rich", "Smart"], "No superpowers", 35)
+  superman = Superhero("Superman", ["Flight", "Super strength"], "Kryptonite", 33)
+
+  # Print superhero information
+  print(f"{batman.name}'s superpowers: {', '.join(batman.superpowers)}")
+  print(f"{superman.name}'s weakness: {superman.weakness}")
+  ```
+  ```py
+  # Error case
+  try:
+      weird_hero = Superhero("Weird Guy", ["Sleeping"], "Wife", -5)
+      print(f"Weird hero's age: {weird_hero.age}")
+  except ValueError as e:
+      print(f"Error occurred: {e}")
+  ```
+  </details>
+  <details open="">
+    <summary>Results</summary>
+
+  ```txt
+  Batman's superpowers: Rich, Smart
+  Superman's weakness: Kryptonite
+  Error occurred: 1 validation error for Superhero
+  3
+    Input should be greater than 0 [type=greater_than, input_value=-5, input_type=int]
+      For further information visit https://errors.pydantic.dev/2.10/v/greater_than
+  ```
+  </details>
 
 
 ## [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#list)
@@ -71,7 +213,7 @@ I'm sorry *C++* …… I betrayed you.
   ```
   </details>
   <details open="">
-    <summary>Code</summary>
+    <summary>Results</summary>
 
   ```txt
   {"id":123,"name":"Alice","is_active":true}
@@ -147,7 +289,7 @@ I'm sorry *C++* …… I betrayed you.
   </details>
 
 
-## [`asyncio` : Compare Sync. Function Handling and Full Async. Requests (2024.09.06)](#list)
+## [`asyncio` : Comparing Sync. Function Handling and Full Async. Requests (2024.09.06)](#list)
 
 - Review of how to reuse synchronous code within an asynchronous context
   - Using `asyncio.loop.run_in_executor()`
