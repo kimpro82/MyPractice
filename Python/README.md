@@ -5,6 +5,7 @@ I'm sorry *C++* …… I betrayed you.
 
 ### \<List>
 
+- [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#abstract-base-classabc-as-interface-practice-20241130)
 - [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#pydantic--comparing-with-dataclass-20241127)
 - [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
 - [`asyncio` : Comparing Sync. Function Handling and Full Async. Requests (2024.09.06)](#asyncio--comparing-sync-function-handling-and-full-async-requests-20240906)
@@ -30,6 +31,76 @@ I'm sorry *C++* …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#list)
+
+- Overview
+  - Python does not provide separate syntax for interfaces, but abstract classes can be used as a concept similar to interfaces in other languages.
+  - Abstract classes used as interfaces are more about enforcing specific method declarations rather than promoting code reusability.
+- Code and Results
+  <details>
+    <summary>Code : abc_as_interface.py</summary>
+
+  ```py
+  from abc import ABC, abstractmethod
+  ```
+  ```py
+  class MischievousBoy(ABC):
+      """Abstract base class defining the interface for mischievous boys."""
+      @abstractmethod
+      def play_prank(self):
+          """Play a prank on someone."""
+          # pass  # not necessary
+
+      @abstractmethod
+      def get_in_trouble(self):
+          """Get into trouble for doing something naughty."""
+          # pass  # not necessary
+
+  class Timmy(MischievousBoy):
+      """Concrete class representing Timmy, a mischievous boy."""
+      def play_prank(self):
+          """Timmy's specific implementation of playing a prank."""
+          print("Timmy puts a whoopee cushion on the teacher's chair!")
+
+      def get_in_trouble(self):
+          """Timmy's specific way of getting into trouble."""
+          print("Timmy gets detention for drawing on the walls.")
+
+  class Johnny(MischievousBoy):
+      """Concrete class representing Johnny, another mischievous boy."""
+      def play_prank(self):
+          """Johnny's specific implementation of playing a prank."""
+          print("Johnny hides all the chalk in the classroom!")
+
+      def get_in_trouble(self):
+          """Johnny's specific way of getting into trouble."""
+          print("Johnny has to clean the blackboard for a week.")
+  ```
+  ```py
+  # Create instances of the mischievous boys
+  timmy = Timmy()
+  johnny = Johnny()
+
+  # Demonstrate Timmy and Johnny in action
+  timmy.play_prank()
+  timmy.get_in_trouble()
+
+  johnny.play_prank()
+  johnny.get_in_trouble()
+  ```
+  </details>
+  <details>
+    <summary>Results</summary>
+
+  ```txt
+  Timmy puts a whoopee cushion on the teacher's chair!
+  Timmy gets detention for drawing on the walls.
+  Johnny hides all the chalk in the classroom!
+  Johnny has to clean the blackboard for a week.
+  ```
+  </details>
 
 
 ## [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#list)
