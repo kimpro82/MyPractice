@@ -26,6 +26,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My Python Practice](#list)
 
+- [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](/Python/README.md#abstract-base-classabc-as-interface-practice-20241130)
 - [`pydantic` : Comparing with `@dataclass` (2024.11.27)](/Python/README.md#pydantic--comparing-with-dataclass-20241127)
 - [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](/Python/README.md#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
 - [`asyncio` : Comparing Sync. Function Handling and Full Async. Requests (2024.09.06)](/Python/README.md#asyncio--comparing-sync-function-handling-and-full-async-requests-20240906)
