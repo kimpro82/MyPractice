@@ -73,6 +73,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My C/C++ Practice](#list)
 
+- [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](/C%26Cpp/README.md#diamond-inheritance-problem-and-resolution-through-virtual-inheritance-20250106)
 - [Compression Implementation : Huffman Coding (2024.10.09)](/C&Cpp/README.md#compression-implementation--huffman-coding-20241009)
 - [*K&R C* Style Function Declaration (2023.08.20)](/C&Cpp/README.md#kr-c-style-function-declaration-20230820)
 - [Conditional Compile with `#ifdef` (2022.08.30)](/C&Cpp/README.md#conditional-compile-with-ifdef-20220830)

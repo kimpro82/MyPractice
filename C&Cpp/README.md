@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](#diamond-inheritance-problem-and-resolution-through-virtual-inheritance-20250106)
 - [Compression Implementation : Huffman Coding (2024.10.09)](#compression-implementation--huffman-coding-20241009)
 - [*K&R C* Style Function Declaration (2023.08.20)](#kr-c-style-function-declaration-20230820)
 - [Conditional Compile with `#ifdef` (2022.08.30)](#conditional-compile-with-ifdef-20220830)
@@ -21,18 +22,114 @@ The final destination of programming
 - [Hello World (2021.05.12)](#hello-world-20210512)
 
 
-※ All code include the following top lines. :
 
-  ```c
-  // C
-  #include <stdio.h>
-  ```
+## [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](#list)
+
+- What is *Diamond Inheritance*?
+  - Diamond inheritance occurs when a class inherits from two classes that have a common base class. This can lead to ambiguity and duplication of the base class members in the derived class.
+- Brief Code Description
+  - This code demonstrates the diamond inheritance problem using a simple class hierarchy. It shows how ambiguity arises in a non-virtual inheritance scenario and how virtual inheritance resolves the issue, allowing unambiguous access to base class members.
+- Code and Results
+  <details>
+    <summary>Code : DiamonInheritance.cpp</summary>
+
   ```cpp
-  // CPP
   #include <iostream>
-
   using namespace std;
   ```
+  ```cpp
+  class Food 
+  {
+  public:
+      void eat_deliciously() 
+      {
+          cout << "Yum yum yum! Delicious!" << endl;
+      }
+  };
+  ```
+  ```cpp
+  // Problematic diamond inheritance
+  class Pizza : public Food 
+  {
+  public:
+      void stretch_cheese() 
+      {
+          cout << "The cheese stretches so much~" << endl;
+      }
+  };
+
+  class Pasta : public Food 
+  {
+  public:
+      void slurp_noodles() 
+      {
+          cout << "Slurp! Sucking in the noodles!" << endl;
+      }
+  };
+
+  class PizzaPasta : public Pizza, public Pasta 
+  {
+  };
+  ```
+  ```cpp
+  // Solution using virtual inheritance
+  class VPizza : virtual public Food 
+  {
+  public:
+      void stretch_cheese() 
+      {
+          cout << "The cheese stretches so much~" << endl;
+      }
+  };
+
+  class VPasta : virtual public Food 
+  {
+  public:
+      void slurp_noodles() 
+      {
+          cout << "Slurp! Sucking in the noodles!" << endl;
+      }
+  };
+
+  class VPizzaPasta : public VPizza, public VPasta 
+  {
+  };
+  ```
+  ```cpp
+  int main() 
+  {
+      // Problematic diamond inheritance
+      PizzaPasta weird_dish;
+      weird_dish.stretch_cheese();
+      weird_dish.slurp_noodles();
+      // weird_dish.eat_deliciously();                        // Compilation error: ambiguous call to eat_deliciously()
+      weird_dish.Pizza::eat_deliciously();                    // Resolve ambiguity by specifying the class
+
+      cout << "\n";
+
+      // Solution using virtual inheritance
+      VPizzaPasta v_weird_dish;
+      v_weird_dish.stretch_cheese();
+      v_weird_dish.slurp_noodles();
+      v_weird_dish.eat_deliciously();                         // No ambiguity, calls Food::eat_deliciously()
+
+      return 0;
+  }
+  ```
+  </details>
+  <details>
+    <summary>Results</summary>
+
+  ```txt
+  The cheese stretches so much~
+  Slurp! Sucking in the noodles!
+  Yum yum yum! Delicious!
+
+  The cheese stretches so much~
+  Slurp! Sucking in the noodles!
+  Yum yum yum! Delicious!
+  ```
+  </details>
 
 
 ## [Compression Implementation : Huffman Coding (2024.10.09)](#list)
