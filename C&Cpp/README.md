@@ -25,7 +25,7 @@ The final destination of programming
 
 ## [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](#list)
 
-- What is Diamond Inheritance?
+- What is *Diamond Inheritance*?
   - Diamond inheritance occurs when a class inherits from two classes that have a common base class. This can lead to ambiguity and duplication of the base class members in the derived class.
 - Brief Code Description
   - This code demonstrates the diamond inheritance problem using a simple class hierarchy. It shows how ambiguity arises in a non-virtual inheritance scenario and how virtual inheritance resolves the issue, allowing unambiguous access to base class members.
