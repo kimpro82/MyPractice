@@ -96,7 +96,7 @@ mindmap
       핀치에 강하게
 ```
 
-### Flowchart : Doom to the Chicken
+### Flowchart : Doomed to Open a Chicken Shop
 ```mermaid
 flowchart TD
   A[진로 고민] --> B{어떤 길을 선택할까?}
