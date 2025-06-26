@@ -1,0 +1,22 @@
+erDiagram
+  DAD {
+    string name
+    int patienceLevel
+  }
+  BOY {
+    string name
+    int energyLevel
+  }
+  TOY {
+    string type
+    bool broken
+  }
+  SNACK {
+    string flavor
+    int sugarContent
+  }
+  DAD ||--o{ TOY : "fixes"
+  BOY ||--o{ TOY : "breaks"
+  DAD ||--o{ SNACK : "hides"
+  BOY ||--o{ SNACK : "finds"
+  DAD ||--|| BOY : "raises"

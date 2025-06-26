@@ -20,6 +20,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Golang** Practice](#my-golang-practice)
 - [My **Verilog** Practice](#my-verilog-practice)
+- [My **Mermaid** Practice](#my-mermaid--practice)
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
@@ -131,6 +132,11 @@ This is a repository primarily for storing code related to **learning programmin
 
 - [Type Casting (2022.09.06)](/Verilog/README.md#type-casting-20220906)
 - [Array Indexing (2022.09.06)](/Verilog/README.md#array-indexing-20220906)
+
+
+## [My Mermaid  Practice](#list)
+
+- [Initial Practice (2025.06.25)](/Mermaid/README.md#initial-practice-20250625)
 
 
 ## [My Ruby Practice](#list)
