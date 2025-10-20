@@ -22,6 +22,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Mermaid** Practice](#my-mermaid--practice)
 - [My **Ruby** Practice](#my-ruby-practice)
+- [My **Perl** Practice](#my-perl-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
 
@@ -142,6 +143,11 @@ This is a repository primarily for storing code related to **learning programmin
 ## [My Ruby Practice](#list)
 
 - [Ruby's Crazy Syntax (2022.12.24)](/Ruby/README.md#rubys-crazy-syntax-20221224)
+
+
+## [My Perl Practice](#list)
+
+- [Initial Practice : Text Processing Demo (2025.10.20)](/Perl/README.md#initial-practice--text-processing-demo-20251020)
 
 
 ## [My Dart Practice](#list)
