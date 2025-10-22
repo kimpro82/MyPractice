@@ -1,5 +1,6 @@
 C&Cpp/*.s linguist-vendored
 Shell/*.js linguist-vendored
 
+Perl/*.pl linguist-language=Perl
 VBA/*.bas linguist-language=VBA
 *.mmd linguist-language=Mermaid
