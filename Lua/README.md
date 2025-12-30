@@ -7,7 +7,7 @@
 - [JDoodle / Online Lua Compiler](https://www.jdoodle.com/execute-lua-online)
 
 
-### How to Set Up and Run Lua in Bash
+### **\<How to Set Up and Run Lua in Bash>**
 
 - Install
   ```bash
