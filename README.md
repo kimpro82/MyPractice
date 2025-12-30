@@ -22,6 +22,7 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Mermaid** Practice](#my-mermaid--practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
+- [My **Lua** Practice](#my-lua-practice)
 - [My **Perl** Practice](#my-perl-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
