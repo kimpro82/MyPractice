@@ -19,8 +19,8 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **ShellScript** Practice](#my-shellscript-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Golang** Practice](#my-golang-practice)
-- [My **Verilog** Practice](#my-verilog-practice)
 - [My **Mermaid** Practice](#my-mermaid--practice)
+- [My **Verilog** Practice](#my-verilog-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
 - [My **Perl** Practice](#my-perl-practice)
 - [My **Dart** Practice](#my-dart-practice)
@@ -129,20 +129,25 @@ This is a repository primarily for storing code related to **learning programmin
 - [Grade (2021.12.06)](/Golang/README.md#grade-20211206)
 
 
+## [My Mermaid  Practice](#list)
+
+- [Initial Practice (2025.06.25)](/Mermaid/README.md#initial-practice-20250625)
+
+
 ## [My Verilog Practice](#list)
 
 - [Type Casting (2022.09.06)](/Verilog/README.md#type-casting-20220906)
 - [Array Indexing (2022.09.06)](/Verilog/README.md#array-indexing-20220906)
 
 
-## [My Mermaid  Practice](#list)
-
-- [Initial Practice (2025.06.25)](/Mermaid/README.md#initial-practice-20250625)
-
-
 ## [My Ruby Practice](#list)
 
 - [Ruby's Crazy Syntax (2022.12.24)](/Ruby/README.md#rubys-crazy-syntax-20221224)
+
+
+## [My Lua Practice](#list)
+
+- [Multiplication Table (2025.12.30)](/Lua/README.md#multiplication-table-20251230)
 
 
 ## [My Perl Practice](#list)
