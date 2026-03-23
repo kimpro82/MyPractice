@@ -21,8 +21,8 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **Golang** Practice](#my-golang-practice)
 - [My **Mermaid** Practice](#my-mermaid--practice)
 - [My **Verilog** Practice](#my-verilog-practice)
-- [My **Ruby** Practice](#my-ruby-practice)
 - [My **Lua** Practice](#my-lua-practice)
+- [My **Ruby** Practice](#my-ruby-practice)
 - [My **Perl** Practice](#my-perl-practice)
 - [My **Dart** Practice](#my-dart-practice)
 
@@ -142,14 +142,14 @@ This is a repository primarily for storing code related to **learning programmin
 - [Array Indexing (2022.09.06)](/Verilog/README.md#array-indexing-20220906)
 
 
-## [My Ruby Practice](#list)
-
-- [Ruby's Crazy Syntax (2022.12.24)](/Ruby/README.md#rubys-crazy-syntax-20221224)
-
-
 ## [My Lua Practice](#list)
 
 - [Multiplication Table (2025.12.30)](/Lua/README.md#multiplication-table-20251230)
+
+
+## [My Ruby Practice](#list)
+
+- [Ruby's Crazy Syntax (2022.12.24)](/Ruby/README.md#rubys-crazy-syntax-20221224)
 
 
 ## [My Perl Practice](#list)
