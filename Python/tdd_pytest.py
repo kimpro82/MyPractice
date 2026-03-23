@@ -50,3 +50,16 @@ def test_should_not_buy_when_price_is_over_limit(mocked_broker, monkeypatch):
     monkeypatch.setattr(mocked_broker, "fetch_market_data", lambda t: {"last_price": 200.0})
     
     assert should_execute_buy(mocked_broker, "AAPL", 160.0) is False
+
+@pytest.mark.parametrize("market_price,limit_price,expected", [
+    (150.0, 160.0, True),   # Price is below the limit
+    (200.0, 160.0, False),  # Price exceeds the limit
+    (160.0, 160.0, True),   # Price equals the limit (boundary case)
+])
+def test_buy_decision_with_parametrize(mocked_broker, monkeypatch, market_price, limit_price, expected):
+    """Verify buy logic against multiple price scenarios using parametrize."""
+    # Override the fixture's fetch_market_data to return the parametrized market price
+    monkeypatch.setattr(mocked_broker, "fetch_market_data", lambda t: {"last_price": market_price})
+    
+    # Verify the buy decision matches the expected outcome
+    assert should_execute_buy(mocked_broker, "AAPL", limit_price) is expected
