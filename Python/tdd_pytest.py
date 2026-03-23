@@ -1,3 +1,14 @@
+"""
+Pytest-based test suite for the trading system
+
+2026.03.23 / Powered by Gemini 3 Flash
+
+This module contains test cases using pytest fixtures and monkeypatch
+for mocking the StockBroker API interactions.
+
+Run tests with:
+    pytest ./tdd_pytest.py
+"""
 import pytest
 from tdd_practice import StockBroker, should_execute_buy
 
