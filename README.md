@@ -29,6 +29,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My Python Practice](#list)
 
+- [TDD Practice with `unittest` and `pytest` (2026.03.23)](/Python/README.md#tdd-practice-with-unittest-and-pytest-20260323)
 - [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](/Python/README.md#abstract-base-classabc-as-interface-practice-20241130)
 - [`pydantic` : Comparing with `@dataclass` (2024.11.27)](/Python/README.md#pydantic--comparing-with-dataclass-20241127)
 - [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](/Python/README.md#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
