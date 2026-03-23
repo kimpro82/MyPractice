@@ -5,6 +5,7 @@ I'm sorry *C++* …… I betrayed you.
 
 ### \<List>
 
+- [TDD Practice with `unittest` and `pytest` (2026.03.23)](#tdd-practice-with-unittest-and-pytest-20260323)
 - [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#abstract-base-classabc-as-interface-practice-20241130)
 - [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#pydantic--comparing-with-dataclass-20241127)
 - [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
@@ -31,6 +32,129 @@ I'm sorry *C++* …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [TDD Practice with `unittest` and `pytest` (2026.03.23)](#list)
+
+- Overview
+  - A comparison between Python's two primary testing frameworks: `unittest` (standard library) and `pytest` (third-party).
+  - `unittest`: Traditional, class-based approach similar to JUnit; requires `setUp()` and assertion methods like `self.assertTrue()`.
+  - `pytest`: Modern, function-based approach supporting fixtures; uses simple `assert` statements.
+    - This practice includes `parametrize` decorator to test multiple scenarios with a single test function.
+- Components
+  - `tdd_practice.py`: Core module containing `StockBroker` class and `should_execute_buy()` function for decision logic.
+  - `tdd_unittest.py`: Test suite using `unittest` framework with `MagicMock` for mocking.
+  - `tdd_pytest.py`: Test suite using `pytest` framework with fixtures and `monkeypatch` for mocking, including parametrized tests.
+- Code and Results
+  <details>
+    <summary>Code : tdd_practice.py</summary>
+
+  ```py
+  import requests
+
+  class StockBroker:
+      """
+      Interface for interacting with a Stock Exchange API.
+      In production, this would perform actual network calls.
+      """
+      def fetch_market_data(self, ticker):
+          # Simulated network call to a financial API
+          response = requests.get(f"https://api.generic-broker.com/v1/quote/{ticker}")
+          return response.json()
+
+  def should_execute_buy(broker, ticker, limit_price):
+      """
+      Decision logic: Returns True if the current market price 
+      is less than or equal to the user's limit price.
+      """
+      data = broker.fetch_market_data(ticker)
+      current_price = data.get('last_price', 0)
+      
+      if current_price <= limit_price:
+          return True
+      return False
+  ```
+  </details>
+  <details>
+    <summary>Code : tdd_unittest.py</summary>
+
+  ```py
+  import unittest
+  from unittest.mock import MagicMock
+  from tdd_practice import StockBroker, should_execute_buy
+
+  class TestTradingSystem(unittest.TestCase):
+      def setUp(self):
+          """Initialize the broker instance before each test."""
+          self.broker = StockBroker()
+          self.ticker = "AAPL"
+
+      def test_buy_decision_on_low_price(self):
+          """Test that the system triggers a buy when the price is below the limit."""
+          # Mocking the return value of the network-dependent method
+          self.broker.fetch_market_data = MagicMock(return_value={'last_price': 150.0})
+          
+          # Scenario: Limit is 160.0, Market is 150.0 -> Should buy
+          result = should_execute_buy(self.broker, self.ticker, 160.0)
+          self.assertTrue(result)
+
+  if __name__ == '__main__':
+      unittest.main(verbosity=2)
+  ```
+  </details>
+  <details>
+    <summary>Code : tdd_pytest.py (Fixtures and Parametrize)</summary>
+
+  ```py
+  import pytest
+  from tdd_practice import StockBroker, should_execute_buy
+
+  @pytest.fixture
+  def mock_json_data():
+      """Fixture representing a standardized JSON response from the Broker API."""
+      return {
+          "ticker": "AAPL",
+          "last_price": 150.0,
+          "volume": 1000000
+      }
+
+  @pytest.fixture
+  def mocked_broker(monkeypatch, mock_json_data):
+      """Fixture that patches the real StockBroker methods to prevent network requests."""
+      broker = StockBroker()
+      def fake_fetch(self, ticker):
+          return mock_json_data
+      monkeypatch.setattr(StockBroker, "fetch_market_data", fake_fetch)
+      return broker
+
+  @pytest.mark.parametrize("market_price,limit_price,expected", [
+      (150.0, 160.0, True),   # Price is below the limit
+      (200.0, 160.0, False),  # Price exceeds the limit
+      (160.0, 160.0, True),   # Price equals the limit (boundary case)
+  ])
+  def test_buy_decision_with_parametrize(mocked_broker, monkeypatch, market_price, limit_price, expected):
+      """Verify buy logic against multiple price scenarios using parametrize."""
+      monkeypatch.setattr(mocked_broker, "fetch_market_data", lambda t: {"last_price": market_price})
+      assert should_execute_buy(mocked_broker, "AAPL", limit_price) is expected
+  ```
+  </details>
+  <details>
+    <summary>Execution Commands</summary>
+
+  ```bash
+  # Run unittest
+  python3 ./tdd_unittest.py
+
+  # Run pytest (all tests)
+  pytest ./tdd_pytest.py
+
+  # Run pytest (verbose mode to see parametrized tests)
+  pytest ./tdd_pytest.py -v
+
+  # Run specific parametrized test cases
+  pytest ./tdd_pytest.py::test_buy_decision_with_parametrize -v
+  ```
+  </details>
 
 
 ## [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#list)
