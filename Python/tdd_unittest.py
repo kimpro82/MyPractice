@@ -1,3 +1,14 @@
+"""
+Unittest-based test suite for the trading system
+
+2026.03.23 / Powered by Gemini 3 Flash
+
+This module contains test cases using the unittest framework and MagicMock
+for mocking the StockBroker API interactions.
+
+Run tests with:
+    python3 ./tdd_unittest.py
+"""
 import unittest
 from unittest.mock import MagicMock
 from tdd_practice import StockBroker, should_execute_buy
