@@ -9,6 +9,7 @@ for mocking the StockBroker API interactions.
 Run tests with:
     pytest -v ./tdd_pytest.py
 """
+
 import pytest
 from tdd_practice import StockBroker, should_execute_buy
 
