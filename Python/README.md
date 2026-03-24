@@ -45,114 +45,44 @@ I'm sorry *C++* …… I betrayed you.
   - `tdd_practice.py`: Core module containing `StockBroker` class and `should_execute_buy()` function for decision logic.
   - `tdd_unittest.py`: Test suite using `unittest` framework with `MagicMock` for mocking.
   - `tdd_pytest.py`: Test suite using `pytest` framework with fixtures and `monkeypatch` for mocking, including parametrized tests.
-- Code and Results
+- Execution Commands and Results
   <details>
-    <summary>Code : tdd_practice.py</summary>
-
-  ```py
-  import requests
-
-  class StockBroker:
-      """
-      Interface for interacting with a Stock Exchange API.
-      In production, this would perform actual network calls.
-      """
-      def fetch_market_data(self, ticker):
-          # Simulated network call to a financial API
-          response = requests.get(f"https://api.generic-broker.com/v1/quote/{ticker}")
-          return response.json()
-
-  def should_execute_buy(broker, ticker, limit_price):
-      """
-      Decision logic: Returns True if the current market price 
-      is less than or equal to the user's limit price.
-      """
-      data = broker.fetch_market_data(ticker)
-      current_price = data.get('last_price', 0)
-      
-      if current_price <= limit_price:
-          return True
-      return False
-  ```
-  </details>
-  <details>
-    <summary>Code : tdd_unittest.py</summary>
-
-  ```py
-  import unittest
-  from unittest.mock import MagicMock
-  from tdd_practice import StockBroker, should_execute_buy
-
-  class TestTradingSystem(unittest.TestCase):
-      def setUp(self):
-          """Initialize the broker instance before each test."""
-          self.broker = StockBroker()
-          self.ticker = "AAPL"
-
-      def test_buy_decision_on_low_price(self):
-          """Test that the system triggers a buy when the price is below the limit."""
-          # Mocking the return value of the network-dependent method
-          self.broker.fetch_market_data = MagicMock(return_value={'last_price': 150.0})
-          
-          # Scenario: Limit is 160.0, Market is 150.0 -> Should buy
-          result = should_execute_buy(self.broker, self.ticker, 160.0)
-          self.assertTrue(result)
-
-  if __name__ == '__main__':
-      unittest.main(verbosity=2)
-  ```
-  </details>
-  <details>
-    <summary>Code : tdd_pytest.py (Fixtures and Parametrize)</summary>
-
-  ```py
-  import pytest
-  from tdd_practice import StockBroker, should_execute_buy
-
-  @pytest.fixture
-  def mock_json_data():
-      """Fixture representing a standardized JSON response from the Broker API."""
-      return {
-          "ticker": "AAPL",
-          "last_price": 150.0,
-          "volume": 1000000
-      }
-
-  @pytest.fixture
-  def mocked_broker(monkeypatch, mock_json_data):
-      """Fixture that patches the real StockBroker methods to prevent network requests."""
-      broker = StockBroker()
-      def fake_fetch(self, ticker):
-          return mock_json_data
-      monkeypatch.setattr(StockBroker, "fetch_market_data", fake_fetch)
-      return broker
-
-  @pytest.mark.parametrize("market_price,limit_price,expected", [
-      (150.0, 160.0, True),   # Price is below the limit
-      (200.0, 160.0, False),  # Price exceeds the limit
-      (160.0, 160.0, True),   # Price equals the limit (boundary case)
-  ])
-  def test_buy_decision_with_parametrize(mocked_broker, monkeypatch, market_price, limit_price, expected):
-      """Verify buy logic against multiple price scenarios using parametrize."""
-      monkeypatch.setattr(mocked_broker, "fetch_market_data", lambda t: {"last_price": market_price})
-      assert should_execute_buy(mocked_broker, "AAPL", limit_price) is expected
-  ```
-  </details>
-  <details>
-    <summary>Execution Commands</summary>
+    <summary>unittest</summary>
 
   ```bash
-  # Run unittest
-  python3 ./tdd_unittest.py
+  $ python3 ./tdd_unittest.py
+  ```
+  ```bash
+  test_buy_decision_on_low_price (__main__.TestTradingSystem.test_buy_decision_on_low_price)
+  Test that the system triggers a buy when the price is below the limit. ... ok
+  
+  ----------------------------------------------------------------------
+  Ran 1 test in 0.000s
+  
+  OK
+  ```
+  </details>
+  <details>
+    <summary>pytest</summary>
 
-  # Run pytest (all tests)
-  pytest ./tdd_pytest.py
-
-  # Run pytest (verbose mode to see parametrized tests)
-  pytest ./tdd_pytest.py -v
-
-  # Run specific parametrized test cases
-  pytest ./tdd_pytest.py::test_buy_decision_with_parametrize -v
+  ```bash
+  $ pytest -v ./tdd_pytest.py
+  ```
+  ```bash
+  ================================================= test session starts ==================================================
+  platform linux -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/python/3.12.1/bin/python3
+  cachedir: .pytest_cache
+  rootdir: /workspaces/MyPractice/Python
+  plugins: anyio-4.11.0
+  collected 5 items                                                                                                      
+  
+  tdd_pytest.py::test_should_buy_when_price_is_under_limit PASSED                                                  [ 20%]
+  tdd_pytest.py::test_should_not_buy_when_price_is_over_limit PASSED                                               [ 40%]
+  tdd_pytest.py::test_buy_decision_with_parametrize[150.0-160.0-True] PASSED                                       [ 60%]
+  tdd_pytest.py::test_buy_decision_with_parametrize[200.0-160.0-False] PASSED                                      [ 80%]
+  tdd_pytest.py::test_buy_decision_with_parametrize[160.0-160.0-True] PASSED                                       [100%]
+  
+  ================================================== 5 passed in 0.06s ===================================================
   ```
   </details>
 
