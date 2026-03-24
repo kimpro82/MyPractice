@@ -9,6 +9,7 @@ for mocking the StockBroker API interactions.
 Run tests with:
     python3 ./tdd_unittest.py
 """
+
 import unittest
 from unittest.mock import MagicMock
 from tdd_practice import StockBroker, should_execute_buy
