@@ -5,6 +5,7 @@ I'm sorry *C++* …… I betrayed you.
 
 ### \<List>
 
+- [TDD Practice with `unittest` and `pytest` (2026.03.23)](#tdd-practice-with-unittest-and-pytest-20260323)
 - [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#abstract-base-classabc-as-interface-practice-20241130)
 - [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#pydantic--comparing-with-dataclass-20241127)
 - [`pydantic` : Comparing Example Code With and Without `pydantic` (2024.11.26)](#pydantic--comparing-example-code-with-and-without-pydantic-20241126)
@@ -31,6 +32,59 @@ I'm sorry *C++* …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+## [TDD Practice with `unittest` and `pytest` (2026.03.23)](#list)
+
+- Overview
+  - A comparison between Python's two primary testing frameworks: `unittest` (standard library) and `pytest` (third-party).
+  - `unittest`: Traditional, class-based approach similar to JUnit; requires `setUp()` and assertion methods like `self.assertTrue()`.
+  - `pytest`: Modern, function-based approach supporting fixtures; uses simple `assert` statements.
+    - This practice includes `parametrize` decorator to test multiple scenarios with a single test function.
+- Components
+  - `tdd_practice.py`: Core module containing `StockBroker` class and `should_execute_buy()` function for decision logic.
+  - `tdd_unittest.py`: Test suite using `unittest` framework with `MagicMock` for mocking.
+  - `tdd_pytest.py`: Test suite using `pytest` framework with fixtures and `monkeypatch` for mocking, including parametrized tests.
+- Execution Commands and Results
+  <details>
+    <summary>unittest</summary>
+
+  ```bash
+  $ python3 ./tdd_unittest.py
+  ```
+  ```bash
+  test_buy_decision_on_low_price (__main__.TestTradingSystem.test_buy_decision_on_low_price)
+  Test that the system triggers a buy when the price is below the limit. ... ok
+  
+  ----------------------------------------------------------------------
+  Ran 1 test in 0.000s
+  
+  OK
+  ```
+  </details>
+  <details>
+    <summary>pytest</summary>
+
+  ```bash
+  $ pytest -v ./tdd_pytest.py
+  ```
+  ```bash
+  ================================================= test session starts ==================================================
+  platform linux -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0 -- /usr/local/python/3.12.1/bin/python3
+  cachedir: .pytest_cache
+  rootdir: /workspaces/MyPractice/Python
+  plugins: anyio-4.11.0
+  collected 5 items                                                                                                      
+  
+  tdd_pytest.py::test_should_buy_when_price_is_under_limit PASSED                                                  [ 20%]
+  tdd_pytest.py::test_should_not_buy_when_price_is_over_limit PASSED                                               [ 40%]
+  tdd_pytest.py::test_buy_decision_with_parametrize[150.0-160.0-True] PASSED                                       [ 60%]
+  tdd_pytest.py::test_buy_decision_with_parametrize[200.0-160.0-False] PASSED                                      [ 80%]
+  tdd_pytest.py::test_buy_decision_with_parametrize[160.0-160.0-True] PASSED                                       [100%]
+  
+  ================================================== 5 passed in 0.06s ===================================================
+  ```
+  </details>
 
 
 ## [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#list)
