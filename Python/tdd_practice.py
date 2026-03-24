@@ -1,3 +1,16 @@
+"""
+Core module for the trading system TDD practice
+
+2026.03.23 / Powered by Gemini 3 Flash
+
+This module provides the business logic for a stock trading system,
+including the StockBroker class for API interactions and decision logic
+for executing buy orders based on market price and user limits.
+
+Note: In production, actual network calls would be made.
+In testing, this module is used with mocked API responses.
+"""
+
 import requests
 
 class StockBroker:
