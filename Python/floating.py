@@ -64,7 +64,11 @@ class DataBenchmarkSuite:
 
         # 2. Decimal (list comprehension)
         stmt_dec = "[v * Decimal('1.05') for v in self._datasets['Decimal']]"
-        timings["Decimal"] = timeit.timeit(stmt=stmt_dec, globals={'self': self}, number=number)
+        timings["Decimal"] = timeit.timeit(
+            stmt=stmt_dec,
+            globals={'self': self, 'Decimal': Decimal},
+            number=number,
+        )
 
         # 3. NumPy float32 (vectorized operation)
         stmt_np32 = "self._datasets['NumPy float32'] * 1.05"
