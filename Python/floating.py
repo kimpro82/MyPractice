@@ -29,16 +29,15 @@ Author: kimpro82
 """
 
 import timeit
-import sys
 from itertools import zip_longest
 from decimal import Decimal
-from typing import Callable, Dict, List, Any
+from typing import Dict, Any
 import numpy as np
 from pympler import asizeof
 
 class DataBenchmarkSuite:
     """Benchmark numeric types and repeated Python/NumPy conversions."""
-    
+
     def __init__(self, data_size: int = 10_000):
         self.data_size = data_size
         self._datasets = self._initialize_datasets()
@@ -63,7 +62,7 @@ class DataBenchmarkSuite:
     def measure_execution_time(self, number: int = 1_000) -> Dict[str, float]:
         """Measure operation speed for each data type using optimized operations."""
         timings = {}
-        
+
         # 1. Python float (list comprehension)
         stmt_float = "[v * 1.05 for v in self._datasets['Python float']]"
         timings["Python float"] = timeit.timeit(stmt=stmt_float, globals={'self': self}, number=number)
@@ -130,7 +129,7 @@ class DataBenchmarkSuite:
     def run_report(self) -> None:
         """Print numeric-type and conversion-overhead results side by side."""
         print(f"=== [Benchmark Report] Data Size: {self.data_size:,} elements ===\n")
-        
+
         memory_data = self.measure_memory()
         time_data = self.measure_execution_time()
         conversion_data = self.measure_conversion_overhead()
@@ -139,8 +138,7 @@ class DataBenchmarkSuite:
             f"{'Data Type':<18} | {'Memory (Bytes)':<15} | {'Execution Time (s)':<18}",
             "-" * 58,
         ]
-        for name in memory_data.keys():
-            mem = memory_data[name]
+        for name, mem in memory_data.items():
             sec = time_data[name]
             main_table.append(f"{name:<18} | {mem:>15,d} | {sec:>18.5f}")
 
