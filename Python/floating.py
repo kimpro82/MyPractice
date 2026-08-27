@@ -28,6 +28,7 @@ Author: kimpro82
 
 import timeit
 import sys
+from itertools import zip_longest
 from decimal import Decimal
 from typing import Callable, Dict, List, Any
 import numpy as np
@@ -117,21 +118,27 @@ class DataBenchmarkSuite:
         
         memory_data = self.measure_memory()
         time_data = self.measure_execution_time()
+        conversion_data = self.measure_conversion_overhead()
 
-        print(f"{'Data Type':<18} | {'Memory (Bytes)':<15} | {'Execution Time (s)':<18}")
-        print("-" * 58)
-        
+        main_table = [
+            f"{'Data Type':<18} | {'Memory (Bytes)':<15} | {'Execution Time (s)':<18}",
+            "-" * 58,
+        ]
         for name in memory_data.keys():
             mem = memory_data[name]
             sec = time_data[name]
-            print(f"{name:<18} | {mem:>15,d} | {sec:>18.5f}")
+            main_table.append(f"{name:<18} | {mem:>15,d} | {sec:>18.5f}")
 
-        print("\n=== [Python/NumPy Conversion Overhead] ===\n")
-        conversion_data = self.measure_conversion_overhead()
-        print(f"{'Operation':<28} | {'Execution Time (s)':<18}")
-        print("-" * 50)
+        conversion_table = [
+            f"{'Operation':<28} | {'Execution Time (s)':<18}",
+            "-" * 50,
+        ]
         for name, seconds in conversion_data.items():
-            print(f"{name:<28} | {seconds:>18.5f}")
+            conversion_table.append(f"{name:<28} | {seconds:>18.5f}")
+
+        print(f"{'=== [Numeric Type Benchmark] ===':<58}   === [Python/NumPy Conversion Overhead] ===")
+        for main_row, conversion_row in zip_longest(main_table, conversion_table, fillvalue=""):
+            print(f"{main_row:<58}   {conversion_row}")
 
 
 if __name__ == "__main__":
