@@ -8,6 +8,9 @@ arguments are forwarded to the target script unchanged.
 
 Usage:
     python run.py <script_name.py> [args for script...]
+
+Date: 2026-08-27
+Author: kimpro82
 """
 
 import sys
