@@ -5,6 +5,7 @@ I'm sorry *C++* …… I betrayed you.
 
 ### \<List>
 
+- [Floating-Point Type and Python/NumPy Conversion Benchmark (2026.08.27)](#floating-point-type-and-pythonnumpy-conversion-benchmark-20260827)
 - [TDD Practice with `unittest` and `pytest` (2026.03.23)](#tdd-practice-with-unittest-and-pytest-20260323)
 - [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#abstract-base-classabc-as-interface-practice-20241130)
 - [`pydantic` : Comparing with `@dataclass` (2024.11.27)](#pydantic--comparing-with-dataclass-20241127)
@@ -32,6 +33,44 @@ I'm sorry *C++* …… I betrayed you.
 - [Password (2019.05.24)](#password-20190524)
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
+
+
+
+## [Floating-Point Type and Python/NumPy Conversion Benchmark (2026.08.27)](#list)
+
+- Overview
+  - A comparison of memory usage and execution speed for Python `float`, `decimal.Decimal`, NumPy `float32`, and NumPy `float64`.
+  - The benchmark also measures the overhead of repeatedly converting between Python lists and NumPy arrays.
+- Components
+  - `floating.py`: Creates the datasets, measures memory and execution time, and prints the comparison report.
+  - `run.py`: A helper script that reads `dependencies.yaml`, installs configured packages, and runs the selected Python script.
+  - `dependencies.yaml`: Registers `numpy` and `pympler` as dependencies for `floating.py`.
+- Measurements
+  - Memory usage includes nested objects and container overhead measured with `pympler.asizeof.asizeof`.
+  - Numeric operations multiply every value by `1.05`. Python lists use list comprehensions, while NumPy arrays use vectorized multiplication.
+  - The conversion benchmark compares direct NumPy operation, Python list operation, list-to-NumPy conversion, NumPy-to-list conversion, and a complete list/NumPy round trip.
+  - Conversion costs are included in each timed statement, showing why repeated representation changes can remove the benefit of NumPy.
+- Execution Commands and Results
+  ```bash
+  $ python3 run.py floating.py
+  ```
+
+  ```txt
+  --- Running 'floating.py' ---
+
+  === [Benchmark Report] Data Size: 10,000 elements ===
+
+  === [Numeric Type Benchmark] ===                             === [Python/NumPy Conversion Overhead] ===
+  Data Type          | Memory (Bytes)  | Execution Time (s)    Operation                    | Execution Time (s)
+  ----------------------------------------------------------   --------------------------------------------------
+  Python float       |         325,176 |            0.32852    NumPy direct operation       |            0.00264
+  Decimal            |       1,125,176 |            3.15240    Python list operation        |            0.28159
+  NumPy float32      |          40,128 |            0.00204    List to NumPy each time      |            0.32939
+  NumPy float64      |          80,128 |            0.00272    NumPy to list each time      |            0.16725
+                                                               List-NumPy round trip         |            0.58042
+  ```
+
+  Execution times vary by machine and system load. The important observation is that direct NumPy operations are fast, but repeatedly converting between lists and arrays can make the combined operation slower than staying with a Python list. A practical approach is to convert data once, perform multiple operations while it remains a NumPy array, and convert it back only when necessary.
 
 
 ## [TDD Practice with `unittest` and `pytest` (2026.03.23)](#list)
