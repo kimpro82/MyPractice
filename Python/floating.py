@@ -11,6 +11,9 @@ The benchmark measures two characteristics:
     :func:`pympler.asizeof.asizeof`.
 * The time required to multiply every value by ``1.05``. Python lists use
     list comprehensions, while NumPy arrays use vectorized multiplication.
+* The cost of crossing the Python/NumPy boundary. Additional measurements
+    compare direct NumPy operations with cases that convert a list to an array
+    or an array result back to a list for every timed operation.
 
 Use :class:`DataBenchmarkSuite` to collect individual measurements or call
 its :meth:`DataBenchmarkSuite.run_report` method to print a formatted summary.
@@ -80,6 +83,34 @@ class DataBenchmarkSuite:
 
         return timings
 
+    def measure_conversion_overhead(self, number: int = 1_000) -> Dict[str, float]:
+        """Measure the cost of converting between Python lists and NumPy arrays."""
+        python_values = self._datasets["Python float"]
+        numpy_values = self._datasets["NumPy float64"]
+        conversion_timings = {}
+
+        statements = {
+            "NumPy direct operation": "numpy_values * 1.05",
+            "Python list operation": "[value * 1.05 for value in python_values]",
+            "List to NumPy each time": "np.asarray(python_values) * 1.05",
+            "NumPy to list each time": "(numpy_values * 1.05).tolist()",
+            "List-NumPy round trip": "(np.asarray(python_values) * 1.05).tolist()",
+        }
+        benchmark_globals = {
+            "np": np,
+            "numpy_values": numpy_values,
+            "python_values": python_values,
+        }
+
+        for name, statement in statements.items():
+            conversion_timings[name] = timeit.timeit(
+                stmt=statement,
+                globals=benchmark_globals,
+                number=number,
+            )
+
+        return conversion_timings
+
     def run_report(self) -> None:
         """Format the results and print a readable report."""
         print(f"=== [Benchmark Report] Data Size: {self.data_size:,} elements ===\n")
@@ -94,6 +125,13 @@ class DataBenchmarkSuite:
             mem = memory_data[name]
             sec = time_data[name]
             print(f"{name:<18} | {mem:>15,d} | {sec:>18.5f}")
+
+        print("\n=== [Python/NumPy Conversion Overhead] ===\n")
+        conversion_data = self.measure_conversion_overhead()
+        print(f"{'Operation':<28} | {'Execution Time (s)':<18}")
+        print("-" * 50)
+        for name, seconds in conversion_data.items():
+            print(f"{name:<28} | {seconds:>18.5f}")
 
 
 if __name__ == "__main__":
