@@ -1,3 +1,28 @@
+"""Compare the memory usage and execution speed of numeric data types.
+
+This module creates equally sized datasets using Python ``float``,
+``decimal.Decimal``, NumPy ``float32``, and NumPy ``float64`` values. The
+datasets are prepared during initialization so that dataset construction is
+excluded from the measurements.
+
+The benchmark measures two characteristics:
+
+* Total memory usage, including nested objects and container overhead, through
+    :func:`pympler.asizeof.asizeof`.
+* The time required to multiply every value by ``1.05``. Python lists use
+    list comprehensions, while NumPy arrays use vectorized multiplication.
+
+Use :class:`DataBenchmarkSuite` to collect individual measurements or call
+its :meth:`DataBenchmarkSuite.run_report` method to print a formatted summary.
+
+Example:
+        benchmark = DataBenchmarkSuite(data_size=10_000)
+        benchmark.run_report()
+
+Date: 2026-08-27
+Author: kimpro82
+"""
+
 import timeit
 import sys
 from decimal import Decimal
