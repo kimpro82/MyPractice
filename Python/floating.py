@@ -11,9 +11,11 @@ The benchmark measures two characteristics:
     :func:`pympler.asizeof.asizeof`.
 * The time required to multiply every value by ``1.05``. Python lists use
     list comprehensions, while NumPy arrays use vectorized multiplication.
-* The cost of crossing the Python/NumPy boundary. Additional measurements
-    compare direct NumPy operations with cases that convert a list to an array
-    or an array result back to a list for every timed operation.
+* The cost of crossing the Python/NumPy boundary. The conversion benchmark
+    compares direct NumPy operations, Python list operations, list-to-array
+    conversion, array-to-list conversion, and a complete list/NumPy round trip.
+    Each conversion is performed inside the timed statement, so the results
+    show the cost of repeatedly mixing the two data representations.
 
 Use :class:`DataBenchmarkSuite` to collect individual measurements or call
 its :meth:`DataBenchmarkSuite.run_report` method to print a formatted summary.
@@ -35,7 +37,7 @@ import numpy as np
 from pympler import asizeof
 
 class DataBenchmarkSuite:
-    """Benchmark memory usage and operation performance for floating-point data types."""
+    """Benchmark numeric types and repeated Python/NumPy conversions."""
     
     def __init__(self, data_size: int = 10_000):
         self.data_size = data_size
@@ -85,7 +87,20 @@ class DataBenchmarkSuite:
         return timings
 
     def measure_conversion_overhead(self, number: int = 1_000) -> Dict[str, float]:
-        """Measure the cost of converting between Python lists and NumPy arrays."""
+        """Measure repeated operations that cross the Python/NumPy boundary.
+
+        The benchmark compares direct NumPy and Python list operations with
+        list-to-array conversion, array-to-list conversion, and a complete
+        list-to-array-to-list round trip. The returned times include both the
+        conversion and the multiplication performed in each statement.
+
+        Args:
+            number: Number of times to execute each timed statement.
+
+        Returns:
+            A mapping from each operation name to its total elapsed time in
+            seconds.
+        """
         python_values = self._datasets["Python float"]
         numpy_values = self._datasets["NumPy float64"]
         conversion_timings = {}
@@ -113,7 +128,7 @@ class DataBenchmarkSuite:
         return conversion_timings
 
     def run_report(self) -> None:
-        """Format the results and print a readable report."""
+        """Print numeric-type and conversion-overhead results side by side."""
         print(f"=== [Benchmark Report] Data Size: {self.data_size:,} elements ===\n")
         
         memory_data = self.measure_memory()
