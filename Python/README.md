@@ -67,7 +67,7 @@ I'm sorry *C++* …… I betrayed you.
   Decimal            |       1,125,176 |            3.15240    Python list operation        |            0.28159
   NumPy float32      |          40,128 |            0.00204    List to NumPy each time      |            0.32939
   NumPy float64      |          80,128 |            0.00272    NumPy to list each time      |            0.16725
-                                                               List-NumPy round trip         |            0.58042
+                                                               List-NumPy round trip        |            0.58042
   ```
 
   Execution times vary by machine and system load. The important observation is that direct NumPy operations are fast, but repeatedly converting between lists and arrays can make the combined operation slower than staying with a Python list. A practical approach is to convert data once, perform multiple operations while it remains a NumPy array, and convert it back only when necessary.
