@@ -1,0 +1,6 @@
+# Dependency configuration for the Python script runner.
+# Each script name maps to the packages that must be installed before execution.
+
+floating.py:
+  - numpy
+  - pympler
