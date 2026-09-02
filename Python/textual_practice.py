@@ -88,8 +88,11 @@ class LiquidityCrisisApp(App):
 
     BINDINGS = [
         Binding("q", "quit", ASSETS["bindings"]["quit"]),
+        Binding("Q", "quit", show=False),
         Binding("b", "drink_beer", ASSETS["bindings"]["drink_beer"]),
+        Binding("B", "drink_beer", show=False),
         Binding("r", "hangover_cure", ASSETS["bindings"]["hangover_cure"]),
+        Binding("R", "hangover_cure", show=False),
     ]
 
     def compose(self) -> ComposeResult:
