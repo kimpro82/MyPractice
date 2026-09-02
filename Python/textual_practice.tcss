@@ -6,12 +6,24 @@ Horizontal {
     height: 1fr;
 }
 
-DrinkingStatusPanel {
+Vertical#left_panel {
     width: 1fr;
+    height: 1fr;
+}
+
+DrinkingStatusPanel {
     height: 1fr;
     border: solid yellow;
     margin: 1;
     padding: 2;
+}
+
+RichLog#event_log {
+    height: 10;
+    border: solid green;
+    margin: 0 1 1 1;
+    padding: 0 1;
+    scrollbar-size: 1 1;
 }
 
 BACChart {

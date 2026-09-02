@@ -1,6 +1,6 @@
 from textual.app import App, ComposeResult
-from textual.containers import Horizontal
-from textual.widgets import Header, Footer, Static
+from textual.containers import Horizontal, Vertical
+from textual.widgets import Header, Footer, RichLog, Static
 from textual.binding import Binding
 from textual_plotext import PlotextPlot
 from pathlib import Path
@@ -68,7 +68,7 @@ class DrinkingStatusPanel(Static):
         self.drinks_count += 1
         chart = self.app.query_one("#bac_chart", BACChart)
         chart.current_bac = min(105.0, chart.current_bac + 35.0)
-        self.app.notify(ASSETS["messages"]["drink_added"], severity="warning")
+        self.app.add_event_log(ASSETS["messages"]["drink_added"], "warning")
         self.update_status()
         
         # Immediate check after adding drink
@@ -78,7 +78,7 @@ class DrinkingStatusPanel(Static):
     def sober_up(self) -> None:
         chart = self.app.query_one("#bac_chart", BACChart)
         chart.current_bac = max(0.0, chart.current_bac - 25.0)
-        self.app.notify(ASSETS["messages"]["sober_up"], severity="information")
+        self.app.add_event_log(ASSETS["messages"]["sober_up"], "information")
         self.update_status()
 
 
@@ -94,10 +94,19 @@ class LiquidityCrisisApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
         yield Horizontal(
-            DrinkingStatusPanel(id="status_panel"),
+            Vertical(
+                DrinkingStatusPanel(id="status_panel"),
+                RichLog(id="event_log", markup=True, wrap=True),
+                id="left_panel",
+            ),
             BACChart(id="bac_chart")
         )
         yield Footer()
+
+    def add_event_log(self, message: str, severity: str) -> None:
+        log = self.query_one("#event_log", RichLog)
+        style = "yellow" if severity == "warning" else "cyan"
+        log.write(f"[{style}]{message}[/]", scroll_end=True)
 
     def action_drink_beer(self) -> None:
         panel = self.query_one("#status_panel", DrinkingStatusPanel)
@@ -122,10 +131,14 @@ class LiquidityCrisisApp(App):
 
         if random.choice([True, False]):
             chart.current_bac = min(105.0, chart.current_bac + change)
-            self.notify(random.choice(random_event["increase_messages"]), severity="warning")
+            self.add_event_log(
+                random.choice(random_event["increase_messages"]), "warning"
+            )
         else:
             chart.current_bac = max(0.0, chart.current_bac - change)
-            self.notify(random.choice(random_event["decrease_messages"]), severity="information")
+            self.add_event_log(
+                random.choice(random_event["decrease_messages"]), "information"
+            )
 
         if chart.current_bac >= 100.0:
             self.exit(message=ASSETS["messages"]["blackout"])
