@@ -25,6 +25,7 @@ class BACChart(PlotextPlot):
         
         self.plt.plot(self.x_data, self.y_data, marker="braille")
         self.plt.ylim(0, 110)
+        self.plt.yticks(ASSETS["chart"]["y_ticks"])
         
         # Background tick: updates every 1 second
         self.set_interval(1.0, self.update_bac)
@@ -42,6 +43,7 @@ class BACChart(PlotextPlot):
         self.plt.clear_data()
         self.plt.plot(self.x_data, self.y_data, marker="braille")
         self.plt.ylim(0, 110)
+        self.plt.yticks(ASSETS["chart"]["y_ticks"])
         self.refresh()
 
         # Check for Over-100% BAC (Memory Blackout Over)
@@ -141,7 +143,7 @@ class LiquidityCrisisApp(App):
         )[0]
         chart = self.query_one("#bac_chart", BACChart)
 
-        if random.choice([True, False]):
+        if random.random() < random_event["increase_probability"]:
             chart.current_bac = min(105.0, chart.current_bac + change)
             self.add_event_log(
                 random.choice(random_event["increase_messages"]), "warning"

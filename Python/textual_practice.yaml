@@ -2,7 +2,8 @@ chart:
   title: "Liquidity Crisis: Real-time BAC & Sanity Tracker"
   x_label: "Time (s)"
   y_label: "Level (%)"
-  natural_change_per_second: 0.0
+  y_ticks: [0, 20, 40, 60, 80, 100]
+  natural_change_per_second: -0.5
 
 bindings:
   quit: "uit App"
@@ -27,8 +28,9 @@ messages:
     - "If you don't remember writing it, it doesn't exist."
 
 random_event:
-  changes: [1.0, 2.0, 3.0, 4.0, 5.0]
+  changes: [5.0, 10.0, 15.0, 20.0, 25.0]
   weights: [35, 30, 20, 10, 5]
+  increase_probability: 0.5681818181818182
   increase_messages:
     - "An expense report was approved. Confidence is carbonated."
     - "The office coffee was replaced with mystery punch."
