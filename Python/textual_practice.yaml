@@ -4,23 +4,16 @@ chart:
   y_label: "Level (%)"
 
 bindings:
-  quit: "Quit"
-  drink_beer: "Beer"
-  hangover_cure: "Relief"
+  quit: "Quit App"
+  drink_beer: "Beer (Sharp BAC spike)"
+  hangover_cure: "Hangover Cure (Lower BAC)"
 
 status_panel:
   template: |-
-
     [bold cyan]🍻 Liquidity Crisis Monitoring[/]
 
     • Drinks Consumed: {drinks_count} glasses
     • Current Status: {current_quote}
-
-    [dim]----------------------------------------[/]
-    [bold green]Key Bindings:[/]
-     [B] Add Beer (Sharp BAC spike)
-     [R] Hangover Cure (Lower BAC)
-     [Q] Quit App
 
 messages:
   blackout: "🚨 Liquidity Crisis! Memory Blackout triggered. Sent home & forced exit."
