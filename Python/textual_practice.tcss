@@ -41,7 +41,8 @@ DrinkingStatusPanel {
 RichLog#event_log {
     height: 10;
     border: solid green;
-    margin: 0 1 1 1;
+    margin: 0 1;
+    offset: 0 0;
     padding: 0 1;
     overflow-x: hidden;
     scrollbar-size: 1 1;
