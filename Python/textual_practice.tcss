@@ -8,6 +8,20 @@ FooterKey {
     }
 }
 
+GameOverScreen {
+    align: center middle;
+    background: $background 80%;
+}
+
+#game_over_message {
+    width: 44;
+    height: auto;
+    border: thick red;
+    background: $surface;
+    content-align: center middle;
+    padding: 2 4;
+}
+
 Horizontal {
     height: 1fr;
 }

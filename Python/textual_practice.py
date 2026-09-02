@@ -3,6 +3,8 @@ from textual.containers import Horizontal, Vertical
 from textual.widgets import Header, Footer, RichLog, Static
 from textual.binding import Binding
 from textual_plotext import PlotextPlot
+from textual.screen import ModalScreen
+from textual import events
 from pathlib import Path
 import random
 import textwrap
@@ -48,7 +50,17 @@ class BACChart(PlotextPlot):
 
         # Check for Over-100% BAC (Memory Blackout Over)
         if self.current_bac >= 100.0:
-            self.app.exit(message=ASSETS["messages"]["blackout"])
+            self.app.game_over()
+
+    def reset(self) -> None:
+        self.x_data = list(range(10))
+        self.y_data = [20.0 for _ in range(10)]
+        self.current_bac = 20.0
+        self.plt.clear_data()
+        self.plt.plot(self.x_data, self.y_data, marker="braille")
+        self.plt.ylim(0, 110)
+        self.plt.yticks(ASSETS["chart"]["y_ticks"])
+        self.refresh()
 
 
 class DrinkingStatusPanel(Static):
@@ -77,7 +89,7 @@ class DrinkingStatusPanel(Static):
         
         # Immediate check after adding drink
         if chart.current_bac >= 100.0:
-            self.app.exit(message=ASSETS["messages"]["blackout"])
+            self.app.game_over()
 
     def sober_up(self) -> None:
         chart = self.app.query_one("#bac_chart", BACChart)
@@ -122,6 +134,21 @@ class LiquidityCrisisApp(App):
         )
         log.write(f"[{style}]{formatted_message}[/]", scroll_end=True)
 
+    def game_over(self) -> None:
+        if self.is_game_over:
+            return
+        self.is_game_over = True
+        self.random_event_timer.stop()
+        self.push_screen(GameOverScreen())
+
+    def restart_game(self) -> None:
+        self.query_one("#bac_chart", BACChart).reset()
+        self.query_one("#status_panel", DrinkingStatusPanel).drinks_count = 0
+        self.query_one("#status_panel", DrinkingStatusPanel).update_status()
+        self.query_one("#event_log", RichLog).clear()
+        self.is_game_over = False
+        self.schedule_random_bac_event()
+
     def action_drink_beer(self) -> None:
         panel = self.query_one("#status_panel", DrinkingStatusPanel)
         panel.add_drink()
@@ -131,12 +158,18 @@ class LiquidityCrisisApp(App):
         panel.sober_up()
 
     def on_mount(self) -> None:
+        self.is_game_over = False
         self.schedule_random_bac_event()
 
     def schedule_random_bac_event(self) -> None:
-        self.set_timer(random.uniform(1.0, 5.0), self.trigger_random_bac_event)
+        self.random_event_timer = self.set_timer(
+            random.uniform(1.0, 5.0), self.trigger_random_bac_event
+        )
 
     def trigger_random_bac_event(self) -> None:
+        if self.is_game_over:
+            return
+
         random_event = ASSETS["random_event"]
         change = random.choices(
             random_event["changes"], weights=random_event["weights"]
@@ -155,10 +188,20 @@ class LiquidityCrisisApp(App):
             )
 
         if chart.current_bac >= 100.0:
-            self.exit(message=ASSETS["messages"]["blackout"])
+            self.game_over()
             return
 
         self.schedule_random_bac_event()
+
+
+class GameOverScreen(ModalScreen[None]):
+    def compose(self) -> ComposeResult:
+        yield Static(ASSETS["game_over"]["message"], id="game_over_message")
+
+    def on_key(self, event: events.Key) -> None:
+        event.stop()
+        self.app.restart_game()
+        self.dismiss()
 
 
 if __name__ == "__main__":
