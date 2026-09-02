@@ -14,16 +14,16 @@ Notes:
     weighted events. Reaching the blackout threshold shows a restartable modal.
 """
 
+import random
+from pathlib import Path
+import textwrap
 from textual.app import App, ComposeResult
+from textual.screen import ModalScreen
 from textual.containers import Horizontal, Vertical
 from textual.widgets import Header, Footer, RichLog, Static
 from textual.binding import Binding
 from textual_plotext import PlotextPlot
-from textual.screen import ModalScreen
 from textual import events
-from pathlib import Path
-import random
-import textwrap
 import yaml  # PyYAML
 
 ASSET_PATH = Path(__file__).with_suffix(".yaml")
@@ -41,11 +41,11 @@ class BACChart(PlotextPlot):
         self.x_data = list(range(10))
         self.y_data = [20.0 for _ in range(10)]
         self.current_bac = 20.0
-        
+
         self.plt.plot(self.x_data, self.y_data, marker="braille")
         self.plt.ylim(0, 110)
         self.plt.yticks(ASSETS["chart"]["y_ticks"])
-        
+
         # Background tick: updates every 1 second
         self.set_interval(1.0, self.update_bac)
 
@@ -53,12 +53,12 @@ class BACChart(PlotextPlot):
         self.current_bac = max(
             0.0, self.current_bac + ASSETS["chart"]["natural_change_per_second"]
         )
-        
+
         self.x_data.pop(0)
         self.x_data.append(self.x_data[-1] + 1)
         self.y_data.pop(0)
         self.y_data.append(self.current_bac)
-        
+
         self.plt.clear_data()
         self.plt.plot(self.x_data, self.y_data, marker="braille")
         self.plt.ylim(0, 110)
@@ -89,7 +89,7 @@ class DrinkingStatusPanel(Static):
 
     def update_status(self) -> None:
         current_quote = random.choice(ASSETS["messages"]["status_quotes"])
-        
+
         self.update(
             ASSETS["status_panel"]["template"].format(
                 drinks_count=self.drinks_count,
@@ -103,7 +103,7 @@ class DrinkingStatusPanel(Static):
         chart.current_bac = min(105.0, chart.current_bac + 35.0)
         self.app.add_event_log(ASSETS["messages"]["drink_added"], "warning")
         self.update_status()
-        
+
         # Immediate check after adding drink
         if chart.current_bac >= 100.0:
             self.app.game_over()
