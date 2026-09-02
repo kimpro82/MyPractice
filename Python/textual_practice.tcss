@@ -2,6 +2,12 @@ Screen {
     background: #1e1e2e;
 }
 
+FooterKey {
+    .footer-key--key {
+        padding: 0 0 0 1;
+    }
+}
+
 Horizontal {
     height: 1fr;
 }
@@ -15,7 +21,7 @@ DrinkingStatusPanel {
     height: 1fr;
     border: solid yellow;
     margin: 1;
-    padding: 2;
+    padding: 1;
 }
 
 RichLog#event_log {

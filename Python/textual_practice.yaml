@@ -4,9 +4,9 @@ chart:
   y_label: "Level (%)"
 
 bindings:
-  quit: "Quit App"
-  drink_beer: "Beer (Sharp BAC spike)"
-  hangover_cure: "Hangover Cure (Lower BAC)"
+  quit: "uit App"
+  drink_beer: "eer (Sharp BAC spike)"
+  hangover_cure: "elief (Lower BAC)"
 
 status_panel:
   template: |-

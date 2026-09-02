@@ -87,12 +87,12 @@ class LiquidityCrisisApp(App):
     CSS_PATH = "textual_practice.tcss"
 
     BINDINGS = [
-        Binding("q", "quit", ASSETS["bindings"]["quit"]),
-        Binding("Q", "quit", show=False),
-        Binding("b", "drink_beer", ASSETS["bindings"]["drink_beer"]),
-        Binding("B", "drink_beer", show=False),
-        Binding("r", "hangover_cure", ASSETS["bindings"]["hangover_cure"]),
-        Binding("R", "hangover_cure", show=False),
+        Binding("q", "quit", show=False),
+        Binding("Q", "quit", ASSETS["bindings"]["quit"]),
+        Binding("b", "drink_beer", show=False),
+        Binding("B", "drink_beer", ASSETS["bindings"]["drink_beer"]),
+        Binding("r", "hangover_cure", show=False),
+        Binding("R", "hangover_cure", ASSETS["bindings"]["hangover_cure"]),
     ]
 
     def compose(self) -> ComposeResult:
