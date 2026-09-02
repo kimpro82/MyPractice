@@ -23,6 +23,7 @@ RichLog#event_log {
     border: solid green;
     margin: 0 1 1 1;
     padding: 0 1;
+    overflow-x: hidden;
     scrollbar-size: 1 1;
 }
 

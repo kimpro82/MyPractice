@@ -5,6 +5,7 @@ from textual.binding import Binding
 from textual_plotext import PlotextPlot
 from pathlib import Path
 import random
+import textwrap
 import yaml                                         # PyYAML
 
 ASSET_PATH = Path(__file__).with_suffix(".yaml")
@@ -96,7 +97,7 @@ class LiquidityCrisisApp(App):
         yield Horizontal(
             Vertical(
                 DrinkingStatusPanel(id="status_panel"),
-                RichLog(id="event_log", markup=True, wrap=True),
+                RichLog(id="event_log", markup=True, min_width=0, wrap=True),
                 id="left_panel",
             ),
             BACChart(id="bac_chart")
@@ -106,7 +107,14 @@ class LiquidityCrisisApp(App):
     def add_event_log(self, message: str, severity: str) -> None:
         log = self.query_one("#event_log", RichLog)
         style = "yellow" if severity == "warning" else "cyan"
-        log.write(f"[{style}]{message}[/]", scroll_end=True)
+        message_width = max(1, log.content_size.width - 2)
+        formatted_message = textwrap.fill(
+            message,
+            width=message_width,
+            initial_indent="- ",
+            subsequent_indent=" ",
+        )
+        log.write(f"[{style}]{formatted_message}[/]", scroll_end=True)
 
     def action_drink_beer(self) -> None:
         panel = self.query_one("#status_panel", DrinkingStatusPanel)
