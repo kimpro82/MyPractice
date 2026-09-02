@@ -2,6 +2,7 @@ chart:
   title: "Liquidity Crisis: Real-time BAC & Sanity Tracker"
   x_label: "Time (s)"
   y_label: "Level (%)"
+  natural_change_per_second: 0.0
 
 bindings:
   quit: "uit App"

@@ -30,8 +30,9 @@ class BACChart(PlotextPlot):
         self.set_interval(1.0, self.update_bac)
 
     def update_bac(self) -> None:
-        # Natural slight decrease over time, but never below 0
-        self.current_bac = max(0.0, self.current_bac - 1.5)
+        self.current_bac = max(
+            0.0, self.current_bac + ASSETS["chart"]["natural_change_per_second"]
+        )
         
         self.x_data.pop(0)
         self.x_data.append(self.x_data[-1] + 1)
