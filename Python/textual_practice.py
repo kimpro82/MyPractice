@@ -1,3 +1,19 @@
+"""Interactive Textual dashboard that simulates blood alcohol content changes.
+
+Date: 2026.09.02
+Author: kimpro82
+
+Usage:
+    Run ``python3 textual_practice.py``. Press ``B`` or ``b`` to add a beer,
+    ``R`` or ``r`` to apply a hangover cure, and ``Q`` or ``q`` to quit.
+
+Notes:
+    User-facing text and simulation settings are loaded from the adjacent YAML
+    asset file, while layout and presentation rules are defined in the TCSS
+    file. BAC changes through a small natural decrease and randomly timed,
+    weighted events. Reaching the blackout threshold shows a restartable modal.
+"""
+
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, Vertical
 from textual.widgets import Header, Footer, RichLog, Static
@@ -8,9 +24,10 @@ from textual import events
 from pathlib import Path
 import random
 import textwrap
-import yaml                                         # PyYAML
+import yaml  # PyYAML
 
 ASSET_PATH = Path(__file__).with_suffix(".yaml")
+# Load display text and simulation settings from the external asset file.
 with ASSET_PATH.open(encoding="utf-8") as asset_file:
     ASSETS = yaml.safe_load(asset_file)
 

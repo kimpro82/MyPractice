@@ -1,3 +1,6 @@
+# User-facing text and simulation settings for the Textual BAC dashboard.
+
+# Chart labels and continuous BAC adjustment.
 chart:
   title: "Real-time BAC & Sanity Tracker"
   x_label: "Time (s)"
@@ -5,17 +8,21 @@ chart:
   y_ticks: [0, 20, 40, 60, 80, 100]
   natural_change_per_second: -0.5
 
+# Footer shortcut descriptions.
 bindings:
   quit: "uit App"
   drink_beer: "eer (Sharp BAC spike)"
   hangover_cure: "elief (Lower BAC)"
 
+# Text displayed in the upper-left status panel.
 status_panel:
   template: |-
     [bold cyan]🍻 Liquidity Crisis Monitoring[/]
+
     • Drinks Consumed: {drinks_count} glasses
     • Current Status: {current_quote}
 
+# Notifications written to the event log and rotating status quotes.
 messages:
   drink_added: "🍺 Liquid injection! BAC is spiking."
   sober_up: "🍲 Hangover soup consumed! Capital preservation active."
@@ -26,6 +33,7 @@ messages:
     - "Not sure if I wrote the code or the alcohol wrote me."
     - "If you don't remember writing it, it doesn't exist."
 
+# Modal content shown when BAC reaches the blackout threshold.
 game_over:
   message: |-
     [bold red]GAME OVER[/]
@@ -33,6 +41,7 @@ game_over:
     BAC reached the blackout zone.
     Press any key to restart.
 
+# Weighted BAC event magnitudes and their humorous log messages.
 random_event:
   changes: [5.0, 10.0, 15.0, 20.0, 25.0]
   weights: [35, 30, 20, 10, 5]
