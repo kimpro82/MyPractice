@@ -8,3 +8,4 @@ floating.py:
 textual_practice.py:
   - textual
   - textual_plotext
+  - PyYAML

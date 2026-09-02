@@ -1,0 +1,22 @@
+Screen {
+    background: #1e1e2e;
+}
+
+Horizontal {
+    height: 1fr;
+}
+
+DrinkingStatusPanel {
+    width: 1fr;
+    height: 1fr;
+    border: solid yellow;
+    margin: 1;
+    padding: 2;
+}
+
+BACChart {
+    width: 1fr;
+    height: 1fr;
+    border: solid cyan;
+    margin: 1;
+}

@@ -3,15 +3,21 @@ from textual.containers import Horizontal
 from textual.widgets import Header, Footer, Static
 from textual.binding import Binding
 from textual_plotext import PlotextPlot
+from pathlib import Path
 import random
+import yaml                                         # PyYAML
+
+ASSET_PATH = Path(__file__).with_suffix(".yaml")
+with ASSET_PATH.open(encoding="utf-8") as asset_file:
+    ASSETS = yaml.safe_load(asset_file)
 
 class BACChart(PlotextPlot):
     """Real-time Blood Alcohol Content (BAC) and Sanity line chart."""
 
     def on_mount(self) -> None:
-        self.plt.title("Liquidity Crisis: Real-time BAC & Sanity Tracker")
-        self.plt.xlabel("Time (s)")
-        self.plt.ylabel("Level (%)")
+        self.plt.title(ASSETS["chart"]["title"])
+        self.plt.xlabel(ASSETS["chart"]["x_label"])
+        self.plt.ylabel(ASSETS["chart"]["y_label"])
         self.x_data = list(range(10))
         self.y_data = [20.0 for _ in range(10)]
         self.current_bac = 20.0
@@ -38,7 +44,7 @@ class BACChart(PlotextPlot):
 
         # Check for Over-100% BAC (Memory Blackout Over)
         if self.current_bac >= 100.0:
-            self.app.exit(message="🚨 Liquidity Crisis! Memory Blackout triggered. Sent home & forced exit.")
+            self.app.exit(message=ASSETS["messages"]["blackout"])
 
 
 class DrinkingStatusPanel(Static):
@@ -49,71 +55,40 @@ class DrinkingStatusPanel(Static):
         self.update_status()
 
     def update_status(self) -> None:
-        quotes = [
-            "HODLing my sobriety with diamond hands...",
-            "High liquidity detected in the blood stream.",
-            "Sudden urge to execute `git push -f origin main`.",
-            "Not sure if I wrote the code or the alcohol wrote me.",
-            "If you don't remember writing it, it doesn't exist."
-        ]
-        current_quote = random.choice(quotes)
+        current_quote = random.choice(ASSETS["messages"]["status_quotes"])
         
         self.update(
-            f"\n[bold cyan]🍻 Liquidity Crisis Monitoring[/]\n\n"
-            f"• Drinks Consumed: {self.drinks_count} glasses\n"
-            f"• Current Status: {current_quote}\n\n"
-            f"[dim]----------------------------------------[/]\n"
-            f"[bold green]Key Bindings:[/]\n"
-            f" [B] Add Beer (Sharp BAC spike)\n"
-            f" [R] Hangover Cure (Lower BAC)\n"
-            f" [Q] Quit App"
+            ASSETS["status_panel"]["template"].format(
+                drinks_count=self.drinks_count,
+                current_quote=current_quote,
+            )
         )
 
     def add_drink(self) -> None:
         self.drinks_count += 1
         chart = self.app.query_one("#bac_chart", BACChart)
         chart.current_bac = min(105.0, chart.current_bac + 35.0)
-        self.app.notify("🍺 Liquid injection! BAC is spiking.", severity="warning")
+        self.app.notify(ASSETS["messages"]["drink_added"], severity="warning")
         self.update_status()
         
         # Immediate check after adding drink
         if chart.current_bac >= 100.0:
-            self.app.exit(message="🚨 Liquidity Crisis! Memory Blackout triggered. Sent home & forced exit.")
+            self.app.exit(message=ASSETS["messages"]["blackout"])
 
     def sober_up(self) -> None:
         chart = self.app.query_one("#bac_chart", BACChart)
         chart.current_bac = max(0.0, chart.current_bac - 25.0)
-        self.app.notify("🍲 Hangover soup consumed! Capital preservation active.", severity="information")
+        self.app.notify(ASSETS["messages"]["sober_up"], severity="information")
         self.update_status()
 
 
 class LiquidityCrisisApp(App):
-    CSS = """
-    Screen {
-        background: #1e1e2e;
-    }
-    Horizontal {
-        height: 1fr;
-    }
-    DrinkingStatusPanel {
-        width: 1fr;
-        height: 1fr;
-        border: solid yellow;
-        margin: 1;
-        padding: 2;
-    }
-    BACChart {
-        width: 1fr;
-        height: 1fr;
-        border: solid cyan;
-        margin: 1;
-    }
-    """
+    CSS_PATH = "textual_practice.tcss"
 
     BINDINGS = [
-        Binding("q", "quit", "Quit"),
-        Binding("b", "drink_beer", "Beer"),
-        Binding("r", "hangover_cure", "Relief"),
+        Binding("q", "quit", ASSETS["bindings"]["quit"]),
+        Binding("b", "drink_beer", ASSETS["bindings"]["drink_beer"]),
+        Binding("r", "hangover_cure", ASSETS["bindings"]["hangover_cure"]),
     ]
 
     def compose(self) -> ComposeResult:
@@ -139,42 +114,21 @@ class LiquidityCrisisApp(App):
         self.set_timer(random.uniform(1.0, 5.0), self.trigger_random_bac_event)
 
     def trigger_random_bac_event(self) -> None:
-        increase_messages = [
-            "An expense report was approved. Confidence is carbonated.",
-            "The office coffee was replaced with mystery punch.",
-            "A teammate said 'quick deploy' with a straight face.",
-            "Someone opened a meeting with 'one tiny update.'",
-            "The build turned green, so celebration became a service.",
-            "A spreadsheet achieved sentience and ordered a round.",
-            "The snack budget was reclassified as liquid assets.",
-            "A calendar invite arrived labeled 'casual emergency.'",
-            "The printer finally worked. This felt historically important.",
-            "A bug was fixed by restarting it. Cheers to science.",
-        ]
-        decrease_messages = [
-            "Water appeared, pretending to be a responsible adult.",
-            "The finance team discovered the receipt trail.",
-            "A production alert provided instant emotional clarity.",
-            "Someone asked for the password manager master key.",
-            "The CEO entered the room. Gravity returned.",
-            "A lint error gently escorted the party outside.",
-            "The coffee machine served a sobering error code.",
-            "A code review comment contained the word 'actually.'",
-            "The expense policy materialized in full legal font.",
-            "The meeting recorder announced it was already running.",
-        ]
-        change = random.choices([1.0, 2.0, 3.0, 4.0, 5.0], weights=[35, 30, 20, 10, 5])[0]
+        random_event = ASSETS["random_event"]
+        change = random.choices(
+            random_event["changes"], weights=random_event["weights"]
+        )[0]
         chart = self.query_one("#bac_chart", BACChart)
 
         if random.choice([True, False]):
             chart.current_bac = min(105.0, chart.current_bac + change)
-            self.notify(random.choice(increase_messages), severity="warning")
+            self.notify(random.choice(random_event["increase_messages"]), severity="warning")
         else:
             chart.current_bac = max(0.0, chart.current_bac - change)
-            self.notify(random.choice(decrease_messages), severity="information")
+            self.notify(random.choice(random_event["decrease_messages"]), severity="information")
 
         if chart.current_bac >= 100.0:
-            self.exit(message="Liquidity Crisis! Memory Blackout triggered. Sent home & forced exit.")
+            self.exit(message=ASSETS["messages"]["blackout"])
             return
 
         self.schedule_random_bac_event()

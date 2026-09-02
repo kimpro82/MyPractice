@@ -1,0 +1,60 @@
+chart:
+  title: "Liquidity Crisis: Real-time BAC & Sanity Tracker"
+  x_label: "Time (s)"
+  y_label: "Level (%)"
+
+bindings:
+  quit: "Quit"
+  drink_beer: "Beer"
+  hangover_cure: "Relief"
+
+status_panel:
+  template: |-
+
+    [bold cyan]🍻 Liquidity Crisis Monitoring[/]
+
+    • Drinks Consumed: {drinks_count} glasses
+    • Current Status: {current_quote}
+
+    [dim]----------------------------------------[/]
+    [bold green]Key Bindings:[/]
+     [B] Add Beer (Sharp BAC spike)
+     [R] Hangover Cure (Lower BAC)
+     [Q] Quit App
+
+messages:
+  blackout: "🚨 Liquidity Crisis! Memory Blackout triggered. Sent home & forced exit."
+  drink_added: "🍺 Liquid injection! BAC is spiking."
+  sober_up: "🍲 Hangover soup consumed! Capital preservation active."
+  status_quotes:
+    - "HODLing my sobriety with diamond hands..."
+    - "High liquidity detected in the blood stream."
+    - "Sudden urge to execute `git push -f origin main`."
+    - "Not sure if I wrote the code or the alcohol wrote me."
+    - "If you don't remember writing it, it doesn't exist."
+
+random_event:
+  changes: [1.0, 2.0, 3.0, 4.0, 5.0]
+  weights: [35, 30, 20, 10, 5]
+  increase_messages:
+    - "An expense report was approved. Confidence is carbonated."
+    - "The office coffee was replaced with mystery punch."
+    - "A teammate said 'quick deploy' with a straight face."
+    - "Someone opened a meeting with 'one tiny update.'"
+    - "The build turned green, so celebration became a service."
+    - "A spreadsheet achieved sentience and ordered a round."
+    - "The snack budget was reclassified as liquid assets."
+    - "A calendar invite arrived labeled 'casual emergency.'"
+    - "The printer finally worked. This felt historically important."
+    - "A bug was fixed by restarting it. Cheers to science."
+  decrease_messages:
+    - "Water appeared, pretending to be a responsible adult."
+    - "The finance team discovered the receipt trail."
+    - "A production alert provided instant emotional clarity."
+    - "Someone asked for the password manager master key."
+    - "The CEO entered the room. Gravity returned."
+    - "A lint error gently escorted the party outside."
+    - "The coffee machine served a sobering error code."
+    - "A code review comment contained the word 'actually.'"
+    - "The expense policy materialized in full legal font."
+    - "The meeting recorder announced it was already running."
