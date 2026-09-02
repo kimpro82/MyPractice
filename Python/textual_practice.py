@@ -132,6 +132,53 @@ class LiquidityCrisisApp(App):
         panel = self.query_one("#status_panel", DrinkingStatusPanel)
         panel.sober_up()
 
+    def on_mount(self) -> None:
+        self.schedule_random_bac_event()
+
+    def schedule_random_bac_event(self) -> None:
+        self.set_timer(random.uniform(1.0, 5.0), self.trigger_random_bac_event)
+
+    def trigger_random_bac_event(self) -> None:
+        increase_messages = [
+            "An expense report was approved. Confidence is carbonated.",
+            "The office coffee was replaced with mystery punch.",
+            "A teammate said 'quick deploy' with a straight face.",
+            "Someone opened a meeting with 'one tiny update.'",
+            "The build turned green, so celebration became a service.",
+            "A spreadsheet achieved sentience and ordered a round.",
+            "The snack budget was reclassified as liquid assets.",
+            "A calendar invite arrived labeled 'casual emergency.'",
+            "The printer finally worked. This felt historically important.",
+            "A bug was fixed by restarting it. Cheers to science.",
+        ]
+        decrease_messages = [
+            "Water appeared, pretending to be a responsible adult.",
+            "The finance team discovered the receipt trail.",
+            "A production alert provided instant emotional clarity.",
+            "Someone asked for the password manager master key.",
+            "The CEO entered the room. Gravity returned.",
+            "A lint error gently escorted the party outside.",
+            "The coffee machine served a sobering error code.",
+            "A code review comment contained the word 'actually.'",
+            "The expense policy materialized in full legal font.",
+            "The meeting recorder announced it was already running.",
+        ]
+        change = random.choices([1.0, 2.0, 3.0, 4.0, 5.0], weights=[35, 30, 20, 10, 5])[0]
+        chart = self.query_one("#bac_chart", BACChart)
+
+        if random.choice([True, False]):
+            chart.current_bac = min(105.0, chart.current_bac + change)
+            self.notify(random.choice(increase_messages), severity="warning")
+        else:
+            chart.current_bac = max(0.0, chart.current_bac - change)
+            self.notify(random.choice(decrease_messages), severity="information")
+
+        if chart.current_bac >= 100.0:
+            self.exit(message="Liquidity Crisis! Memory Blackout triggered. Sent home & forced exit.")
+            return
+
+        self.schedule_random_bac_event()
+
 
 if __name__ == "__main__":
     app = LiquidityCrisisApp()
