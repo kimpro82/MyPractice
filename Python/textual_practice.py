@@ -1,0 +1,235 @@
+"""Interactive Textual dashboard that simulates blood alcohol content changes.
+
+Date: 2026.09.02
+Author: kimpro82
+
+Usage:
+    Run ``python3 textual_practice.py``. Press ``B`` or ``b`` to add a beer,
+    ``R`` or ``r`` to apply a hangover cure, and ``Q`` or ``q`` to quit.
+
+Notes:
+    User-facing text and simulation settings are loaded from the adjacent YAML
+    asset file, while layout and presentation rules are defined in the TCSS
+    file. BAC changes through a small natural decrease and randomly timed,
+    weighted events. Reaching the blackout threshold shows a restartable modal.
+"""
+
+import random
+from pathlib import Path
+import textwrap
+from textual.app import App, ComposeResult
+from textual.screen import ModalScreen
+from textual.containers import Horizontal, Vertical
+from textual.widgets import Header, Footer, RichLog, Static
+from textual.binding import Binding
+from textual_plotext import PlotextPlot
+from textual import events
+import yaml  # PyYAML
+
+ASSET_PATH = Path(__file__).with_suffix(".yaml")
+# Load display text and simulation settings from the external asset file.
+with ASSET_PATH.open(encoding="utf-8") as asset_file:
+    ASSETS = yaml.safe_load(asset_file)
+
+class BACChart(PlotextPlot):
+    """Real-time Blood Alcohol Content (BAC) and Sanity line chart."""
+
+    BORDER_TITLE = "<BAC Chart>"
+
+    def on_mount(self) -> None:
+        self.plt.title(ASSETS["chart"]["title"])
+        self.plt.xlabel(ASSETS["chart"]["x_label"])
+        self.plt.ylabel(ASSETS["chart"]["y_label"])
+        self.x_data = list(range(10))
+        self.y_data = [20.0 for _ in range(10)]
+        self.current_bac = 20.0
+
+        self.plt.plot(self.x_data, self.y_data, marker="braille")
+        self.plt.ylim(0, 110)
+        self.plt.yticks(ASSETS["chart"]["y_ticks"])
+
+        # Background tick: updates every 1 second
+        self.set_interval(1.0, self.update_bac)
+
+    def update_bac(self) -> None:
+        self.current_bac = max(
+            0.0, self.current_bac + ASSETS["chart"]["natural_change_per_second"]
+        )
+
+        self.x_data.pop(0)
+        self.x_data.append(self.x_data[-1] + 1)
+        self.y_data.pop(0)
+        self.y_data.append(self.current_bac)
+
+        self.plt.clear_data()
+        self.plt.plot(self.x_data, self.y_data, marker="braille")
+        self.plt.ylim(0, 110)
+        self.plt.yticks(ASSETS["chart"]["y_ticks"])
+        self.refresh()
+
+        # Check for Over-100% BAC (Memory Blackout Over)
+        if self.current_bac >= 100.0:
+            self.app.game_over()
+
+    def reset(self) -> None:
+        self.x_data = list(range(10))
+        self.y_data = [20.0 for _ in range(10)]
+        self.current_bac = 20.0
+        self.plt.clear_data()
+        self.plt.plot(self.x_data, self.y_data, marker="braille")
+        self.plt.ylim(0, 110)
+        self.plt.yticks(ASSETS["chart"]["y_ticks"])
+        self.refresh()
+
+
+class DrinkingStatusPanel(Static):
+    """Status display widget with humorous office worker and financial quotes."""
+
+    BORDER_TITLE = "<Status>"
+
+    def on_mount(self) -> None:
+        self.drinks_count = 0
+        self.update_status()
+
+    def update_status(self) -> None:
+        current_quote = random.choice(ASSETS["messages"]["status_quotes"])
+
+        self.update(
+            ASSETS["status_panel"]["template"].format(
+                drinks_count=self.drinks_count,
+                current_quote=current_quote,
+            )
+        )
+
+    def add_drink(self) -> None:
+        self.drinks_count += 1
+        chart = self.app.query_one("#bac_chart", BACChart)
+        chart.current_bac = min(105.0, chart.current_bac + 35.0)
+        self.app.add_event_log(ASSETS["messages"]["drink_added"], "warning")
+        self.update_status()
+
+        # Immediate check after adding drink
+        if chart.current_bac >= 100.0:
+            self.app.game_over()
+
+    def sober_up(self) -> None:
+        chart = self.app.query_one("#bac_chart", BACChart)
+        chart.current_bac = max(0.0, chart.current_bac - 25.0)
+        self.app.add_event_log(ASSETS["messages"]["sober_up"], "information")
+        self.update_status()
+
+
+class EventLog(RichLog):
+    BORDER_TITLE = "<Log Messages>"
+
+
+class LiquidityCrisisApp(App):
+    CSS_PATH = "textual_practice.tcss"
+    ENABLE_COMMAND_PALETTE = False
+
+    BINDINGS = [
+        Binding("q", "quit", show=False),
+        Binding("Q", "quit", ASSETS["bindings"]["quit"]),
+        Binding("b", "drink_beer", show=False),
+        Binding("B", "drink_beer", ASSETS["bindings"]["drink_beer"]),
+        Binding("r", "hangover_cure", show=False),
+        Binding("R", "hangover_cure", ASSETS["bindings"]["hangover_cure"]),
+    ]
+
+    def compose(self) -> ComposeResult:
+        yield Header(show_clock=False, icon="")
+        yield Horizontal(
+            Vertical(
+                DrinkingStatusPanel(id="status_panel"),
+                EventLog(id="event_log", markup=True, min_width=0, wrap=True),
+                id="left_panel",
+            ),
+            BACChart(id="bac_chart")
+        )
+        yield Footer()
+
+    def add_event_log(self, message: str, severity: str) -> None:
+        log = self.query_one("#event_log", EventLog)
+        style = "yellow" if severity == "warning" else "cyan"
+        message_width = max(1, log.content_size.width - 2)
+        formatted_message = textwrap.fill(
+            message,
+            width=message_width,
+            initial_indent="- ",
+            subsequent_indent=" ",
+        )
+        log.write(f"[{style}]{formatted_message}[/]", scroll_end=True)
+
+    def game_over(self) -> None:
+        if self.is_game_over:
+            return
+        self.is_game_over = True
+        self.random_event_timer.stop()
+        self.push_screen(GameOverScreen())
+
+    def restart_game(self) -> None:
+        self.query_one("#bac_chart", BACChart).reset()
+        self.query_one("#status_panel", DrinkingStatusPanel).drinks_count = 0
+        self.query_one("#status_panel", DrinkingStatusPanel).update_status()
+        self.query_one("#event_log", EventLog).clear()
+        self.is_game_over = False
+        self.schedule_random_bac_event()
+
+    def action_drink_beer(self) -> None:
+        panel = self.query_one("#status_panel", DrinkingStatusPanel)
+        panel.add_drink()
+
+    def action_hangover_cure(self) -> None:
+        panel = self.query_one("#status_panel", DrinkingStatusPanel)
+        panel.sober_up()
+
+    def on_mount(self) -> None:
+        self.is_game_over = False
+        self.schedule_random_bac_event()
+
+    def schedule_random_bac_event(self) -> None:
+        self.random_event_timer = self.set_timer(
+            random.uniform(1.0, 5.0), self.trigger_random_bac_event
+        )
+
+    def trigger_random_bac_event(self) -> None:
+        if self.is_game_over:
+            return
+
+        random_event = ASSETS["random_event"]
+        change = random.choices(
+            random_event["changes"], weights=random_event["weights"]
+        )[0]
+        chart = self.query_one("#bac_chart", BACChart)
+
+        if random.random() < random_event["increase_probability"]:
+            chart.current_bac = min(105.0, chart.current_bac + change)
+            self.add_event_log(
+                random.choice(random_event["increase_messages"]), "warning"
+            )
+        else:
+            chart.current_bac = max(0.0, chart.current_bac - change)
+            self.add_event_log(
+                random.choice(random_event["decrease_messages"]), "information"
+            )
+
+        if chart.current_bac >= 100.0:
+            self.game_over()
+            return
+
+        self.schedule_random_bac_event()
+
+
+class GameOverScreen(ModalScreen[None]):
+    def compose(self) -> ComposeResult:
+        yield Static(ASSETS["game_over"]["message"], id="game_over_message")
+
+    def on_key(self, event: events.Key) -> None:
+        event.stop()
+        self.app.restart_game()
+        self.dismiss()
+
+
+if __name__ == "__main__":
+    app = LiquidityCrisisApp()
+    app.run()

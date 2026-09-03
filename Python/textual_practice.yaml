@@ -1,0 +1,69 @@
+# User-facing text and simulation settings for the Textual BAC dashboard.
+
+# Chart labels and continuous BAC adjustment.
+chart:
+  title: "Real-time BAC & Sanity Tracker"
+  x_label: "Time (s)"
+  y_label: "Level (%)"
+  y_ticks: [0, 20, 40, 60, 80, 100]
+  natural_change_per_second: -0.5
+
+# Footer shortcut descriptions.
+bindings:
+  quit: "uit App"
+  drink_beer: "eer (Sharp BAC spike)"
+  hangover_cure: "elief (Lower BAC)"
+
+# Text displayed in the upper-left status panel.
+status_panel:
+  template: |-
+    [bold cyan]🍻 Liquidity Crisis Monitoring[/]
+      • Drinks Consumed: {drinks_count} glasses
+      • Current Status: {current_quote}
+
+# Notifications written to the event log and rotating status quotes.
+messages:
+  drink_added: "🍺 Liquid injection! BAC is spiking."
+  sober_up: "🍲 Hangover soup consumed! Capital preservation active."
+  status_quotes:
+    - "HODLing my sobriety with diamond hands..."
+    - "High liquidity detected in the blood stream."
+    - "Sudden urge to execute `git push -f origin main`."
+    - "Not sure if I wrote the code or the alcohol wrote me."
+    - "If you don't remember writing it, it doesn't exist."
+
+# Modal content shown when BAC reaches the blackout threshold.
+game_over:
+  message: |-
+    [bold red]GAME OVER[/]
+
+    BAC reached the blackout zone.
+    Press any key to restart.
+
+# Weighted BAC event magnitudes and their humorous log messages.
+random_event:
+  changes: [5.0, 10.0, 15.0, 20.0, 25.0]
+  weights: [35, 30, 20, 10, 5]
+  increase_probability: 0.6
+  increase_messages:
+    - "An expense report was approved. Confidence is carbonated."
+    - "The office coffee was replaced with mystery punch."
+    - "A teammate said 'quick deploy' with a straight face."
+    - "Someone opened a meeting with 'one tiny update.'"
+    - "The build turned green, so celebration became a service."
+    - "A spreadsheet achieved sentience and ordered a round."
+    - "The snack budget was reclassified as liquid assets."
+    - "A calendar invite arrived labeled 'casual emergency.'"
+    - "The printer finally worked. This felt historically important."
+    - "A bug was fixed by restarting it. Cheers to science."
+  decrease_messages:
+    - "Water appeared, pretending to be a responsible adult."
+    - "The finance team discovered the receipt trail."
+    - "A production alert provided instant emotional clarity."
+    - "Someone asked for the password manager master key."
+    - "The CEO entered the room. Gravity returned."
+    - "A lint error gently escorted the party outside."
+    - "The coffee machine served a sobering error code."
+    - "A code review comment contained the word 'actually.'"
+    - "The expense policy materialized in full legal font."
+    - "The meeting recorder announced it was already running."

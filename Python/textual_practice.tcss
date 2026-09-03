@@ -1,0 +1,70 @@
+/* Layout and presentation rules for the Textual BAC dashboard. */
+
+/* Application-wide background and compact footer key labels. */
+Screen {
+    background: #1e1e2e;
+}
+
+HeaderIcon {
+    display: none;
+}
+
+FooterKey {
+    .footer-key--key {
+        padding: 0 0 0 1;
+    }
+}
+
+/* Center the blackout modal above the dashboard. */
+GameOverScreen {
+    align: center middle;
+    background: $background 80%;
+}
+
+#game_over_message {
+    width: 44;
+    height: auto;
+    border: thick red;
+    background: $surface;
+    content-align: center middle;
+    padding: 2 4;
+}
+
+/* Main two-column dashboard layout. */
+Horizontal {
+    height: 1fr;
+}
+
+Vertical#left_panel {
+    width: 1fr;
+    height: 1fr;
+}
+
+/* Left status area and scrollable event log. */
+DrinkingStatusPanel {
+    height: 7;
+    border: solid yellow;
+    border-title-align: left;
+    margin: 1;
+    padding: 0 1;
+}
+
+EventLog#event_log {
+    height: 1fr;
+    border: solid green;
+    border-title-align: left;
+    margin: 0 1;
+    offset: 0 0;
+    padding: 0 1;
+    overflow-x: hidden;
+    scrollbar-size: 1 1;
+}
+
+/* Right-side BAC chart. */
+BACChart {
+    width: 1fr;
+    height: 1fr;
+    border: solid cyan;
+    border-title-align: left;
+    margin: 1;
+}

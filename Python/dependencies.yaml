@@ -4,3 +4,8 @@
 floating.py:
   - numpy
   - pympler
+
+textual_practice.py:
+  - textual
+  - textual_plotext
+  - PyYAML
