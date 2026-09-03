@@ -49,7 +49,7 @@ I'm sorry *C++* …… I betrayed you.
   - `textual_practice.yaml`: External asset configuration file containing status quotes, event messages, weights, and display templates.
 - Features & UI Customization
   - **Border Title Overlay**: Uses `BORDER_TITLE` attributes (`<Status>`, `<Log Messages>`, `<BAC Chart>`) and TCSS `border-title-align: left;` to render text labels overlaid directly on widget top border lines.
-  - **Responsive Vertical Layout**: The status panel has a fixed height (`height: 8`), guaranteeing 4 lines of text display, while the event log automatically scales vertically (`height: 1fr`) to fill remaining terminal space.
+  - **Responsive Vertical Layout**: The status panel has a fixed height (`height: 7`), guaranteeing 4 lines of text display, while the event log automatically scales vertically (`height: 1fr`) to fill remaining terminal space.
   - **Clean Header & Shortcut Display**: Disables Textual's default command palette (`ENABLE_COMMAND_PALETTE = False`) and clock to hide default system shortcuts (`^p`, `^o`).
   - **Real-Time Visualization**: Integrated braille-marker line chart tracking BAC levels over time.
 - Execution Commands
