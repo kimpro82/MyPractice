@@ -18,8 +18,8 @@ bindings:
 status_panel:
   template: |-
     [bold cyan]🍻 Liquidity Crisis Monitoring[/]
-    • Drinks Consumed: {drinks_count} glasses
-    • Current Status: {current_quote}
+      • Drinks Consumed: {drinks_count} glasses
+      • Current Status: {current_quote}
 
 # Notifications written to the event log and rotating status quotes.
 messages:
