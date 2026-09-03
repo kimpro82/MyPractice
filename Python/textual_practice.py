@@ -125,6 +125,7 @@ class EventLog(RichLog):
 
 class LiquidityCrisisApp(App):
     CSS_PATH = "textual_practice.tcss"
+    ENABLE_COMMAND_PALETTE = False
 
     BINDINGS = [
         Binding("q", "quit", show=False),
@@ -136,7 +137,7 @@ class LiquidityCrisisApp(App):
     ]
 
     def compose(self) -> ComposeResult:
-        yield Header()
+        yield Header(show_clock=False, icon="")
         yield Horizontal(
             Vertical(
                 DrinkingStatusPanel(id="status_panel"),

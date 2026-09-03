@@ -5,6 +5,10 @@ Screen {
     background: #1e1e2e;
 }
 
+HeaderIcon {
+    display: none;
+}
+
 FooterKey {
     .footer-key--key {
         padding: 0 0 0 1;
