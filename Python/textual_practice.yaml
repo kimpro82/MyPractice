@@ -18,7 +18,6 @@ bindings:
 status_panel:
   template: |-
     [bold cyan]🍻 Liquidity Crisis Monitoring[/]
-
     • Drinks Consumed: {drinks_count} glasses
     • Current Status: {current_quote}
 
