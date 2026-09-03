@@ -5,6 +5,7 @@ I'm sorry *C++* …… I betrayed you.
 
 ### \<List>
 
+- [Interactive `Textual` Dashboard Practice (2026.09.02)](#interactive-textual-dashboard-practice-20260902)
 - [Floating-Point Type and Python/NumPy Conversion Benchmark (2026.08.27)](#floating-point-type-and-pythonnumpy-conversion-benchmark-20260827)
 - [TDD Practice with `unittest` and `pytest` (2026.03.23)](#tdd-practice-with-unittest-and-pytest-20260323)
 - [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](#abstract-base-classabc-as-interface-practice-20241130)
@@ -34,6 +35,26 @@ I'm sorry *C++* …… I betrayed you.
 - [Class (2018.02.07)](#class-20180207)
 - [`while` (2017.05.15)](#while-20170515)
 
+
+
+## [Interactive `Textual` Dashboard Practice (2026.09.02)](#list)
+
+- Overview
+  - An interactive Terminal User Interface (TUI) dashboard built with `Textual` and `textual-plotext`.
+  - Simulates Blood Alcohol Content (BAC) changes with real-time Plotext charts, dynamic status displays, and logged random events.
+  - Demonstrates separation of UI logic, external configuration (`YAML`), and presentation styling (`TCSS`), as well as widget border title customization.
+- Components
+  - `textual_practice.py`: Main application code implementing `App`, `PlotextPlot` chart widget, `DrinkingStatusPanel`, `EventLog`, and `ModalScreen`.
+  - `textual_practice.tcss`: Style sheet defining colors, layout partitioning (`Horizontal`/`Vertical`), fixed status height, and responsive log window scaling (`height: 1fr`).
+  - `textual_practice.yaml`: External asset configuration file containing status quotes, event messages, weights, and display templates.
+- Features & UI Customization
+  - **Border Title Overlay**: Uses `BORDER_TITLE` attributes (`<Status>`, `<Log Messages>`, `<BAC Chart>`) and TCSS `border-title-align: left;` to render text labels overlaid directly on widget top border lines.
+  - **Responsive Vertical Layout**: The status panel has a fixed height (`height: 8`), guaranteeing 4 lines of text display, while the event log automatically scales vertically (`height: 1fr`) to fill remaining terminal space.
+  - **Real-Time Visualization**: Integrated braille-marker line chart tracking BAC levels over time.
+- Execution Commands
+  ```bash
+  $ python3 textual_practice.py
+  ```
 
 
 ## [Floating-Point Type and Python/NumPy Conversion Benchmark (2026.08.27)](#list)

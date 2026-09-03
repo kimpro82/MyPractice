@@ -29,6 +29,7 @@ This is a repository primarily for storing code related to **learning programmin
 
 ## [My Python Practice](#list)
 
+- [Interactive `Textual` Dashboard Practice (2026.09.02)](/Python/README.md#interactive-textual-dashboard-practice-20260902)
 - [Floating-Point Type and Python/NumPy Conversion Benchmark (2026.08.27)](/Python/README.md#floating-point-type-and-pythonnumpy-conversion-benchmark-20260827)
 - [TDD Practice with `unittest` and `pytest` (2026.03.23)](/Python/README.md#tdd-practice-with-unittest-and-pytest-20260323)
 - [Abstract Base Class(ABC) as Interface Practice (2024.11.30)](/Python/README.md#abstract-base-classabc-as-interface-practice-20241130)
