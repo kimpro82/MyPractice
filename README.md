@@ -19,7 +19,6 @@ This is a repository primarily for storing code related to **learning programmin
 - [My **ShellScript** Practice](#my-shellscript-practice)
 - [My **Auto Hot Key** Practice](#my-auto-hot-key-practice)
 - [My **Golang** Practice](#my-golang-practice)
-- [My **Mermaid** Practice](#my-mermaid--practice)
 - [My **Verilog** Practice](#my-verilog-practice)
 - [My **Lua** Practice](#my-lua-practice)
 - [My **Ruby** Practice](#my-ruby-practice)
@@ -131,11 +130,6 @@ This is a repository primarily for storing code related to **learning programmin
 
 - [Assembly Practice 1 (2023.08.04)](/Golang/README.md#assembly-practice-1-20230804)
 - [Grade (2021.12.06)](/Golang/README.md#grade-20211206)
-
-
-## [My Mermaid  Practice](#list)
-
-- [Initial Practice (2025.06.25)](/Mermaid/README.md#initial-practice-20250625)
 
 
 ## [My Verilog Practice](#list)
