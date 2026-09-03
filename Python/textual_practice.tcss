@@ -40,13 +40,15 @@ Vertical#left_panel {
 DrinkingStatusPanel {
     height: 1fr;
     border: solid yellow;
+    border-title-align: left;
     margin: 1;
     padding: 1;
 }
 
-RichLog#event_log {
+EventLog#event_log {
     height: 10;
     border: solid green;
+    border-title-align: left;
     margin: 0 1;
     offset: 0 0;
     padding: 0 1;
@@ -59,5 +61,6 @@ BACChart {
     width: 1fr;
     height: 1fr;
     border: solid cyan;
+    border-title-align: left;
     margin: 1;
 }

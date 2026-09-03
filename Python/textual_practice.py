@@ -34,6 +34,8 @@ with ASSET_PATH.open(encoding="utf-8") as asset_file:
 class BACChart(PlotextPlot):
     """Real-time Blood Alcohol Content (BAC) and Sanity line chart."""
 
+    BORDER_TITLE = "<BAC Chart>"
+
     def on_mount(self) -> None:
         self.plt.title(ASSETS["chart"]["title"])
         self.plt.xlabel(ASSETS["chart"]["x_label"])
@@ -83,6 +85,8 @@ class BACChart(PlotextPlot):
 class DrinkingStatusPanel(Static):
     """Status display widget with humorous office worker and financial quotes."""
 
+    BORDER_TITLE = "<Status>"
+
     def on_mount(self) -> None:
         self.drinks_count = 0
         self.update_status()
@@ -115,6 +119,10 @@ class DrinkingStatusPanel(Static):
         self.update_status()
 
 
+class EventLog(RichLog):
+    BORDER_TITLE = "<Log Messages>"
+
+
 class LiquidityCrisisApp(App):
     CSS_PATH = "textual_practice.tcss"
 
@@ -132,7 +140,7 @@ class LiquidityCrisisApp(App):
         yield Horizontal(
             Vertical(
                 DrinkingStatusPanel(id="status_panel"),
-                RichLog(id="event_log", markup=True, min_width=0, wrap=True),
+                EventLog(id="event_log", markup=True, min_width=0, wrap=True),
                 id="left_panel",
             ),
             BACChart(id="bac_chart")
@@ -140,7 +148,7 @@ class LiquidityCrisisApp(App):
         yield Footer()
 
     def add_event_log(self, message: str, severity: str) -> None:
-        log = self.query_one("#event_log", RichLog)
+        log = self.query_one("#event_log", EventLog)
         style = "yellow" if severity == "warning" else "cyan"
         message_width = max(1, log.content_size.width - 2)
         formatted_message = textwrap.fill(
@@ -162,7 +170,7 @@ class LiquidityCrisisApp(App):
         self.query_one("#bac_chart", BACChart).reset()
         self.query_one("#status_panel", DrinkingStatusPanel).drinks_count = 0
         self.query_one("#status_panel", DrinkingStatusPanel).update_status()
-        self.query_one("#event_log", RichLog).clear()
+        self.query_one("#event_log", EventLog).clear()
         self.is_game_over = False
         self.schedule_random_bac_event()
 
