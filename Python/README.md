@@ -40,6 +40,9 @@ I'm sorry *C++* …… I betrayed you.
 ## [Interactive `Textual` Dashboard Practice (2026.09.02)](#list)
 
 - Overview
+
+  ![textual_practice](./Images/textual_practice.gif)
+
   - An interactive Terminal User Interface (TUI) dashboard built with `Textual` and `textual-plotext`.
   - Simulates Blood Alcohol Content (BAC) changes with real-time Plotext charts, dynamic status displays, and logged random events.
   - Demonstrates separation of UI logic, external configuration (`YAML`), and presentation styling (`TCSS`), as well as widget border title customization.
