@@ -135,6 +135,7 @@ int main() {
     std::cout << "=== [PROJECT CAFFEINE-FLOW] INITIALIZING PIPELINE ===\n\n";
 
     constexpr int cup_count = 3;
+    std::cout << "=== SYNCHRONOUS BREW ===\n";
     const auto sync_start = std::chrono::steady_clock::now();
     for (int cup_id = 1; cup_id <= cup_count; ++cup_id) {
         brew_cup_synchronously(cup_id);
@@ -144,6 +145,7 @@ int main() {
     std::cout << "[Synchronous] " << cup_count << " cups completed in "
               << std::fixed << std::setprecision(2) << sync_elapsed << " seconds.\n\n";
 
+    std::cout << "=== ASYNCHRONOUS BREW ===\n";
     const auto async_start = std::chrono::steady_clock::now();
     auto cup1 = brew_cup_asynchronously(1);
     auto cup2 = brew_cup_asynchronously(2);
