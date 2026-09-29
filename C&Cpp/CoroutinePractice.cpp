@@ -3,9 +3,9 @@
 #include <generator>
 #include <ranges>
 #include <expected>
-#include <concepts>
 #include <thread>
 #include <chrono>
+#include <utility>
 
 // 1. Monadic Error Definition for Barista Operations
 enum class BrewingError {
@@ -14,39 +14,7 @@ enum class BrewingError {
     ExistentialCrisis
 };
 
-// C++20 Concept for Type-Safe Custom Awaitables
-template<typename T>
-concept Awaitable = requires(T t, std::coroutine_handle<> h) {
-    { t.await_ready() } -> std::convertible_to<bool>;
-    { t.await_suspend(h) };
-    { t.await_resume() };
-};
-
-// 2. Custom Awaitable for Async Water Boiling (co_await)
-struct BoilWaterAwaitable {
-    int target_temp;
-
-    bool await_ready() const noexcept { return false; }
-
-    void await_suspend(std::coroutine_handle<> h) const {
-        // Simulate non-blocking hardware latency in a background thread
-        std::thread([h, temp = target_temp]() {
-            std::this_thread::sleep_for(std::chrono::milliseconds(150));
-            std::cout << "[Hardware] Water successfully boiled to " << temp << "°C!\n";
-            h.resume(); // Resume coroutine execution
-        }).detach();
-    }
-
-    void await_resume() const noexcept {}
-};
-
-// Concept-constrained helper wrapper
-template <Awaitable A>
-auto perform_async_action(A&& awaitable) {
-    return std::forward<A>(awaitable);
-}
-
-// 3. Lazy Infinite Data Stream using C++23 std::generator & std::expected
+// 2. Lazy Data Stream using C++23 std::generator & std::expected
 std::generator<std::expected<int, BrewingError>> infinite_espresso_stream() {
     int cup_id = 1;
     while (true) {
@@ -60,8 +28,9 @@ std::generator<std::expected<int, BrewingError>> infinite_espresso_stream() {
             co_return;
         }
 
-        // Non-blocking wait using our concept-constrained awaitable
-        co_await perform_async_action(BoilWaterAwaitable{95});
+        // std::generator is a synchronous range and does not support co_await.
+        std::this_thread::sleep_for(std::chrono::milliseconds(150));
+        std::cout << "[Hardware] Water successfully boiled to 95°C!\n";
 
         std::cout << "[Barista] Pouring Espresso Cup #" << cup_id << "\n";
         co_yield cup_id++;
@@ -76,7 +45,7 @@ int main() {
     auto stream = infinite_espresso_stream();
 
     // Apply C++20 std::ranges to safely take only the first 10 items from the stream
-    auto processed_stream = stream | std::views::take(10);
+    auto processed_stream = std::views::take(std::move(stream), 10);
 
     for (auto&& result : processed_stream) {
         // Monadic error management on std::expected
