@@ -158,6 +158,6 @@ int main() {
     std::cout << "[Asynchronous] " << cup_count << " cups completed in "
               << std::fixed << std::setprecision(2) << async_elapsed << " seconds.\n";
 
-    std::cout << "=== [PROJECT CAFFEINE-FLOW] SHUTTING DOWN SAFELY ===\n";
+    std::cout << "\n=== [PROJECT CAFFEINE-FLOW] SHUTTING DOWN SAFELY ===\n";
     return 0;
 }
