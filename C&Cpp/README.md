@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [Coroutine Practice : Synchronous and Asynchronous Coffee Brewing (2026.09.29)](#coroutine-practice--synchronous-and-asynchronous-coffee-brewing-20260929)
 - [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](#diamond-inheritance-problem-and-resolution-through-virtual-inheritance-20250106)
 - [Compression Implementation : Huffman Coding (2024.10.09)](#compression-implementation--huffman-coding-20241009)
 - [*K&R C* Style Function Declaration (2023.08.20)](#kr-c-style-function-declaration-20230820)
@@ -21,6 +22,39 @@ The final destination of programming
 - [Stack Overflow (2021.05.18)](#stack-overflow-20210518)
 - [Hello World (2021.05.12)](#hello-world-20210512)
 
+
+## [Coroutine Practice : Synchronous and Asynchronous Coffee Brewing (2026.09.29)](#list)
+
+- Compares synchronous and asynchronous coffee brewing with C++ coroutines and measures the elapsed time for three cups
+- Uses a custom `Task` coroutine return type and `BoilWaterAwaitable` to resume each coroutine after the simulated brewing delay
+- The asynchronous tasks start before the program waits for their completion, allowing the three one-second waits to overlap
+- Build and Run : `run.sh` (requires `g++-14` with C++23 support)
+- Build and Run : `bash run.sh` (requires `g++-14` with C++23 support)
+- Code : `CoroutinePractice.cpp`
+- Results
+  <details>
+    <summary>Console Output</summary>
+
+  ```txt
+  [Synchronous] 3 cups completed in 3.00 seconds.
+
+  === ASYNCHRONOUS BREW ===
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #1
+  [Success] Consumed Espresso Unit: 1
+
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #3
+  [Success] Consumed Espresso Unit: 3
+
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #2
+  [Success] Consumed Espresso Unit: 2
+
+  [Asynchronous] 3 cups completed in 1.00 seconds.
+  ```
+  </details>
+- The asynchronous completion order can vary because each cup is brewed on a separate worker thread
 
 
 ## [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](#list)
