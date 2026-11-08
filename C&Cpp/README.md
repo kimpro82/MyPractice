@@ -26,7 +26,7 @@ The final destination of programming
 ## [Asynchronous C++20 Programming Practice Using Coroutine (2026.09.29)](#list)
 
 - **Purpose**
-  - Explores how much convenience `C++20` `coroutines` provide for asynchronous programming.
+  - Explores how much convenience `C++20` coroutines provide for asynchronous programming, using the `<coroutine>` header.
   - Coffee brewing is only a simple example used to demonstrate and compare synchronous and asynchronous execution.
 - **Asynchronous implementation**
   - `brew_cup_asynchronously()` uses `co_await` with `BoilWaterAwaitable`; its worker thread simulates boiling water, then resumes the coroutine.
@@ -34,7 +34,7 @@ The final destination of programming
 - **Limitations compared with higher-level coroutine support**
   - `C++20` provides coroutine language mechanisms, but does not itself provide an event loop, executor, or general-purpose task scheduler.
   - This example supplies only the machinery it needs: each await starts a detached thread, and `Task` provides basic completion waiting and exception propagation.
-  - Unlike Python's `asyncio` or Go's `goroutines` and runtime, this is not a reusable system for scheduling many kinds of asynchronous I/O or composing, cancelling, and managing tasks. Those facilities need to be provided by libraries or additional application code.
+  - Unlike Python's `asyncio` or Go's goroutines and runtime, this is not a reusable system for scheduling many kinds of asynchronous I/O or composing, cancelling, and managing tasks. Those facilities need to be provided by libraries or additional application code.
 - Build and Run : `./run.sh` or `bash ./run.sh` (requires `g++-14` with C++23 support)
 - Code : `CoroutinePractice.cpp`
 - Results
