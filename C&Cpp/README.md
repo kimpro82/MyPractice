@@ -5,6 +5,7 @@ The final destination of programming
 
 ### \<List>
 
+- [Asynchronous C++20 Programming Practice Using Coroutine (2026.09.29)](#asynchronous-c20-programming-practice-using-coroutine-20260929)
 - [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](#diamond-inheritance-problem-and-resolution-through-virtual-inheritance-20250106)
 - [Compression Implementation : Huffman Coding (2024.10.09)](#compression-implementation--huffman-coding-20241009)
 - [*K&R C* Style Function Declaration (2023.08.20)](#kr-c-style-function-declaration-20230820)
@@ -21,6 +22,66 @@ The final destination of programming
 - [Stack Overflow (2021.05.18)](#stack-overflow-20210518)
 - [Hello World (2021.05.12)](#hello-world-20210512)
 
+
+## [Asynchronous C++20 Programming Practice Using Coroutine (2026.09.29)](#list)
+
+- **Purpose**
+  - Explores how much convenience `C++20` coroutines provide for asynchronous programming, using the `<coroutine>` header.
+  - Coffee brewing is only a simple example used to demonstrate and compare synchronous and asynchronous execution.
+- **Asynchronous implementation**
+  - `brew_cup_asynchronously()` uses `co_await` with `BoilWaterAwaitable`; its worker thread simulates boiling water, then resumes the coroutine.
+  - The custom `Task` keeps the coroutine handle and completion future. `main()` starts all three tasks before calling `get()`, so their one-second waits overlap.
+- **Limitations compared with higher-level coroutine support**
+  - `C++20` provides coroutine language mechanisms, but does not itself provide an event loop, executor, or general-purpose task scheduler.
+  - This example supplies only the machinery it needs: each await starts a detached thread, and `Task` provides basic completion waiting and exception propagation.
+  - Unlike Python's `asyncio` or Go's goroutines and runtime, this is not a reusable system for scheduling many kinds of asynchronous I/O or composing, cancelling, and managing tasks. Those facilities need to be provided by libraries or additional application code.
+- Code : `CoroutinePractice.cpp`
+- Build and Run (requires `g++-14` with C++23 support)
+  ```bash
+  g++-14 -std=c++23 CoroutinePractice.cpp -o CoroutinePractice
+  ./CoroutinePractice
+  ```
+- Results
+  <details open="">
+    <summary>Console Output</summary>
+
+  ```txt
+  == [PROJECT CAFFEINE-FLOW] INITIALIZING PIPELINE ===
+
+  === SYNCHRONOUS BREW ===
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #1
+  [Success] Consumed Espresso Unit: 1
+
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #2
+  [Success] Consumed Espresso Unit: 2
+
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #3
+  [Success] Consumed Espresso Unit: 3
+
+  [Synchronous] 3 cups completed in 3.00 seconds.
+
+  === ASYNCHRONOUS BREW ===
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #3
+  [Success] Consumed Espresso Unit: 3
+
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #1
+  [Success] Consumed Espresso Unit: 1
+
+  [Hardware] Water successfully boiled to 95°C!
+  [Barista] Pouring Espresso Cup #2
+  [Success] Consumed Espresso Unit: 2
+
+  [Asynchronous] 3 cups completed in 1.00 seconds.
+
+  === [PROJECT CAFFEINE-FLOW] SHUTTING DOWN SAFELY ===
+  ```
+  </details>
+- The asynchronous completion order can vary because each cup is brewed on a separate worker thread
 
 
 ## [Diamond Inheritance Problem and Resolution through Virtual Inheritance (2025.01.06)](#list)
